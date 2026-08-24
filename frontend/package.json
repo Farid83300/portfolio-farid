@@ -1,0 +1,33 @@
+{
+  "name": "reeni-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@popperjs/core": "^2.11.8",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
+    "bootstrap": "^5.0.2",
+    "gsap": "^3.12.7",
+    "next": "15.3.0",
+    "odometer": "^0.4.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.5",
+    "sal.js": "^0.8.5",
+    "sass": "^1.86.3",
+    "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^10.9.0",
+    "eslint-config-next": "^16.3.2",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6"
+  }
+}
