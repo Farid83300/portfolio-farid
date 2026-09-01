@@ -18,7 +18,7 @@ export default function Hero() {
                   height={781}
                 />
                 <h2 className="banner-big-text-1 up-down">WEB DESIGNER</h2>
-                <h2 className="banner-big-text-2 up-down-2">WEB DESIGNER</h2>
+                <h2 className="banner-big-text-2 up-down-2">WEB DEVELOPER</h2>
               </div>
             </div>
             <div className="col-lg-6 order-lg-1">
@@ -27,25 +27,23 @@ export default function Hero() {
                   Hello
                 </span>
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
-                  i’m Jane Cooper a <br />
+                  Moi c'est Farid <br />
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Web Designer.",
                           "Web Developer.",
+                          "Full-stack Developer.",
                           "UI/UX Designer.",
                           "Freelancer.",
-                          "Content Writer.",
+                          "Wordpress Developer.",
                         ]}
                       />
                     </span>
                   </span>
                 </h1>
                 <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  A personal portfolio is a collection of your work,
-                  achievements, and skills that highlights your abilities and
-                  professional growth. It serves as
+                  Freelance basé en France à Draguignan, je développe des applications web full-stack pour des clients qui veulent un interlocuteur unique, un code maintenable, et un projet livré dans les règles de l'art.
                 </p>
                 <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
                   <Link
@@ -53,7 +51,7 @@ export default function Hero() {
                     href={`/project`}
                   >
                     <span className="icon-reverse-wrapper">
-                      <span className="btn-text">View Portfolio</span>
+                      <span className="btn-text">Voir Portfolio</span>
                       <span className="btn-icon">
                         <i className="fa-sharp fa-regular fa-arrow-right" />
                       </span>

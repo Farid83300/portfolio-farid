@@ -5,7 +5,7 @@
 ---------------------*/
 .logo {
   img {
-    max-width: 120px;
+    max-width: 160px;
     &.logo-white {
       display: none;
     }
@@ -31,7 +31,8 @@
     .logo {
       display: block;
       img {
-        max-width: max-content;
+        width: 53px;
+        height: 50px;
         @media #{variables.$sm-layout} {
           max-width: 135px;
         }

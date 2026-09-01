@@ -21,15 +21,15 @@ export default function Header1({
                     className="logo-dark"
                     alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                     src={darkLogo}
-                    width={121}
-                    height={41}
+                    width={53}
+                    height={50}
                   />
                   <Image
                     className="logo-white"
                     alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                     src={lightLogo}
-                    width={121}
-                    height={40}
+                    width={53}
+                    height={50}
                   />
                 </Link>
               </div>
