@@ -1,0 +1,98 @@
+# ================================
+# PHP / Composer
+# ================================
+
+# Dependencies
+/vendor/
+
+# Composer files generated locally
+composer.lock
+
+# ================================
+# Environment / Secrets
+# ================================
+
+.env
+.env.local
+.env.*.local
+
+# Keep example environment file
+!.env.example
+
+# ================================
+# IDE / Editors
+# ================================
+
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.DS_Store
+
+# ================================
+# Logs
+# ================================
+
+*.log
+/logs/
+storage/logs/
+
+# ================================
+# Cache
+# ================================
+
+/cache/
+.tmp/
+temp/
+tmp/
+
+# PHP cache
+.phpunit.result.cache
+
+# ================================
+# PHPUnit / Tests
+# ================================
+
+/.phpunit.cache/
+coverage/
+
+# ================================
+# Symfony (si utilisé)
+# ================================
+
+/var/
+/public/bundles/
+
+# ================================
+# Laravel (si utilisé)
+# ================================
+
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+
+# Keep Laravel storage directories
+!/storage/framework/
+!/storage/framework/cache/
+!/storage/framework/sessions/
+!/storage/framework/views/
+!/storage/logs/
+
+# ================================
+# OS
+# ================================
+
+.DS_Store
+Thumbs.db
+
+# ================================
+# Backup files
+# ================================
+
+*.bak
+*.backup
+*.old
+*~

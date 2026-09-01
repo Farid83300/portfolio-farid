@@ -1,4 +1,4 @@
-import { closeMobilemenu2 } from "@/utlis/toggleMobilemenu";
+import { closeMobilemenu2 } from "@/utils/toggleMobilemenu";
 import { useEffect, useState } from "react";
 
 const navItems = [

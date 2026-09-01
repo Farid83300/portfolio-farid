@@ -3,7 +3,7 @@ import Copyright from "@/components/footers/Copyright";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 import { allBlogs } from "@/data/blogs";
-import { slugify } from "@/utlis/slugify";
+import { slugify } from "@/utils/slugify";
 import Link from "next/link";
 import React from "react";
 import CommonComponents from "@/components/common/CommonComponents";

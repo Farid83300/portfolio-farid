@@ -1,6 +1,6 @@
 "use client";
 import { menuItems } from "@/data/menu";
-import { closeMobilemenu } from "@/utlis/toggleMobilemenu";
+import { closeMobilemenu } from "@/utils/toggleMobilemenu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";

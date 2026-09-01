@@ -1,6 +1,6 @@
 "use client";
 
-import { openDemoModal } from "@/utlis/toggleDemoModal";
+import { openDemoModal } from "@/utils/toggleDemoModal";
 
 export default function DemoToggler() {
   return (

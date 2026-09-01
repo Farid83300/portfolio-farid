@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 import Link from "next/link";
-import { slugify } from "@/utlis/slugify";
+import { slugify } from "@/utils/slugify";
 
 export default function BlogSidebar({ isLight = false }) {
   return (

@@ -3,8 +3,8 @@ import React from "react";
 import Nav1 from "./Nav1";
 import Image from "next/image";
 import Link from "next/link";
-import { openSidebar } from "@/utlis/toggleSidebar";
-import { openMobilemenu } from "@/utlis/toggleMobilemenu";
+import { openSidebar } from "@/utils/toggleSidebar";
+import { openMobilemenu } from "@/utils/toggleMobilemenu";
 export default function Header1({
   darkLogo = "/assets/images/logo/white-logo-reeni.png",
   lightLogo = "/assets/images/logo/logo-white.png",

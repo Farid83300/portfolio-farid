@@ -1,5 +1,5 @@
 "use client";
-import { openMobilemenu2 } from "@/utlis/toggleMobilemenu";
+import { openMobilemenu2 } from "@/utils/toggleMobilemenu";
 import Link from "next/link";
 import React from "react";
 

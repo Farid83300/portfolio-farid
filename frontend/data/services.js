@@ -1,4 +1,4 @@
-import { slugify } from "@/utlis/slugify";
+import { slugify } from "@/utils/slugify";
 
 export const services = [
   {

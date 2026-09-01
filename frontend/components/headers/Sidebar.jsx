@@ -1,6 +1,6 @@
 "use client";
 
-import { closeSidebar } from "@/utlis/toggleSidebar";
+import { closeSidebar } from "@/utils/toggleSidebar";
 
 export default function Sidebar() {
   return (

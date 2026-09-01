@@ -3,8 +3,8 @@ import React from "react";
 import Nav1 from "./Nav1";
 import Link from "next/link";
 import Image from "next/image";
-import { openSidebar } from "@/utlis/toggleSidebar";
-import { openMobilemenu2 } from "@/utlis/toggleMobilemenu";
+import { openSidebar } from "@/utils/toggleSidebar";
+import { openMobilemenu2 } from "@/utils/toggleMobilemenu";
 export default function Header4() {
   return (
     <header className="header-full-width header--sticky">

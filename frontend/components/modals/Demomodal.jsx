@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { closeDemoModal } from "@/utlis/toggleDemoModal";
+import { closeDemoModal } from "@/utils/toggleDemoModal";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { demoData, whiteDemoData } from "@/data/menu";

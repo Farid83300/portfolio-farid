@@ -4,7 +4,7 @@ import Link from "next/link";
 import BlogSidebar from "./BlogSidebar";
 import Comment from "./Comment";
 import { tags } from "@/data/blogs";
-import { slugify } from "@/utlis/slugify";
+import { slugify } from "@/utils/slugify";
 export default function BlogDetails({ blog, isLight = false }) {
   return (
     <div className="blog-classic-area-wrapper tmp-section-gap">

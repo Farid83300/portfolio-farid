@@ -1,6 +1,6 @@
 "use client";
 
-import { closeMobilemenu2 } from "@/utlis/toggleMobilemenu";
+import { closeMobilemenu2 } from "@/utils/toggleMobilemenu";
 
 import React, { useEffect, useRef } from "react";
 import OnepageNavMobile from "./OnepageNavMobile";

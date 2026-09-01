@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { openMobilemenu2 } from "@/utlis/toggleMobilemenu";
+import { openMobilemenu2 } from "@/utils/toggleMobilemenu";
 import OnepageNav from "./OnepageNav";
 export default function Header2({
   darkLogo = "/assets/images/logo/white-logo-reeni.png",
