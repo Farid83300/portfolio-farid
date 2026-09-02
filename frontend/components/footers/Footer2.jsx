@@ -1,17 +1,17 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import Demomodal from "../modals/Demomodal";
-import Chat from "../common/Chat";
-import DemoToggler from "../common/DemoToggler";
-import ScrollTop from "../common/ScrollTop";
-import Sidebar from "../headers/Sidebar";
-import MobileMenu from "../headers/MobileMenu";
-import MobileMenuOnepage from "../headers/MobileMenuOnepage";
-import { footerLinks, footerLinksWhite } from "@/data/footerLinks";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import Demomodal from '../modals/Demomodal';
+import Chat from '../common/Chat';
+import DemoToggler from '../common/DemoToggler';
+import ScrollTop from '../common/ScrollTop';
+import Sidebar from '../headers/Sidebar';
+import MobileMenu from '../headers/MobileMenu';
+import MobileMenuOnepage from '../headers/MobileMenuOnepage';
+import { footerLinks, footerLinksWhite } from '@/data/footerLinks';
 export default function Footer2({
-  darkLogo = "/assets/images/logo/white-logo-reeni.png",
-  lightLogo = "/assets/images/logo/logo-white.png",
+  darkLogo = '/assets/images/logo/white-logo-reeni.png',
+  lightLogo = '/assets/images/logo/logo-white.png',
 }) {
   return (
     <>
@@ -40,8 +40,7 @@ export default function Footer2({
                     </Link>
                   </div>
                   <p className="description">
-                    The personal portfolio category includes websites or
-                    physical displays
+                    The personal portfolio category includes websites or physical displays
                   </p>
                   <div className="social-link footer">
                     <a href="#">
@@ -107,13 +106,9 @@ export default function Footer2({
                 <div className="newslatter tmp-scroll-trigger animation-order-1">
                   <h3 className="title">Newslatter</h3>
                   <p className="para">
-                    The personal portfolio categor includes the a websites or
-                    representation
+                    The personal portfolio categor includes the a websites or representation
                   </p>
-                  <form
-                    onSubmit={(e) => e.preventDefault()}
-                    className="newsletter-form-1"
-                  >
+                  <form onSubmit={(e) => e.preventDefault()} className="newsletter-form-1">
                     <input type="email" placeholder="Your e-mail" />
                     <span>
                       <a href="#" className="form-icon">
@@ -126,7 +121,7 @@ export default function Footer2({
             </div>
           </div>
         </div>
-      </footer>{" "}
+      </footer>{' '}
     </>
   );
 }

@@ -1,21 +1,19 @@
-import About2 from "@/components/common/About2";
-import Blogs4 from "@/components/common/Blogs4";
-import Contact3 from "@/components/common/Contact3";
+import About2 from '@/components/common/About2';
+import Blogs4 from '@/components/common/Blogs4';
+import Contact3 from '@/components/common/Contact3';
 
-import Portfolio3 from "@/components/common/Portfolio3";
-import Resume from "@/components/common/Resume";
-import CommonComponents from "@/components/common/CommonComponents";
-import Footer4 from "@/components/footers/Footer4";
-import Hero from "@/components/homes/home-8/Hero";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Portfolio3 from '@/components/common/Portfolio3';
+import Resume from '@/components/common/Resume';
+import CommonComponents from '@/components/common/CommonComponents';
+import Footer4 from '@/components/footers/Footer4';
+import Hero from '@/components/homes/home-8/Hero';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 export const metadata = {
-  title:
-    "Home 08 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 08 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
@@ -43,9 +41,7 @@ export default function page() {
                       <div className="content">
                         <div className="title-area">
                           <h4 className="title">John Lee</h4>
-                          <span className="subtitle">
-                            Chief Operating Officer
-                          </span>
+                          <span className="subtitle">Chief Operating Officer</span>
                         </div>
                         <div className="description">
                           <div className="info-box">
@@ -55,9 +51,7 @@ export default function page() {
                             </span>
                             <span className="mail">
                               Email:
-                              <a href="mailto:admin@example.com">
-                                admin@example.com
-                              </a>
+                              <a href="mailto:admin@example.com">admin@example.com</a>
                             </span>
                           </div>
                         </div>
@@ -101,10 +95,7 @@ export default function page() {
               <div className="order-3 order-xl-2 col-xxl-7 col-lg-10">
                 <div className="tmp-tab-content-area tab-wrapper-overlay-to-top">
                   <div className="d-flex align-items-start">
-                    <div
-                      className="tmp-all-tab-content tab-content"
-                      id="v-pills-tabContent"
-                    >
+                    <div className="tmp-all-tab-content tab-content" id="v-pills-tabContent">
                       <div
                         className="tab-pane fade show active"
                         id="v-pills-Javascript"

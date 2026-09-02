@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import Demomodal from "../modals/Demomodal";
-import Chat from "../common/Chat";
-import DemoToggler from "../common/DemoToggler";
-import ScrollTop from "../common/ScrollTop";
-import Sidebar from "../headers/Sidebar";
-import MobileMenu from "../headers/MobileMenu";
-import MobileMenuOnepage from "../headers/MobileMenuOnepage";
+import React from 'react';
+import Link from 'next/link';
+import Demomodal from '../modals/Demomodal';
+import Chat from '../common/Chat';
+import DemoToggler from '../common/DemoToggler';
+import ScrollTop from '../common/ScrollTop';
+import Sidebar from '../headers/Sidebar';
+import MobileMenu from '../headers/MobileMenu';
+import MobileMenuOnepage from '../headers/MobileMenuOnepage';
 export default function Footer5() {
   return (
     <>
@@ -31,8 +31,7 @@ export default function Footer5() {
                           target="_blank"
                           href="https://themeforest.net/item/reeni-personal-portfolio-html-template/56387656"
                         >
-                          Purchase Reeni{" "}
-                          <i className="icon feather-arrow-right"> </i>
+                          Purchase Reeni <i className="icon feather-arrow-right"> </i>
                         </a>
                       </div>
                     </div>
@@ -99,11 +98,8 @@ export default function Footer5() {
                 <div className="col-lg-4 col-md-12 col-sm-12 col-sm-12 col-12 mt_md--20 mt_sm--20">
                   <div className="copyright-right text-center text-lg-end">
                     <p className="copyright-text">
-                      © {new Date().getFullYear()} Copyright All rights reserved{" "}
-                      <a
-                        target="_blank"
-                        href="https://themeforest.net/user/inversweb/portfolio"
-                      >
+                      © {new Date().getFullYear()} Copyright All rights reserved{' '}
+                      <a target="_blank" href="https://themeforest.net/user/inversweb/portfolio">
                         Inversweb
                       </a>
                     </p>
@@ -113,7 +109,7 @@ export default function Footer5() {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
     </>
   );
 }

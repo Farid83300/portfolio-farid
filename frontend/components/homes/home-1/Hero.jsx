@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import TyperComponent from "@/components/common/TyperComponent";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import TyperComponent from '@/components/common/TyperComponent';
 export default function Hero() {
   return (
     <div className="tmp-banner-one-area">
@@ -32,24 +32,23 @@ export default function Hero() {
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Web Developer.",
-                          "Full-stack Developer.",
-                          "UI/UX Designer.",
-                          "Freelancer.",
-                          "Wordpress Developer.",
+                          'Web Developer.',
+                          'Full-stack Developer.',
+                          'UI/UX Designer.',
+                          'Freelancer.',
+                          'Wordpress Developer.',
                         ]}
                       />
                     </span>
                   </span>
                 </h1>
                 <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  Freelance basé en France à Draguignan, je développe des applications web full-stack pour des clients qui veulent un interlocuteur unique, un code maintenable, et un projet livré dans les règles de l'art.
+                  Freelance basé en France à Draguignan, je développe des applications web
+                  full-stack pour des clients qui veulent un interlocuteur unique, un code
+                  maintenable, et un projet livré dans les règles de l'art.
                 </p>
                 <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
-                  <Link
-                    className="tmp-btn hover-icon-reverse radius-round"
-                    href={`/project`}
-                  >
+                  <Link className="tmp-btn hover-icon-reverse radius-round" href={`/project`}>
                     <span className="icon-reverse-wrapper">
                       <span className="btn-text">Voir Portfolio</span>
                       <span className="btn-icon">

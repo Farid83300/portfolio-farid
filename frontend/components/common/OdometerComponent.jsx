@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 const OdometerComponent = ({ max }) => {
   const odometerRef = useRef(null);
@@ -8,7 +8,7 @@ const OdometerComponent = ({ max }) => {
   const odometerInitRef = useRef();
 
   useEffect(() => {
-    import("odometer").then((Odometer) => {
+    import('odometer').then((Odometer) => {
       // Initialize Odometer or do something with it
 
       // Example usage of Odometer
@@ -42,7 +42,7 @@ const OdometerComponent = ({ max }) => {
 
     const options = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.5,
     };
 

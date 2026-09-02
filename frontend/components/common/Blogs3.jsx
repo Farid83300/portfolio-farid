@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import { blogData4 } from "@/data/blogs";
+import React from 'react';
+import Image from 'next/image';
+import { blogData4 } from '@/data/blogs';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Blogs3({
-  parentClass = "blog-and-news-are tmp-section-gap",
+  parentClass = 'blog-and-news-are tmp-section-gap',
   isLight = false,
 }) {
   return (
@@ -25,11 +25,7 @@ export default function Blogs3({
                 className={`blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in ${blog.animationOrder}`}
               >
                 <div className="img-box">
-                  <Link
-                    href={`/blog-details${isLight ? "-white" : ""}/${
-                      blog.slug
-                    }`}
-                  >
+                  <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                     <Image
                       className="img-primary hidden-on-mobile"
                       alt={blog.altText}
@@ -64,20 +60,16 @@ export default function Blogs3({
                   <h3 className="blog-title v2">
                     <Link
                       className="link"
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
+                      href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     >
                       {blog.title}
                     </Link>
                   </h3>
                   <Link
-                    href={`/blog-details${isLight ? "-white" : ""}/${
-                      blog.slug
-                    }`}
+                    href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     className="read-more-btn v2"
                   >
-                    Read More{" "}
+                    Read More{' '}
                     <span className="read-more-icon">
                       <i className="fa-solid fa-angle-right" />
                     </span>

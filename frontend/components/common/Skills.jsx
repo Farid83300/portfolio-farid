@@ -1,9 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { skillSections } from "@/data/skills";
-export default function Skills({
-  parentClass = "tmp-skill-area tmp-section-gapTop",
-}) {
+import React from 'react';
+import Image from 'next/image';
+import { skillSections } from '@/data/skills';
+export default function Skills({ parentClass = 'tmp-skill-area tmp-section-gapTop' }) {
   return (
     <div className={parentClass}>
       <div className="container">
@@ -34,18 +32,16 @@ export default function Skills({
                           role="progressbar"
                           style={{
                             width: `${skill.percent}%`,
-                            visibility: "visible",
+                            visibility: 'visible',
                             animationDuration: skill.duration,
                             animationDelay: skill.delay,
-                            animationName: "fadeInLeft",
+                            animationName: 'fadeInLeft',
                           }}
                           aria-valuenow={skill.percent}
                           aria-valuemin={0}
                           aria-valuemax={100}
                         >
-                          <span className="percent-label">
-                            {skill.percent}%
-                          </span>
+                          <span className="percent-label">{skill.percent}%</span>
                         </div>
                       </div>
                     </div>

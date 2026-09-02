@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 export default function Appointment() {
   return (
@@ -69,7 +69,7 @@ export default function Appointment() {
                               placeholder="Your Message"
                               name="contact-message"
                               id="contact-message"
-                              defaultValue={""}
+                              defaultValue={''}
                             />
                           </div>
                         </div>
@@ -82,9 +82,7 @@ export default function Appointment() {
                               id="submit"
                             >
                               <span className="icon-reverse-wrapper">
-                                <span className="btn-text">
-                                  Appointment Now
-                                </span>
+                                <span className="btn-text">Appointment Now</span>
                                 <span className="btn-icon">
                                   <i className="fa-sharp fa-regular fa-arrow-right" />
                                 </span>

@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { portfolioItems10 } from "@/data/portfolio";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioItems10 } from '@/data/portfolio';
 
 export default function Portfolio({ isLight = false }) {
   return (
@@ -21,11 +21,7 @@ export default function Portfolio({ isLight = false }) {
                   <div className="portfoli-card-img">
                     <div className="img-box v2">
                       {/* Link is static as per examples */}
-                      <Link
-                        href={`/project-details${isLight ? "-white" : ""}/${
-                          item.slug
-                        }`}
-                      >
+                      <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                         <Image
                           className="img-primary hidden-on-mobile"
                           alt={item.imageAlt} // Dynamic alt text
@@ -48,11 +44,7 @@ export default function Portfolio({ isLight = false }) {
                     <div className="content-left">
                       <h3 className="portfolio-card-title">
                         {/* Link is static, title is dynamic */}
-                        <Link
-                          href={`/project-details${isLight ? "-white" : ""}/${
-                            item.slug
-                          }`}
-                        >
+                        <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                           {item.title}
                         </Link>
                       </h3>
@@ -61,7 +53,7 @@ export default function Portfolio({ isLight = false }) {
                           {/* Map over the tags array */}
                           {item.tags.map((tag, index) => (
                             <li key={index}>
-                              {" "}
+                              {' '}
                               {/* Use index as key for tag items */}
                               {/* Tag link is static as per examples */}
                               <a href="#" className="tag-item">
@@ -76,13 +68,12 @@ export default function Portfolio({ isLight = false }) {
                       {/* Button link and text are static as per examples */}
                       <Link
                         className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                        href={`/project-details${isLight ? "-white" : ""}${
-                          isLight ? "-white" : ""
+                        href={`/project-details${isLight ? '-white' : ''}${
+                          isLight ? '-white' : ''
                         }/${item.slug}`}
                       >
                         <span className="icon-reverse-wrapper">
-                          <span className="btn-text">View Design</span>{" "}
-                          {/* Static text */}
+                          <span className="btn-text">View Design</span> {/* Static text */}
                           <span className="btn-icon">
                             <i className="fa-sharp fa-regular fa-arrow-right" />
                           </span>
@@ -123,9 +114,8 @@ export default function Portfolio({ isLight = false }) {
                   <p className="sub-title">21 Done</p>
                 </div>
                 <p className="card-para">
-                  My work is driven by the belief that thoughtful design and
-                  strategic planning can empower brands strategic planning can
-                  empower brands
+                  My work is driven by the belief that thoughtful design and strategic planning can
+                  empower brands strategic planning can empower brands
                 </p>
                 <a href="#" className="read-more-btn">
                   Read More
@@ -146,9 +136,8 @@ export default function Portfolio({ isLight = false }) {
                   <p className="sub-title">21 Done</p>
                 </div>
                 <p className="card-para">
-                  In this portfolio, you’ll find a curated selection of projects
-                  that highlight my skills in [Main Areas, e.g., responsive web
-                  design
+                  In this portfolio, you’ll find a curated selection of projects that highlight my
+                  skills in [Main Areas, e.g., responsive web design
                 </p>
                 <a href="#" className="read-more-btn">
                   Read More
@@ -169,8 +158,8 @@ export default function Portfolio({ isLight = false }) {
                   <p className="sub-title">20 Done</p>
                 </div>
                 <p className="card-para">
-                  Each project here showcases my commitment to excellence and
-                  adaptability, tailored to meet each client’s unique needs
+                  Each project here showcases my commitment to excellence and adaptability, tailored
+                  to meet each client’s unique needs
                 </p>
                 <a href="#" className="read-more-btn">
                   Read More

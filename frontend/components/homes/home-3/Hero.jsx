@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 export default function Hero() {
   return (
     <div className="rpp-banner-three-area">
@@ -38,9 +38,8 @@ export default function Hero() {
                 <div className="about-me tmp-scroll-trigger tmp-fade-in animation-order-1">
                   <h3 className="title">About Me</h3>
                   <p className="para tmp-title-split">
-                    A personal <span>portfolio</span> is a collection of to your
-                    work, that is achievements, and a skills that{" "}
-                    <span>web design</span> highlights in your{" "}
+                    A personal <span>portfolio</span> is a collection of to your work, that is
+                    achievements, and a skills that <span>web design</span> highlights in your{' '}
                   </p>
                 </div>
                 <div className="find-me-on mt--40 tmp-scroll-trigger tmp-fade-in animation-order-2">

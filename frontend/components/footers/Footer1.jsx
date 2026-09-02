@@ -1,17 +1,17 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import Demomodal from "../modals/Demomodal";
-import Chat from "../common/Chat";
-import DemoToggler from "../common/DemoToggler";
-import ScrollTop from "../common/ScrollTop";
-import Sidebar from "../headers/Sidebar";
-import MobileMenu from "../headers/MobileMenu";
-import MobileMenuOnepage from "../headers/MobileMenuOnepage";
-import { footerLinks, footerLinksWhite } from "@/data/footerLinks";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import Demomodal from '../modals/Demomodal';
+import Chat from '../common/Chat';
+import DemoToggler from '../common/DemoToggler';
+import ScrollTop from '../common/ScrollTop';
+import Sidebar from '../headers/Sidebar';
+import MobileMenu from '../headers/MobileMenu';
+import MobileMenuOnepage from '../headers/MobileMenuOnepage';
+import { footerLinks, footerLinksWhite } from '@/data/footerLinks';
 export default function Footer1({
-  darkLogo = "/assets/images/logo/white-logo-reeni.png",
-  lightLogo = "/assets/images/logo/logo-white.png",
+  darkLogo = '/assets/images/logo/white-logo-reeni.png',
+  lightLogo = '/assets/images/logo/logo-white.png',
 }) {
   return (
     <>
@@ -27,8 +27,8 @@ export default function Footer1({
                         className="logo-dark"
                         alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                         src={darkLogo}
-                        width={121}
-                        height={41}
+                        width={53}
+                        height={50}
                       />
                       <Image
                         className="logo-white"
@@ -40,12 +40,9 @@ export default function Footer1({
                     </Link>
                   </div>
                   <p className="description">
-                    <span>Get Ready</span> To Create Great
+                    <span>Inscrivez-vous</span> à mon Newsletters
                   </p>
-                  <form
-                    onSubmit={(e) => e.preventDefault()}
-                    className="newsletter-form-1 mt--40"
-                  >
+                  <form onSubmit={(e) => e.preventDefault()} className="newsletter-form-1 mt--40">
                     <input type="email" placeholder="Email Adress" />
                     <span className="form-icon">
                       <i className="fa-regular fa-envelope" />
@@ -55,7 +52,7 @@ export default function Footer1({
               </div>
               <div className="col-lg-4 col-md-6">
                 <div className="single-footer-wrapper quick-link-wrap">
-                  <h5 className="ft-title">Quick Link</h5>
+                  <h5 className="ft-title">Accès rapide</h5>
                   <ul className="ft-link tmp-link-animation dark-content">
                     {footerLinks.map((item, index) => (
                       <li key={index}>
@@ -80,32 +77,43 @@ export default function Footer1({
                       <span className="ft-icon">
                         <i className="fa-solid fa-envelope" />
                       </span>
-                      <a href="#">example@gmail.com</a>
+                      <a href="#">contact@faridzaffalone.com</a>
                     </li>
                     <li>
                       <span className="ft-icon">
                         <i className="fa-solid fa-location-dot" />
                       </span>
-                      3891 Ranchview Dr. Richardson
+                      83300 Draguignan, France
                     </li>
                     <li>
                       <span className="ft-icon">
                         <i className="fa-solid fa-phone" />
                       </span>
-                      <a href="#">01245789321</a>
+                      <a href="#">+33756960653</a>
                     </li>
                   </ul>
                   <div className="social-link footer">
-                    <a href="#">
-                      <i className="fa-brands fa-instagram" />
+                    <a href="https://github.com/Farid83300" aria-label="Profil Github">
+                      <i className="fa-brands fa-github" />
                     </a>
-                    <a href="#">
+                    <a
+                      href="https://www.linkedin.com/in/farid-zaffalone/"
+                      aria-label="Profil Linkedin"
+                    >
                       <i className="fa-brands fa-linkedin-in" />
                     </a>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter" />
+                    <a href="https://x.com/fzaffalone" aria-label="ProfilX (Twitter)">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                      </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/FaridZaffalone" aria-label="Profil Facebook">
                       <i className="fa-brands fa-facebook-f" />
                     </a>
                   </div>
@@ -114,7 +122,7 @@ export default function Footer1({
             </div>
           </div>
         </div>
-      </footer>{" "}
+      </footer>{' '}
     </>
   );
 }

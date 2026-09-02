@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { educationExperienceData } from "@/data/education";
+import React from 'react';
+import Image from 'next/image';
+import { educationExperienceData } from '@/data/education';
 export default function Education() {
   return (
     <section className="education-experience tmp-section-gapTop" id="resume">
@@ -14,9 +14,8 @@ export default function Education() {
             through
           </h2>
           <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-            Business consulting consultants provide expert advice and guida
-            businesses to help them improve their performance, efficiency, and
-            organizational
+            Business consulting consultants provide expert advice and guida businesses to help them
+            improve their performance, efficiency, and organizational
           </p>
         </div>
         <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
@@ -63,9 +62,8 @@ export default function Education() {
                   <h2 className="ex-name">Soft Tech (2 Years)</h2>
                   <h3 className="ex-title">UI/UX Designer</h3>
                   <p className="ex-para">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum desi dolore eu fugiat nulla pariatu Duis aute
-                    irure.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum desi
+                    dolore eu fugiat nulla pariatu Duis aute irure.
                   </p>
                 </div>
                 <div className="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
@@ -73,9 +71,8 @@ export default function Education() {
                   <h2 className="ex-name">ModernTech (3 Years)</h2>
                   <h3 className="ex-title">App Developer</h3>
                   <p className="ex-para">
-                    In this portfolio, you’ll find a curated selection of
-                    projects that highlight my skills in [Main Areas, e.g.,
-                    responsive web design.
+                    In this portfolio, you’ll find a curated selection of projects that highlight my
+                    skills in [Main Areas, e.g., responsive web design.
                   </p>
                 </div>
               </div>

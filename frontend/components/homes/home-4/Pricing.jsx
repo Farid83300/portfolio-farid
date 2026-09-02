@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { pricingPlans2 } from "@/data/pricing";
+import React from 'react';
+import Image from 'next/image';
+import { pricingPlans2 } from '@/data/pricing';
 
 export default function Pricing() {
   return (
@@ -21,15 +21,10 @@ export default function Pricing() {
               <div
                 className={`price-plan-card v2 tmponhover blur-style-three tmp-scroll-trigger tmp-fade-in animation-order-${
                   index + 1
-                } ${plan.active ? "active" : ""}`}
+                } ${plan.active ? 'active' : ''}`}
               >
                 <div className="price-plan-card-icon">
-                  <Image
-                    alt="pricing-logo"
-                    src={plan.icon}
-                    width={65}
-                    height={65}
-                  />
+                  <Image alt="pricing-logo" src={plan.icon} width={65} height={65} />
                 </div>
                 <span className="price-sub-title">{plan.title}</span>
                 <div className="check-box">
@@ -52,7 +47,7 @@ export default function Pricing() {
                   <a
                     href="#"
                     className={`tmp-btn hover-icon-reverse btn-md radius-round ${
-                      plan.borderedButton ? "btn-border" : ""
+                      plan.borderedButton ? 'btn-border' : ''
                     }`}
                   >
                     <span className="icon-reverse-wrapper">

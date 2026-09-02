@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import TyperComponent from "@/components/common/TyperComponent";
+import React from 'react';
+import Link from 'next/link';
+import TyperComponent from '@/components/common/TyperComponent';
 
 export default function Hero() {
   return (
@@ -14,31 +14,27 @@ export default function Hero() {
                   Hello
                 </span>
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2">
-                  I’m Jane Cooper <br />A{" "}
+                  I’m Jane Cooper <br />A{' '}
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Web Designer.",
-                          "Web Developer.",
-                          "UI/UX Designer.",
-                          "Freelancer.",
-                          "Content Writer.",
+                          'Web Designer.',
+                          'Web Developer.',
+                          'UI/UX Designer.',
+                          'Freelancer.',
+                          'Content Writer.',
                         ]}
                       />
                     </span>
                   </span>
                 </h1>
                 <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  A personal portfolio is a collection of your work,
-                  achievements, and skills that highlights your abilities and
-                  professional growth. It serves as
+                  A personal portfolio is a collection of your work, achievements, and skills that
+                  highlights your abilities and professional growth. It serves as
                 </p>
                 <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
-                  <Link
-                    className="tmp-btn hover-icon-reverse radius-round"
-                    href={`/project`}
-                  >
+                  <Link className="tmp-btn hover-icon-reverse radius-round" href={`/project`}>
                     <span className="icon-reverse-wrapper">
                       <span className="btn-text">View Portfolio</span>
                       <span className="btn-icon">

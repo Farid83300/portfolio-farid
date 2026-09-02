@@ -1,6 +1,6 @@
-import { educationResumeItems } from "@/data/education";
-import { resumeItems } from "@/data/experiences";
-import React from "react";
+import { educationResumeItems } from '@/data/education';
+import { resumeItems } from '@/data/experiences';
+import React from 'react';
 
 export default function Experience() {
   return (
@@ -19,7 +19,7 @@ export default function Experience() {
                   key={index}
                   className={`resume-single tmp-scroll-trigger tmp-fade-in animation-order-${
                     index + 1
-                  } ${item.isLast ? "mb--0" : ""}`}
+                  } ${item.isLast ? 'mb--0' : ''}`}
                 >
                   <div className="time">
                     <i className="fa-duotone fa-solid fa-circle-dot fa-fade mr--15" />
@@ -43,7 +43,7 @@ export default function Experience() {
                   key={index}
                   className={`resume-single tmp-scroll-trigger tmp-fade-in animation-order-${
                     index + 1
-                  } ${item.isLast ? "mb--0" : ""}`}
+                  } ${item.isLast ? 'mb--0' : ''}`}
                 >
                   <div className="time">
                     <i className="fa-duotone fa-solid fa-circle-dot fa-fade mr--15" />

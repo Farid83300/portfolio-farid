@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import TyperComponent from "@/components/common/TyperComponent";
-import ParticleComponent from "@/components/common/ParticleComponent";
+import React from 'react';
+import Link from 'next/link';
+import TyperComponent from '@/components/common/TyperComponent';
+import ParticleComponent from '@/components/common/ParticleComponent';
 export default function Hero() {
   return (
     <div
@@ -15,18 +15,18 @@ export default function Hero() {
             <div className="col-lg-12">
               <div className="inner text-center">
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mb--30">
-                  I’m John Lee <br />A{" "}
+                  I’m John Lee <br />A{' '}
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Social Influencer",
-                          "Youtuber",
-                          "Web Designer",
-                          "Web Developer",
-                          "UI/UX Designer",
-                          "Freelancer",
-                          "Content Writer",
+                          'Social Influencer',
+                          'Youtuber',
+                          'Web Designer',
+                          'Web Developer',
+                          'UI/UX Designer',
+                          'Freelancer',
+                          'Content Writer',
                         ]}
                       />
                     </span>
@@ -80,19 +80,19 @@ export default function Hero() {
               },
             },
             color: {
-              value: ["#ffffff"],
+              value: ['#ffffff'],
             },
             shape: {
-              type: "star",
+              type: 'star',
               stroke: {
                 width: 0,
-                color: "#000000",
+                color: '#000000',
               },
               polygon: {
                 nb_sides: 5,
               },
               image: {
-                src: "img/github.svg",
+                src: 'img/github.svg',
                 width: 100,
                 height: 100,
               },
@@ -121,14 +121,14 @@ export default function Hero() {
             line_linked: {
               enable: false,
               distance: 150,
-              color: "#ffffff",
+              color: '#ffffff',
               opacity: 0.4,
               width: 1,
             },
             move: {
               enable: true,
               speed: 2,
-              direction: "none",
+              direction: 'none',
               random: false,
               straight: false,
               // out_mode: "out",
@@ -150,15 +150,15 @@ export default function Hero() {
             },
           },
           interactivity: {
-            detect_on: "canvas",
+            detect_on: 'canvas',
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse",
+                mode: 'repulse',
               },
               onclick: {
                 enable: true,
-                mode: "push",
+                mode: 'push',
               },
               resize: true,
             },
@@ -190,11 +190,11 @@ export default function Hero() {
           retina_detect: true,
           config_demo: {
             hide_card: false,
-            background_color: "#b61924",
-            background_image: "",
-            background_position: "50% 50%",
-            background_repeat: "no-repeat",
-            background_size: "cover",
+            background_color: '#b61924',
+            background_image: '',
+            background_position: '50% 50%',
+            background_repeat: 'no-repeat',
+            background_size: 'cover',
           },
         }}
       />

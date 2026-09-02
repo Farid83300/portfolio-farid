@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { services2 } from "@/data/services";
+import { services2 } from '@/data/services';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Services({
-  parentClass = "latest-service-area tmp-section-gapTop",
+  parentClass = 'latest-service-area tmp-section-gapTop',
   isLight = false,
 }) {
   return (
@@ -18,9 +18,7 @@ export default function Services({
               .map((service) =>
                 service.isLink ? (
                   <Link
-                    href={`/service-details${isLight ? "-white" : ""}/${
-                      service.slug
-                    }`}
+                    href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}
                     className={`service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-${service.animationOrder}`}
                     key={service.id}
                   >
@@ -52,9 +50,7 @@ export default function Services({
               .map((service) =>
                 service.isLink ? (
                   <Link
-                    href={`/service-details${isLight ? "-white" : ""}/${
-                      service.slug
-                    }`}
+                    href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}
                     className={`service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-${service.animationOrder}`}
                     key={service.id}
                   >

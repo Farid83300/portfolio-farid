@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import TyperComponent from "@/components/common/TyperComponent";
+import React from 'react';
+import Image from 'next/image';
+import TyperComponent from '@/components/common/TyperComponent';
 
 export default function Hero() {
   return (
@@ -60,27 +60,23 @@ export default function Hero() {
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Web Designer.",
-                          "Web Developer.",
-                          "UI/UX Designer.",
-                          "Freelancer.",
-                          "Content Writer.",
+                          'Web Designer.',
+                          'Web Developer.',
+                          'UI/UX Designer.',
+                          'Freelancer.',
+                          'Content Writer.',
                         ]}
                       />
                     </span>
                   </span>
                 </h1>
                 <p className="disc tmp-scroll-trigger tmp-title-split tmp-fade-in animation-order-3">
-                  A personal <span>portfolio</span> is a collection of your
-                  work, that is achievements, and skills that highlights in your
-                  abilities and professional <span>web design</span> growth. It
-                  serves as
+                  A personal <span>portfolio</span> is a collection of your work, that is
+                  achievements, and skills that highlights in your abilities and professional{' '}
+                  <span>web design</span> growth. It serves as
                 </p>
                 <div className="button-area-banner-two tmp-scroll-trigger tmp-fade-in animation-order-4">
-                  <a
-                    className="tmp-btn hover-icon-reverse radius-round"
-                    href="#"
-                  >
+                  <a className="tmp-btn hover-icon-reverse radius-round" href="#">
                     <span className="icon-reverse-wrapper">
                       <span className="btn-text">More About Us</span>
                       <span className="btn-icon">
@@ -115,12 +111,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="banner-shape-two">
-        <Image
-          alt=""
-          src="/assets/images/banner/banner-shape-two.png"
-          width={778}
-          height={900}
-        />
+        <Image alt="" src="/assets/images/banner/banner-shape-two.png" width={778} height={900} />
       </div>
     </div>
   );

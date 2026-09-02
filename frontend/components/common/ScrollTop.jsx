@@ -1,60 +1,56 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export default function ScrollTop() {
   useEffect(() => {
     // Calculate document height once
     const documentHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+      document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-    const box = document.querySelector(".scrollToTop");
+    const box = document.querySelector('.scrollToTop');
     if (box) {
-      const water = box.querySelector(".water");
+      const water = box.querySelector('.water');
 
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        const percent = Math.min(
-          Math.floor((scrollPosition / documentHeight) * 100),
-          100
-        );
+        const percent = Math.min(Math.floor((scrollPosition / documentHeight) * 100), 100);
 
         if (water) {
-          water.style.transform = "translate(0," + (100 - percent) + "%)";
+          water.style.transform = 'translate(0,' + (100 - percent) + '%)';
         }
 
         if (scrollPosition >= 200) {
-          box.style.display = "block";
+          box.style.display = 'block';
         } else {
-          box.style.display = "none";
+          box.style.display = 'none';
         }
       };
 
       const handleClick = () => {
         window.scrollTo({
           top: 0,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       };
 
-      window.addEventListener("scroll", handleScroll);
-      box.addEventListener("click", handleClick);
+      window.addEventListener('scroll', handleScroll);
+      box.addEventListener('click', handleClick);
 
       // Preloader functionality
       const removePreloader = () => {
-        document.body.classList.remove("preloader-active");
+        document.body.classList.remove('preloader-active');
       };
 
-      document.body.classList.add("preloader-active");
-      window.addEventListener("load", removePreloader);
-      const scrollEvent = new Event("scroll");
+      document.body.classList.add('preloader-active');
+      window.addEventListener('load', removePreloader);
+      const scrollEvent = new Event('scroll');
       window.dispatchEvent(scrollEvent);
       // Cleanup function
       return () => {
-        window.removeEventListener("scroll", handleScroll);
-        box.removeEventListener("click", handleClick);
-        window.removeEventListener("load", removePreloader);
+        window.removeEventListener('scroll', handleScroll);
+        box.removeEventListener('click', handleClick);
+        window.removeEventListener('load', removePreloader);
       };
     }
   }, []); // Empty dependency array means this runs once on mount
@@ -62,37 +58,29 @@ export default function ScrollTop() {
     const handleScroll = () => {
       const offset = 100; // adjust as needed
       if (window.scrollY > offset) {
-        document
-          .querySelector(".scrollToTop")
-          ?.classList.add("active-progress");
-        document
-          .querySelector(".tmp-ready-chat")
-          ?.classList.add("chat-visible");
+        document.querySelector('.scrollToTop')?.classList.add('active-progress');
+        document.querySelector('.tmp-ready-chat')?.classList.add('chat-visible');
       } else {
-        document
-          .querySelector(".scrollToTop")
-          ?.classList.remove("active-progress");
-        document
-          .querySelector(".tmp-ready-chat")
-          ?.classList.remove("chat-visible");
+        document.querySelector('.scrollToTop')?.classList.remove('active-progress');
+        document.querySelector('.tmp-ready-chat')?.classList.remove('chat-visible');
       }
     };
     setTimeout(() => {
-      window.dispatchEvent(new Event("scroll"));
+      window.dispatchEvent(new Event('scroll'));
     });
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <div className="scrollToTop" style={{ display: "block" }}>
+    <div className="scrollToTop" style={{ display: 'block' }}>
       <div className="arrowUp">
         <i className="fa-light fa-arrow-up" />
       </div>
-      <div className="water" style={{ transform: "translate(0px, 87%)" }}>
+      <div className="water" style={{ transform: 'translate(0px, 87%)' }}>
         <svg viewBox="0 0 560 20" className="water_wave water_wave_back">
           <use xlinkHref="#wave" />
         </svg>
@@ -104,7 +92,7 @@ export default function ScrollTop() {
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 560 20"
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
         >
           <symbol id="wave">
             <path

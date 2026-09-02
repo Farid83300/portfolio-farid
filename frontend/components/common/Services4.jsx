@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { serviceCards2 } from "@/data/services";
+import React from 'react';
+import Image from 'next/image';
+import { serviceCards2 } from '@/data/services';
 export default function Services4() {
   return (
     <section className="latest-service-area tmp-section-gapTop" id="service">
@@ -14,9 +14,8 @@ export default function Services4() {
             Project
           </h2>
           <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-            Business consulting consultants provide expert advice and guida
-            businesses to help them improve their performance, efficiency, and
-            organizational
+            Business consulting consultants provide expert advice and guida businesses to help them
+            improve their performance, efficiency, and organizational
           </p>
         </div>
         <div className="row">

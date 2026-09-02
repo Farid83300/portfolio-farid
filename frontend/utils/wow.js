@@ -13,16 +13,14 @@ function extend(custom, defaults) {
 }
 
 function isMobile(agent) {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    agent
-  );
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(agent);
 }
 
 function createEvent(event, bubble = false, cancel = false, detail = null) {
   let customEvent;
   if (document.createEvent != null) {
     // W3C DOM
-    customEvent = document.createEvent("CustomEvent");
+    customEvent = document.createEvent('CustomEvent');
     customEvent.initCustomEvent(event, bubble, cancel, detail);
   } else if (document.createEventObject != null) {
     // IE DOM < 9
@@ -73,7 +71,7 @@ function removeEvent(elem, event, fn) {
 }
 
 function getInnerHeight() {
-  if ("innerHeight" in window) {
+  if ('innerHeight' in window) {
     return window.innerHeight;
   }
 
@@ -121,10 +119,10 @@ const MutationObserver =
   window.MozMutationObserver ||
   class MutationObserver {
     constructor() {
-      if (typeof console !== "undefined" && console !== null) {
-        console.warn("MutationObserver is not supported by your browser.");
+      if (typeof console !== 'undefined' && console !== null) {
+        console.warn('MutationObserver is not supported by your browser.');
         console.warn(
-          "WOW.js cannot detect dom mutations, please call .sync() after loading new content."
+          'WOW.js cannot detect dom mutations, please call .sync() after loading new content.'
         );
       }
     }
@@ -141,8 +139,8 @@ const getComputedStyle =
     const getComputedStyleRX = /(\-([a-z]){1})/g;
     return {
       getPropertyValue(prop) {
-        if (prop === "float") {
-          prop = "styleFloat";
+        if (prop === 'float') {
+          prop = 'styleFloat';
         }
         if (getComputedStyleRX.test(prop)) {
           prop.replace(getComputedStyleRX, (_, _char) => _char.toUpperCase());
@@ -155,8 +153,8 @@ const getComputedStyle =
 
 export default class WOW {
   defaults = {
-    boxClass: "wow",
-    animateClass: "animated",
+    boxClass: 'wow',
+    animateClass: 'animated',
     offset: 0,
     mobile: true,
     live: true,
@@ -172,9 +170,7 @@ export default class WOW {
     this.scrolled = true;
     this.config = extend(options, this.defaults);
     if (options.scrollContainer != null) {
-      this.config.scrollContainer = document.querySelector(
-        options.scrollContainer
-      );
+      this.config.scrollContainer = document.querySelector(options.scrollContainer);
     }
     // Map of elements to animation names:
     this.animationNameCache = new WeakMap();
@@ -183,19 +179,17 @@ export default class WOW {
 
   init() {
     this.element = window.document.documentElement;
-    if (isIn(document.readyState, ["interactive", "complete"])) {
+    if (isIn(document.readyState, ['interactive', 'complete'])) {
       this.start();
     } else {
-      addEvent(document, "DOMContentLoaded", this.start);
+      addEvent(document, 'DOMContentLoaded', this.start);
     }
     this.finished = [];
   }
 
   start() {
     this.stopped = false;
-    this.boxes = [].slice.call(
-      this.element.querySelectorAll(`.${this.config.boxClass}`)
-    );
+    this.boxes = [].slice.call(this.element.querySelectorAll(`.${this.config.boxClass}`));
     this.all = this.boxes.slice(0);
     if (this.boxes.length) {
       if (this.disabled()) {
@@ -208,12 +202,8 @@ export default class WOW {
       }
     }
     if (!this.disabled()) {
-      addEvent(
-        this.config.scrollContainer || window,
-        "scroll",
-        this.scrollHandler
-      );
-      addEvent(window, "resize", this.scrollHandler);
+      addEvent(this.config.scrollContainer || window, 'scroll', this.scrollHandler);
+      addEvent(window, 'resize', this.scrollHandler);
       this.interval = setInterval(this.scrollCallback, 50);
     }
     if (this.config.live) {
@@ -237,12 +227,8 @@ export default class WOW {
   // unbind the scroll event
   stop() {
     this.stopped = true;
-    removeEvent(
-      this.config.scrollContainer || window,
-      "scroll",
-      this.scrollHandler
-    );
-    removeEvent(window, "resize", this.scrollHandler);
+    removeEvent(this.config.scrollContainer || window, 'scroll', this.scrollHandler);
+    removeEvent(window, 'resize', this.scrollHandler);
     if (this.interval != null) {
       clearInterval(this.interval);
     }
@@ -255,7 +241,7 @@ export default class WOW {
   }
 
   doSync(element) {
-    if (typeof element === "undefined" || element === null) {
+    if (typeof element === 'undefined' || element === null) {
       ({ element } = this);
     }
     if (element.nodeType !== 1) {
@@ -287,26 +273,24 @@ export default class WOW {
     }
     emitEvent(box, this.wowEvent);
 
-    addEvent(box, "animationend", this.resetAnimation);
-    addEvent(box, "oanimationend", this.resetAnimation);
-    addEvent(box, "webkitAnimationEnd", this.resetAnimation);
-    addEvent(box, "MSAnimationEnd", this.resetAnimation);
+    addEvent(box, 'animationend', this.resetAnimation);
+    addEvent(box, 'oanimationend', this.resetAnimation);
+    addEvent(box, 'webkitAnimationEnd', this.resetAnimation);
+    addEvent(box, 'MSAnimationEnd', this.resetAnimation);
 
     return box;
   }
 
   applyStyle(box, hidden) {
-    const duration = box.getAttribute("data-wow-duration");
-    const delay = box.getAttribute("data-wow-delay");
-    const iteration = box.getAttribute("data-wow-iteration");
+    const duration = box.getAttribute('data-wow-duration');
+    const delay = box.getAttribute('data-wow-delay');
+    const iteration = box.getAttribute('data-wow-iteration');
 
-    return this.animate(() =>
-      this.customStyle(box, hidden, duration, delay, iteration)
-    );
+    return this.animate(() => this.customStyle(box, hidden, duration, delay, iteration));
   }
 
   animate = (function animateFactory() {
-    if ("requestAnimationFrame" in window) {
+    if ('requestAnimationFrame' in window) {
       return (callback) => window.requestAnimationFrame(callback);
     }
     return (callback) => callback();
@@ -315,17 +299,15 @@ export default class WOW {
   resetStyle() {
     for (let i = 0; i < this.boxes.length; i++) {
       const box = this.boxes[i];
-      box.style.visibility = "visible";
+      box.style.visibility = 'visible';
     }
     return undefined;
   }
 
   resetAnimation(event) {
-    if (event.type.toLowerCase().indexOf("animationend") >= 0) {
+    if (event.type.toLowerCase().indexOf('animationend') >= 0) {
       const target = event.target || event.srcElement;
-      target.className = target.className
-        .replace(this.config.animateClass, "")
-        .trim();
+      target.className = target.className.replace(this.config.animateClass, '').trim();
     }
   }
 
@@ -333,7 +315,7 @@ export default class WOW {
     if (hidden) {
       this.cacheAnimationName(box);
     }
-    box.style.visibility = hidden ? "hidden" : "visible";
+    box.style.visibility = hidden ? 'hidden' : 'visible';
 
     if (duration) {
       this.vendorSet(box.style, { animationDuration: duration });
@@ -345,13 +327,13 @@ export default class WOW {
       this.vendorSet(box.style, { animationIterationCount: iteration });
     }
     this.vendorSet(box.style, {
-      animationName: hidden ? "none" : this.cachedAnimationName(box),
+      animationName: hidden ? 'none' : this.cachedAnimationName(box),
     });
 
     return box;
   }
 
-  vendors = ["moz", "webkit"];
+  vendors = ['moz', 'webkit'];
   vendorSet(elem, properties) {
     for (const name in properties) {
       if (properties.hasOwnProperty(name)) {
@@ -359,8 +341,7 @@ export default class WOW {
         elem[`${name}`] = value;
         for (let i = 0; i < this.vendors.length; i++) {
           const vendor = this.vendors[i];
-          elem[`${vendor}${name.charAt(0).toUpperCase()}${name.substr(1)}`] =
-            value;
+          elem[`${vendor}${name.charAt(0).toUpperCase()}${name.substr(1)}`] = value;
         }
       }
     }
@@ -378,14 +359,14 @@ export default class WOW {
   animationName(box) {
     let aName;
     try {
-      aName = this.vendorCSS(box, "animation-name").cssText;
+      aName = this.vendorCSS(box, 'animation-name').cssText;
     } catch (error) {
       // Opera, fall back to plain property value
-      aName = getComputedStyle(box).getPropertyValue("animation-name");
+      aName = getComputedStyle(box).getPropertyValue('animation-name');
     }
 
-    if (aName === "none") {
-      return ""; // SVG/Firefox, unable to get animation name?
+    if (aName === 'none') {
+      return ''; // SVG/Firefox, unable to get animation name?
     }
 
     return aName;
@@ -444,12 +425,10 @@ export default class WOW {
 
   // check if box is visible
   isVisible(box) {
-    const offset = box.getAttribute("data-wow-offset") || this.config.offset;
+    const offset = box.getAttribute('data-wow-offset') || this.config.offset;
     const viewTop =
-      (this.config.scrollContainer && this.config.scrollContainer.scrollTop) ||
-      window.pageYOffset;
-    const viewBottom =
-      viewTop + Math.min(this.element.clientHeight, getInnerHeight()) - offset;
+      (this.config.scrollContainer && this.config.scrollContainer.scrollTop) || window.pageYOffset;
+    const viewBottom = viewTop + Math.min(this.element.clientHeight, getInnerHeight()) - offset;
     const top = this.offsetTop(box);
     const bottom = top + box.clientHeight;
 

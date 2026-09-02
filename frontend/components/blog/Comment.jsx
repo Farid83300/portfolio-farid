@@ -1,12 +1,11 @@
-"use client";
+'use client';
 
 export default function Comment() {
   return (
     <div className="blog-details-form-wrapper tmponhover">
       <h4 className="title">Leave a comment</h4>
       <span className="subtitle">
-        By using form u agree with the message sorage, you can contact us
-        directly now
+        By using form u agree with the message sorage, you can contact us directly now
       </span>
       <form onSubmit={(e) => e.preventDefault()} className="blog-details-form">
         <div className="single-input">
@@ -18,13 +17,10 @@ export default function Comment() {
           <input type="text" placeholder="Email" />
         </div>
         <label>Message</label>
-        <textarea placeholder="Message here.." defaultValue={""} />
+        <textarea placeholder="Message here.." defaultValue={''} />
         <div className="blog-submit-btn mt--40">
           <div className="tmp-button-here">
-            <a
-              className="tmp-btn hover-icon-reverse radius-round w-100"
-              href="#"
-            >
+            <a className="tmp-btn hover-icon-reverse radius-round w-100" href="#">
               <span className="icon-reverse-wrapper">
                 <span className="btn-text">Submit Now</span>
                 <span className="btn-icon">

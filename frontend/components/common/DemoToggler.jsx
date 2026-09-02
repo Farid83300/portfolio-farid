@@ -1,12 +1,15 @@
-"use client";
+'use client';
 
-import { openDemoModal } from "@/utils/toggleDemoModal";
+import { openDemoModal } from '@/utils/toggleDemoModal';
 
 export default function DemoToggler() {
   return (
     <div className="demo-button-wrapper">
       <div className="buy-theme">
-        <a target="_blank" href="https://themeforest.net/item/reeni-personal-portfolio-cv-resume-react-nextjs-template/58144525">
+        <a
+          target="_blank"
+          href="https://themeforest.net/item/reeni-personal-portfolio-cv-resume-react-nextjs-template/58144525"
+        >
           <div className="theme-wrapper">
             <div>
               <svg

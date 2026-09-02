@@ -1,16 +1,16 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Demomodal from "../modals/Demomodal";
-import Chat from "../common/Chat";
-import DemoToggler from "../common/DemoToggler";
-import ScrollTop from "../common/ScrollTop";
-import Sidebar from "../headers/Sidebar";
-import MobileMenu from "../headers/MobileMenu";
-import MobileMenuOnepage from "../headers/MobileMenuOnepage";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Demomodal from '../modals/Demomodal';
+import Chat from '../common/Chat';
+import DemoToggler from '../common/DemoToggler';
+import ScrollTop from '../common/ScrollTop';
+import Sidebar from '../headers/Sidebar';
+import MobileMenu from '../headers/MobileMenu';
+import MobileMenuOnepage from '../headers/MobileMenuOnepage';
 export default function Footer4({
-  darkLogo = "/assets/images/logo/white-logo-reeni.png",
-  lightLogo = "/assets/images/logo/logo-white.png",
+  darkLogo = '/assets/images/logo/white-logo-reeni.png',
+  lightLogo = '/assets/images/logo/logo-white.png',
 }) {
   return (
     <>
@@ -30,7 +30,7 @@ export default function Footer4({
                     />
                     <div
                       className="light-content "
-                      style={{ display: "flex", justifyContent: "center" }}
+                      style={{ display: 'flex', justifyContent: 'center' }}
                     >
                       <Image
                         className=""
@@ -38,17 +38,14 @@ export default function Footer4({
                         src={lightLogo}
                         width={121}
                         height={40}
-                      />{" "}
+                      />{' '}
                     </div>
                   </Link>
                 </div>
                 <p className="description mt--30">
                   © {new Date().getFullYear()} . All rights reserved by
-                  <a
-                    target="_blank"
-                    href="https://themeforest.net/user/inversweb/portfolio"
-                  >
-                    {" "}
+                  <a target="_blank" href="https://themeforest.net/user/inversweb/portfolio">
+                    {' '}
                     Inversweb.
                   </a>
                 </p>

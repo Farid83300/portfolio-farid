@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import { menuItems, menuItemsLight } from "@/data/menu";
-import { usePathname } from "next/navigation";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import { menuItems, menuItemsLight } from '@/data/menu';
+import { usePathname } from 'next/navigation';
 export default function Nav1() {
   const pathname = usePathname();
   // menu-item-open
@@ -12,23 +12,17 @@ export default function Nav1() {
         {menuItems.map((item, index) => (
           <li
             key={index}
-            className={`${item.hasDropdown ? "has-dropdown" : ""} ${
+            className={`${item.hasDropdown ? 'has-dropdown' : ''} ${
               item.submenu
-                ? item.submenu.some(
-                    (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
-                  )
-                  ? "menu-item-open"
-                  : ""
-                : ""
+                ? item.submenu.some((elm) => elm.href.split('/')[1] == pathname.split('/')[1])
+                  ? 'menu-item-open'
+                  : ''
+                : ''
             }`}
           >
             {item.isLink ? (
               <Link
-                className={`${
-                  item.href.split("/")[1] == pathname.split("/")[1]
-                    ? "active"
-                    : ""
-                }`}
+                className={`${item.href.split('/')[1] == pathname.split('/')[1] ? 'active' : ''}`}
                 href={item.href}
               >
                 {item.label}
@@ -36,9 +30,7 @@ export default function Nav1() {
             ) : (
               <a href={item.href}>
                 {item.label}
-                {item.hasDropdown && (
-                  <i className="fa-regular fa-chevron-down" />
-                )}
+                {item.hasDropdown && <i className="fa-regular fa-chevron-down" />}
               </a>
             )}
 
@@ -48,9 +40,7 @@ export default function Nav1() {
                   <li key={subIndex}>
                     <Link
                       className={`${
-                        subItem.href.split("/")[1] == pathname.split("/")[1]
-                          ? "active"
-                          : ""
+                        subItem.href.split('/')[1] == pathname.split('/')[1] ? 'active' : ''
                       }`}
                       href={subItem.href}
                     >
@@ -67,23 +57,17 @@ export default function Nav1() {
         {menuItemsLight.map((item, index) => (
           <li
             key={index}
-            className={`${item.hasDropdown ? "has-dropdown" : ""} ${
+            className={`${item.hasDropdown ? 'has-dropdown' : ''} ${
               item.submenu
-                ? item.submenu.some(
-                    (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
-                  )
-                  ? "menu-item-open"
-                  : ""
-                : ""
+                ? item.submenu.some((elm) => elm.href.split('/')[1] == pathname.split('/')[1])
+                  ? 'menu-item-open'
+                  : ''
+                : ''
             }`}
           >
             {item.isLink ? (
               <Link
-                className={`${
-                  item.href.split("/")[1] == pathname.split("/")[1]
-                    ? "active"
-                    : ""
-                }`}
+                className={`${item.href.split('/')[1] == pathname.split('/')[1] ? 'active' : ''}`}
                 href={item.href}
               >
                 {item.label}
@@ -91,9 +75,7 @@ export default function Nav1() {
             ) : (
               <a href={item.href}>
                 {item.label}
-                {item.hasDropdown && (
-                  <i className="fa-regular fa-chevron-down" />
-                )}
+                {item.hasDropdown && <i className="fa-regular fa-chevron-down" />}
               </a>
             )}
 
@@ -103,9 +85,7 @@ export default function Nav1() {
                   <li key={subIndex}>
                     <Link
                       className={`${
-                        subItem.href.split("/")[1] == pathname.split("/")[1]
-                          ? "active"
-                          : ""
+                        subItem.href.split('/')[1] == pathname.split('/')[1] ? 'active' : ''
                       }`}
                       href={subItem.href}
                     >

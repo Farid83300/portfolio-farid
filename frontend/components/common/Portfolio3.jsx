@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { portfolioItems3 } from "@/data/portfolio";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioItems3 } from '@/data/portfolio';
 
 export default function Portfolio3({ isLight = false }) {
   return (
@@ -23,8 +23,8 @@ export default function Portfolio3({ isLight = false }) {
             Elevate your brand with a the
           </h2>
           <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-            ished fact that a reader will be distrol acted bioiiy desig ished
-            fact that a reader <br />
+            ished fact that a reader will be distrol acted bioiiy desig ished fact that a reader{' '}
+            <br />
             will acted ished fact that a reader will be distrol acted
           </p>
         </div>
@@ -32,30 +32,19 @@ export default function Portfolio3({ isLight = false }) {
           {portfolioItems3.map((item) => (
             <div className="col-lg-6 col-md-6 col-sm-12" key={item.id}>
               <div className="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                <Image
-                  alt="tab-image"
-                  src={item.imageSrc}
-                  width={410}
-                  height={457}
-                />
+                <Image alt="tab-image" src={item.imageSrc} width={410} height={457} />
                 <div className="portfolio-card-content-wrap">
                   <div className="content-left">
                     <p className="portfoli-card-para">{item.description}</p>
                     <h3 className="portfolio-card-title animated fadeIn">
-                      <Link
-                        href={`/project-details${isLight ? "-white" : ""}/${
-                          item.slug
-                        }`}
-                      >
+                      <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                         {item.title}
                       </Link>
                     </h3>
                   </div>
                   <div className="portfolio-btn">
                     <Link
-                      href={`/project-details${isLight ? "-white" : ""}/${
-                        item.slug
-                      }`}
+                      href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                       className="tmp-arrow-icon-btn"
                     >
                       <div className="btn-inner">
@@ -66,9 +55,7 @@ export default function Portfolio3({ isLight = false }) {
                   </div>
                 </div>
                 <Link
-                  href={`/project-details${isLight ? "-white" : ""}/${
-                    item.slug
-                  }`}
+                  href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                   className="over_link"
                 />
               </div>

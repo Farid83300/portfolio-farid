@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import TyperComponent from "@/components/common/TyperComponent";
+import React from 'react';
+import Image from 'next/image';
+import TyperComponent from '@/components/common/TyperComponent';
 
 export default function Hero() {
   return (
@@ -11,24 +11,18 @@ export default function Hero() {
             <div className="banner-right-thumb-left-content">
               <span className="pre-title">Welcome to my world</span>
               <h1 className="title">
-                I’m Jane Cooper <br />A{" "}
+                I’m Jane Cooper <br />A{' '}
                 <span className="header-caption">
                   <span className="cd-headline clip is-full-width">
                     <TyperComponent
-                      strings={[
-                        "Teacher",
-                        "Instructor",
-                        "Content Writer",
-                        "Influencer",
-                      ]}
+                      strings={['Teacher', 'Instructor', 'Content Writer', 'Influencer']}
                     />
                   </span>
                 </span>
               </h1>
               <p className="disc">
-                A personal portfolio is a collection of your work, achievements,
-                and skills that highlights your abilities and professional
-                growth. It serves as
+                A personal portfolio is a collection of your work, achievements, and skills that
+                highlights your abilities and professional growth. It serves as
               </p>
               <div className="find-me-on">
                 <h2 className="find-me-on-title">Find me on</h2>
@@ -52,12 +46,7 @@ export default function Hero() {
           <div className="col-lg-5">
             <div className="">
               <div className="thumbnail-right-inner-main-image tmponhover">
-                <Image
-                  alt=""
-                  src="/assets/images/banner/instructor.png"
-                  width={700}
-                  height={933}
-                />
+                <Image alt="" src="/assets/images/banner/instructor.png" width={700} height={933} />
               </div>
             </div>
           </div>

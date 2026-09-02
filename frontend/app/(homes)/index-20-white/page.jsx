@@ -1,32 +1,24 @@
-import About2 from "@/components/common/About2";
-import Blogs4 from "@/components/common/Blogs4";
-import Contact3 from "@/components/common/Contact3";
-import Portfolio3 from "@/components/common/Portfolio3";
-import Resume from "@/components/common/Resume";
-import Footer4 from "@/components/footers/Footer4";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Hero from "@/components/homes/home-20/Hero";
-import BodyClassToggler from "@/components/common/BodyClassToggler";
-import CommonComponents from "@/components/common/CommonComponents";
+import About2 from '@/components/common/About2';
+import Blogs4 from '@/components/common/Blogs4';
+import Contact3 from '@/components/common/Contact3';
+import Portfolio3 from '@/components/common/Portfolio3';
+import Resume from '@/components/common/Resume';
+import Footer4 from '@/components/footers/Footer4';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Hero from '@/components/homes/home-20/Hero';
+import BodyClassToggler from '@/components/common/BodyClassToggler';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 20 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 20 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
     <>
       <BodyClassToggler
-        classes={[
-          "tmp-white-version",
-          "spybody",
-          "index-8",
-          "card-1-body",
-          "color-pink",
-        ]}
+        classes={['tmp-white-version', 'spybody', 'index-8', 'card-1-body', 'color-pink']}
       />
 
       <>
@@ -62,9 +54,7 @@ export default function page() {
                             </span>
                             <span className="mail">
                               Email:
-                              <a href="mailto:admin@example.com">
-                                admin@example.com
-                              </a>
+                              <a href="mailto:admin@example.com">admin@example.com</a>
                             </span>
                           </div>
                         </div>
@@ -108,10 +98,7 @@ export default function page() {
               <div className="order-3 order-xl-2 col-xxl-7 col-lg-10">
                 <div className="tmp-tab-content-area tab-wrapper-overlay-to-top">
                   <div className="d-flex align-items-start">
-                    <div
-                      className="tmp-all-tab-content tab-content"
-                      id="v-pills-tabContent"
-                    >
+                    <div className="tmp-all-tab-content tab-content" id="v-pills-tabContent">
                       <div
                         className="tab-pane fade show active"
                         id="v-pills-Javascript"
@@ -242,7 +229,7 @@ export default function page() {
         <Footer4
           darkLogo="/assets/images/logo/logo-pink.svg"
           lightLogo="/assets/images/logo/logo-pink.svg"
-        />{" "}
+        />{' '}
         <CommonComponents />
       </>
     </>

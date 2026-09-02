@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import TyperComponent from "@/components/common/TyperComponent";
-import ParticleComponent from "@/components/common/ParticleComponent";
+import React from 'react';
+import Image from 'next/image';
+import TyperComponent from '@/components/common/TyperComponent';
+import ParticleComponent from '@/components/common/ParticleComponent';
 export default function Hero({ isLight = false }) {
   return (
     <div className="tmp-banner-one-area banner-twelve-area style-3" id="home">
@@ -41,16 +41,16 @@ export default function Hero({ isLight = false }) {
                   </div>
                 </div>
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2">
-                  I’m John Lee <br />A{" "}
+                  I’m John Lee <br />A{' '}
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Web Designer.",
-                          "Web Developer.",
-                          "UI/UX Designer.",
-                          "Freelancer.",
-                          "Content Writer.",
+                          'Web Designer.',
+                          'Web Developer.',
+                          'UI/UX Designer.',
+                          'Freelancer.',
+                          'Content Writer.',
                         ]}
                       />
                     </span>
@@ -77,19 +77,19 @@ export default function Hero({ isLight = false }) {
                 },
               },
               color: {
-                value: ["#ff014f"],
+                value: ['#ff014f'],
               },
               shape: {
-                type: "circle",
+                type: 'circle',
                 stroke: {
                   width: 0,
-                  color: "#000000",
+                  color: '#000000',
                 },
                 polygon: {
                   nb_sides: 4,
                 },
                 image: {
-                  src: "img/github.svg",
+                  src: 'img/github.svg',
                   width: 100,
                   height: 100,
                 },
@@ -118,14 +118,14 @@ export default function Hero({ isLight = false }) {
               line_linked: {
                 enable: false,
                 distance: 150,
-                color: "#ffffff",
+                color: '#ffffff',
                 opacity: 0.4,
                 width: 1,
               },
               move: {
                 enable: true,
                 speed: 2,
-                direction: "none",
+                direction: 'none',
                 random: false,
                 straight: false,
                 // out_mode: "out",
@@ -147,15 +147,15 @@ export default function Hero({ isLight = false }) {
               },
             },
             interactivity: {
-              detect_on: "canvas",
+              detect_on: 'canvas',
               events: {
                 onhover: {
                   enable: true,
-                  mode: "repulse",
+                  mode: 'repulse',
                 },
                 onclick: {
                   enable: true,
-                  mode: "push",
+                  mode: 'push',
                 },
                 resize: true,
               },
@@ -187,11 +187,11 @@ export default function Hero({ isLight = false }) {
             retina_detect: true,
             config_demo: {
               hide_card: false,
-              background_color: "#b61924",
-              background_image: "",
-              background_position: "50% 50%",
-              background_repeat: "no-repeat",
-              background_size: "cover",
+              background_color: '#b61924',
+              background_image: '',
+              background_position: '50% 50%',
+              background_repeat: 'no-repeat',
+              background_size: 'cover',
             },
           }}
         />
@@ -211,19 +211,19 @@ export default function Hero({ isLight = false }) {
                 },
               },
               color: {
-                value: ["#ffffff"],
+                value: ['#ffffff'],
               },
               shape: {
-                type: "star",
+                type: 'star',
                 stroke: {
                   width: 0,
-                  color: "#000000",
+                  color: '#000000',
                 },
                 polygon: {
                   nb_sides: 5,
                 },
                 image: {
-                  src: "img/github.svg",
+                  src: 'img/github.svg',
                   width: 100,
                   height: 100,
                 },
@@ -252,14 +252,14 @@ export default function Hero({ isLight = false }) {
               line_linked: {
                 enable: false,
                 distance: 150,
-                color: "#ffffff",
+                color: '#ffffff',
                 opacity: 0.4,
                 width: 1,
               },
               move: {
                 enable: true,
                 speed: 2,
-                direction: "none",
+                direction: 'none',
                 random: false,
                 straight: false,
                 // out_mode: "out",
@@ -281,15 +281,15 @@ export default function Hero({ isLight = false }) {
               },
             },
             interactivity: {
-              detect_on: "canvas",
+              detect_on: 'canvas',
               events: {
                 onhover: {
                   enable: true,
-                  mode: "repulse",
+                  mode: 'repulse',
                 },
                 onclick: {
                   enable: true,
-                  mode: "push",
+                  mode: 'push',
                 },
                 resize: true,
               },
@@ -321,11 +321,11 @@ export default function Hero({ isLight = false }) {
             retina_detect: true,
             config_demo: {
               hide_card: false,
-              background_color: "#b61924",
-              background_image: "",
-              background_position: "50% 50%",
-              background_repeat: "no-repeat",
-              background_size: "cover",
+              background_color: '#b61924',
+              background_image: '',
+              background_position: '50% 50%',
+              background_repeat: 'no-repeat',
+              background_size: 'cover',
             },
           }}
         />

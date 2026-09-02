@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 const pricingOptions = [
   {
-    type: "basic",
+    type: 'basic',
     note: (
       <>
         Have design ready to build?
@@ -10,18 +10,18 @@ const pricingOptions = [
         or small budget
       </>
     ),
-    price: "$59",
+    price: '$59',
     features: [
-      "Need your wireframe",
-      "Design with Figma, Framer",
-      "Implement with Webflow, React, WordPress, Laravel/PHP",
-      "Remote/Online",
-      "Work in business days, no weekend.",
-      "Support 6 months",
+      'Need your wireframe',
+      'Design with Figma, Framer',
+      'Implement with Webflow, React, WordPress, Laravel/PHP',
+      'Remote/Online',
+      'Work in business days, no weekend.',
+      'Support 6 months',
     ],
   },
   {
-    type: "premium",
+    type: 'premium',
     note: (
       <>
         Not have any design?
@@ -29,16 +29,16 @@ const pricingOptions = [
         Leave its for me
       </>
     ),
-    price: "$129",
+    price: '$129',
     features: [
       "Don't need wireframe or anything",
-      "Design with Figma, Framer from scratch",
-      "Implement with Webflow, React, WordPress, Laravel/PHP",
-      "Remote/Online",
-      "Work with both weekend",
-      "Support 12 months",
-      "Your project alway be priority",
-      "Customer care gifts",
+      'Design with Figma, Framer from scratch',
+      'Implement with Webflow, React, WordPress, Laravel/PHP',
+      'Remote/Online',
+      'Work with both weekend',
+      'Support 12 months',
+      'Your project alway be priority',
+      'Customer care gifts',
     ],
   },
 ];
@@ -88,12 +88,9 @@ export default function Pricing() {
               </div>
             ))}
           </div>
-          <p
-            className="info scroll-animation"
-            data-animation="fade_from_bottom"
-          >
+          <p className="info scroll-animation" data-animation="fade_from_bottom">
             Don't find any package that matches your plan! <br />
-            Want to set up a new tailor-made package for only you?.{" "}
+            Want to set up a new tailor-made package for only you?.{' '}
             <Link href={`/contact`}>Contact Me</Link>
           </p>
         </div>

@@ -1,27 +1,25 @@
-import About from "@/components/common/About";
-import Blogs from "@/components/common/Blogs";
-import Brands from "@/components/common/Brands";
-import Contact from "@/components/common/Contact";
-import Pricing from "@/components/common/Pricing";
-import TextAnim from "@/components/common/TextAnim";
-import Footer1 from "@/components/footers/Footer1";
-import Header2 from "@/components/headers/Header2";
-import Educationn from "@/components/common/Education3";
-import Hero from "@/components/homes/home-22/Hero";
-import Portfolio from "@/components/homes/home-15/Portfolio";
-import Services from "@/components/common/Services4";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import About from '@/components/common/About';
+import Blogs from '@/components/common/Blogs';
+import Brands from '@/components/common/Brands';
+import Contact from '@/components/common/Contact';
+import Pricing from '@/components/common/Pricing';
+import TextAnim from '@/components/common/TextAnim';
+import Footer1 from '@/components/footers/Footer1';
+import Header2 from '@/components/headers/Header2';
+import Educationn from '@/components/common/Education3';
+import Hero from '@/components/homes/home-22/Hero';
+import Portfolio from '@/components/homes/home-15/Portfolio';
+import Services from '@/components/common/Services4';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 22 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 22 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
     <>
-      {" "}
+      {' '}
       <div className="demo-model color-blue">
         <Header2
           darkLogo="/assets/images/logo/white-logo-reeni-4.png"
@@ -42,9 +40,8 @@ export default function page() {
                     You Can Find Me On
                   </h2>
                   <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    Business consulting consultants provide expert advice and
-                    guida businesses to help them improve their performance,
-                    efficiency, and organizational
+                    Business consulting consultants provide expert advice and guida businesses to
+                    help them improve their performance, efficiency, and organizational
                   </p>
                 </div>
               </div>
@@ -61,7 +58,7 @@ export default function page() {
         <Footer1
           darkLogo="/assets/images/logo/white-logo-reeni-4.png"
           lightLogo="/assets/images/logo/logo-blue-white.svg"
-        />{" "}
+        />{' '}
         <CommonComponents />
       </div>
     </>

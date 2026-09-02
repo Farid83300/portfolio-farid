@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import OnepageNav2 from "./OnepageNav2";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import OnepageNav2 from './OnepageNav2';
 export default function Header3() {
   return (
     <div className="d-none d-xl-block header-style-2 header-left">
@@ -17,10 +17,7 @@ export default function Header3() {
               />
             </Link>
           </div>
-          <nav
-            id="sideNavs"
-            className="mainmenu-nav navbar-example2 onepagenav"
-          >
+          <nav id="sideNavs" className="mainmenu-nav navbar-example2 onepagenav">
             <ul className="primary-menu nav nav-pills">
               <OnepageNav2 />
             </ul>

@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { educationExperience } from "@/data/education";
-import { jobExperience } from "@/data/experiences";
-import { skillSections } from "@/data/skills";
+import React from 'react';
+import Image from 'next/image';
+import { educationExperience } from '@/data/education';
+import { jobExperience } from '@/data/experiences';
+import { skillSections } from '@/data/skills';
 export default function Resume() {
   return (
     <div className="tmp-resume-area" id="resume">
@@ -23,8 +23,8 @@ export default function Resume() {
             Elevate your brand with a the
           </h2>
           <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-            ished fact that a reader will be distrol acted bioiiy desig ished
-            fact that a reader <br />
+            ished fact that a reader will be distrol acted bioiiy desig ished fact that a reader{' '}
+            <br />
             will acted ished fact that a reader will be distrol acted
           </p>
         </div>
@@ -100,18 +100,16 @@ export default function Resume() {
                           role="progressbar"
                           style={{
                             width: `${skill.percent}%`,
-                            visibility: "visible",
+                            visibility: 'visible',
                             animationDuration: skill.duration,
                             animationDelay: skill.delay,
-                            animationName: "fadeInLeft",
+                            animationName: 'fadeInLeft',
                           }}
                           aria-valuenow={skill.percent}
                           aria-valuemin={0}
                           aria-valuemax={100}
                         >
-                          <span className="percent-label">
-                            {skill.percent}%
-                          </span>
+                          <span className="percent-label">{skill.percent}%</span>
                         </div>
                       </div>
                     </div>

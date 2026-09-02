@@ -1,18 +1,16 @@
-import Pricing from "@/components/common/Pricing";
-import Copyright from "@/components/footers/Copyright";
+import Pricing from '@/components/common/Pricing';
+import Copyright from '@/components/footers/Copyright';
 
-import Footer3 from "@/components/footers/Footer3";
+import Footer3 from '@/components/footers/Footer3';
 
-import Header1 from "@/components/headers/Header1";
-import Services from "@/components/services/Services";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Header1 from '@/components/headers/Header1';
+import Services from '@/components/services/Services';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Services || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Services || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (

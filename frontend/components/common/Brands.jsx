@@ -1,10 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { companyLogos } from "@/data/brands";
+import React from 'react';
+import Image from 'next/image';
+import { companyLogos } from '@/data/brands';
 
-export default function Brands({
-  parentClass = "our-supported-company-area tmp-section-gapTop",
-}) {
+export default function Brands({ parentClass = 'our-supported-company-area tmp-section-gapTop' }) {
   return (
     <div className={parentClass} id="clients">
       <div className="container">

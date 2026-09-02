@@ -1,22 +1,20 @@
-import Footer5 from "@/components/footers/Footer5";
-import Header4 from "@/components/headers/Header4";
-import About from "@/components/homes/home-13/About";
-import Contact from "@/components/homes/home-13/Contact";
-import Facts from "@/components/homes/home-13/Facts";
-import Hero from "@/components/homes/home-13/Hero";
-import Portfolio from "@/components/homes/home-13/Portfolio";
-import Pricing from "@/components/homes/home-13/Pricing";
-import Profile from "@/components/homes/home-13/Profile";
-import Resume from "@/components/homes/home-13/Resume";
-import Services from "@/components/homes/home-13/Services";
-import Skills from "@/components/homes/home-13/Skills";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Footer5 from '@/components/footers/Footer5';
+import Header4 from '@/components/headers/Header4';
+import About from '@/components/homes/home-13/About';
+import Contact from '@/components/homes/home-13/Contact';
+import Facts from '@/components/homes/home-13/Facts';
+import Hero from '@/components/homes/home-13/Hero';
+import Portfolio from '@/components/homes/home-13/Portfolio';
+import Pricing from '@/components/homes/home-13/Pricing';
+import Profile from '@/components/homes/home-13/Profile';
+import Resume from '@/components/homes/home-13/Resume';
+import Services from '@/components/homes/home-13/Services';
+import Skills from '@/components/homes/home-13/Skills';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 13 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 13 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (

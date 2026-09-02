@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 export default function ServiceDetails({ serviceItem }) {
   return (
     <div className="service-details-area-wrapper tmp-section-gap">
@@ -16,48 +16,39 @@ export default function ServiceDetails({ serviceItem }) {
             </div>
             <h2 className="title split-collab">{serviceItem.title}</h2>
             <p className="doc-para">
-              Web designing in a powerful way of just not an only professions,
-              however, in a passion for our Company. We have to a tendency to
-              believe the idea that smart looking of any websitet in on
-              visitors.Web designing in a powerful way of just not an only
-              profession Web designing in a powerful way of just not an only
+              Web designing in a powerful way of just not an only professions, however, in a passion
+              for our Company. We have to a tendency to believe the idea that smart looking of any
+              websitet in on visitors.Web designing in a powerful way of just not an only profession
+              Web designing in a powerful way of just not an only
             </p>
-            <h2 className="title-mini split-collab">
-              My Experts Areas where i gained skill
-            </h2>
+            <h2 className="title-mini split-collab">My Experts Areas where i gained skill</h2>
             <p className="doc-para">
-              Web designing in a powerful way of just not an only professions,
-              however, in a passion for our Company. We have to a tendency to
-              believe the idea that smart looking of any websitet in on
-              visitors.Web designing in a powerful way of just not an only
-              profession Web designing in a powerful way of just not an only
+              Web designing in a powerful way of just not an only professions, however, in a passion
+              for our Company. We have to a tendency to believe the idea that smart looking of any
+              websitet in on visitors.Web designing in a powerful way of just not an only profession
+              Web designing in a powerful way of just not an only
             </p>
             <p className="doc-para">
-              Aliquam eros justo, posuere loborti viverra laoreet matti
-              ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis,
-              viverra laoreet augue mattis fermentum ullamcorper viverra laoreet
-              Aliquam eros
-            </p>
-            <h2 className="title-mini split-collab">
-              My Experts Areas where i gained skill
-            </h2>
-            <p className="doc-para">
-              Web designing in a powerful way of just not an only professions,
-              however, in a passion for our Company. We have to a tendency to
-              believe the idea that smart looking of any websitet in on
-              visitors.Web designing in a powerful way of just not an only
-              profession Web designing in a powerful way of just not an only
-            </p>
-            <p className="doc-para">
-              Aliquam eros justo, posuere loborti viverra laoreet matti
-              ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis,
-              viverra laoreet augue mattis fermentum ullamcorper viverra laoreet
-              Aliquam eros
-            </p>
-            <p className="doc-para">
-              viverra laoreet matti ullamcorper posuere viverra .Aliquam eros
-              justo, posuere lobortis, viverra laoreet augue mattis fermentum
+              Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra
+              .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentum
               ullamcorper viverra laoreet Aliquam eros
+            </p>
+            <h2 className="title-mini split-collab">My Experts Areas where i gained skill</h2>
+            <p className="doc-para">
+              Web designing in a powerful way of just not an only professions, however, in a passion
+              for our Company. We have to a tendency to believe the idea that smart looking of any
+              websitet in on visitors.Web designing in a powerful way of just not an only profession
+              Web designing in a powerful way of just not an only
+            </p>
+            <p className="doc-para">
+              Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra
+              .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentum
+              ullamcorper viverra laoreet Aliquam eros
+            </p>
+            <p className="doc-para">
+              viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo, posuere
+              lobortis, viverra laoreet augue mattis fermentum ullamcorper viverra laoreet Aliquam
+              eros
             </p>
           </div>
           <div className="col-lg-4">

@@ -1,24 +1,20 @@
-import Blogs from "@/components/blog/Blogs";
-import Copyright from "@/components/footers/Copyright";
-import Footer1 from "@/components/footers/Footer1";
-import Header1 from "@/components/headers/Header1";
-import { allBlogs } from "@/data/blogs";
-import { slugify } from "@/utils/slugify";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Blogs from '@/components/blog/Blogs';
+import Copyright from '@/components/footers/Copyright';
+import Footer1 from '@/components/footers/Footer1';
+import Header1 from '@/components/headers/Header1';
+import { allBlogs } from '@/data/blogs';
+import { slugify } from '@/utils/slugify';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Blog || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Blog || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default async function TagPage({ params }) {
-  let tagTitle = "";
+  let tagTitle = '';
   const { tag } = await params;
-  const blogs = allBlogs.filter((blog) =>
-    blog.tags?.some((el) => slugify(el) == tag)
-  );
+  const blogs = allBlogs.filter((blog) => blog.tags?.some((el) => slugify(el) == tag));
   allBlogs[0].tags.forEach((element) => {
     if (slugify(element) == tag) {
       tagTitle = element;
@@ -32,9 +28,7 @@ export default async function TagPage({ params }) {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcrumb-inner text-center">
-                <h1 className="title split-collab">
-                  {tagTitle ? tagTitle : <> {tag}</>}
-                </h1>
+                <h1 className="title split-collab">{tagTitle ? tagTitle : <> {tag}</>}</h1>
                 <ul className="page-list">
                   <li className="tmp-breadcrumb-item">
                     <Link href={`/`}>Home</Link>

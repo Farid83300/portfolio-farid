@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { counters } from "@/data/facts";
-import OdometerComponent from "./OdometerComponent";
-import { aboutCards } from "@/data/aboutCards";
+import React from 'react';
+import Image from 'next/image';
+import { counters } from '@/data/facts';
+import OdometerComponent from './OdometerComponent';
+import { aboutCards } from '@/data/aboutCards';
 export default function About2() {
   return (
     <div id="about" className="tmp-about-area">
@@ -24,10 +24,9 @@ export default function About2() {
             Solutions with Us
           </h2>
           <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-            Hello! I'm Fatima, a passionate your profession, e.g., Web
-            Developer, Graphic Designer, Data Analyst based in Dhaka. With a
-            strong focus on creativity, innovation, and a commitment to
-            continuous learning, I bring a unique blend of technical skills and
+            Hello! I'm Fatima, a passionate your profession, e.g., Web Developer, Graphic Designer,
+            Data Analyst based in Dhaka. With a strong focus on creativity, innovation, and a
+            commitment to continuous learning, I bring a unique blend of technical skills and
             artistic vision to each project I undertake.
           </p>
         </div>

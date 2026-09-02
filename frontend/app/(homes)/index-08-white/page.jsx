@@ -1,29 +1,25 @@
-import About2 from "@/components/common/About2";
-import Blogs4 from "@/components/common/Blogs4";
-import BodyClassToggler from "@/components/common/BodyClassToggler";
-import Contact3 from "@/components/common/Contact3";
+import About2 from '@/components/common/About2';
+import Blogs4 from '@/components/common/Blogs4';
+import BodyClassToggler from '@/components/common/BodyClassToggler';
+import Contact3 from '@/components/common/Contact3';
 
-import Portfolio3 from "@/components/common/Portfolio3";
-import Resume from "@/components/common/Resume";
+import Portfolio3 from '@/components/common/Portfolio3';
+import Resume from '@/components/common/Resume';
 
-import Footer4 from "@/components/footers/Footer4";
-import Hero from "@/components/homes/home-8/Hero";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Footer4 from '@/components/footers/Footer4';
+import Hero from '@/components/homes/home-8/Hero';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 08 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 08 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
     <>
-      <BodyClassToggler
-        classes={["tmp-white-version", "spybody", "index-8", "card-1-body"]}
-      />
+      <BodyClassToggler classes={['tmp-white-version', 'spybody', 'index-8', 'card-1-body']} />
       <Hero />
       <div className="cv-card-area">
         <div className="plr--150 plr_lg--30 plr_md--30 plr_sm--30 plr_mobile--15">
@@ -46,9 +42,7 @@ export default function page() {
                     <div className="content">
                       <div className="title-area">
                         <h4 className="title">John Lee</h4>
-                        <span className="subtitle">
-                          Chief Operating Officer
-                        </span>
+                        <span className="subtitle">Chief Operating Officer</span>
                       </div>
                       <div className="description">
                         <div className="info-box">
@@ -58,9 +52,7 @@ export default function page() {
                           </span>
                           <span className="mail">
                             Email:
-                            <a href="mailto:admin@example.com">
-                              admin@example.com
-                            </a>
+                            <a href="mailto:admin@example.com">admin@example.com</a>
                           </span>
                         </div>
                       </div>
@@ -81,10 +73,7 @@ export default function page() {
                         </div>
                       </div>
                       <div className="button-area-banner-one text-xl-center text-start">
-                        <Link
-                          className="tmp-btn hover-icon-reverse radius-round"
-                          href={`/contact`}
-                        >
+                        <Link className="tmp-btn hover-icon-reverse radius-round" href={`/contact`}>
                           <span className="icon-reverse-wrapper">
                             <span className="btn-text">Download My CV</span>
                             <span className="btn-icon">
@@ -104,10 +93,7 @@ export default function page() {
             <div className="order-3 order-xl-2 col-xxl-7 col-lg-10">
               <div className="tmp-tab-content-area tab-wrapper-overlay-to-top">
                 <div className="d-flex align-items-start">
-                  <div
-                    className="tmp-all-tab-content tab-content"
-                    id="v-pills-tabContent"
-                  >
+                  <div className="tmp-all-tab-content tab-content" id="v-pills-tabContent">
                     <div
                       className="tab-pane fade show active"
                       id="v-pills-Javascript"

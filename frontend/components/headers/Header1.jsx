@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
-import Nav1 from "./Nav1";
-import Image from "next/image";
-import Link from "next/link";
-import { openSidebar } from "@/utils/toggleSidebar";
-import { openMobilemenu } from "@/utils/toggleMobilemenu";
+'use client';
+import React from 'react';
+import Nav1 from './Nav1';
+import Image from 'next/image';
+import Link from 'next/link';
+import { openSidebar } from '@/utils/toggleSidebar';
+import { openMobilemenu } from '@/utils/toggleMobilemenu';
 export default function Header1({
-  darkLogo = "/assets/images/logo/white-logo-reeni.png",
-  lightLogo = "/assets/images/logo/logo-white.png",
+  darkLogo = '/assets/images/logo/white-logo-reeni.png',
+  lightLogo = '/assets/images/logo/logo-white.png',
 }) {
   return (
     <header className="tmp-header-area-start header-one header--sticky header--transparent">
@@ -39,26 +39,34 @@ export default function Header1({
               <div className="tmp-header-right">
                 <div className="social-share-wrapper d-none d-md-block">
                   <div className="social-link">
-                    <a href="#">
-                      <i className="fa-brands fa-instagram" />
+                    <a href="https://github.com/Farid83300" aria-label="Profil Github">
+                      <i className="fa-brands fa-github" />
                     </a>
-                    <a href="#">
+                    <a
+                      href="https://www.linkedin.com/in/farid-zaffalone/"
+                      aria-label="Profil Linkedin"
+                    >
                       <i className="fa-brands fa-linkedin-in" />
                     </a>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter" />
+                    <a href="https://x.com/fzaffalone" aria-label="ProfilX (Twitter)">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                      </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/FaridZaffalone" aria-label="Profil Facebook">
                       <i className="fa-brands fa-facebook-f" />
                     </a>
                   </div>
                 </div>
                 <div className="actions-area">
                   <div className="tmp-side-collups-area d-none d-xl-block">
-                    <button
-                      className="tmp-menu-bars tmp_button_active"
-                      onClick={openSidebar}
-                    >
+                    <button className="tmp-menu-bars tmp_button_active" onClick={openSidebar}>
                       <i className="fa-regular fa-bars-staggered" />
                     </button>
                   </div>

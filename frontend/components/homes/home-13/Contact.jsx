@@ -1,5 +1,5 @@
-"use client";
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
 export default function Contact() {
   return (
     <div className="contact-area-left-portfolio-fixed finance banner-personal-portfolio signle-section">
@@ -63,19 +63,14 @@ export default function Contact() {
                     />
                   </div>
                   <div className="form-group">
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      placeholder="Your Subject"
-                    />
+                    <input type="text" id="subject" name="subject" placeholder="Your Subject" />
                   </div>
                   <div className="form-group">
                     <textarea
                       name="contact-message"
                       id="contact-message"
                       placeholder="Your Message"
-                      defaultValue={""}
+                      defaultValue={''}
                     />
                   </div>
                   <div className="form-group mb--0">

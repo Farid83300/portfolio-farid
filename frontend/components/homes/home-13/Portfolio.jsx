@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { portfolioItems4 } from "@/data/portfolio";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioItems4 } from '@/data/portfolio';
 
 export default function Portfolio({ isLight = false }) {
   return (
@@ -36,11 +36,7 @@ export default function Portfolio({ isLight = false }) {
               >
                 <div className="inner">
                   <div className="thumbnail">
-                    <Link
-                      href={`/project-details${isLight ? "-white" : ""}/${
-                        item.slug
-                      }`}
-                    >
+                    <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                       <Image
                         alt="Personal Portfolio Images"
                         src={item.imageSrc}
@@ -52,21 +48,13 @@ export default function Portfolio({ isLight = false }) {
                   <div className="content">
                     <div className="category-info">
                       <div className="category-list">
-                        <Link
-                          href={`/project-details${isLight ? "-white" : ""}/${
-                            item.slug
-                          }`}
-                        >
+                        <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                           {item.category}
                         </Link>
                       </div>
                       <div className="meta">
                         <span>
-                          <Link
-                            href={`/project-details${isLight ? "-white" : ""}/${
-                              item.slug
-                            }`}
-                          >
+                          <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                             <i className="feather-heart" />
                           </Link>
                           {item.likes}
@@ -74,11 +62,7 @@ export default function Portfolio({ isLight = false }) {
                       </div>
                     </div>
                     <h4 className="title">
-                      <Link
-                        href={`/project-details${isLight ? "-white" : ""}/${
-                          item.slug
-                        }`}
-                      >
+                      <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                         {item.title}
                         <i className="fa-solid fa-arrow-up-right" />
                       </Link>

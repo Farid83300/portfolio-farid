@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import { services4 } from "@/data/services";
+import React from 'react';
+import Link from 'next/link';
+import { services4 } from '@/data/services';
 
 export default function Services({ isLight = false }) {
   return (
@@ -12,9 +12,7 @@ export default function Services({ isLight = false }) {
               .filter((service) => service.column === 1)
               .map((service) => (
                 <Link
-                  href={`/service-details${isLight ? "-white" : ""}/${
-                    service.slug
-                  }`}
+                  href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}
                   className={`service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-${service.animationOrder}`}
                   key={service.id}
                 >
@@ -33,9 +31,7 @@ export default function Services({ isLight = false }) {
               .filter((service) => service.column === 2)
               .map((service) => (
                 <Link
-                  href={`/service-details${isLight ? "-white" : ""}/${
-                    service.slug
-                  }`}
+                  href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}
                   className={`service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-${service.animationOrder}`}
                   key={service.id}
                 >

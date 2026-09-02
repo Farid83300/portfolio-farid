@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { closeSidebar } from "@/utils/toggleSidebar";
+import { closeSidebar } from '@/utils/toggleSidebar';
 
 export default function Sidebar() {
   return (
@@ -13,15 +13,15 @@ export default function Sidebar() {
                 className="logo-dark"
                 alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                 src="/assets/images/logo/white-logo-reeni.png"
-                width={121}
-                height={41}
+                width={53}
+                height={50}
               />
               <img
                 className="logo-white"
                 alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                 src="/assets/images/logo/logo-white.png"
-                width={121}
-                height={40}
+                width={53}
+                height={50}
               />
             </a>
             <div className="close-icon-area">
@@ -45,21 +45,21 @@ export default function Sidebar() {
               </a>
             </div>
             <h5 className="title mt--30">
-              Freelancer delivering exceptional Webflow, and Next.js solutions.
+              Freelance proposant des solutions PHP/React et WordPress exceptionnelles.
             </h5>
             <p className="disc">
-              I am a skilled freelancer specializing in Webflow development,
-              Figma design, and Next.js projects. I deliver creative, dynamic,
-              and user-centric web solutions.
+              Je suis un développeur freelance expérimenté, spécialisé dans le développement
+              PHP/React, la conception Figma et les projets WordPress. Je propose des solutions web
+              créatives, dynamiques et centrées sur l'utilisateur.
             </p>
             <div className="short-contact-area">
               {/* single contact information */}
               <div className="single-contact">
                 <i className="fa-solid fa-phone" />
                 <div className="information tmp-link-animation">
-                  <span>Call Now</span>
+                  <span>Téléphone</span>
                   <a href="#" className="number">
-                    +92 (8800) - 98670
+                    +33 7 56960653
                   </a>
                 </div>
               </div>
@@ -68,9 +68,9 @@ export default function Sidebar() {
               <div className="single-contact">
                 <i className="fa-solid fa-envelope" />
                 <div className="information tmp-link-animation">
-                  <span>Mail Us</span>
+                  <span>Email</span>
                   <a href="#" className="number">
-                    example@info.com
+                    contact@faridzaffalone.com
                   </a>
                 </div>
               </div>
@@ -79,26 +79,34 @@ export default function Sidebar() {
               <div className="single-contact">
                 <i className="fa-solid fa-location-crosshairs" />
                 <div className="information tmp-link-animation">
-                  <span>My Address</span>
-                  <span className="number">66 Broklyant, New York 3269</span>
+                  <span>Adresse</span>
+                  <span className="number">83300 Draguignan, France</span>
                 </div>
               </div>
               {/* single contact information end */}
             </div>
             {/* social area start */}
             <div className="social-wrapper mt--20">
-              <span className="subtitle">find with me</span>
+              <span className="subtitle">Rejoignez moi</span>
               <div className="social-link">
-                <a href="#">
-                  <i className="fa-brands fa-instagram" />
+                <a href="https://github.com/Farid83300" aria-label="Profil Github">
+                  <i className="fa-brands fa-github" />
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/farid-zaffalone/" aria-label="Profil Linkedin">
                   <i className="fa-brands fa-linkedin-in" />
                 </a>
-                <a href="#">
-                  <i className="fa-brands fa-twitter" />
+                <a href="https://x.com/fzaffalone" aria-label="ProfilX (Twitter)">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/FaridZaffalone" aria-label="Profil Facebook">
                   <i className="fa-brands fa-facebook-f" />
                 </a>
               </div>

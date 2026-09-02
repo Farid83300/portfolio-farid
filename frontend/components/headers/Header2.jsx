@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { openMobilemenu2 } from "@/utils/toggleMobilemenu";
-import OnepageNav from "./OnepageNav";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { openMobilemenu2 } from '@/utils/toggleMobilemenu';
+import OnepageNav from './OnepageNav';
 export default function Header2({
-  darkLogo = "/assets/images/logo/white-logo-reeni.png",
-  lightLogo = "/assets/images/logo/logo-white.png",
+  darkLogo = '/assets/images/logo/white-logo-reeni.png',
+  lightLogo = '/assets/images/logo/logo-white.png',
 }) {
   return (
     <header className="tmp-header-area-start header-one header--sticky header--transparent">
@@ -62,10 +62,7 @@ export default function Header2({
                     className="hamberger-menu humberger_menu_active"
                     onClick={openMobilemenu2}
                   >
-                    <i
-                      id="menuBtn"
-                      className="fa-light fa-bars humberger-menu"
-                    />
+                    <i id="menuBtn" className="fa-light fa-bars humberger-menu" />
                   </button>
                 </div>
               </div>

@@ -1,24 +1,19 @@
-import { closeMobilemenu2 } from "@/utils/toggleMobilemenu";
-import { useEffect, useState } from "react";
+import { closeMobilemenu2 } from '@/utils/toggleMobilemenu';
+import { useEffect, useState } from 'react';
 
 const navItems = [
-  { id: 1, href: "#home", text: "Home" },
-  { id: 2, href: "#about", text: "About" },
-  { id: 3, href: "#service", text: "Services" },
-  { id: 4, href: "#portfolio", text: "Portfolio" },
-  { id: 5, href: "#resume", text: "Resume" },
-  { id: 6, href: "#pricing", text: "Pricing" },
-  { id: 7, href: "#blog", text: "Blog" },
-  { id: 8, href: "#contacts", text: "Contact" },
+  { id: 1, href: '#home', text: 'Home' },
+  { id: 2, href: '#about', text: 'About' },
+  { id: 3, href: '#service', text: 'Services' },
+  { id: 4, href: '#portfolio', text: 'Portfolio' },
+  { id: 5, href: '#resume', text: 'Resume' },
+  { id: 6, href: '#pricing', text: 'Pricing' },
+  { id: 7, href: '#blog', text: 'Blog' },
+  { id: 8, href: '#contacts', text: 'Contact' },
 ];
 
-export default function OnepageNavMobile({
-  sectionIds = navItems,
-  activeClass = "current",
-}) {
-  const [activeSection, setActiveSection] = useState(
-    sectionIds[0].href.replace("#", "")
-  );
+export default function OnepageNavMobile({ sectionIds = navItems, activeClass = 'current' }) {
+  const [activeSection, setActiveSection] = useState(sectionIds[0].href.replace('#', ''));
 
   useEffect(() => {
     // Create an IntersectionObserver to track visibility of sections
@@ -32,7 +27,7 @@ export default function OnepageNavMobile({
         });
       },
       {
-        rootMargin: "-50% 0px", // Trigger when section is 50% visible
+        rootMargin: '-50% 0px', // Trigger when section is 50% visible
       }
     );
 
@@ -53,9 +48,7 @@ export default function OnepageNavMobile({
 
   const handleClick = (e, id) => {
     e.preventDefault();
-    document
-      .querySelector(id)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     closeMobilemenu2();
   };
 
@@ -64,11 +57,7 @@ export default function OnepageNavMobile({
       {navItems.map((item) => (
         <li
           key={item.id}
-          className={
-            activeSection == item.href.replace("#", "")
-              ? activeClass
-              : "nav-item"
-          }
+          className={activeSection == item.href.replace('#', '') ? activeClass : 'nav-item'}
         >
           <a
             className="smoth-animation"

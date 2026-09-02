@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const navItems = [
   {
     id: 1,
-    href: "#home",
-    text: "Home",
+    href: '#home',
+    text: 'Home',
     isCurrent: true,
     icon: (
       <svg
@@ -28,8 +28,8 @@ const navItems = [
   },
   {
     id: 2,
-    href: "#features",
-    text: "Features",
+    href: '#features',
+    text: 'Features',
     isCurrent: false,
     icon: (
       <svg
@@ -51,8 +51,8 @@ const navItems = [
   },
   {
     id: 3,
-    href: "#portfolio",
-    text: "Portfolio",
+    href: '#portfolio',
+    text: 'Portfolio',
     isCurrent: false,
     icon: (
       <svg
@@ -75,8 +75,8 @@ const navItems = [
   },
   {
     id: 4,
-    href: "#resume",
-    text: "Resume",
+    href: '#resume',
+    text: 'Resume',
     isCurrent: false,
     icon: (
       <svg
@@ -100,8 +100,8 @@ const navItems = [
   },
   {
     id: 5,
-    href: "#clients",
-    text: "Clients",
+    href: '#clients',
+    text: 'Clients',
     isCurrent: false,
     icon: (
       <svg
@@ -123,8 +123,8 @@ const navItems = [
   },
   {
     id: 6,
-    href: "#pricing",
-    text: "Pricing",
+    href: '#pricing',
+    text: 'Pricing',
     isCurrent: false,
     icon: (
       <svg
@@ -147,8 +147,8 @@ const navItems = [
   },
   {
     id: 7,
-    href: "#blog",
-    text: "Blog",
+    href: '#blog',
+    text: 'Blog',
     isCurrent: false,
     icon: (
       <svg
@@ -171,8 +171,8 @@ const navItems = [
   },
   {
     id: 8,
-    href: "#contacts",
-    text: "Contact",
+    href: '#contacts',
+    text: 'Contact',
     isCurrent: false,
     icon: (
       <svg
@@ -193,13 +193,8 @@ const navItems = [
   },
 ];
 
-export default function OnepageNav2({
-  sectionIds = navItems,
-  activeClass = "current",
-}) {
-  const [activeSection, setActiveSection] = useState(
-    sectionIds[0].href.replace("#", "")
-  );
+export default function OnepageNav2({ sectionIds = navItems, activeClass = 'current' }) {
+  const [activeSection, setActiveSection] = useState(sectionIds[0].href.replace('#', ''));
 
   useEffect(() => {
     // Create an IntersectionObserver to track visibility of sections
@@ -213,7 +208,7 @@ export default function OnepageNav2({
         });
       },
       {
-        rootMargin: "-50% 0px", // Trigger when section is 50% visible
+        rootMargin: '-50% 0px', // Trigger when section is 50% visible
       }
     );
 
@@ -234,9 +229,7 @@ export default function OnepageNav2({
 
   const handleClick = (e, id) => {
     e.preventDefault();
-    document
-      .querySelector(id)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   return (
@@ -244,9 +237,7 @@ export default function OnepageNav2({
       {navItems.map((item) => (
         <li
           key={item.id}
-          className={`nav-item ${
-            activeSection == item.href.replace("#", "") ? activeClass : ""
-          }`}
+          className={`nav-item ${activeSection == item.href.replace('#', '') ? activeClass : ''}`}
         >
           <a
             className="nav-link smoth-animation"

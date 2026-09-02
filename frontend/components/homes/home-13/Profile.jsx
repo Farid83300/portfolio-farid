@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import TyperComponent from "@/components/common/TyperComponent";
+import React from 'react';
+import Image from 'next/image';
+import TyperComponent from '@/components/common/TyperComponent';
 export default function Profile() {
   return (
     <>
@@ -13,10 +13,10 @@ export default function Profile() {
         />
         <h3 className="title">
           Hello I'm <br />
-          John Deon <br />a{" "}
+          John Deon <br />a{' '}
           <span className="header-caption">
             <span className="cd-headline clip is-full-width">
-              <TyperComponent strings={["Developer", "Designer", "Writer"]} />
+              <TyperComponent strings={['Developer', 'Designer', 'Writer']} />
             </span>
           </span>
         </h3>
@@ -42,7 +42,7 @@ export default function Profile() {
             </a>
           </li>
         </ul>
-      </div>{" "}
+      </div>{' '}
       <div className="profile-image-1-personal-left-fixed light-content">
         <Image
           alt="business-coatch"
@@ -55,7 +55,7 @@ export default function Profile() {
           John Deon <br />a
           <span className="header-caption">
             <span className="cd-headline clip is-full-width">
-              <TyperComponent strings={["Developer", "Designer", "Writer"]} />
+              <TyperComponent strings={['Developer', 'Designer', 'Writer']} />
             </span>
           </span>
         </h3>

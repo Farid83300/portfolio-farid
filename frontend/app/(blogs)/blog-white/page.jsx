@@ -1,15 +1,13 @@
-import Blogs from "@/components/blog/Blogs";
-import Copyright from "@/components/footers/Copyright";
-import Footer1 from "@/components/footers/Footer1";
-import Header1 from "@/components/headers/Header1";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Blogs from '@/components/blog/Blogs';
+import Copyright from '@/components/footers/Copyright';
+import Footer1 from '@/components/footers/Footer1';
+import Header1 from '@/components/headers/Header1';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Blog || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Blog || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (

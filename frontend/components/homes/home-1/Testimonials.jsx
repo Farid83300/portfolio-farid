@@ -1,9 +1,9 @@
-"use client";
-import { testimonials } from "@/data/testimonials";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import Image from "next/image";
+'use client';
+import { testimonials } from '@/data/testimonials';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import Image from 'next/image';
 export default function Testimonials() {
   return (
     <section className="testimonial tmp-section-gapTop">
@@ -16,8 +16,8 @@ export default function Testimonials() {
               spaceBetween: 50,
               loop: true,
               navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
               },
               breakpoints: {
                 0: {

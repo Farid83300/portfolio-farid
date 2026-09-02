@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function About() {
   return (
@@ -12,12 +12,10 @@ export default function About() {
           an even <span>better story</span>
         </h2>
         <p className="about-desc">
-          Since beginning my journey as a freelance designer nearly 8 years ago,
-          I've done remote work for agencies, consulted for startups, and
-          collaborated with talented people to create digital products for both
-          business and consumer use. I'm quietly confident, naturally curious,
-          and perpetually working on improving my chopsone design problem at a
-          time.
+          Since beginning my journey as a freelance designer nearly 8 years ago, I've done remote
+          work for agencies, consulted for startups, and collaborated with talented people to create
+          digital products for both business and consumer use. I'm quietly confident, naturally
+          curious, and perpetually working on improving my chopsone design problem at a time.
         </p>
       </div>
       <div className="single-progress large-size no-radius">
@@ -28,7 +26,7 @@ export default function About() {
             data-wow-duration="0.5s"
             data-wow-delay=".3s"
             role="progressbar"
-            style={{ width: "90%" }}
+            style={{ width: '90%' }}
             aria-valuenow={90}
             aria-valuemin={0}
             aria-valuemax={100}
@@ -44,7 +42,7 @@ export default function About() {
             data-wow-duration="0.5s"
             data-wow-delay=".3s"
             role="progressbar"
-            style={{ width: "75%" }}
+            style={{ width: '75%' }}
             aria-valuenow={75}
             aria-valuemin={0}
             aria-valuemax={100}
@@ -60,7 +58,7 @@ export default function About() {
             data-wow-duration="0.5s"
             data-wow-delay=".3s"
             role="progressbar"
-            style={{ width: "95%" }}
+            style={{ width: '95%' }}
             aria-valuenow={95}
             aria-valuemin={0}
             aria-valuemax={100}
@@ -74,7 +72,7 @@ export default function About() {
           <div
             className="progress-bar wow fadeInLeft"
             role="progressbar"
-            style={{ width: "45%" }}
+            style={{ width: '45%' }}
             aria-valuenow={45}
             aria-valuemin={0}
             aria-valuemax={100}

@@ -1,9 +1,9 @@
-"use client";
-import { testimonials2 } from "@/data/testimonials";
-import React from "react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
+'use client';
+import { testimonials2 } from '@/data/testimonials';
+import React from 'react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 export default function Testimonials() {
   return (
     <section className="clients-testimonial-area tmp-section-gapTop">
@@ -15,8 +15,7 @@ export default function Testimonials() {
           Bringing Dreams to Life through
         </h2>
         <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-          Business consulting consultants provide expert advice and guida
-          businesses to <br />
+          Business consulting consultants provide expert advice and guida businesses to <br />
           help them improve their performance, efficiency, and organizational
         </p>
       </div>
@@ -30,7 +29,7 @@ export default function Testimonials() {
             centeredSlides: true,
             loop: true,
             pagination: {
-              el: ".tmp-swiper-pagination",
+              el: '.tmp-swiper-pagination',
               clickable: true,
             },
             autoplay: {
@@ -56,12 +55,7 @@ export default function Testimonials() {
                 <div className="client-card-head">
                   <div className="client-info">
                     <div className="client-img">
-                      <Image
-                        alt=""
-                        src={testimonial.image}
-                        width={301}
-                        height={301}
-                      />
+                      <Image alt="" src={testimonial.image} width={301} height={301} />
                     </div>
                     <div className="client-details">
                       <h3 className="client-title">{testimonial.name}</h3>

@@ -1,9 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { pricingPlans } from "@/data/pricing";
-export default function Pricing({
-  parentClass = "our-price-plan-area tmp-section-gapTop",
-}) {
+import React from 'react';
+import Link from 'next/link';
+import { pricingPlans } from '@/data/pricing';
+export default function Pricing({ parentClass = 'our-price-plan-area tmp-section-gapTop' }) {
   return (
     <section className={parentClass} id="pricing">
       <div className="container">
@@ -23,7 +21,7 @@ export default function Pricing({
             >
               <div
                 className={`price-plan-card tmponhover blur-style-two ${
-                  plan.active ? "active" : ""
+                  plan.active ? 'active' : ''
                 }`}
               >
                 <span className="price-sub-title">{plan.title}</span>

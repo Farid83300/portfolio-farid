@@ -1,9 +1,9 @@
-import { allBlogs, categories, posts, tags } from "@/data/blogs";
-import Image from "next/image";
-import React from "react";
+import { allBlogs, categories, posts, tags } from '@/data/blogs';
+import Image from 'next/image';
+import React from 'react';
 
-import Link from "next/link";
-import { slugify } from "@/utils/slugify";
+import Link from 'next/link';
+import { slugify } from '@/utils/slugify';
 
 export default function BlogSidebar({ isLight = false }) {
   return (
@@ -25,9 +25,7 @@ export default function BlogSidebar({ isLight = false }) {
         <div className="body">
           {categories.map((post, index) => (
             <Link
-              href={`/blog${isLight ? "-white" : ""}/category/${slugify(
-                post.title
-              )}`}
+              href={`/blog${isLight ? '-white' : ''}/category/${slugify(post.title)}`}
               className="single-post"
               key={index}
             >
@@ -36,13 +34,7 @@ export default function BlogSidebar({ isLight = false }) {
                 <span className="post-title">{post.title}</span>
               </span>
               <span className="post-num">
-                (
-                {
-                  allBlogs.filter((blog) =>
-                    blog.categories?.includes(post.title)
-                  ).length
-                }
-                )
+                ({allBlogs.filter((blog) => blog.categories?.includes(post.title)).length})
               </span>
             </Link>
           ))}
@@ -66,9 +58,7 @@ export default function BlogSidebar({ isLight = false }) {
                 <h3 className="post-title">
                   <Link
                     className="link"
-                    href={`/blog-details${isLight ? "-white" : ""}/${
-                      post.slug
-                    }`}
+                    href={`/blog-details${isLight ? '-white' : ''}/${post.slug}`}
                   >
                     {post.title}
                   </Link>
@@ -113,8 +103,8 @@ export default function BlogSidebar({ isLight = false }) {
               </div>
             </div>
             <p className="about-me-para">
-              Aliquam eros justo, posuere loborti viverra ullamcorper posuere
-              viverra .Aliquam eros justo, posuere justo, posuere.
+              Aliquam eros justo, posuere loborti viverra ullamcorper posuere viverra .Aliquam eros
+              justo, posuere justo, posuere.
             </p>
           </div>
         </div>
@@ -127,7 +117,7 @@ export default function BlogSidebar({ isLight = false }) {
           <div className="tags-wrapper">
             {tags.map((tag, index) => (
               <Link
-                href={`/blog${isLight ? "-white" : ""}/tag/${slugify(tag)}`}
+                href={`/blog${isLight ? '-white' : ''}/tag/${slugify(tag)}`}
                 className="tag-link"
                 key={index}
               >

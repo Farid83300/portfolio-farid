@@ -1,9 +1,9 @@
-"use client";
-import { menuItems } from "@/data/menu";
-import { closeMobilemenu } from "@/utils/toggleMobilemenu";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+'use client';
+import { menuItems } from '@/data/menu';
+import { closeMobilemenu } from '@/utils/toggleMobilemenu';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function MobileMenu() {
   const pathname = usePathname();
@@ -20,8 +20,8 @@ export default function MobileMenu() {
       }
     }
 
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
   }, []);
 
   return (
@@ -35,23 +35,20 @@ export default function MobileMenu() {
                   className="logo-dark"
                   alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                   src="/assets/images/logo/white-logo-reeni.png"
-                  width={121}
-                  height={41}
+                  width={53}
+                  height={50}
                 />
                 <img
                   className="logo-white"
                   alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                   src="/assets/images/logo/logo-white.png"
-                  width={121}
-                  height={40}
+                  width={53}
+                  height={50}
                 />
               </a>
             </div>
             <div className="close-menu">
-              <button
-                className="close-button tmp-round-action-btn"
-                onClick={closeMobilemenu}
-              >
+              <button className="close-button tmp-round-action-btn" onClick={closeMobilemenu}>
                 <i className="fa-sharp fa-light fa-xmark" />
               </button>
             </div>
@@ -60,23 +57,18 @@ export default function MobileMenu() {
             {menuItems.map((item, index) => (
               <li
                 key={index}
-                className={`${item.hasDropdown ? "has-dropdown" : ""} ${
+                className={`${item.hasDropdown ? 'has-dropdown' : ''} ${
                   item.submenu
-                    ? item.submenu.some(
-                        (elm) =>
-                          elm.href.split("/")[1] == pathname.split("/")[1]
-                      )
-                      ? "menu-item-open"
-                      : ""
-                    : ""
+                    ? item.submenu.some((elm) => elm.href.split('/')[1] == pathname.split('/')[1])
+                      ? 'menu-item-open'
+                      : ''
+                    : ''
                 }`}
               >
                 {item.isLink ? (
                   <Link
                     className={`${
-                      item.href.split("/")[1] == pathname.split("/")[1]
-                        ? "active"
-                        : ""
+                      item.href.split('/')[1] == pathname.split('/')[1] ? 'active' : ''
                     }`}
                     href={item.href}
                   >
@@ -85,15 +77,11 @@ export default function MobileMenu() {
                 ) : (
                   <a
                     href={item.href}
-                    onClick={() =>
-                      setActiveParent((pre) => (pre == index ? -1 : index))
-                    }
-                    className={activeParent == index ? "open" : ""}
+                    onClick={() => setActiveParent((pre) => (pre == index ? -1 : index))}
+                    className={activeParent == index ? 'open' : ''}
                   >
                     {item.label}
-                    {item.hasDropdown && (
-                      <i className="fa-regular fa-chevron-down" />
-                    )}
+                    {item.hasDropdown && <i className="fa-regular fa-chevron-down" />}
                   </a>
                 )}
 
@@ -101,16 +89,14 @@ export default function MobileMenu() {
                   <ul
                     className="submenu"
                     style={{
-                      display: activeParent == index ? "block" : "none",
+                      display: activeParent == index ? 'block' : 'none',
                     }}
                   >
                     {item.submenu.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <Link
                           className={`${
-                            subItem.href.split("/")[1] == pathname.split("/")[1]
-                              ? "active"
-                              : ""
+                            subItem.href.split('/')[1] == pathname.split('/')[1] ? 'active' : ''
                           }`}
                           href={subItem.href}
                         >
@@ -126,16 +112,24 @@ export default function MobileMenu() {
           <div className="social-wrapper mt--40">
             <span className="subtitle">find with me</span>
             <div className="social-link">
-              <a href="#">
-                <i className="fa-brands fa-instagram" />
+              <a href="https://github.com/Farid83300" aria-label="Profil Github">
+                <i className="fa-brands fa-github" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/farid-zaffalone/" aria-label="Profil Linkedin">
                 <i className="fa-brands fa-linkedin-in" />
               </a>
-              <a href="#">
-                <i className="fa-brands fa-twitter" />
+              <a href="https://x.com/fzaffalone" aria-label="ProfilX (Twitter)">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/FaridZaffalone" aria-label="Profil Facebook">
                 <i className="fa-brands fa-facebook-f" />
               </a>
             </div>

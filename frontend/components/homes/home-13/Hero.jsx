@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Hero() {
   return (
@@ -12,8 +12,7 @@ export default function Hero() {
           Framer Designer and Developer
         </h1>
         <p className="tmp-title-split">
-          I design and code beautifully simple things and i love what i do. Just
-          simple like that!
+          I design and code beautifully simple things and i love what i do. Just simple like that!
         </p>
       </div>
     </div>

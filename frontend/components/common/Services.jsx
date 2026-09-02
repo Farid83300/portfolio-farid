@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { services } from "@/data/services";
+import { services } from '@/data/services';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Services({ isLight = false }) {
   return (
     <section className="service-area tmp-section-gap">
@@ -17,11 +17,7 @@ export default function Services({ isLight = false }) {
                   <i className={service.icon} />
                 </div>
                 <h4 className="service-title">
-                  <Link
-                    href={`/service-details${isLight ? "-white" : ""}/${
-                      service.slug
-                    }`}
-                  >
+                  <Link href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}>
                     {service.title}
                   </Link>
                 </h4>

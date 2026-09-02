@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import OdometerComponent from "@/components/common/OdometerComponent";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import OdometerComponent from '@/components/common/OdometerComponent';
 export default function About() {
   return (
     <section className="about-us-area tmp-section-gapTop" id="about">
@@ -39,9 +39,8 @@ export default function About() {
                   Solutions with Us
                 </h2>
                 <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  Business consulting consultants provide expert advice and
-                  guida businesses to help them improve their performance,
-                  efficiency, and organizational
+                  Business consulting consultants provide expert advice and guida businesses to help
+                  them improve their performance, efficiency, and organizational
                 </p>
               </div>
               <div className="about-us-section-card row g-5">
@@ -59,8 +58,7 @@ export default function About() {
                       <h3 className="card-title">Business Solutions</h3>
                     </div>
                     <p className="card-para">
-                      Each one showcases my approach and dedication to detail,
-                      creativity
+                      Each one showcases my approach and dedication to detail, creativity
                     </p>
                   </div>
                 </div>
@@ -78,17 +76,13 @@ export default function About() {
                       <h3 className="card-title">Profit Partners</h3>
                     </div>
                     <p className="card-para">
-                      Business consulting consul us to a provide expert advice
-                      businesses
+                      Business consulting consul us to a provide expert advice businesses
                     </p>
                   </div>
                 </div>
               </div>
               <div className="about-btn mt--40 tmp-scroll-trigger tmp-fade-in animation-order-6">
-                <Link
-                  className="tmp-btn hover-icon-reverse radius-round"
-                  href={`/about`}
-                >
+                <Link className="tmp-btn hover-icon-reverse radius-round" href={`/about`}>
                   <span className="icon-reverse-wrapper">
                     <span className="btn-text">Read More About Me</span>
                     <span className="btn-icon">

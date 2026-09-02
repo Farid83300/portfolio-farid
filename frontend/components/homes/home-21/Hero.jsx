@@ -1,11 +1,8 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 export default function Hero() {
   return (
-    <div
-      className="tmp-banner-area-full-width-modern bg_modern-banner-bg bg_image"
-      id="home"
-    >
+    <div className="tmp-banner-area-full-width-modern bg_modern-banner-bg bg_image" id="home">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -18,15 +15,11 @@ export default function Hero() {
               </h1>
               <div className="right-content">
                 <p className="disc">
-                  A personal portfolio is a collection of your work, that is aa
-                  go achievements, and skills that highlights web design in your
-                  is abilities and professional growth. It serves as A personal
-                  to a portfolio in since 2009 a collection of your work
+                  A personal portfolio is a collection of your work, that is aa go achievements, and
+                  skills that highlights web design in your is abilities and professional growth. It
+                  serves as A personal to a portfolio in since 2009 a collection of your work
                 </p>
-                <Link
-                  className="tmp-btn hover-icon-reverse radius-round"
-                  href={`/about`}
-                >
+                <Link className="tmp-btn hover-icon-reverse radius-round" href={`/about`}>
                   <span className="icon-reverse-wrapper">
                     <span className="btn-text">LETS CONTACT</span>
                     <span className="btn-icon">

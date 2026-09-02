@@ -1,7 +1,7 @@
-"use client";
-import { openMobilemenu2 } from "@/utils/toggleMobilemenu";
-import Link from "next/link";
-import React from "react";
+'use client';
+import { openMobilemenu2 } from '@/utils/toggleMobilemenu';
+import Link from 'next/link';
+import React from 'react';
 
 export default function Header5() {
   return (
@@ -22,10 +22,7 @@ export default function Header5() {
         <div className="col-6">
           <div className="header-right text-end">
             <div className="tmp-side-collups-area d-flex justify-content-end">
-              <button
-                className="tmp-menu-bars humberger_menu_active"
-                onClick={openMobilemenu2}
-              >
+              <button className="tmp-menu-bars humberger_menu_active" onClick={openMobilemenu2}>
                 <i className="fa-regular fa-bars-staggered"></i>
               </button>
             </div>

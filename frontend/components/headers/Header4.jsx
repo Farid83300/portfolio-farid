@@ -1,10 +1,10 @@
-"use client";
-import React from "react";
-import Nav1 from "./Nav1";
-import Link from "next/link";
-import Image from "next/image";
-import { openSidebar } from "@/utils/toggleSidebar";
-import { openMobilemenu2 } from "@/utils/toggleMobilemenu";
+'use client';
+import React from 'react';
+import Nav1 from './Nav1';
+import Link from 'next/link';
+import Image from 'next/image';
+import { openSidebar } from '@/utils/toggleSidebar';
+import { openMobilemenu2 } from '@/utils/toggleMobilemenu';
 export default function Header4() {
   return (
     <header className="header-full-width header--sticky">
@@ -41,10 +41,7 @@ export default function Header4() {
                 </Link>
                 <div className="actions-area">
                   <div className="tmp-side-collups-area d-none d-xl-block">
-                    <button
-                      className="tmp-menu-bars tmp_button_active"
-                      onClick={openSidebar}
-                    >
+                    <button className="tmp-menu-bars tmp_button_active" onClick={openSidebar}>
                       <i className="fa-regular fa-bars-staggered" />
                     </button>
                   </div>

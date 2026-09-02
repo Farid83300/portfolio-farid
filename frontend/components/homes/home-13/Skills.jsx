@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { skills } from "@/data/skills";
-import OdometerComponent from "@/components/common/OdometerComponent";
+import React from 'react';
+import Image from 'next/image';
+import { skills } from '@/data/skills';
+import OdometerComponent from '@/components/common/OdometerComponent';
 export default function Skills() {
   return (
     <div className="tmp-service-area tmp-section-gapBottom banner-personal-portfolio signle-section">
@@ -25,12 +25,7 @@ export default function Skills() {
             <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
               <div className="skill-style-border-card tmponhover">
                 <div className="skill-inner">
-                  <Image
-                    alt={item.alt}
-                    src={item.src}
-                    width={item.width}
-                    height={item.height}
-                  />
+                  <Image alt={item.alt} src={item.src} width={item.width} height={item.height} />
                   <h3 className="count-number">
                     <OdometerComponent max={item.count} /> %
                   </h3>

@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { portfolioItems12 } from "@/data/portfolio";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioItems12 } from '@/data/portfolio';
 
 export default function Projects({ isLight = false }) {
   return (
@@ -14,20 +14,16 @@ export default function Projects({ isLight = false }) {
               className="col-lg-6 col-md-6 col-12" // Static column classes
             >
               <div className="latest-portfolio-card v5 tmp-hover-link">
-                {" "}
+                {' '}
                 {/* Static card classes */}
                 <div className="portfoli-card-img">
-                  {" "}
+                  {' '}
                   {/* Static img container classes */}
                   <div className="img-box v2">
-                    {" "}
+                    {' '}
                     {/* Static img box classes */}
                     {/* Link wrapper around images - href is static */}
-                    <Link
-                      href={`/project-details${isLight ? "-white" : ""}/${
-                        item.slug
-                      }`}
-                    >
+                    <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                       {/* Image Primary - dynamic src, alt, width, height */}
                       <Image
                         className="img-primary hidden-on-mobile"
@@ -49,38 +45,33 @@ export default function Projects({ isLight = false }) {
                   {/* Icon Link after img-box - static href, classes, icon */}
                   {/* Included for all items, matching examples 2-4 */}
                   <Link
-                    href={`/project-details${isLight ? "-white" : ""}/${
-                      item.slug
-                    }`}
+                    href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                     className="img-link-icon"
                   >
                     <i className="fa-solid fa-arrow-up-long" />
                   </Link>
                 </div>
                 <div className="portfolio-card-content-wrap">
-                  {" "}
+                  {' '}
                   {/* Static content wrap classes */}
                   <div className="content-left">
-                    {" "}
+                    {' '}
                     {/* Static content left classes */}
                     <h3 className="portfolio-card-title">
-                      {" "}
+                      {' '}
                       {/* Static title classes */}
                       {/* Title Link - static classes & href, dynamic text */}
                       <Link
                         className="link"
-                        href={`/project-details${isLight ? "-white" : ""}/${
-                          item.slug
-                        }`}
+                        href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                       >
                         {item.title} {/* Dynamic title text from data */}
                       </Link>
                     </h3>
                     <p className="portfoli-card-para">
-                      {" "}
+                      {' '}
                       {/* Static paragraph classes */}
-                      {item.description}{" "}
-                      {/* Dynamic paragraph text from data */}
+                      {item.description} {/* Dynamic paragraph text from data */}
                     </p>
                   </div>
                 </div>

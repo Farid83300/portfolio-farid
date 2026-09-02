@@ -1,26 +1,22 @@
-import About2 from "@/components/common/About2";
-import Blogs4 from "@/components/common/Blogs4";
-import Contact3 from "@/components/common/Contact3";
-import Portfolio3 from "@/components/common/Portfolio3";
-import Resume from "@/components/common/Resume";
-import Footer4 from "@/components/footers/Footer4";
-import React from "react";
-import Image from "next/image";
-import Hero from "@/components/homes/home-10/Hero";
-import BodyClassToggler from "@/components/common/BodyClassToggler";
-import CommonComponents from "@/components/common/CommonComponents";
+import About2 from '@/components/common/About2';
+import Blogs4 from '@/components/common/Blogs4';
+import Contact3 from '@/components/common/Contact3';
+import Portfolio3 from '@/components/common/Portfolio3';
+import Resume from '@/components/common/Resume';
+import Footer4 from '@/components/footers/Footer4';
+import React from 'react';
+import Image from 'next/image';
+import Hero from '@/components/homes/home-10/Hero';
+import BodyClassToggler from '@/components/common/BodyClassToggler';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 10 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 10 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
     <>
-      <BodyClassToggler
-        classes={["spybody", "index-ten", "tmp-white-version"]}
-      />
+      <BodyClassToggler classes={['spybody', 'index-ten', 'tmp-white-version']} />
       <Hero />
       <div className="cv-card-area">
         <div className="plr--150 plr_lg--30 plr_md--30 plr_sm--30 plr_mobile--15">
@@ -43,9 +39,7 @@ export default function page() {
                     <div className="content">
                       <div className="title-area">
                         <h4 className="title">John Lee</h4>
-                        <span className="subtitle">
-                          Chief Operating Officer
-                        </span>
+                        <span className="subtitle">Chief Operating Officer</span>
                       </div>
                       <div className="description">
                         <div className="info-box">
@@ -55,9 +49,7 @@ export default function page() {
                           </span>
                           <span className="mail">
                             Email:
-                            <a href="mailto:admin@example.com">
-                              admin@example.com
-                            </a>
+                            <a href="mailto:admin@example.com">admin@example.com</a>
                           </span>
                         </div>
                       </div>
@@ -169,10 +161,7 @@ export default function page() {
                   </ul>
                 </div>
                 <div className="tmp-tab-content-area mt--40">
-                  <div
-                    className="tmp-all-tab-content tab-content"
-                    id="v-pills-tabContent"
-                  >
+                  <div className="tmp-all-tab-content tab-content" id="v-pills-tabContent">
                     <div
                       className="tab-pane fade show active"
                       id="v-pills-Javascript"

@@ -1,6 +1,6 @@
-import OdometerComponent from "@/components/common/OdometerComponent";
-import { countData } from "@/data/facts";
-import React from "react";
+import OdometerComponent from '@/components/common/OdometerComponent';
+import { countData } from '@/data/facts';
+import React from 'react';
 
 export default function Facts() {
   return (

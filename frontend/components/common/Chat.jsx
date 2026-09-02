@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 export default function Chat() {
   return (
@@ -14,10 +14,7 @@ export default function Chat() {
           <div className="desc-text">
             Please fill out the form below to start chatting with me directly.
           </div>
-          <form
-            className="tmp-dynamic-form"
-            onSubmit={(e) => e.preventDefault()}
-          >
+          <form className="tmp-dynamic-form" onSubmit={(e) => e.preventDefault()}>
             <div className="field">
               <input
                 className="input-field"
@@ -42,7 +39,7 @@ export default function Chat() {
                 placeholder="Your Message"
                 name="message"
                 required
-                defaultValue={""}
+                defaultValue={''}
               />
             </div>
             <div className="field">

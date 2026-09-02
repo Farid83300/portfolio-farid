@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { portfolioItems9 } from "@/data/portfolio";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioItems9 } from '@/data/portfolio';
 
 export default function Portfolios2({ isLight = false }) {
   return (
@@ -20,8 +20,8 @@ export default function Portfolios2({ isLight = false }) {
           <div className="discription-area tmp-scroll-trigger tmp-fade-in animation-order-3">
             <p className="description">
               Business consulting consultants provide expert advice and guida
-              <span>businesses</span> to help them improve their performance,
-              efficiency, and organizational
+              <span>businesses</span> to help them improve their performance, efficiency, and
+              organizational
             </p>
           </div>
         </div>
@@ -33,11 +33,7 @@ export default function Portfolios2({ isLight = false }) {
               >
                 <div className="portfoli-card-img">
                   <div className="img-box v2">
-                    <Link
-                      href={`/project-details${isLight ? "-white" : ""}/${
-                        item.slug
-                      }`}
-                    >
+                    <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                       <Image
                         className="img-primary hidden-on-mobile"
                         alt="Blog Thumbnail"
@@ -58,11 +54,7 @@ export default function Portfolios2({ isLight = false }) {
                 <div className="portfolio-card-content-wrap">
                   <div className="content-left">
                     <h3 className="portfolio-card-title">
-                      <Link
-                        href={`/project-details${isLight ? "-white" : ""}/${
-                          item.slug
-                        }`}
-                      >
+                      <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                         {item.title}
                       </Link>
                     </h3>
@@ -81,9 +73,7 @@ export default function Portfolios2({ isLight = false }) {
                   <div className="tmp-button-here">
                     <Link
                       className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                      href={`/project-details${isLight ? "-white" : ""}/${
-                        item.slug
-                      }`}
+                      href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">{item.buttonText}</span>

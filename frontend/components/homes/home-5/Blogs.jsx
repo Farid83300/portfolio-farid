@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import { blogData7 } from "@/data/blogs";
+import { blogData7 } from '@/data/blogs';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Blogs({ isLight = false }) {
   return (
     <section className="blog-and-news-are tmp-section-gap">
@@ -24,11 +24,7 @@ export default function Blogs({ isLight = false }) {
                 className={`blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in ${blog.animationOrder}`}
               >
                 <div className="img-box">
-                  <Link
-                    href={`/blog-details${isLight ? "-white" : ""}/${
-                      blog.slug
-                    }`}
-                  >
+                  <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                     <Image
                       className="img-primary hidden-on-mobile"
                       alt={blog.altText}
@@ -63,17 +59,13 @@ export default function Blogs({ isLight = false }) {
                   <h3 className="blog-title v2">
                     <Link
                       className="link"
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
+                      href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     >
                       {blog.title}
                     </Link>
                   </h3>
                   <Link
-                    href={`/blog-details${isLight ? "-white" : ""}/${
-                      blog.slug
-                    }`}
+                    href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     className="read-more-btn v2"
                   >
                     Read More

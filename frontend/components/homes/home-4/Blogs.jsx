@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { blogData6 } from "@/data/blogs";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { blogData6 } from '@/data/blogs';
 
 export default function Blogs({ isLight = false }) {
   return (
@@ -24,11 +24,7 @@ export default function Blogs({ isLight = false }) {
               >
                 <div className="blog-card-img">
                   <div className="img-box">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       <Image
                         className="img-primary hidden-on-mobile"
                         alt={blog.altText}
@@ -65,20 +61,14 @@ export default function Blogs({ isLight = false }) {
                     </ul>
                   </div>
                   <h3 className="blog-title">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       {blog.title}
                     </Link>
                   </h3>
                   <div className="read-more-btn">
                     <Link
                       className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
+                      href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">Read More</span>

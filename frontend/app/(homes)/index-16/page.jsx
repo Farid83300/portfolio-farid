@@ -1,22 +1,20 @@
-import About from "@/components/common/About";
-import Blogs from "@/components/common/Blogs";
-import Brands from "@/components/common/Brands";
-import Contact from "@/components/common/Contact";
-import Educationn3 from "@/components/common/Education3";
-import Pricing from "@/components/common/Pricing";
-import Services4 from "@/components/common/Services4";
-import TextAnim from "@/components/common/TextAnim";
-import Footer4 from "@/components/footers/Footer4";
-import Header2 from "@/components/headers/Header2";
-import Hero from "@/components/homes/home-16/Hero";
-import Portfolio from "@/components/homes/home-16/Portfolio";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import About from '@/components/common/About';
+import Blogs from '@/components/common/Blogs';
+import Brands from '@/components/common/Brands';
+import Contact from '@/components/common/Contact';
+import Educationn3 from '@/components/common/Education3';
+import Pricing from '@/components/common/Pricing';
+import Services4 from '@/components/common/Services4';
+import TextAnim from '@/components/common/TextAnim';
+import Footer4 from '@/components/footers/Footer4';
+import Header2 from '@/components/headers/Header2';
+import Hero from '@/components/homes/home-16/Hero';
+import Portfolio from '@/components/homes/home-16/Portfolio';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 16 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 16 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
@@ -38,9 +36,8 @@ export default function page() {
                     You Can Find Me On
                   </h2>
                   <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    Business consulting consultants provide expert advice and
-                    guida businesses to help them improve their performance,
-                    efficiency, and organizational
+                    Business consulting consultants provide expert advice and guida businesses to
+                    help them improve their performance, efficiency, and organizational
                   </p>
                 </div>
               </div>

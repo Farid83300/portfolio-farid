@@ -1,28 +1,18 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { portfolioItems11 } from "@/data/portfolio";
-import { useEffect, useState } from "react";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioItems11 } from '@/data/portfolio';
+import { useEffect, useState } from 'react';
 
 export default function Portfolio({ isLight = false }) {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState('All');
   const [filtered, setFiltered] = useState(portfolioItems11);
-  const categories = [
-    "All",
-    "Branding",
-    "Design",
-    "Content writing",
-    "Marketing",
-  ];
+  const categories = ['All', 'Branding', 'Design', 'Content writing', 'Marketing'];
   useEffect(() => {
-    if (activeCategory == "All") {
+    if (activeCategory == 'All') {
       setFiltered(portfolioItems11);
     } else {
-      setFiltered(
-        portfolioItems11.filter((elm) =>
-          elm.categories.includes(activeCategory)
-        )
-      );
+      setFiltered(portfolioItems11.filter((elm) => elm.categories.includes(activeCategory)));
     }
   }, [activeCategory]);
 
@@ -37,9 +27,8 @@ export default function Portfolio({ isLight = false }) {
             Transforming Ideas into Exceptional
           </h2>
           <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-            Business consulting consultants provide expert advice and guida
-            businesses to help them improve their performance, efficiency, and
-            organizational
+            Business consulting consultants provide expert advice and guida businesses to help them
+            improve their performance, efficiency, and organizational
           </p>
         </div>
         <div className="latest-portfolio-tabs-area">
@@ -48,9 +37,7 @@ export default function Portfolio({ isLight = false }) {
               {categories.map((category) => (
                 <li key={category}>
                   <button
-                    className={`nav-link ${
-                      activeCategory === category ? "active" : ""
-                    }`}
+                    className={`nav-link ${activeCategory === category ? 'active' : ''}`}
                     onClick={() => setActiveCategory(category)}
                   >
                     {category}
@@ -79,17 +66,11 @@ export default function Portfolio({ isLight = false }) {
                       />
                       <div className="portfolio-card-content-wrap">
                         <div className="content-left">
-                          <p className="portfoli-card-para">
-                            {item.description}
-                          </p>{" "}
+                          <p className="portfoli-card-para">{item.description}</p>{' '}
                           {/* Dynamic description */}
                           <h3 className="portfolio-card-title animated fadeIn">
                             {/* Link href is static, title is dynamic */}
-                            <Link
-                              href={`/project-details${
-                                isLight ? "-white" : ""
-                              }/${item.slug}`}
-                            >
+                            <Link href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}>
                               {item.title}
                             </Link>
                           </h3>
@@ -97,9 +78,7 @@ export default function Portfolio({ isLight = false }) {
                         <div className="portfolio-btn">
                           {/* Button Link is static */}
                           <Link
-                            href={`/project-details${isLight ? "-white" : ""}/${
-                              item.slug
-                            }`}
+                            href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                             className="tmp-arrow-icon-btn"
                           >
                             <div className="btn-inner">
@@ -111,9 +90,7 @@ export default function Portfolio({ isLight = false }) {
                       </div>
                       {/* Overlay Link is static */}
                       <Link
-                        href={`/project-details${isLight ? "-white" : ""}/${
-                          item.slug
-                        }`}
+                        href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
                         className="over_link"
                       />
                     </div>

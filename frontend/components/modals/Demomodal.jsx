@@ -1,11 +1,11 @@
-"use client";
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
 
-import { closeDemoModal } from "@/utils/toggleDemoModal";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { demoData, whiteDemoData } from "@/data/menu";
-import { usePathname } from "next/navigation";
+import { closeDemoModal } from '@/utils/toggleDemoModal';
+import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { demoData, whiteDemoData } from '@/data/menu';
+import { usePathname } from 'next/navigation';
 
 export default function Demomodal() {
   const modalRef = useRef(null);
@@ -17,14 +17,14 @@ export default function Demomodal() {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
   useEffect(() => {
-    if (pathname.includes("white")) {
-      document.querySelector(".demo-modal-area").classList.add("active-light");
+    if (pathname.includes('white')) {
+      document.querySelector('.demo-modal-area').classList.add('active-light');
     }
   }, [pathname]);
 
@@ -42,20 +42,14 @@ export default function Demomodal() {
           <div className="demo-top text-center">
             <h4 className="title">Reeni</h4>
             <p className="subtitle">
-              A personal portfolio website is your digital resume—a place to
-              showcase your work, skills, and achievements.
+              A personal portfolio website is your digital resume—a place to showcase your work,
+              skills, and achievements.
             </p>
           </div>
-          <ul
-            className="popuptab-area nav nav-tabs"
-            id="popuptab"
-            role="tablist"
-          >
+          <ul className="popuptab-area nav nav-tabs" id="popuptab" role="tablist">
             <li className="nav-item">
               <a
-                className={`nav-link ${
-                  pathname.includes("white") ? "" : "active"
-                }  demo-dark`}
+                className={`nav-link ${pathname.includes('white') ? '' : 'active'}  demo-dark`}
                 id="demodark-tab"
                 data-bs-toggle="tab"
                 href="#demodark"
@@ -63,9 +57,7 @@ export default function Demomodal() {
                 aria-controls="demodark"
                 aria-selected="true"
                 onClick={() => {
-                  document
-                    .querySelector(".demo-modal-area")
-                    .classList.remove("active-light");
+                  document.querySelector('.demo-modal-area').classList.remove('active-light');
                 }}
               >
                 Dark Demo
@@ -73,9 +65,7 @@ export default function Demomodal() {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${
-                  pathname.includes("white") ? "active" : ""
-                } demo-light`}
+                className={`nav-link ${pathname.includes('white') ? 'active' : ''} demo-light`}
                 id="demolight-tab"
                 data-bs-toggle="tab"
                 href="#demolight"
@@ -83,9 +73,7 @@ export default function Demomodal() {
                 aria-controls="demolight"
                 aria-selected="false"
                 onClick={() => {
-                  document
-                    .querySelector(".demo-modal-area")
-                    .classList.add("active-light");
+                  document.querySelector('.demo-modal-area').classList.add('active-light');
                 }}
               >
                 Light Demo
@@ -94,9 +82,7 @@ export default function Demomodal() {
           </ul>
           <div className="tab-content" id="popuptabContent">
             <div
-              className={`tab-pane  ${
-                pathname.includes("white") ? "" : "show active"
-              }`}
+              className={`tab-pane  ${pathname.includes('white') ? '' : 'show active'}`}
               id="demodark"
               role="tabpanel"
               aria-labelledby="demodark-tab"
@@ -118,8 +104,7 @@ export default function Demomodal() {
                               />
                               <span className="overlay-content">
                                 <span className="overlay-text">
-                                  View Demo{" "}
-                                  <i className="feather-external-link" />
+                                  View Demo <i className="feather-external-link" />
                                 </span>
                               </span>
                             </Link>
@@ -148,8 +133,7 @@ export default function Demomodal() {
                             />
                             <span className="overlay-content">
                               <span className="overlay-text">
-                                View Demo{" "}
-                                <i className="feather-external-link" />
+                                View Demo <i className="feather-external-link" />
                               </span>
                             </span>
                           </a>
@@ -167,9 +151,7 @@ export default function Demomodal() {
               </div>
             </div>
             <div
-              className={`tab-pane  ${
-                pathname.includes("white") ? "show active" : ""
-              }`}
+              className={`tab-pane  ${pathname.includes('white') ? 'show active' : ''}`}
               id="demolight"
               role="tabpanel"
               aria-labelledby="demolight-tab"
@@ -191,8 +173,7 @@ export default function Demomodal() {
                               />
                               <span className="overlay-content">
                                 <span className="overlay-text">
-                                  View Demo{" "}
-                                  <i className="feather-external-link" />
+                                  View Demo <i className="feather-external-link" />
                                 </span>
                               </span>
                             </Link>
@@ -221,8 +202,7 @@ export default function Demomodal() {
                             />
                             <span className="overlay-content">
                               <span className="overlay-text">
-                                View Demo{" "}
-                                <i className="feather-external-link" />
+                                View Demo <i className="feather-external-link" />
                               </span>
                             </span>
                           </a>

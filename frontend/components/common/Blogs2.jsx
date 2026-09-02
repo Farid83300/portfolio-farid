@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import { blogData3 } from "@/data/blogs";
+import React from 'react';
+import Image from 'next/image';
+import { blogData3 } from '@/data/blogs';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Blogs2({
-  parentClass = "blog-and-news-are tmp-section-gap",
+  parentClass = 'blog-and-news-are tmp-section-gap',
   isLight = false,
 }) {
   return (
@@ -27,11 +27,7 @@ export default function Blogs2({
               >
                 <div className="blog-card-img">
                   <div className="img-box">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       <Image
                         className="w-100"
                         alt={blog.altText}
@@ -61,20 +57,14 @@ export default function Blogs2({
                     </ul>
                   </div>
                   <h3 className="blog-title">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       {blog.title}
                     </Link>
                   </h3>
                   <div className="read-more-btn">
                     <Link
                       className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
+                      href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">Read More</span>

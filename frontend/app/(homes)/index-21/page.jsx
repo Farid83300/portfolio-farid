@@ -1,24 +1,22 @@
-import About from "@/components/common/About";
+import About from '@/components/common/About';
 
-import Contact from "@/components/common/Contact";
-import Facts2 from "@/components/common/Facts2";
-import Portofolio from "@/components/common/Portfolio";
-import Pricing from "@/components/common/Pricing";
+import Contact from '@/components/common/Contact';
+import Facts2 from '@/components/common/Facts2';
+import Portofolio from '@/components/common/Portfolio';
+import Pricing from '@/components/common/Pricing';
 
-import Skills3 from "@/components/common/Skills3";
-import Footer4 from "@/components/footers/Footer4";
-import Header2 from "@/components/headers/Header2";
+import Skills3 from '@/components/common/Skills3';
+import Footer4 from '@/components/footers/Footer4';
+import Header2 from '@/components/headers/Header2';
 
-import Hero from "@/components/homes/home-21/Hero";
-import Services from "@/components/common/Services5";
-import Blogs from "@/components/common/Blogs2";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Hero from '@/components/homes/home-21/Hero';
+import Services from '@/components/common/Services5';
+import Blogs from '@/components/common/Blogs2';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    "Home 21 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+  title: 'Home 21 || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default function page() {
   return (
@@ -40,7 +38,7 @@ export default function page() {
         <Footer4
           darkLogo="/assets/images/logo/white-logo-reeni-4.png"
           lightLogo="/assets/images/logo/logo-blue-white.svg"
-        />{" "}
+        />{' '}
         <CommonComponents />
       </div>
     </>

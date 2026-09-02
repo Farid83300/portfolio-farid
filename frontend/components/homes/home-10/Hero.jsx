@@ -1,5 +1,5 @@
-import ParticleComponent from "@/components/common/ParticleComponent";
-import React from "react";
+import ParticleComponent from '@/components/common/ParticleComponent';
+import React from 'react';
 
 export default function Hero() {
   return (
@@ -21,19 +21,19 @@ export default function Hero() {
               },
             },
             color: {
-              value: ["#ffffff"],
+              value: ['#ffffff'],
             },
             shape: {
-              type: "star",
+              type: 'star',
               stroke: {
                 width: 0,
-                color: "#000000",
+                color: '#000000',
               },
               polygon: {
                 nb_sides: 5,
               },
               image: {
-                src: "img/github.svg",
+                src: 'img/github.svg',
                 width: 100,
                 height: 100,
               },
@@ -62,14 +62,14 @@ export default function Hero() {
             line_linked: {
               enable: false,
               distance: 150,
-              color: "#ffffff",
+              color: '#ffffff',
               opacity: 0.4,
               width: 1,
             },
             move: {
               enable: true,
               speed: 2,
-              direction: "none",
+              direction: 'none',
               random: false,
               straight: false,
               // out_mode: "out",
@@ -91,15 +91,15 @@ export default function Hero() {
             },
           },
           interactivity: {
-            detect_on: "canvas",
+            detect_on: 'canvas',
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse",
+                mode: 'repulse',
               },
               onclick: {
                 enable: true,
-                mode: "push",
+                mode: 'push',
               },
               resize: true,
             },
@@ -131,11 +131,11 @@ export default function Hero() {
           retina_detect: true,
           config_demo: {
             hide_card: false,
-            background_color: "#b61924",
-            background_image: "",
-            background_position: "50% 50%",
-            background_repeat: "no-repeat",
-            background_size: "cover",
+            background_color: '#b61924',
+            background_image: '',
+            background_position: '50% 50%',
+            background_repeat: 'no-repeat',
+            background_size: 'cover',
           },
         }}
       />

@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import BlogSidebar from "./BlogSidebar";
-import Comment from "./Comment";
-import { tags } from "@/data/blogs";
-import { slugify } from "@/utils/slugify";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import BlogSidebar from './BlogSidebar';
+import Comment from './Comment';
+import { tags } from '@/data/blogs';
+import { slugify } from '@/utils/slugify';
 export default function BlogDetails({ blog, isLight = false }) {
   return (
     <div className="blog-classic-area-wrapper tmp-section-gap">
@@ -13,12 +13,7 @@ export default function BlogDetails({ blog, isLight = false }) {
           <div className="col-lg-8">
             <div className="blog-details-left-area">
               <div className="thumbnail-top">
-                <Image
-                  alt="Corporate_business"
-                  src={blog.imageSrc}
-                  width={850}
-                  height={440}
-                />
+                <Image alt="Corporate_business" src={blog.imageSrc} width={850} height={440} />
               </div>
               <div className="blog-details-discription">
                 <div className="blog-classic-tag">
@@ -40,25 +35,22 @@ export default function BlogDetails({ blog, isLight = false }) {
                 </div>
                 <h3 className="title split-collab">{blog.title}</h3>
                 <p className="disc">
-                  Aliquam eros justo, posuere loborti viverra laoreet matti
-                  ullamcorper posuere viverra .Aliquam eros justo, posuere
-                  lobortis, viverra laoreet augue mattis fermentum ullamcorper
-                  viverra laoreet Aliquam
+                  Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere
+                  viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis
+                  fermentum ullamcorper viverra laoreet Aliquam
                 </p>
                 <p className="disc">
-                  Aliquam eros justo, posuere loborti viverra laoreet matti
-                  ullamcorper posuere viverra .Aliquam eros justoposuere
-                  lobortis non, viverra laoreet augue mattis fermentum
-                  ullamcorper viverra laore Aliquam eros justo posuere desig
-                  loborti viverra laoreet matti ullamcorper posuere viverra
+                  Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere
+                  viverra .Aliquam eros justoposuere lobortis non, viverra laoreet augue mattis
+                  fermentum ullamcorper viverra laore Aliquam eros justo posuere desig loborti
+                  viverra laoreet matti ullamcorper posuere viverra
                 </p>
               </div>
               <div className="quote-area-blog-details">
                 <p className="disc">
-                  Aliquam eros justo, posuere loborti viverra laoreet matti
-                  ullamcorper posuere viverra .Aliquam eros justo, posuere
-                  lobortis, viverra laoreet augue mattis fermentum ullamcorper
-                  viverra laoreet.
+                  Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere
+                  viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis
+                  fermentum ullamcorper viverra laoreet.
                 </p>
                 <h3 className="author">Mark wood</h3>
                 <span>
@@ -66,35 +58,29 @@ export default function BlogDetails({ blog, isLight = false }) {
                 </span>
               </div>
               <div className="blog-details-discription">
-                <h3 className="title split-collab">
-                  Showcase your talent with our portfolio
-                </h3>
+                <h3 className="title split-collab">Showcase your talent with our portfolio</h3>
                 <p className="disc">
-                  Aliquam eros justo, posuere loborti viverra laoreet matti
-                  ullamcorper posuere viverra .Aliquam eros justo, posuere
-                  lobortis, viverra laoreet augue mattis fermentum ullamcorper
-                  viverra laoreet Aliquam eros
+                  Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere
+                  viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis
+                  fermentum ullamcorper viverra laoreet Aliquam eros
                 </p>
                 <div className="our-portfolio-swiper">
                   <div className="blog-details-swiper">
                     <div className="our-portfoli-swiper-card">
                       <div className="card-left-content">
                         <p className="disc">
-                          Ished fact that a reader will be distrol acted bioii
-                          the.ished fact th reader will besi distrol ac laoreet
-                          Aliquam fact that a reader will be distrol acted
-                          Aliquam posuere loborti viverra laoreet
+                          Ished fact that a reader will be distrol acted bioii the.ished fact th
+                          reader will besi distrol ac laoreet Aliquam fact that a reader will be
+                          distrol acted Aliquam posuere loborti viverra laoreet
                         </p>
                         <p className="disc">
-                          Aliquam eros justo, posuere loborti viverra laoreet
-                          matt design the ullamcorper posuere viverra .Aliquam
-                          eros justo posuere inni lobortis non, viverra laoreet
-                          augue mattis
+                          Aliquam eros justo, posuere loborti viverra laoreet matt design the
+                          ullamcorper posuere viverra .Aliquam eros justo posuere inni lobortis non,
+                          viverra laoreet augue mattis
                         </p>
                         <p className="disc">
-                          Aliquam eros justo, posuere loborti viverra laoreet
-                          matti design an the ullamcorper posuere viverra
-                          .Aliquam eros
+                          Aliquam eros justo, posuere loborti viverra laoreet matti design an the
+                          ullamcorper posuere viverra .Aliquam eros
                         </p>
                       </div>
                       <div className="card-right-content">
@@ -115,11 +101,7 @@ export default function BlogDetails({ blog, isLight = false }) {
                       {tags.slice(1, 4).map((tag, index) => (
                         <li key={index}>
                           <p className="tag">
-                            <Link
-                              href={`/blog${
-                                isLight ? "-white" : ""
-                              }/tag/${slugify(tag)}`}
-                            >
+                            <Link href={`/blog${isLight ? '-white' : ''}/tag/${slugify(tag)}`}>
                               {tag}
                             </Link>
                           </p>
@@ -173,10 +155,9 @@ export default function BlogDetails({ blog, isLight = false }) {
                         </div>
                       </div>
                       <p className="disc">
-                        Ished fact that a reader will be distrol acted bioii
-                        the.ished fact that a reader will be distrol acted
-                        laoreet Aliquam fact that a reader will be distrol acted
-                        Aliquam eros justo.
+                        Ished fact that a reader will be distrol acted bioii the.ished fact that a
+                        reader will be distrol acted laoreet Aliquam fact that a reader will be
+                        distrol acted Aliquam eros justo.
                       </p>
                       <a href="#" className="reply-btn">
                         reply
@@ -211,9 +192,8 @@ export default function BlogDetails({ blog, isLight = false }) {
                         </div>
                       </div>
                       <p className="disc">
-                        Ished fact that a reader will be distrol acted bioii
-                        the.ished fact that a reader will be distrol acted
-                        laoreet.
+                        Ished fact that a reader will be distrol acted bioii the.ished fact that a
+                        reader will be distrol acted laoreet.
                       </p>
                       <a href="#" className="reply-btn">
                         reply
@@ -248,10 +228,9 @@ export default function BlogDetails({ blog, isLight = false }) {
                         </div>
                       </div>
                       <p className="disc">
-                        Ished fact that a reader will be distrol acted bioii
-                        the.ished fact that a reader will be distrol acted
-                        laoreet Aliquam fact that a reader will be distrol acted
-                        Aliquam eros justo.
+                        Ished fact that a reader will be distrol acted bioii the.ished fact that a
+                        reader will be distrol acted laoreet Aliquam fact that a reader will be
+                        distrol acted Aliquam eros justo.
                       </p>
                       <a href="#" className="reply-btn">
                         reply

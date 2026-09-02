@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Hero() {
   return (
@@ -13,9 +13,7 @@ export default function Hero() {
             <div className="col-lg-12">
               <div className="inner banner-model-15">
                 <h1 className="title tmp-fade-in">Julian Tobias</h1>
-                <p className="disc tmp-fade-in">
-                  German Super Model, Influencer &amp; Youtuber
-                </p>
+                <p className="disc tmp-fade-in">German Super Model, Influencer &amp; Youtuber</p>
               </div>
             </div>
           </div>

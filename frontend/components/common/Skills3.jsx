@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { skillCards } from "@/data/skills";
+import React from 'react';
+import Image from 'next/image';
+import { skillCards } from '@/data/skills';
 export default function Skills3() {
   return (
     <section
@@ -21,10 +21,9 @@ export default function Skills3() {
                     Gained Skill
                   </h2>
                   <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    Business consulting consultants provide expert advice and
-                    guida busi nesses to help them improve their performance,
-                    efficiency, and organ izational Business consulting
-                    consultants provide
+                    Business consulting consultants provide expert advice and guida busi nesses to
+                    help them improve their performance, efficiency, and organ izational Business
+                    consulting consultants provide
                   </p>
                 </div>
               </div>

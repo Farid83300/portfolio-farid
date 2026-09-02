@@ -1,9 +1,9 @@
-"use client";
-import { testimonials3 } from "@/data/testimonials";
-import React from "react";
-import { Autoplay, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
+'use client';
+import { testimonials3 } from '@/data/testimonials';
+import React from 'react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 export default function Testimonials() {
   return (
     <section className="testimonial-area tmp-section-gapTop">
@@ -21,8 +21,8 @@ export default function Testimonials() {
                   slidesPerView: 2,
                   spaceBetween: 30,
                   navigation: {
-                    nextEl: ".project-swiper-button-next",
-                    prevEl: ".project-swiper-button-prev",
+                    nextEl: '.project-swiper-button-next',
+                    prevEl: '.project-swiper-button-prev',
                   },
                   loop: true,
                   autoplay: {

@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { expertiseItems } from "@/data/expertise";
+import React from 'react';
+import Image from 'next/image';
+import { expertiseItems } from '@/data/expertise';
 export default function Experiences2() {
   return (
     <section className="my-expertise-area tpm-custom-box-bg">
@@ -17,9 +17,8 @@ export default function Experiences2() {
           </div>
           <div className="discription-area tmp-scroll-trigger tmp-fade-in animation-order-3">
             <p className="description color-primary-3rd">
-              Business consulting consultants provide expert advice and guida
-              businesses to help them improve their performance, efficiency, and
-              organizational
+              Business consulting consultants provide expert advice and guida businesses to help
+              them improve their performance, efficiency, and organizational
             </p>
           </div>
         </div>
@@ -27,7 +26,7 @@ export default function Experiences2() {
           {expertiseItems.map((item, index) => (
             <div
               className={`service-item tmp-scroll-trigger tmp-fade-in ${
-                index == 0 ? "current" : ""
+                index == 0 ? 'current' : ''
               } animation-order-${item.animationOrder}`}
               key={index}
             >
@@ -55,7 +54,7 @@ export default function Experiences2() {
                       cx={40}
                       cy={40}
                       r={35}
-                      style={{ strokeDashoffset: "131.947px" }} // This could be dynamic if needed
+                      style={{ strokeDashoffset: '131.947px' }} // This could be dynamic if needed
                     />
                     <text
                       className="countervalue"

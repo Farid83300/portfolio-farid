@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { counters2 } from "@/data/facts";
-import OdometerComponent from "@/components/common/OdometerComponent";
+import React from 'react';
+import Image from 'next/image';
+import { counters2 } from '@/data/facts';
+import OdometerComponent from '@/components/common/OdometerComponent';
 export default function Hero() {
   return (
     <div className="rpp-banner-five-area">
@@ -51,8 +51,8 @@ export default function Hero() {
                   <div className="contact-info tmp-scroll-trigger tmp-fade-in animation-order-1">
                     <h4 className="title">Biography :</h4>
                     <p className="para">
-                      I'm a freelance product designer &amp; developer based in
-                      London. I’m very passionate about the work I do.
+                      I'm a freelance product designer &amp; developer based in London. I’m very
+                      passionate about the work I do.
                     </p>
                   </div>
                   <div className="contact-info tmp-scroll-trigger tmp-fade-in animation-order-2">

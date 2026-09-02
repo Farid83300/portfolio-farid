@@ -1,5 +1,5 @@
-import { resumeListItems } from "@/data/education";
-import React from "react";
+import { resumeListItems } from '@/data/education';
+import React from 'react';
 
 export default function Resume() {
   return (

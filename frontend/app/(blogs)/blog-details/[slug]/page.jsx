@@ -1,16 +1,15 @@
-import BlogDetails from "@/components/blog/BlogDetails";
-import Copyright from "@/components/footers/Copyright";
-import Footer3 from "@/components/footers/Footer3";
-import Header1 from "@/components/headers/Header1";
-import { allBlogs } from "@/data/blogs";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import BlogDetails from '@/components/blog/BlogDetails';
+import Copyright from '@/components/footers/Copyright';
+import Footer3 from '@/components/footers/Footer3';
+import Header1 from '@/components/headers/Header1';
+import { allBlogs } from '@/data/blogs';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
   title:
-    "Blog Details || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+    'Blog Details || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default async function page({ params }) {
   const { slug } = await params;

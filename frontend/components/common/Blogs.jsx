@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import { blogData2 } from "@/data/blogs";
+import React from 'react';
+import Image from 'next/image';
+import { blogData2 } from '@/data/blogs';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Blogs({
-  parentClass = "blog-and-news-are tmp-section-gap",
+  parentClass = 'blog-and-news-are tmp-section-gap',
   isLight = false,
 }) {
   return (
@@ -27,11 +27,7 @@ export default function Blogs({
                   className={`blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in ${blog.animationOrder}`}
                 >
                   <div className="img-box">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       <Image
                         className="w-100"
                         alt={blog.altText}
@@ -59,18 +55,14 @@ export default function Blogs({
                     <h3 className="blog-title">
                       <Link
                         className="link"
-                        href={`/blog-details${isLight ? "-white" : ""}/${
-                          blog.slug
-                        }`}
+                        href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                       >
                         {blog.title}
                       </Link>
                     </h3>
                     <div className="more-btn tmp-link-animation">
                       <Link
-                        href={`/blog-details${isLight ? "-white" : ""}/${
-                          blog.slug
-                        }`}
+                        href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                         className="read-more-btn"
                       >
                         Read More

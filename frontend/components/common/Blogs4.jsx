@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { blogData5 } from "@/data/blogs";
+import React from 'react';
+import Image from 'next/image';
+import { blogData5 } from '@/data/blogs';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Blogs4({ isLight = false }) {
   return (
     <div className="tmp-blog-area" id="blog">
@@ -23,8 +23,8 @@ export default function Blogs4({ isLight = false }) {
             Elevate your brand with a the
           </h2>
           <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-            ished fact that a reader will be distrol acted bioiiy desig ished
-            fact that a reader <br />
+            ished fact that a reader will be distrol acted bioiiy desig ished fact that a reader{' '}
+            <br />
             will acted ished fact that a reader will be distrol acted
           </p>
         </div>
@@ -36,11 +36,7 @@ export default function Blogs4({ isLight = false }) {
               >
                 <div className="blog-card-img">
                   <div className="img-box">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       <Image
                         className="img-primary hidden-on-mobile"
                         alt={blog.altText}
@@ -77,20 +73,14 @@ export default function Blogs4({ isLight = false }) {
                     </ul>
                   </div>
                   <h3 className="blog-title">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       {blog.title}
                     </Link>
                   </h3>
                   <div className="tmp-button-here">
                     <Link
                       className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
+                      href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">Read More</span>

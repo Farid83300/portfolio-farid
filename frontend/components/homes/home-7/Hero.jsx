@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import TyperComponent from "@/components/common/TyperComponent";
-import ParticleComponent from "@/components/common/ParticleComponent";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import TyperComponent from '@/components/common/TyperComponent';
+import ParticleComponent from '@/components/common/ParticleComponent';
 export default function Hero({ isLight = false }) {
   return (
     <div className="tmp-banner-one-area" id="home">
@@ -28,25 +28,24 @@ export default function Hero({ isLight = false }) {
                   Hello
                 </span>
                 <h1 className="title mt--5 tmp-scroll-trigger tmp-fade-in animation-order-2">
-                  i’m Jane Cooper <br />A{" "}
+                  i’m Jane Cooper <br />A{' '}
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
                       <TyperComponent
                         strings={[
-                          "Web Designer.",
-                          "Web Developer.",
-                          "UI/UX Designer.",
-                          "Freelancer.",
-                          "Content Writer.",
+                          'Web Designer.',
+                          'Web Developer.',
+                          'UI/UX Designer.',
+                          'Freelancer.',
+                          'Content Writer.',
                         ]}
                       />
                     </span>
                   </span>
                 </h1>
                 <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  A personal portfolio is a collection of your work,
-                  achievements, and skills that highlights your abilities and
-                  professional growth. It serves as
+                  A personal portfolio is a collection of your work, achievements, and skills that
+                  highlights your abilities and professional growth. It serves as
                 </p>
                 <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
                   <Link
@@ -85,19 +84,19 @@ export default function Hero({ isLight = false }) {
                 },
               },
               color: {
-                value: ["#ff014f"],
+                value: ['#ff014f'],
               },
               shape: {
-                type: "edge",
+                type: 'edge',
                 stroke: {
                   width: 0,
-                  color: "#000000",
+                  color: '#000000',
                 },
                 polygon: {
                   nb_sides: 4,
                 },
                 image: {
-                  src: "img/github.svg",
+                  src: 'img/github.svg',
                   width: 100,
                   height: 100,
                 },
@@ -126,14 +125,14 @@ export default function Hero({ isLight = false }) {
               line_linked: {
                 enable: false,
                 distance: 150,
-                color: "#ffffff",
+                color: '#ffffff',
                 opacity: 0.4,
                 width: 1,
               },
               move: {
                 enable: true,
                 speed: 2,
-                direction: "none",
+                direction: 'none',
                 random: false,
                 straight: false,
                 // out_mode: "out",
@@ -155,15 +154,15 @@ export default function Hero({ isLight = false }) {
               },
             },
             interactivity: {
-              detect_on: "canvas",
+              detect_on: 'canvas',
               events: {
                 onhover: {
                   enable: true,
-                  mode: "repulse",
+                  mode: 'repulse',
                 },
                 onclick: {
                   enable: true,
-                  mode: "push",
+                  mode: 'push',
                 },
                 resize: true,
               },
@@ -195,11 +194,11 @@ export default function Hero({ isLight = false }) {
             retina_detect: true,
             config_demo: {
               hide_card: false,
-              background_color: "#b61924",
-              background_image: "",
-              background_position: "50% 50%",
-              background_repeat: "no-repeat",
-              background_size: "cover",
+              background_color: '#b61924',
+              background_image: '',
+              background_position: '50% 50%',
+              background_repeat: 'no-repeat',
+              background_size: 'cover',
             },
           }}
         />
@@ -219,19 +218,19 @@ export default function Hero({ isLight = false }) {
                 },
               },
               color: {
-                value: ["#ffffff"],
+                value: ['#ffffff'],
               },
               shape: {
-                type: "edge",
+                type: 'edge',
                 stroke: {
                   width: 0,
-                  color: "#000000",
+                  color: '#000000',
                 },
                 polygon: {
                   nb_sides: 4,
                 },
                 image: {
-                  src: "img/github.svg",
+                  src: 'img/github.svg',
                   width: 100,
                   height: 100,
                 },
@@ -260,14 +259,14 @@ export default function Hero({ isLight = false }) {
               line_linked: {
                 enable: false,
                 distance: 150,
-                color: "#ffffff",
+                color: '#ffffff',
                 opacity: 0.4,
                 width: 1,
               },
               move: {
                 enable: true,
                 speed: 2,
-                direction: "none",
+                direction: 'none',
                 random: false,
                 straight: false,
                 // out_mode: "out",
@@ -289,15 +288,15 @@ export default function Hero({ isLight = false }) {
               },
             },
             interactivity: {
-              detect_on: "canvas",
+              detect_on: 'canvas',
               events: {
                 onhover: {
                   enable: true,
-                  mode: "repulse",
+                  mode: 'repulse',
                 },
                 onclick: {
                   enable: true,
-                  mode: "push",
+                  mode: 'push',
                 },
                 resize: true,
               },
@@ -329,11 +328,11 @@ export default function Hero({ isLight = false }) {
             retina_detect: true,
             config_demo: {
               hide_card: false,
-              background_color: "#b61924",
-              background_image: "",
-              background_position: "50% 50%",
-              background_repeat: "no-repeat",
-              background_size: "cover",
+              background_color: '#b61924',
+              background_image: '',
+              background_position: '50% 50%',
+              background_repeat: 'no-repeat',
+              background_size: 'cover',
             },
           }}
         />

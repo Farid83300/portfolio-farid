@@ -1,19 +1,16 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-const demostrings = ["Bank Account", "Web Payment", " Android & ISO"];
-export default function TyperComponent({
-  className = "theme-gradient",
-  strings = demostrings,
-}) {
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+const demostrings = ['Bank Account', 'Web Payment', ' Android & ISO'];
+export default function TyperComponent({ className = 'theme-gradient', strings = demostrings }) {
   const [activeSctingIndex, setActiveSctingIndex] = useState(0);
   const typeitRef = useRef(null);
 
   useEffect(() => {
     typeitRef.current.style.width =
-      typeitRef.current.querySelector(".is-visible").scrollWidth + "px";
+      typeitRef.current.querySelector('.is-visible').scrollWidth + 'px';
 
     const reapetTyping = setInterval(() => {
-      typeitRef.current.style.width = "0px";
+      typeitRef.current.style.width = '0px';
 
       setTimeout(() => {
         setActiveSctingIndex((pre) => {
@@ -26,7 +23,7 @@ export default function TyperComponent({
         setTimeout(() => {
           if (typeitRef.current) {
             typeitRef.current.style.width =
-              typeitRef.current.querySelector(".is-visible").scrollWidth + "px";
+              typeitRef.current.querySelector('.is-visible').scrollWidth + 'px';
           }
         }, 10);
       }, 600);
@@ -42,9 +39,7 @@ export default function TyperComponent({
       {strings.map((elm, i) => (
         <b
           key={i}
-          className={`${className} ${
-            activeSctingIndex == i ? "is-visible" : "is-hidden"
-          } `}
+          className={`${className} ${activeSctingIndex == i ? 'is-visible' : 'is-hidden'} `}
         >
           {elm}
         </b>

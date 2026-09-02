@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 export default function Hero() {
   return (
     <div className="rpp-banner-six-area">
@@ -29,8 +29,8 @@ export default function Hero() {
                   Jackson Clark
                 </h1>
                 <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  Outsourcing can provide corporate businesses with several
-                  advantages, incl b usinesses Outsourcing can provide
+                  Outsourcing can provide corporate businesses with several advantages, incl b
+                  usinesses Outsourcing can provide
                 </p>
                 <div className="button-area-banner-three tmp-scroll-trigger tmp-fade-in animation-order-4">
                   <Link

@@ -1,9 +1,9 @@
-"use client";
-import emailjs from "@emailjs/browser";
-import React, { useRef } from "react";
-import { toast } from "react-toastify";
+'use client';
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
+import { toast } from 'react-toastify';
 
-import Image from "next/image";
+import Image from 'next/image';
 export default function Contact3() {
   const form = useRef();
 
@@ -12,22 +12,22 @@ export default function Contact3() {
     emailjs
       .sendForm(
         // EmailJS service ID - identifies which email service to use
-        "service_cyobi0y",
+        'service_cyobi0y',
 
         // EmailJS template ID - specifies which email template to use
-        "template_4nbexqj",
+        'template_4nbexqj',
 
         // Reference to the HTML form element containing user input
         form.current,
 
         {
           // Public API key for authentication with EmailJS
-          publicKey: "D79JdTqxXVCcQBXL4",
+          publicKey: 'D79JdTqxXVCcQBXL4',
         }
       )
       .then((res) => {
         if (res.status == 200) {
-          toast.success("Message Sent successfully!", {
+          toast.success('Message Sent successfully!', {
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -37,7 +37,7 @@ export default function Contact3() {
           });
           form.current.reset();
         } else {
-          toast.error("Ops Message not Sent!", {
+          toast.error('Ops Message not Sent!', {
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -68,8 +68,8 @@ export default function Contact3() {
               Elevate your brand with a the
             </h2>
             <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-              ished fact that a reader will be distrol acted bioiiy desig ished
-              fact that a reader <br />
+              ished fact that a reader will be distrol acted bioiiy desig ished fact that a reader{' '}
+              <br />
               will acted ished fact that a reader will be distrol acted
             </p>
           </div>
@@ -128,15 +128,12 @@ export default function Contact3() {
                         placeholder="Your Message"
                         name="contact-message"
                         id="contact-message"
-                        defaultValue={""}
+                        defaultValue={''}
                       />
                     </div>
                   </div>
                   <div className="col-lg-12">
-                    <button
-                      type="submit"
-                      className="tmp-btn hover-icon-reverse radius-round w-100"
-                    >
+                    <button type="submit" className="tmp-btn hover-icon-reverse radius-round w-100">
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">Appointment Now</span>
                         <span className="btn-icon">

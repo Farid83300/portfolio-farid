@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { services3 } from "@/data/services";
+import { services3 } from '@/data/services';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Services({ isLight = false }) {
   return (
@@ -24,21 +24,14 @@ export default function Services({ isLight = false }) {
       <div className="container">
         <div className="row g-5 service-wrapper mt--10">
           {services3.map((service) => (
-            <div
-              className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12"
-              key={service.id}
-            >
+            <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" key={service.id}>
               <div className="service service__style--1 bg-color-card service-narrow radius text-center tmp-border-none tmponhover">
                 <div className="icon">
                   <i className={service.icon} />
                 </div>
                 <div className="content">
                   <h4 className="title w-600">
-                    <Link
-                      href={`/service-details${isLight ? "-white" : ""}/${
-                        service.slug
-                      }`}
-                    >
+                    <Link href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}>
                       {service.title}
                     </Link>
                   </h4>
@@ -46,9 +39,7 @@ export default function Services({ isLight = false }) {
                   <div className="discover-btn mt--20">
                     <Link
                       className="tmp-btn round btn-small btn-border hover-icon-reverse"
-                      href={`/service-details${isLight ? "-white" : ""}/${
-                        service.slug
-                      }`}
+                      href={`/service-details${isLight ? '-white' : ''}/${service.slug}`}
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">services</span>

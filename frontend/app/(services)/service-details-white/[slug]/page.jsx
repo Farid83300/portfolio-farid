@@ -1,21 +1,19 @@
-import Copyright from "@/components/footers/Copyright";
-import Footer3 from "@/components/footers/Footer3";
-import Header1 from "@/components/headers/Header1";
-import ServiceDetails from "@/components/services/ServiceDetails";
-import { allServices } from "@/data/services";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Copyright from '@/components/footers/Copyright';
+import Footer3 from '@/components/footers/Footer3';
+import Header1 from '@/components/headers/Header1';
+import ServiceDetails from '@/components/services/ServiceDetails';
+import { allServices } from '@/data/services';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
   title:
-    "ServiceDetails || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+    'ServiceDetails || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default async function page({ params }) {
   const { slug } = await params;
-  const serviceItem =
-    allServices.find((blog) => blog.slug == slug) || allServices[0];
+  const serviceItem = allServices.find((blog) => blog.slug == slug) || allServices[0];
   return (
     <>
       <div className="tmp-white-version">
@@ -33,9 +31,7 @@ export default async function page({ params }) {
                     <li className="icon">
                       <i className="fa-solid fa-angle-right" />
                     </li>
-                    <li className="tmp-breadcrumb-item active">
-                      Service Details
-                    </li>
+                    <li className="tmp-breadcrumb-item active">Service Details</li>
                   </ul>
                   {/* <div class="circle-1"></div> */}
                 </div>

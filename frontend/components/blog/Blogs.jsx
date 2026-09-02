@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import { blogData } from "@/data/blogs";
-import BlogSidebar from "./BlogSidebar";
+import React from 'react';
+import Image from 'next/image';
+import { blogData } from '@/data/blogs';
+import BlogSidebar from './BlogSidebar';
 
-import Link from "next/link";
+import Link from 'next/link';
 export default function Blogs({ allBlogs = blogData, isLight = false }) {
   return (
     <div className="blog-classic-area-wrapper tmp-section-gap">
@@ -13,26 +13,20 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
             {allBlogs.slice(0, 3).map((blog, i) => (
               <div
                 key={i}
-                className={`blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in ${
-                  i + 1
-                }`}
+                className={`blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in ${i + 1}`}
               >
                 <div className="img-box">
-                  <Link
-                    href={`/blog-details${isLight ? "-white" : ""}/${
-                      blog.slug
-                    }`}
-                  >
+                  <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                     <Image
                       className="img-primary hidden-on-mobile"
-                      alt={"blog.altText"}
+                      alt={'blog.altText'}
                       src={blog.imageSrc}
                       width={850}
                       height={462}
                     />
                     <Image
                       className="img-secondary"
-                      alt={"blog.altText"}
+                      alt={'blog.altText'}
                       src={blog.imageSrc}
                       width={850}
                       height={462}
@@ -63,11 +57,7 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
                     </ul>
                   </div>
                   <h2 className="title">
-                    <Link
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
-                    >
+                    <Link href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}>
                       {blog.title}
                     </Link>
                   </h2>
@@ -75,9 +65,7 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
                   <div className="tmp-button-here">
                     <Link
                       className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                      href={`/blog-details${isLight ? "-white" : ""}/${
-                        blog.slug
-                      }`}
+                      href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">Read More</span>

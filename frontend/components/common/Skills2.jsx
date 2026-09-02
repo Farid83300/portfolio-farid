@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Skills2() {
   return (
@@ -24,9 +24,8 @@ export default function Skills2() {
                 <p className="sub-title">21 Done</p>
               </div>
               <p className="card-para">
-                My work is driven by the belief that thoughtful design and
-                strategic planning can empower brands strategic planning can
-                empower brands
+                My work is driven by the belief that thoughtful design and strategic planning can
+                empower brands strategic planning can empower brands
               </p>
               <a href="#" className="read-more-btn">
                 Read More
@@ -47,9 +46,8 @@ export default function Skills2() {
                 <p className="sub-title">21 Done</p>
               </div>
               <p className="card-para">
-                In this portfolio, you’ll find a curated selection of projects
-                that highlight my skills in [Main Areas, e.g., responsive web
-                design
+                In this portfolio, you’ll find a curated selection of projects that highlight my
+                skills in [Main Areas, e.g., responsive web design
               </p>
               <a href="#" className="read-more-btn">
                 Read More
@@ -70,8 +68,8 @@ export default function Skills2() {
                 <p className="sub-title">20 Done</p>
               </div>
               <p className="card-para">
-                Each project here showcases my commitment to excellence and
-                adaptability, tailored to meet each client’s unique needs
+                Each project here showcases my commitment to excellence and adaptability, tailored
+                to meet each client’s unique needs
               </p>
               <a href="#" className="read-more-btn">
                 Read More

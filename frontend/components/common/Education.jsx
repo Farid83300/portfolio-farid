@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
-import { educationExperienceData } from "@/data/education";
+import React from 'react';
+import Image from 'next/image';
+import { educationExperienceData } from '@/data/education';
 
 export default function Education() {
   return (
     <section className="education-experience tmp-section-gapTop">
       <div className="container">
         <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-          Education{" "}
+          Education{' '}
           <span>
             <Image
               alt="custom-line"
@@ -46,7 +46,7 @@ export default function Education() {
             <div className="col-lg-6">
               <div className="experiences-wrap-left-content">
                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                  Experiences{" "}
+                  Experiences{' '}
                   <span>
                     <Image
                       alt="custom-line"
@@ -61,9 +61,8 @@ export default function Education() {
                   <h2 className="ex-name">Fatima Asrafy</h2>
                   <h3 className="ex-title">UI/UX Designer</h3>
                   <p className="ex-para">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum desi dolore eu fugiat nulla pariatu Duis aute
-                    irure
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum desi
+                    dolore eu fugiat nulla pariatu Duis aute irure
                   </p>
                 </div>
                 <div className="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
@@ -71,8 +70,8 @@ export default function Education() {
                   <h2 className="ex-name">Fatima Asrafy</h2>
                   <h3 className="ex-title">UI/UX Designer</h3>
                   <p className="ex-para">
-                    Interested in working together? Let’s bring your ideas to
-                    life! Contact me, and let’s start building something.
+                    Interested in working together? Let’s bring your ideas to life! Contact me, and
+                    let’s start building something.
                   </p>
                 </div>
               </div>

@@ -1,21 +1,19 @@
-import Copyright from "@/components/footers/Copyright";
-import Footer3 from "@/components/footers/Footer3";
-import Header1 from "@/components/headers/Header1";
-import ProjectDetails from "@/components/projects/ProjectDetails";
-import { allPortfolioItems } from "@/data/portfolio";
-import Link from "next/link";
-import React from "react";
-import CommonComponents from "@/components/common/CommonComponents";
+import Copyright from '@/components/footers/Copyright';
+import Footer3 from '@/components/footers/Footer3';
+import Header1 from '@/components/headers/Header1';
+import ProjectDetails from '@/components/projects/ProjectDetails';
+import { allPortfolioItems } from '@/data/portfolio';
+import Link from 'next/link';
+import React from 'react';
+import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
   title:
-    "Project Details || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
-  description:
-    "Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio",
+    'Project Details || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
 };
 export default async function page({ params }) {
   const { slug } = await params;
-  const portfolioItem =
-    allPortfolioItems.find((blog) => blog.slug == slug) || allPortfolioItems[0];
+  const portfolioItem = allPortfolioItems.find((blog) => blog.slug == slug) || allPortfolioItems[0];
   return (
     <>
       <Header1 />
@@ -32,9 +30,7 @@ export default async function page({ params }) {
                   <li className="icon">
                     <i className="fa-solid fa-angle-right" />
                   </li>
-                  <li className="tmp-breadcrumb-item active">
-                    Project Details
-                  </li>
+                  <li className="tmp-breadcrumb-item active">Project Details</li>
                 </ul>
               </div>
             </div>

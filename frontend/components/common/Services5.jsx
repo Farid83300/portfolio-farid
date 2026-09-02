@@ -1,9 +1,7 @@
-import { serviceCards3 } from "@/data/services";
-import React from "react";
+import { serviceCards3 } from '@/data/services';
+import React from 'react';
 
-export default function Services5({
-  parentClass = "tmp-service-area tmp-section-gapBottom",
-}) {
+export default function Services5({ parentClass = 'tmp-service-area tmp-section-gapBottom' }) {
   return (
     <div className={parentClass} id="service">
       <div className="container">
