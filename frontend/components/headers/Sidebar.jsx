@@ -8,18 +8,18 @@ export default function Sidebar() {
       <div className="tmp-sidebar-area tmp_side_bar">
         <div className="inner">
           <div className="top-area">
-            <a href="index.html" className="logo">
+            <a href="/" className="logo">
               <img
                 className="logo-dark"
-                alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                src="/assets/images/logo/white-logo-reeni.png"
+                alt="Farid Zaffalone - Portfolio personnel"
+                src="/assets/images/logo/logo.png"
                 width={53}
                 height={50}
               />
               <img
                 className="logo-white"
-                alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                src="/assets/images/logo/logo-white.png"
+                alt="Farid Zaffalone - Portfolio personnel"
+                src="/assets/images/logo/logo.png"
                 width={53}
                 height={50}
               />
@@ -35,7 +35,7 @@ export default function Sidebar() {
           </div>
           <div className="content-wrapper">
             <div className="image-area-feature">
-              <a href="index.html">
+              <a href="/">
                 <img
                   alt="personal-logo"
                   src="/assets/images/logo/man.png"

@@ -6,8 +6,8 @@ import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title: 'Contact || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
-  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  title: 'Contact || Farid Zaffalone',
+  description: 'Contactez Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
 export default function page() {
   return (

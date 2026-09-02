@@ -5,9 +5,9 @@ import LayoutWrapper from '@/components/common/LayoutWrapper';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 export const metadata = {
-  title: 'Home || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',
   description:
-    'Reeni is a modern personal portfolio template for designers, developers, content writer, cleaner, programmer, fashion designer, model, Influencer and freelancers. Fully responsive, SEO-friendly, Bootstrap and easy to customize.',
+    "Portfolio de Farid Zaffalone, développeur freelance spécialisé dans le développement PHP/React, la conception Figma et les projets WordPress.",
 };
 export default function RootLayout({ children }) {
   return (

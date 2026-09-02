@@ -13,7 +13,7 @@ export default function Brands({ parentClass = 'our-supported-company-area tmp-s
                 className={`support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-${logo.animationOrder}`}
               >
                 <Image
-                  alt="Reeni - Personal Portfolio HTML Template"
+                  alt="Farid Zaffalone - Portfolio personnel"
                   src={logo.src}
                   width={logo.width}
                   height={logo.height}

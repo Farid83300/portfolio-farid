@@ -1,17 +1,10 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import Demomodal from '../modals/Demomodal';
-import Chat from '../common/Chat';
-import DemoToggler from '../common/DemoToggler';
-import ScrollTop from '../common/ScrollTop';
-import Sidebar from '../headers/Sidebar';
-import MobileMenu from '../headers/MobileMenu';
-import MobileMenuOnepage from '../headers/MobileMenuOnepage';
-import { footerLinks, footerLinksWhite } from '@/data/footerLinks';
+import { footerLinks } from '@/data/footerLinks';
 export default function Footer1({
-  darkLogo = '/assets/images/logo/white-logo-reeni.png',
-  lightLogo = '/assets/images/logo/logo-white.png',
+  darkLogo = '/assets/images/logo/logo.png',
+  lightLogo = '/assets/images/logo/logo.png',
 }) {
   return (
     <>
@@ -25,14 +18,14 @@ export default function Footer1({
                     <Link href={`/`}>
                       <Image
                         className="logo-dark"
-                        alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                        alt="Farid Zaffalone - Portfolio personnel"
                         src={darkLogo}
                         width={53}
                         height={50}
                       />
                       <Image
                         className="logo-white"
-                        alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                        alt="Farid Zaffalone - Portfolio personnel"
                         src={lightLogo}
                         width={121}
                         height={40}
@@ -53,15 +46,8 @@ export default function Footer1({
               <div className="col-lg-4 col-md-6">
                 <div className="single-footer-wrapper quick-link-wrap">
                   <h5 className="ft-title">Accès rapide</h5>
-                  <ul className="ft-link tmp-link-animation dark-content">
+                  <ul className="ft-link tmp-link-animation">
                     {footerLinks.map((item, index) => (
-                      <li key={index}>
-                        <Link href={item.href}>{item.label}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="ft-link tmp-link-animation light-content2">
-                    {footerLinksWhite.map((item, index) => (
                       <li key={index}>
                         <Link href={item.href}>{item.label}</Link>
                       </li>

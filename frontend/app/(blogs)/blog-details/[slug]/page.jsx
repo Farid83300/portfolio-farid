@@ -7,9 +7,8 @@ import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title:
-    'Blog Details || Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
-  description: 'Personal Portfolio React Nextjs Template | Freelancer & Developer Portfolio',
+  title: 'Blog || Farid Zaffalone',
+  description: 'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
 export default async function page({ params }) {
   const { slug } = await params;

@@ -8,32 +8,11 @@ export default function Copyright() {
           <div className="col-lg-12">
             <div className="main-wrapper">
               <p className="copy-right-para tmp-link-animation">
-                ©{' '}
-                <a href="https://themeforest.net/user/inversweb/portfolio" target="_blank">
-                  Inversweb {new Date().getFullYear()}
-                </a>{' '}
-                | All Rights Reserved
+                © Farid Zaffalone {new Date().getFullYear()} | Tous droits réservés
               </p>{' '}
-              <ul className="tmp-link-animation dark-content">
+              <ul className="tmp-link-animation">
                 <li>
-                  <a href="#">Trams &amp; Condition</a>
-                </li>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                  <Link href={`/contact`}>Contact Us</Link>
-                </li>
-              </ul>
-              <ul className="tmp-link-animation light-content">
-                <li>
-                  <a href="#">Trams &amp; Condition</a>
-                </li>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                  <Link href={`/contact-white`}>Contact Us</Link>
+                  <Link href={`/contact`}>Contact</Link>
                 </li>
               </ul>
             </div>

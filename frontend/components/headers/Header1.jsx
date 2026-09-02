@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { openSidebar } from '@/utils/toggleSidebar';
 import { openMobilemenu } from '@/utils/toggleMobilemenu';
 export default function Header1({
-  darkLogo = '/assets/images/logo/white-logo-reeni.png',
-  lightLogo = '/assets/images/logo/logo-white.png',
+  darkLogo = '/assets/images/logo/logo.png',
+  lightLogo = '/assets/images/logo/logo.png',
 }) {
   return (
     <header className="tmp-header-area-start header-one header--sticky header--transparent">
@@ -19,14 +19,14 @@ export default function Header1({
                 <Link href={`/`}>
                   <Image
                     className="logo-dark"
-                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                    alt="Farid Zaffalone - Portfolio personnel"
                     src={darkLogo}
                     width={53}
                     height={50}
                   />
                   <Image
                     className="logo-white"
-                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                    alt="Farid Zaffalone - Portfolio personnel"
                     src={lightLogo}
                     width={53}
                     height={50}

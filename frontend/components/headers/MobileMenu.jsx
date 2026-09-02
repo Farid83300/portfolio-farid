@@ -30,18 +30,18 @@ export default function MobileMenu() {
         <div ref={innerRef} className="inner">
           <div className="header-top">
             <div className="logo">
-              <a href="index.html" className="logo-area">
+              <a href="/" className="logo-area">
                 <img
                   className="logo-dark"
-                  alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                  src="/assets/images/logo/white-logo-reeni.png"
+                  alt="Farid Zaffalone - Portfolio personnel"
+                  src="/assets/images/logo/logo.png"
                   width={53}
                   height={50}
                 />
                 <img
                   className="logo-white"
-                  alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                  src="/assets/images/logo/logo-white.png"
+                  alt="Farid Zaffalone - Portfolio personnel"
+                  src="/assets/images/logo/logo.png"
                   width={53}
                   height={50}
                 />
