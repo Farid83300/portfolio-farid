@@ -1,6 +1,6 @@
 export const menuItems = [
-  { label: 'Home', href: '/', isLink: false },
-  { label: 'About', href: '/about', isLink: true },
+  { label: 'Acceuil', href: '/', isLink: false },
+  { label: 'À Propos', href: '/about', isLink: true },
   {
     label: 'Services',
     href: '#',
@@ -23,7 +23,7 @@ export const menuItems = [
     ],
   },
   {
-    label: 'Project',
+    label: 'Projets',
     href: '#',
     hasDropdown: true,
     submenu: [
@@ -37,8 +37,8 @@ export const menuItems = [
   { label: 'Contact', href: '/contact', isLink: true },
 ];
 export const menuItemsLight = [
-  { label: 'Home', href: '#', isLink: false },
-  { label: 'About', href: '/about-white', isLink: true },
+  { label: 'Acceuil', href: '#', isLink: false },
+  { label: 'À Propos', href: '/about-white', isLink: true },
   {
     label: 'Services',
     href: '#',
@@ -64,13 +64,13 @@ export const menuItemsLight = [
     ],
   },
   {
-    label: 'Project',
+    label: 'Projets',
     href: '#',
     hasDropdown: true,
     submenu: [
       { label: 'Project', href: '/project-white' },
       {
-        label: 'Project Details',
+        label: 'Projets Details',
         href: '/project-details-white/my-portfolio-of-innovation',
       },
     ],
