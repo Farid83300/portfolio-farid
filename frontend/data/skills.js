@@ -67,28 +67,28 @@ export const skills = [
 
 export const skillSections = [
   {
-    title: 'Design Skill',
+    title: 'Front-end',
     skills: [
-      { name: 'PHOTOSHOT', percent: 100, duration: '0.5s', delay: '.3s' },
-      { name: 'FIGMA', percent: 95, duration: '0.6s', delay: '.4s' },
-      { name: 'ADOBE XD', percent: 60, duration: '0.7s', delay: '.5s' },
+      { name: 'HTML', percent: 95, duration: '0.5s', delay: '.3s' },
+      { name: 'CSS', percent: 95, duration: '0.6s', delay: '.4s' },
+      { name: 'JavaScript', percent: 80, duration: '0.7s', delay: '.5s' },
       {
-        name: 'ADOBE ILLUSTRATOR',
-        percent: 70,
+        name: 'React',
+        percent: 75,
         duration: '0.8s',
         delay: '.6s',
       },
     ],
   },
   {
-    title: 'Development Skill',
+    title: 'Back-end',
     skills: [
-      { name: 'PHOTOSHOT', percent: 100, duration: '0.5s', delay: '.3s' },
-      { name: 'FIGMA', percent: 95, duration: '0.6s', delay: '.4s' },
-      { name: 'ADOBE XD', percent: 60, duration: '0.7s', delay: '.5s' },
+      { name: 'PHP', percent: 90, duration: '0.5s', delay: '.3s' },
+      { name: 'Node.JS', percent: 80, duration: '0.6s', delay: '.4s' },
+      { name: 'Next.JS', percent: 85, duration: '0.7s', delay: '.5s' },
       {
-        name: 'ADOBE ILLUSTRATOR',
-        percent: 70,
+        name: 'Wordpress',
+        percent: 90,
         duration: '0.8s',
         delay: '.6s',
       },

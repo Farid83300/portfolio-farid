@@ -2,7 +2,7 @@ export const menuItems = [
   { label: 'Acceuil', href: '/', isLink: false },
   { label: 'À Propos', href: '/about', isLink: true },
   {
-    label: 'Services',
+    label: 'Service',
     href: '#',
     hasDropdown: true,
     submenu: [
@@ -23,13 +23,13 @@ export const menuItems = [
     ],
   },
   {
-    label: 'Projets',
+    label: 'Portfolio',
     href: '#',
     hasDropdown: true,
     submenu: [
-      { label: 'Project', href: '/project' },
+      { label: 'Portfolio', href: '/project' },
       {
-        label: 'Project Details',
+        label: 'Portfolio Details',
         href: '/project-details/my-portfolio-of-innovation',
       },
     ],

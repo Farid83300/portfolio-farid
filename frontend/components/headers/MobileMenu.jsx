@@ -110,7 +110,7 @@ export default function MobileMenu() {
             ))}
           </ul>
           <div className="social-wrapper mt--40">
-            <span className="subtitle">find with me</span>
+            <span className="subtitle">Rejoignez moi</span>
             <div className="social-link">
               <a href="https://github.com/Farid83300" aria-label="Profil Github">
                 <i className="fa-brands fa-github" />

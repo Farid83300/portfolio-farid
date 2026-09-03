@@ -21,7 +21,7 @@ export default function page() {
                 <h1 className="title split-collab">Contact</h1>
                 <ul className="page-list">
                   <li className="tmp-breadcrumb-item">
-                    <Link href={`/`}>Home</Link>
+                    <Link href={`/`}>Acceuil</Link>
                   </li>
                   <li className="icon">
                     <i className="fa-solid fa-angle-right" />

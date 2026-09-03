@@ -20,15 +20,15 @@ export default function Footer3({
                         className="logo-dark"
                         alt="Farid Zaffalone - Portfolio personnel"
                         src={darkLogo}
-                        width={121}
-                        height={41}
+                        width={53}
+                        height={50}
                       />
                       <Image
                         className="logo-white"
                         alt="Farid Zaffalone - Portfolio personnel"
                         src={lightLogo}
-                        width={121}
-                        height={40}
+                        width={53}
+                        height={50}
                       />
                     </Link>
                   </div>
