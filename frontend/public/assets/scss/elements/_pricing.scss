@@ -9,9 +9,17 @@
     padding: 25px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 620px;
 
     @media (min-width: 576px) {
         padding: 40px;
+    }
+
+    @media #{variables.$sm-layout} {
+        min-height: auto;
     }
 
     // &.blur-style-one,
@@ -114,6 +122,7 @@
     border-top: 2px solid #9d9dff0d;
     padding-top: 43px;
     padding-bottom: 30px;
+    flex: 1;
     @media (min-width: 992px) {
         padding-bottom: 40px;
     }
@@ -140,6 +149,13 @@
             line-height: 24px;
         }
     }
+}
+
+/*===============================
+  Button wrapper (collé en bas)
+  ===============================*/
+.tmp-button-here {
+    margin-top: auto;
 }
 
 .pricing-table-col-2{

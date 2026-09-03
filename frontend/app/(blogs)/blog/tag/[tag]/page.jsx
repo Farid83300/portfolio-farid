@@ -8,48 +8,51 @@ import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
-  title: 'Blog || Farid Zaffalone',
-  description: 'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    title: 'Blog || Farid Zaffalone',
+    description:
+        'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
 export default async function TagPage({ params }) {
-  let tagTitle = '';
-  const { tag } = await params;
-  const blogs = allBlogs.filter((blog) => blog.tags?.some((el) => slugify(el) == tag));
-  allBlogs[0].tags.forEach((element) => {
-    if (slugify(element) == tag) {
-      tagTitle = element;
-    }
-  });
-  return (
-    <>
-      <Header1 />
-      <div className="breadcrumb-area breadcrumb-bg">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="breadcrumb-inner text-center">
-                <h1 className="title split-collab">{tagTitle ? tagTitle : <> {tag}</>}</h1>
-                <ul className="page-list">
-                  <li className="tmp-breadcrumb-item">
-                    <Link href={`/`}>Home</Link>
-                  </li>
-                  <li className="icon">
-                    <i className="fa-solid fa-angle-right" />
-                  </li>
-                  <li className="tmp-breadcrumb-item">Blog</li>
-                  <li className="icon">
-                    <i className="fa-solid fa-angle-right" />
-                  </li>
-                  <li className="tmp-breadcrumb-item active">Tag</li>
-                </ul>
-              </div>
+    let tagTitle = '';
+    const { tag } = await params;
+    const blogs = allBlogs.filter((blog) => blog.tags?.some((el) => slugify(el) == tag));
+    allBlogs[0].tags.forEach((element) => {
+        if (slugify(element) == tag) {
+            tagTitle = element;
+        }
+    });
+    return (
+        <>
+            <Header1 />
+            <div className="breadcrumb-area breadcrumb-bg">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="breadcrumb-inner text-center">
+                                <h1 className="title split-collab">
+                                    {tagTitle ? tagTitle : <> {tag}</>}
+                                </h1>
+                                <ul className="page-list">
+                                    <li className="tmp-breadcrumb-item">
+                                        <Link href={`/`}>Acceuil</Link>
+                                    </li>
+                                    <li className="icon">
+                                        <i className="fa-solid fa-angle-right" />
+                                    </li>
+                                    <li className="tmp-breadcrumb-item">Blog</li>
+                                    <li className="icon">
+                                        <i className="fa-solid fa-angle-right" />
+                                    </li>
+                                    <li className="tmp-breadcrumb-item active">Tag</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <Blogs allBlogs={blogs} />
-      <Footer1 />
-      <Copyright /> <CommonComponents />
-    </>
-  );
+            <Blogs allBlogs={blogs} />
+            <Footer1 />
+            <Copyright /> <CommonComponents />
+        </>
+    );
 }

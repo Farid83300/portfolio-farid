@@ -16,29 +16,29 @@ import Testimonials from '@/components/homes/home-1/Testimonials';
 import CommonComponents from '@/components/common/CommonComponents';
 
 export const metadata = {
-  title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',
-  description:
-    "Portfolio de Farid Zaffalone, développeur freelance spécialisé dans le développement PHP/React, la conception Figma et les projets WordPress.",
+    title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',
+    description:
+        'Portfolio de Farid Zaffalone, développeur freelance spécialisé dans le développement PHP/React, la conception Figma et les projets WordPress.',
 };
 export default function Home() {
-  return (
-    <>
-      <Header1 />
-      <Hero />
-      <Services />
-      <Facts />
-      <Skills />
-      <Services2 />
-      <Education />
-      <Brands />
-      <Portfolio />
-      <Skills2 />
-      <Testimonials />
-      <Contact />
-      <Blogs />
-      <Footer1 />
-      <Copyright />
-      <CommonComponents />
-    </>
-  );
+    return (
+        <>
+            <Header1 />
+            <Hero />
+            <Services />
+            <Facts />
+            <Skills />
+            <Services2 />
+            <Education />
+            <Brands />
+            <Portfolio />
+            <Skills2 />
+            <Testimonials />
+            <Contact />
+            <Blogs />
+            <Footer1 />
+            <Copyright />
+            <CommonComponents />
+        </>
+    );
 }

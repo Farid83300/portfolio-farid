@@ -5,12 +5,12 @@ import Sidebar from '../headers/Sidebar';
 import MobileMenu from '../headers/MobileMenu';
 
 export default function CommonComponents() {
-  return (
-    <>
-      <Chat />
-      <ScrollTop />
-      <Sidebar />
-      <MobileMenu />
-    </>
-  );
+    return (
+        <>
+            <Chat />
+            <ScrollTop />
+            <Sidebar />
+            <MobileMenu />
+        </>
+    );
 }
