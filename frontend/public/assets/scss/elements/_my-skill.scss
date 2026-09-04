@@ -81,10 +81,15 @@
     }
 
     .read-more-btn {
-        &:hover {
-            color: var(--color-heading);
-        }
-    } 
+    &:hover {
+        color: var(--color-heading);
+    }
+
+    .read-more-icon {
+        margin-left: 8px;
+        display: inline-block;
+    }
+}
 }
 
 

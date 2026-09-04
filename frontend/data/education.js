@@ -1,30 +1,30 @@
 export const educationExperienceData = [
     {
-        role: 'Trainer Marketing',
-        duration: '2005-2009',
+        role: 'Développeur d\'application full-stack',
+        duration: '2025-2026',
         description:
-            "A personal portfolio is a curated collection of an individual's professional work, showcasing their skills, experience A personal portfolio.",
+            "Diplôme enregistré au RNCP de Niv. 6 (Bac+3/4) Développeur d\'application full-stack PHP/React à OpenClassrooms",
         animationOrder: 1,
     },
     {
-        role: 'Assistant Director',
-        duration: '2010-2014',
+        role: 'Développeur Web / WordPress',
+        duration: '2024-2025',
         description:
-            'Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs.',
+            'Diplôme enregistré au RNCP de Niv. 5 (Bac+2) Développeur WordPress à OpenClassrooms',
         animationOrder: 2,
     },
     {
-        role: 'Design Assistant',
-        duration: '2008-2012',
+        role: 'Webmaster Shopify Wix CMS',
+        duration: '2016-2018',
         description:
-            'I’ve had the privilege of working with various clients, from startups to established companies, helping bring their visions to life.',
+            'Auto-formation Webmaster Shopify Wix CMS à Alpha Shop',
         animationOrder: 3,
     },
     {
-        role: 'Design Assistant',
-        duration: '2008-2012',
+        role: 'Technicien D\'assistance IT',
+        duration: '2004-2006',
         description:
-            'Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs a personal.',
+            'Auto-formation à SpeedyByte',
         animationOrder: 4,
     },
 ];

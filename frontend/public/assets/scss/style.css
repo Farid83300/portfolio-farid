@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*---------------------------
  CSS Index  
 ****************************
@@ -16427,10 +16428,19 @@ section.clients-testimonial-area {
   padding: 25px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 620px;
 }
 @media (min-width: 576px) {
   .price-plan-card {
     padding: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .price-plan-card {
+    min-height: auto;
   }
 }
 .price-plan-card.active.blur-style-one::before {
@@ -16501,6 +16511,7 @@ section.clients-testimonial-area {
   border-top: 2px solid rgba(157, 157, 255, 0.0509803922);
   padding-top: 43px;
   padding-bottom: 30px;
+  flex: 1;
 }
 @media (min-width: 992px) {
   .check-box {
@@ -16527,6 +16538,13 @@ section.clients-testimonial-area {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+
+/*===============================
+  Button wrapper (collé en bas)
+  ===============================*/
+.tmp-button-here {
+  margin-top: auto;
 }
 
 .pricing-table-col-2 {
@@ -18414,6 +18432,10 @@ body.loaded {
 }
 .my-skill-card .read-more-btn:hover {
   color: var(--color-heading);
+}
+.my-skill-card .read-more-btn .read-more-icon {
+  margin-left: 8px;
+  display: inline-block;
 }
 
 /*=========================

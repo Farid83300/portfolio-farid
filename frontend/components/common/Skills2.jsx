@@ -17,18 +17,17 @@ export default function Skills2() {
                     <div className="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
                         <div className="my-skill-card">
                             <div className="card-icon">
-                                <i className="fa-light fa-building-columns" />
+                                <i className="fa-solid fa-code" />
                             </div>
                             <div className="card-title">
-                                <h3 className="main-title">Ui/visual Design</h3>
-                                <p className="sub-title">21 Done</p>
+                                <h3 className="main-title">Web Dev Full-Stack</h3>
+                                <p className="sub-title">16 Done</p>
                             </div>
                             <p className="card-para">
-                                My work is driven by the belief that thoughtful design and strategic
-                                planning can empower brands strategic planning can empower brands
+                                PHP · React · MVC · POO → "De la conception à la mise en ligne, je développe des applications web robustes et évolutives avec des architectures propres".
                             </p>
                             <a href="#" className="read-more-btn">
-                                Read More
+                                Voir Plus
                                 <span className="read-more-icon">
                                     <i className="fa-solid fa-angle-right" />
                                 </span>
@@ -39,18 +38,17 @@ export default function Skills2() {
                     <div className="service-item tmp-scroll-trigger tmp-fade-in animation-order-2">
                         <div className="my-skill-card">
                             <div className="card-icon">
-                                <i className="fa-light fa-calendar" />
+                                <i className="fa-brands fa-wordpress-simple" />
                             </div>
                             <div className="card-title">
-                                <h3 className="main-title">Ui/visual Design</h3>
-                                <p className="sub-title">21 Done</p>
+                                <h3 className="main-title">WordPress & CMS</h3>
+                                <p className="sub-title">9 Done</p>
                             </div>
                             <p className="card-para">
-                                In this portfolio, you’ll find a curated selection of projects that
-                                highlight my skills in [Main Areas, e.g., responsive web design
+                                LiteSpeed · Core Web Vitals → "Création et optimisation de sites WordPress sur-mesure, avec un focus sur la vitesse, le SEO et la sécurité".
                             </p>
                             <a href="#" className="read-more-btn">
-                                Read More
+                                Voir Plus
                                 <span className="read-more-icon">
                                     <i className="fa-solid fa-angle-right" />
                                 </span>
@@ -64,15 +62,14 @@ export default function Skills2() {
                                 <i className="fa-light fa-pen-nib" />
                             </div>
                             <div className="card-title">
-                                <h3 className="main-title">Motion Design</h3>
-                                <p className="sub-title">20 Done</p>
+                                <h3 className="main-title">UI/Design & Intégration</h3>
+                                <p className="sub-title">5 Done</p>
                             </div>
                             <p className="card-para">
-                                Each project here showcases my commitment to excellence and
-                                adaptability, tailored to meet each client’s unique needs
+                                Figma · Canva · HTML/CSS · Responsive → "Je transforme des maquettes en interfaces pixel-perfect, accessibles et adaptées à tous les écrans".
                             </p>
                             <a href="#" className="read-more-btn">
-                                Read More
+                                Voir Plus
                                 <span className="read-more-icon">
                                     <i className="fa-solid fa-angle-right" />
                                 </span>

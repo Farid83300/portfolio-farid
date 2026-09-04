@@ -40,9 +40,9 @@ export const services2 = [
     {
         id: 1,
         num: '01.',
-        title: 'Success Architects',
+        title: 'Développement sur mesure PHP / React',
         description:
-            'Business consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Vous avez un besoin spécifique qu\'un thème ne peut pas couvrir ? Je développe des applications web robustes avec une architecture MVC propre, en PHP orienté objet et React.',
         animationOrder: '1',
         isLink: true,
         column: 1,
@@ -50,9 +50,9 @@ export const services2 = [
     {
         id: 2,
         num: '02.',
-        title: 'Success Architects',
+        title: 'Création de site WordPress',
         description:
-            'App consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Je conçois des sites clairs, rapides et optimisés pour le référencement — vitrine, blog ou catalogue. Chaque projet est pensé pour convertir vos visiteurs en clients.',
         animationOrder: '2',
         isLink: true,
         column: 1,
@@ -60,9 +60,9 @@ export const services2 = [
     {
         id: 3,
         num: '03.',
-        title: 'Success Architects',
+        title: 'Boutique e-commerce',
         description:
-            'I specialize in creating solutions that are not only visually engaging but also align with business goals. From [list services, e.g., branding',
+            'Je crée ou améliore votre boutique en ligne avec WooCommerce : catalogue produits, paiement sécurisé, tunnel de commande optimisé et interface d\'administration simple à prendre en main.',
         animationOrder: '3',
         isLink: true,
         column: 1,
@@ -70,9 +70,9 @@ export const services2 = [
     {
         id: 4,
         num: '04.',
-        title: 'Ui/visual Design',
+        title: 'SEO & optimisation des performances',
         description:
-            "I'm proud of what I've accomplished and excited to share my journey with you. I'm proud of what I've accomplished and excited to.",
+            "Un beau site ne sert à rien s'il n'est pas trouvé. J'optimise votre visibilité sur Google, la vitesse de chargement et les signaux techniques qui font la différence.",
         animationOrder: '4',
         isLink: false,
         column: 2,
@@ -80,9 +80,9 @@ export const services2 = [
     {
         id: 5,
         num: '05.',
-        title: 'Branding Design',
+        title: 'Maintenance & support technique',
         description:
-            "Interested in working together? Let's bring your ideas to life! Contact me, and let's start building something amazing.",
+            "Je prends en charge les mises à jour, sauvegardes, corrections de bugs et la sécurité de votre site. Vous gérez votre activité, je m'occupe du reste.",
         animationOrder: '5',
         isLink: false,
         column: 2,
@@ -90,9 +90,9 @@ export const services2 = [
     {
         id: 6,
         num: '06.',
-        title: 'Motion Design',
+        title: 'Refonte de site web',
         description:
-            'Feel free to browse through my recent projects. Each one showcases my approach and dedication to detail, creativity, and.',
+            'Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n\'est pas nécessaire.',
         animationOrder: '6',
         isLink: false,
         column: 2,
@@ -134,54 +134,54 @@ export const services4 = [
     {
         id: 1,
         num: '01.',
-        title: 'Success Architects',
+        title: 'Développement sur mesure PHP / React',
         description:
-            'Business consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Vous avez un besoin spécifique qu\'un thème ne peut pas couvrir ? Je développe des applications web robustes avec une architecture MVC propre, en PHP orienté objet et React.',
         animationOrder: 1,
         column: 1,
     },
     {
         id: 2,
         num: '02.',
-        title: 'Success Architects',
+        title: 'Création de site WordPress',
         description:
-            'App consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Je conçois des sites clairs, rapides et optimisés pour le référencement — vitrine, blog ou catalogue. Chaque projet est pensé pour convertir vos visiteurs en clients.',
         animationOrder: 2,
         column: 1,
     },
     {
         id: 3,
         num: '03.',
-        title: 'Success Architects',
+        title: 'Boutique e-commerce',
         description:
-            'I specialize in creating solutions that are not only visually engaging but also align with business goals. From [list services, e.g., branding',
+            'Je crée ou améliore votre boutique en ligne avec WooCommerce : catalogue produits, paiement sécurisé, tunnel de commande optimisé et interface d\'administration simple à prendre en main.',
         animationOrder: 3,
         column: 1,
     },
     {
         id: 4,
         num: '04.',
-        title: 'Ui/visual Design',
+        title: 'Refonte de site web',
         description:
-            "I'm proud of what I've accomplished and excited to share my journey with you. I'm proud of what I've accomplished and excited to.",
+            "Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n'est pas nécessaire.",
         animationOrder: 4,
         column: 2,
     },
     {
         id: 5,
         num: '05.',
-        title: 'Branding Design',
+        title: 'Maintenance & support technique',
         description:
-            "Interested in working together? Let's bring your ideas to life! Contact me, and let's start building something amazing.",
+            "Vous avez besoin d'une maintenance régulière ou de support technique pour votre site web ? Je vous propose des solutions adaptées à vos besoins.",
         animationOrder: 5,
         column: 2,
     },
     {
         id: 6,
         num: '06.',
-        title: 'Motion Design',
+        title: 'SEO & optimisation des performances',
         description:
-            'Feel free to browse through my recent projects. Each one showcases my approach and dedication to detail, creativity, and.',
+            "Un beau site ne sert à rien s'il n'est pas trouvé. J'optimise votre visibilité sur Google, la vitesse de chargement et les signaux techniques qui font la différence.",
         animationOrder: 6,
         column: 2,
     },
