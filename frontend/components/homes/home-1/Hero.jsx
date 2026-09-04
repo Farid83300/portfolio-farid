@@ -12,8 +12,8 @@ export default function Hero() {
                             <div className="banner-right-content">
                                 <Image
                                     className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    alt="banner-img"
-                                    src="/assets/images/banner/banner-user-image-one.png"
+                                    alt="Photo Farid Zaffalone"
+                                    src="/assets/images/banner/banner-user-image-one.webp"
                                     width={486}
                                     height={781}
                                 />

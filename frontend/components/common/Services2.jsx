@@ -41,7 +41,7 @@ export default function Services2() {
                                 alt="latest-user-image"
                                 width={567}
                                 height={588}
-                                src="/assets/images/services/latest-services-user-image-two.png"
+                                src="/assets/images/services/latest-services-user-image.webp"
                             />
                         </div>
                     </div>
