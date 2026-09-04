@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
@@ -8,6 +9,7 @@ import { clearToken } from '@/lib/adminApi';
 export default function AdminSidebar({ counts = {} }) {
     const pathname = usePathname();
     const router = useRouter();
+    const [open, setOpen] = useState(false);
 
     const links = [
         { href: '/admin', label: 'Dashboard', exact: true },
@@ -20,6 +22,10 @@ export default function AdminSidebar({ counts = {} }) {
         { href: '/admin/security', label: 'Sécurité / 2FA' },
     ];
 
+    useEffect(() => {
+        setOpen(false);
+    }, [pathname]);
+
     function isActive(link) {
         return link.exact ? pathname === link.href : pathname.startsWith(link.href);
     }
@@ -30,23 +36,37 @@ export default function AdminSidebar({ counts = {} }) {
     }
 
     return (
-        <aside className={styles.sidebar}>
-            <div className={styles.logo}>Admin Portfolio</div>
-            {links.map((link) => (
-                <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`${styles.navLink} ${isActive(link) ? styles.navLinkActive : ''}`}
+        <>
+            <div className={styles.mobileTopbar}>
+                <span className={styles.logo}>Admin Portfolio</span>
+                <button
+                    type="button"
+                    className={styles.menuToggle}
+                    aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+                    onClick={() => setOpen((v) => !v)}
                 >
-                    <span>{link.label}</span>
-                    {typeof link.count === 'number' && link.count > 0 && (
-                        <span className={styles.navBadge}>{link.count}</span>
-                    )}
-                </Link>
-            ))}
-            <button type="button" className={styles.logoutBtn} onClick={handleLogout}>
-                Déconnexion
-            </button>
-        </aside>
+                    <i className={open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'} />
+                </button>
+            </div>
+            {open && <div className={styles.sidebarOverlay} onClick={() => setOpen(false)} />}
+            <aside className={`${styles.sidebar} ${open ? styles.sidebarOpen : ''}`}>
+                <div className={styles.logo}>Admin Portfolio</div>
+                {links.map((link) => (
+                    <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`${styles.navLink} ${isActive(link) ? styles.navLinkActive : ''}`}
+                    >
+                        <span>{link.label}</span>
+                        {typeof link.count === 'number' && link.count > 0 && (
+                            <span className={styles.navBadge}>{link.count}</span>
+                        )}
+                    </Link>
+                ))}
+                <button type="button" className={styles.logoutBtn} onClick={handleLogout}>
+                    Déconnexion
+                </button>
+            </aside>
+        </>
     );
 }

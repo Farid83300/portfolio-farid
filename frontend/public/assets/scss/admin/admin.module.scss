@@ -4,6 +4,56 @@
     background: var(--background-color-2);
     color: var(--color-heading);
     font-family: 'Rubik', sans-serif;
+
+    @media (max-width: 900px) {
+        display: block;
+    }
+}
+
+.mobileTopbar {
+    display: none;
+
+    @media (max-width: 900px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        padding: 0 20px;
+        background: var(--background-color-3);
+        z-index: 110;
+
+        .logo {
+            margin-bottom: 0;
+            padding: 0;
+            font-size: 17px;
+            white-space: nowrap;
+        }
+    }
+}
+
+.menuToggle {
+    background: transparent;
+    border: none;
+    color: var(--color-heading);
+    font-size: 22px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.sidebarOverlay {
+    display: none;
+
+    @media (max-width: 900px) {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 105;
+    }
 }
 
 .sidebar {
@@ -14,6 +64,25 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+
+    @media (max-width: 900px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 80vw;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        z-index: 106;
+    }
+}
+
+.sidebarOpen {
+    @media (max-width: 900px) {
+        transform: translateX(0);
+    }
 }
 
 .logo {
@@ -75,6 +144,15 @@
     flex-grow: 1;
     padding: 40px;
     overflow-x: auto;
+    min-width: 0;
+
+    @media (max-width: 900px) {
+        padding: 84px 20px 20px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 80px 14px 16px;
+    }
 }
 
 .pageTitle {
@@ -82,6 +160,11 @@
     font-weight: 700;
     margin-bottom: 24px;
     color: var(--color-heading);
+
+    @media (max-width: 480px) {
+        font-size: 21px;
+        margin-bottom: 18px;
+    }
 }
 
 .statGrid {
@@ -89,12 +172,26 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-bottom: 36px;
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 380px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .statCard {
     background: var(--background-color-3);
     border-radius: 12px;
     padding: 24px;
+
+    @media (max-width: 600px) {
+        padding: 16px;
+    }
 }
 
 .statNumber {
@@ -114,6 +211,12 @@
     background: var(--background-color-3);
     border-radius: 12px;
     padding: 28px;
+    overflow-x: auto;
+
+    @media (max-width: 600px) {
+        padding: 16px;
+        border-radius: 10px;
+    }
 }
 
 .cardTitle {
@@ -126,6 +229,10 @@
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+
+    @media (max-width: 950px) {
+        min-width: 950px;
+    }
 }
 
 .table td {
@@ -295,6 +402,7 @@
     align-items: center;
     justify-content: center;
     background: var(--background-color-2);
+    padding: 20px;
 }
 
 .loginCard {
@@ -306,6 +414,10 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+
+    @media (max-width: 420px) {
+        padding: 28px 22px;
+    }
 }
 
 .loginTitle {
@@ -352,6 +464,10 @@
     gap: 24px;
     align-items: start;
     max-width: none;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .formMain,
@@ -359,11 +475,16 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+    min-width: 0;
 }
 
 .formAside {
     position: sticky;
     top: 20px;
+
+    @media (max-width: 900px) {
+        position: static;
+    }
 }
 
 .checkboxGrid {
