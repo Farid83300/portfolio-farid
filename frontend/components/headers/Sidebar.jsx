@@ -61,7 +61,7 @@ export default function Sidebar() {
                                 <div className="information tmp-link-animation">
                                     <span>Téléphone</span>
                                     <a href="#" className="number">
-                                        +33756960653
+                                        +33660919320
                                     </a>
                                 </div>
                             </div>

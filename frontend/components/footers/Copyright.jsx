@@ -8,7 +8,7 @@ export default function Copyright() {
                     <div className="col-lg-12">
                         <div className="main-wrapper">
                             <p className="copy-right-para tmp-link-animation">
-                                © Farid Zaffalone {new Date().getFullYear()} | Tous droits réservés | Made by Farid with ❤️
+                                © <Link href={`/`}> Farid Zaffalone </Link> {new Date().getFullYear()} | Tous droits réservés | Made by Farid with ❤️
                             </p>{' '}
                             <ul className="footer-links tmp-link-animation">
                                 <li>

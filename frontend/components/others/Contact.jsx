@@ -85,7 +85,7 @@ export default function Contact() {
                                     <i className="fa-solid fa-phone" />
                                 </div>
                                 <h3 className="title">Contactez-moi</h3>
-                                <p className="para">+33756960653</p>
+                                <p className="para">+33660919320</p>
                             </div>
                         </div>
                     </div>

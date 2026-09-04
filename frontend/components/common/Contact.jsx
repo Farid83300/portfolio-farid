@@ -82,7 +82,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                         </span>
                                         <div className="ft-link-wrap">
                                             <h4 className="link-title">Téléphone:</h4>
-                                            <a href="#">+33 7 56960653</a>
+                                            <a href="#">+33660919320</a>
                                         </div>
                                     </li>
                                 </ul>
