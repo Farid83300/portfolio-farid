@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { footerLinks } from '@/data/footerLinks';
+import NewsletterForm from './NewsletterForm';
 export default function Footer1({
     darkLogo = '/assets/images/logo/logo.png',
     lightLogo = '/assets/images/logo/logo.png',
@@ -35,15 +36,7 @@ export default function Footer1({
                                     <p className="description">
                                         <span>Inscrivez-vous</span> à mon Newsletters
                                     </p>
-                                    <form
-                                        onSubmit={(e) => e.preventDefault()}
-                                        className="newsletter-form-1 mt--40"
-                                    >
-                                        <input type="email" placeholder="Email Adress" />
-                                        <span className="form-icon">
-                                            <i className="fa-regular fa-envelope" />
-                                        </span>
-                                    </form>
+                                    <NewsletterForm placeholder="Email Adress" />
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6">
