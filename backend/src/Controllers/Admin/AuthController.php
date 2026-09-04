@@ -6,6 +6,7 @@ use App\Core\Request;
 use App\Core\Response;
 use App\Models\User;
 use App\Services\AuthService;
+use App\Services\TotpService;
 
 class AuthController
 {
@@ -27,7 +28,29 @@ class AuthController
             return;
         }
 
-        $token = $authService->generateToken($user['id'], $user['email']);
+        if (!$user['totp_enabled']) {
+            $token = $authService->generateToken($user['id'], $user['email'], 'setup_2fa');
+            Response::json([
+                'token' => $token,
+                'setup_2fa_required' => true,
+                'user' => ['id' => $user['id'], 'email' => $user['email']],
+            ], 200);
+            return;
+        }
+
+        $code = $data['code'] ?? null;
+        if (!$code) {
+            Response::json(['require_2fa' => true], 401);
+            return;
+        }
+
+        $totpService = new TotpService();
+        if (!$totpService->verify($user['totp_secret'], $user['email'], (string) $code)) {
+            Response::json(['error' => 'Code 2FA invalide'], 401);
+            return;
+        }
+
+        $token = $authService->generateToken($user['id'], $user['email'], 'full');
 
         Response::json([
             'token' => $token,

@@ -22,4 +22,7 @@ return [
     'cors' => [
         'origin' => $_ENV['CORS_ORIGIN'],
     ],
+    'mail' => [
+        'to' => $_ENV['MAIL_TO'] ?? null,
+    ],
 ];

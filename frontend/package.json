@@ -19,6 +19,7 @@
         "gsap": "^3.12.7",
         "next": "15.3.0",
         "odometer": "^0.4.8",
+        "qrcode": "^1.5.4",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-toastify": "^11.0.5",

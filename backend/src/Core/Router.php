@@ -37,6 +37,19 @@ class Router
             return;
         }
 
+        foreach ($this->routes[$method] ?? [] as $pattern => $handler) {
+            if (!str_contains($pattern, '{')) {
+                continue;
+            }
+
+            $regex = '#^' . preg_replace('/\{[^\/]+\}/', '([^/]+)', $pattern) . '$#';
+            if (preg_match($regex, $uri, $matches)) {
+                array_shift($matches);
+                $handler($request, ...$matches);
+                return;
+            }
+        }
+
         Response::json(['error' => 'Route non trouvée'], 404);
     }
 }

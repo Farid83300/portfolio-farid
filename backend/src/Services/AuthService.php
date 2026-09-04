@@ -27,11 +27,12 @@ class AuthService
         return password_verify($password, $hash);
     }
 
-    public function generateToken(int $userId, string $email): string
+    public function generateToken(int $userId, string $email, string $scope = 'full'): string
     {
         $payload = [
             'sub' => $userId,
             'email' => $email,
+            'scope' => $scope,
             'iat' => time(),
             'exp' => time() + $this->expire,
         ];

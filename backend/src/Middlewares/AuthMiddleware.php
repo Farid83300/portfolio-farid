@@ -7,7 +7,7 @@ use App\Services\AuthService;
 
 class AuthMiddleware
 {
-    public static function handle(): array
+    public static function handle(string $requiredScope = 'full'): array
     {
         $authHeader = '';
 
@@ -34,6 +34,12 @@ class AuthMiddleware
 
         if (!$payload) {
             Response::json(['error' => 'Token invalide ou expiré'], 401);
+            exit;
+        }
+
+        $scope = $payload['scope'] ?? 'full';
+        if ($requiredScope !== 'any' && $scope !== $requiredScope && $scope !== 'full') {
+            Response::json(['error' => 'Activation du 2FA requise'], 403);
             exit;
         }
 
