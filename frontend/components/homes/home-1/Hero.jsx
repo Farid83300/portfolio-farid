@@ -51,10 +51,10 @@ export default function Hero() {
                                 <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
                                     <Link
                                         className="tmp-btn hover-icon-reverse radius-round"
-                                        href={`/project`}
+                                        href={`/contact`}
                                     >
                                         <span className="icon-reverse-wrapper">
-                                            <span className="btn-text">Voir Portfolio</span>
+                                            <span className="btn-text">Prendre RDV</span>
                                             <span className="btn-icon">
                                                 <i className="fa-sharp fa-regular fa-arrow-right" />
                                             </span>

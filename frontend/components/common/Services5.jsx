@@ -9,10 +9,10 @@ export default function Services5({ parentClass = 'tmp-service-area tmp-section-
                     <div className="col-lg-12">
                         <div className="section-head mb--50">
                             <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                <span className="subtitle">What I Do</span>
+                                <span className="subtitle">Mes Services</span>
                             </div>
                             <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                What I Provide For You
+                                Vos idées...Mon expertise.
                             </h2>
                         </div>
                     </div>

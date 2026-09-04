@@ -10,9 +10,15 @@ export default function Copyright() {
                             <p className="copy-right-para tmp-link-animation">
                                 © Farid Zaffalone {new Date().getFullYear()} | Tous droits réservés | Made by Farid with ❤️
                             </p>{' '}
-                            <ul className="tmp-link-animation">
+                            <ul className="footer-links tmp-link-animation">
                                 <li>
-                                    <Link href={`/contact`}>Contact</Link>
+                                    <Link href={`/mentions-legales`}>Mentions légales</Link>
+                                </li>
+                                <li>
+                                    <Link href={`/politique-de-confidentialite`}>Politique de confidentialité</Link>
+                                </li>
+                                <li>
+                                    <Link href={`/contact`}>Me Contacter</Link>
                                 </li>
                             </ul>
                         </div>

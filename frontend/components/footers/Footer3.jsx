@@ -33,7 +33,7 @@ export default function Footer3({
                                         </Link>
                                     </div>
                                     <p className="description">
-                                        <span>Inscrivez-vous</span> To <br /> à mon Newsletters
+                                        <span>Inscrivez-vous</span> <br /> à mon Newsletters
                                     </p>
                                     <form
                                         onSubmit={(e) => e.preventDefault()}

@@ -67,7 +67,7 @@ export default function Blogs({
                                                 href={`/blog-details${isLight ? '-white' : ''}/${blog.slug}`}
                                                 className="read-more-btn"
                                             >
-                                                Read More
+                                                Voir Plus
                                                 <span className="read-more-icon">
                                                     <i className="fa-solid fa-angle-right" />
                                                 </span>

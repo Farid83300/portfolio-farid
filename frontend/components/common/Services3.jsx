@@ -7,15 +7,13 @@ export default function Services3() {
             <div className="container">
                 <div className="section-head mb--50">
                     <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <span className="subtitle">Dernier Service</span>
+                        <span className="subtitle">Mes Services</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Inspiring The World One <br />
-                        Project
+                        Vos idées...<br />Mon expertise.
                     </h2>
                     <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        Business consulting consultants provide expert advice and guida businesses
-                        to help them improve their performance, efficiency, and organizational
+                        Mon expertise a votre service pour des sites web et applications qui convertissent vos visiteurs en clients.
                     </p>
                 </div>
                 <div className="row">

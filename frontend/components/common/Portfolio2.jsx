@@ -10,7 +10,7 @@ export default function Portfolio({ isLight = false }) {
             <div className="container">
                 <div className="section-head mb--60">
                     <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <span className="subtitle">Dernier Portfolio</span>
+                        <span className="subtitle">Mes Projets terminé</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
                         Transforming Ideas into <br />

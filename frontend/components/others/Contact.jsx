@@ -182,7 +182,7 @@ export default function Contact() {
                                                             >
                                                                 <span className="icon-reverse-wrapper">
                                                                     <span className="btn-text">
-                                                                        Prenez rendez-vous dès maintenant
+                                                                        Prenez rendez-vous
                                                                     </span>
                                                                     <span className="btn-icon">
                                                                         <i className="fa-sharp fa-regular fa-arrow-right" />

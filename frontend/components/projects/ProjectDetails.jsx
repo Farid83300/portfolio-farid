@@ -109,10 +109,10 @@ export default function ProjectDetails({ portfolioItem }) {
                                         <span>
                                             <i className="fa-solid fa-arrow-left" />
                                         </span>
-                                        Previous
+                                        Précédent
                                     </div>
                                     <div className="project-swiper-button-next">
-                                        Next{' '}
+                                        Suivant{' '}
                                         <span>
                                             <i className="fa-solid fa-arrow-right" />
                                         </span>
@@ -127,14 +127,14 @@ export default function ProjectDetails({ portfolioItem }) {
                     <div className="col-lg-4">
                         <div className="signle-side-bar project-details-area tmponhover">
                             <div className="header">
-                                <h3 className="title">Project Details</h3>
+                                <h3 className="title">Projet Detail</h3>
                             </div>
                             <div className="body">
                                 <div className="project-details-info">
-                                    Name: <span>Hosting vps</span>
+                                    Nom: <span>Hosting vps</span>
                                 </div>
                                 <div className="project-details-info">
-                                    Author: <span>Nadimul Islam</span>
+                                    Auteur: <span>Nadimul Islam</span>
                                 </div>
                                 <div className="project-details-info">
                                     Date: <span>23 January,2024</span>

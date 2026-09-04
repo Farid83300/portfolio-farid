@@ -39,37 +39,22 @@ export default function Header1({
                             <div className="tmp-header-right">
                                 <div className="social-share-wrapper d-none d-md-block">
                                     <div className="social-link">
-                                        <a
-                                            href="https://github.com/Farid83300"
-                                            aria-label="Profil Github"
-                                        >
-                                            <i className="fa-brands fa-github" />
+                                        <a href="https://github.com/Farid83300" aria-label="Profil Github" target="_blank" rel="noopener noreferrer">
+                                        <i className="fa-brands fa-github" />
                                         </a>
-                                        <a
-                                            href="https://www.linkedin.com/in/farid-zaffalone/"
-                                            aria-label="Profil Linkedin"
-                                        >
-                                            <i className="fa-brands fa-linkedin-in" />
+
+                                        <a href="https://www.linkedin.com/in/farid-zaffalone/" aria-label="Profil Linkedin" target="_blank" rel="noopener noreferrer">
+                                        <i className="fa-brands fa-linkedin-in" />
                                         </a>
-                                        <a
-                                            href="https://x.com/fzaffalone"
-                                            aria-label="ProfilX (Twitter)"
-                                        >
-                                            <svg
-                                                width="14"
-                                                height="14"
-                                                viewBox="0 0 24 24"
-                                                fill="currentColor"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                            </svg>
+
+                                        <a href="https://x.com/fzaffalone" aria-label="Profil X (Twitter)" target="_blank" rel="noopener noreferrer">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                        </svg>
                                         </a>
-                                        <a
-                                            href="https://www.facebook.com/FaridZaffalone"
-                                            aria-label="Profil Facebook"
-                                        >
-                                            <i className="fa-brands fa-facebook-f" />
+
+                                        <a href="https://www.facebook.com/FaridZaffalone" aria-label="Profil Facebook" target="_blank" rel="noopener noreferrer">
+                                        <i className="fa-brands fa-facebook-f" />
                                         </a>
                                     </div>
                                 </div>

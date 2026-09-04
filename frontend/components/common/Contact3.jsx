@@ -65,12 +65,10 @@ export default function Contact3() {
                             </span>
                         </h2>
                         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                            Elevate your brand with a the
+                            Parlons de votre projet...
                         </h2>
                         <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                            ished fact that a reader will be distrol acted bioiiy desig ished fact
-                            that a reader <br />
-                            will acted ished fact that a reader will be distrol acted
+                            Vous avez un projet en tête ? Discutons-en ensemble. Je vous réponds sous 24h pour étudier vos besoins et vous proposer la solution la plus adaptée à votre budget.
                         </p>
                     </div>
                     <div className="contact-inner">
@@ -139,7 +137,7 @@ export default function Contact3() {
                                         >
                                             <span className="icon-reverse-wrapper">
                                                 <span className="btn-text">
-                                                    Prenez rendez-vous dès maintenant
+                                                    Prenez rendez-vous
                                                 </span>
                                                 <span className="btn-icon">
                                                     <i className="fa-sharp fa-regular fa-arrow-right" />

@@ -13,7 +13,7 @@ export default function About({ parentClass = 'about-us-area' }) {
                                 <h2 className="counter card-title">
                                     <OdometerComponent max={10} /> +
                                 </h2>
-                                <p className="card-para">années d'expérience</p>
+                                <p className="card-para">Années d'expérience</p>
                             </div>
                             <div className="design-card tmp-scroll-trigger tmp-fade-in animation-order-2">
                                 <div className="design-card-img">

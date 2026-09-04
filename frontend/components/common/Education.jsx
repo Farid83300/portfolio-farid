@@ -7,7 +7,7 @@ export default function Education() {
         <section className="education-experience tmp-section-gapTop">
             <div className="container">
                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    Education{' '}
+                    Formation{' '}
                     <span>
                         <Image
                             alt="custom-line"
@@ -46,7 +46,7 @@ export default function Education() {
                         <div className="col-lg-6">
                             <div className="experiences-wrap-left-content">
                                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    Experiences{' '}
+                                    Expériences{' '}
                                     <span>
                                         <Image
                                             alt="custom-line"

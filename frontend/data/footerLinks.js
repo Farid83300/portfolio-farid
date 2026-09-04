@@ -3,5 +3,5 @@ export const footerLinks = [
     { href: '/service', label: 'Service' },
     { href: '/contact', label: 'Contact' },
     { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Tarifs' },
+    { href: '/about#pricing', label: 'Tarifs' },
 ];

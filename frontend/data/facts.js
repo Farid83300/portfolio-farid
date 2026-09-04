@@ -1,8 +1,8 @@
 export const counters = [
-    { count: 20, suffix: 'k+', text: 'Our Project Complete', order: 1 },
-    { count: 10, suffix: 'k+', text: 'Our Natural Products', order: 2 },
-    { count: 200, suffix: '+', text: 'Clients Reviews', order: 3 },
-    { count: 1000, suffix: '+', text: 'our Satisfied Clientd', order: 4 },
+    { count: 26, suffix: '+', text: 'Projets finalisés', order: 1 },
+    { count: 6, suffix: '+', text: 'Languages maîtrisés', order: 2 },
+    { count: 3, suffix: '+', text: 'Années d\'expérience', order: 3 },
+    { count: 26, suffix: '+', text: 'Clients satisfaits', order: 4 },
 ];
 
 export const countData = [

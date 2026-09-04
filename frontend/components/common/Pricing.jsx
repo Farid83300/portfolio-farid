@@ -12,7 +12,7 @@ export default function Pricing({ parentClass = 'our-price-plan-area tmp-section
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
                         Des solutions web adaptées <br /> à chaque besoin
                     </h2>
-                    <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
                         "Chaque projet est unique, ceci est mon approche tarifaire, les prix peuvent
                         varier en fonction des besoins spécifiques."
                     </p>

@@ -43,7 +43,7 @@ export default async function CategoryPage({ params }) {
                                     <li className="icon">
                                         <i className="fa-solid fa-angle-right" />
                                     </li>
-                                    <li className="tmp-breadcrumb-item active">Categorie</li>
+                                    <li className="tmp-breadcrumb-item active">Catégorie</li>
                                 </ul>
                             </div>
                         </div>

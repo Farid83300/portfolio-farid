@@ -20,7 +20,7 @@ export default function Resume() {
                         </span>
                     </h2>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Elevate your brand with a the
+                        Parlons de votre projet...
                     </h2>
                     <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
                         ished fact that a reader will be distrol acted bioiiy desig ished fact that
@@ -46,7 +46,7 @@ export default function Resume() {
             </div>
             <div className="inner pt--60">
                 <h2 className="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    Experience
+                    Expérience
                     <span>
                         <Image
                             alt="custom-line"
