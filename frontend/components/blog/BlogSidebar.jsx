@@ -71,6 +71,7 @@ export default async function BlogSidebar({ isLight = false }) {
                                     src={uploadUrl(post.featured_image)}
                                     width={82}
                                     height={92}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                 />
                             </div>
                             <div className="single-post-right">

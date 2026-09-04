@@ -17,6 +17,7 @@ export default function BlogDetails({ blog, isLight = false }) {
                                     src={uploadUrl(blog.featured_image)}
                                     width={850}
                                     height={440}
+                                    style={{ width: '100%', height: 'auto', aspectRatio: '850 / 440', objectFit: 'cover' }}
                                 />
                             </div>
                             <div className="blog-details-discription">

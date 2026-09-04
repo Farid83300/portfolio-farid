@@ -20,6 +20,7 @@ export default function ProjectDetails({ portfolioItem }) {
                                 src={uploadUrl(portfolioItem.cover_image || portfolioItem.thumbnail)}
                                 width={1290}
                                 height={560}
+                                style={{ width: '100%', height: 'auto', aspectRatio: '1290 / 560', objectFit: 'cover' }}
                             />
                         </div>
                     </div>
@@ -62,6 +63,12 @@ export default function ProjectDetails({ portfolioItem }) {
                                                             src={uploadUrl(item.image)}
                                                             width={410}
                                                             height={295}
+                                                            style={{
+                                                                width: '100%',
+                                                                height: 'auto',
+                                                                aspectRatio: '410 / 295',
+                                                                objectFit: 'cover',
+                                                            }}
                                                         />
                                                     </div>
                                                 </div>
