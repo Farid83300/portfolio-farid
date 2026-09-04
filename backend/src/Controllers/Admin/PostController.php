@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Core\Request;
 use App\Core\Response;
 use App\Models\Post;
+use App\Support\Slugger;
 
 class PostController
 {
@@ -29,10 +30,12 @@ class PostController
     {
         $data = $request->getBody();
 
-        if (empty($data['title']) || empty($data['slug']) || empty($data['content'])) {
-            Response::json(['error' => 'Titre, slug et contenu requis'], 400);
+        if (empty($data['title']) || empty($data['content'])) {
+            Response::json(['error' => 'Titre et contenu requis'], 400);
             return;
         }
+
+        $data['slug'] = !empty($data['slug']) ? $data['slug'] : Slugger::slugify($data['title']);
 
         $id = Post::create($data);
         Response::json(Post::find($id), 201);
@@ -47,10 +50,12 @@ class PostController
 
         $data = $request->getBody();
 
-        if (empty($data['title']) || empty($data['slug']) || empty($data['content'])) {
-            Response::json(['error' => 'Titre, slug et contenu requis'], 400);
+        if (empty($data['title']) || empty($data['content'])) {
+            Response::json(['error' => 'Titre et contenu requis'], 400);
             return;
         }
+
+        $data['slug'] = !empty($data['slug']) ? $data['slug'] : Slugger::slugify($data['title']);
 
         Post::update((int) $id, $data);
         Response::json(Post::find((int) $id), 200);

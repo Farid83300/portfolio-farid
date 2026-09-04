@@ -50,22 +50,40 @@ export default function AdminArticlesPage() {
                     <table className={styles.table}>
                         <thead>
                             <tr>
+                                <th>Statut</th>
                                 <th>Titre</th>
                                 <th>Slug</th>
+                                <th>Catégorie</th>
                                 <th>Publié le</th>
+                                <th>Vues</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {posts.map((p) => (
                                 <tr key={p.id}>
+                                    <td>
+                                        <span
+                                            className={`${styles.badge} ${
+                                                p.status === 'published'
+                                                    ? styles.badgeApproved
+                                                    : p.status === 'archived'
+                                                      ? styles.badgeRejected
+                                                      : styles.badgePending
+                                            }`}
+                                        >
+                                            {p.status}
+                                        </span>
+                                    </td>
                                     <td>{p.title}</td>
                                     <td>{p.slug}</td>
+                                    <td>{p.category_name || '—'}</td>
                                     <td>
                                         {p.published_at
                                             ? new Date(p.published_at).toLocaleDateString('fr-FR')
                                             : '—'}
                                     </td>
+                                    <td>{p.views_count}</td>
                                     <td>
                                         <div className={styles.actions}>
                                             <Link

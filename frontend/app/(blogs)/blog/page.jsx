@@ -5,12 +5,14 @@ import Header1 from '@/components/headers/Header1';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
+import { getPosts } from '@/lib/publicApi';
 export const metadata = {
     title: 'Blog || Farid Zaffalone',
     description:
         'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
-export default function page() {
+export default async function page() {
+    const posts = await getPosts();
     return (
         <>
             <Header1 />
@@ -34,7 +36,7 @@ export default function page() {
                     </div>
                 </div>
             </div>
-            <Blogs />
+            <Blogs allBlogs={posts} />
             <Footer1 />
             <Copyright /> <CommonComponents />
         </>

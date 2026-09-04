@@ -5,12 +5,14 @@ import Projects from '@/components/projects/Projects';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
+import { getProjects } from '@/lib/publicApi';
 export const metadata = {
     title: 'Projets || Farid Zaffalone',
     description:
         'Portfolio de projets de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
-export default function page() {
+export default async function page() {
+    const items = await getProjects();
     return (
         <>
             <div className="project inner">
@@ -35,7 +37,7 @@ export default function page() {
                         </div>
                     </div>
                 </div>
-                <Projects />
+                <Projects items={items} />
                 <Footer3 />
                 <Copyright /> <CommonComponents />
             </div>

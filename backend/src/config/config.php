@@ -25,4 +25,7 @@ return [
     'mail' => [
         'to' => $_ENV['MAIL_TO'] ?? null,
     ],
+    'app' => [
+        'url' => $_ENV['APP_URL'] ?? 'http://localhost:8000',
+    ],
 ];

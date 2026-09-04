@@ -2,25 +2,20 @@ import Blogs from '@/components/blog/Blogs';
 import Copyright from '@/components/footers/Copyright';
 import Footer1 from '@/components/footers/Footer1';
 import Header1 from '@/components/headers/Header1';
-import { allBlogs } from '@/data/blogs';
-import { slugify } from '@/utils/slugify';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
+import { getPosts } from '@/lib/publicApi';
 export const metadata = {
     title: 'Blog || Farid Zaffalone',
     description:
         'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
 export default async function CategoryPage({ params }) {
-    let categoryTitle = '';
     const { category } = await params;
-    const blogs = allBlogs.filter((blog) => blog.categories?.some((el) => slugify(el) == category));
-    allBlogs[0].categories.forEach((element) => {
-        if (slugify(element) == category) {
-            categoryTitle = element;
-        }
-    });
+    const blogs = await getPosts({ category });
+    const categoryTitle = blogs[0]?.category_name || category;
+
     return (
         <>
             <Header1 />
@@ -29,9 +24,7 @@ export default async function CategoryPage({ params }) {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="breadcrumb-inner text-center">
-                                <h1 className="title split-collab">
-                                    {categoryTitle ? categoryTitle : <> {category}</>}
-                                </h1>
+                                <h1 className="title split-collab">{categoryTitle}</h1>
                                 <ul className="page-list">
                                     <li className="tmp-breadcrumb-item">
                                         <Link href={`/`}>Acceuil</Link>

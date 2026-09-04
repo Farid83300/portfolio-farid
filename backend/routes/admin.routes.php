@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\Admin\CategoryController;
 use App\Controllers\Admin\ChatMessageController;
 use App\Controllers\Admin\CommentController;
 use App\Controllers\Admin\DashboardController;
@@ -8,6 +9,8 @@ use App\Controllers\Admin\NewsletterController;
 use App\Controllers\Admin\PostController;
 use App\Controllers\Admin\ProjectController;
 use App\Controllers\Admin\SecurityController;
+use App\Controllers\Admin\TagController;
+use App\Controllers\Admin\UploadController;
 use App\Middlewares\AuthMiddleware;
 
 /** @var \App\Core\Router $router */
@@ -77,6 +80,40 @@ $router->put('/admin/projects/{id}', function ($request, $id) {
 $router->delete('/admin/projects/{id}', function ($request, $id) {
     AuthMiddleware::handle();
     (new ProjectController())->destroy($request, $id);
+});
+
+// Upload d'images
+$router->post('/admin/uploads', function ($request) {
+    AuthMiddleware::handle();
+    (new UploadController())->store($request);
+});
+
+// Catégories (articles)
+$router->get('/admin/categories', function ($request) {
+    AuthMiddleware::handle();
+    (new CategoryController())->index($request);
+});
+$router->post('/admin/categories', function ($request) {
+    AuthMiddleware::handle();
+    (new CategoryController())->store($request);
+});
+$router->delete('/admin/categories/{id}', function ($request, $id) {
+    AuthMiddleware::handle();
+    (new CategoryController())->destroy($request, $id);
+});
+
+// Tags (articles)
+$router->get('/admin/tags', function ($request) {
+    AuthMiddleware::handle();
+    (new TagController())->index($request);
+});
+$router->post('/admin/tags', function ($request) {
+    AuthMiddleware::handle();
+    (new TagController())->store($request);
+});
+$router->delete('/admin/tags/{id}', function ($request, $id) {
+    AuthMiddleware::handle();
+    (new TagController())->destroy($request, $id);
 });
 
 // Commentaires blog

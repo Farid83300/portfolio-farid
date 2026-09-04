@@ -2,6 +2,8 @@
 
 use App\Controllers\Admin\AuthController;
 use App\Controllers\Public\ContactController;
+use App\Controllers\Public\PostController;
+use App\Controllers\Public\ProjectController;
 
 /** @var \App\Core\Router $router */
 
@@ -11,4 +13,18 @@ $router->post('/admin/login', function ($request) {
 
 $router->post('/contact', function ($request) {
     (new ContactController())->store($request);
+});
+
+$router->get('/posts', function ($request) {
+    (new PostController())->index($request);
+});
+$router->get('/posts/{slug}', function ($request, $slug) {
+    (new PostController())->show($request, $slug);
+});
+
+$router->get('/projects', function ($request) {
+    (new ProjectController())->index($request);
+});
+$router->get('/projects/{slug}', function ($request, $slug) {
+    (new ProjectController())->show($request, $slug);
 });

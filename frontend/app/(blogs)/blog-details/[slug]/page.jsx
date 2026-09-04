@@ -2,17 +2,21 @@ import BlogDetails from '@/components/blog/BlogDetails';
 import Copyright from '@/components/footers/Copyright';
 import Footer3 from '@/components/footers/Footer3';
 import Header1 from '@/components/headers/Header1';
-import { allBlogs } from '@/data/blogs';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
+import { getPost } from '@/lib/publicApi';
+import { notFound } from 'next/navigation';
 export const metadata = {
     title: 'Blog || Farid Zaffalone',
     description: 'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
 export default async function page({ params }) {
     const { slug } = await params;
-    const blog = allBlogs.find((blog) => blog.slug == slug) || allBlogs[0];
+    const blog = await getPost(slug);
+    if (!blog) {
+        notFound();
+    }
     return (
         <>
             <Header1 />

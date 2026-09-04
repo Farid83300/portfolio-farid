@@ -1,19 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
-import { blogData } from '@/data/blogs';
 import BlogSidebar from './BlogSidebar';
+import { uploadUrl } from '@/lib/publicApi';
 
 import Link from 'next/link';
-export default function Blogs({ allBlogs = blogData, isLight = false }) {
+export default function Blogs({ allBlogs = [], isLight = false }) {
     return (
         <div className="blog-classic-area-wrapper tmp-section-gap">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8">
-                        {allBlogs.slice(0, 3).map((blog, i) => (
+                        {allBlogs.map((blog, i) => (
                             <div
-                                key={i}
-                                className={`blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in ${i + 1}`}
+                                key={blog.id}
+                                className={`blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in ${(i % 3) + 1}`}
                             >
                                 <div className="img-box">
                                     <Link
@@ -21,15 +21,15 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
                                     >
                                         <Image
                                             className="img-primary hidden-on-mobile"
-                                            alt={'blog.altText'}
-                                            src={blog.imageSrc}
+                                            alt={blog.featured_image_alt || blog.title}
+                                            src={uploadUrl(blog.featured_image)}
                                             width={850}
                                             height={462}
                                         />
                                         <Image
                                             className="img-secondary"
-                                            alt={'blog.altText'}
-                                            src={blog.imageSrc}
+                                            alt={blog.featured_image_alt || blog.title}
+                                            src={uploadUrl(blog.featured_image)}
                                             width={850}
                                             height={462}
                                         />
@@ -38,24 +38,26 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
                                 <div className="blog-classic-content">
                                     <div className="blog-classic-tag">
                                         <ul>
-                                            <li>
-                                                <div className="tag-wrap">
-                                                    <i className="fa-solid fa-tag" />
-                                                    <h4 className="tag-title">Web design</h4>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="tag-wrap">
-                                                    <i className="fa-regular fa-comment" />
-                                                    <h4 className="tag-title">Commentaires (05)</h4>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="tag-wrap">
-                                                    <i className="fa-solid fa-calendar-day" />
-                                                    <h4 className="tag-title">Commentaires (05)</h4>
-                                                </div>
-                                            </li>
+                                            {blog.category_name && (
+                                                <li>
+                                                    <div className="tag-wrap">
+                                                        <i className="fa-solid fa-tag" />
+                                                        <h4 className="tag-title">{blog.category_name}</h4>
+                                                    </div>
+                                                </li>
+                                            )}
+                                            {blog.published_at && (
+                                                <li>
+                                                    <div className="tag-wrap">
+                                                        <i className="fa-solid fa-calendar-day" />
+                                                        <h4 className="tag-title">
+                                                            {new Date(blog.published_at).toLocaleDateString(
+                                                                'fr-FR'
+                                                            )}
+                                                        </h4>
+                                                    </div>
+                                                </li>
+                                            )}
                                         </ul>
                                     </div>
                                     <h2 className="title">
@@ -65,7 +67,7 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
                                             {blog.title}
                                         </Link>
                                     </h2>
-                                    <p className="para">{blog.description}</p>
+                                    <p className="para">{blog.excerpt}</p>
                                     <div className="tmp-button-here">
                                         <Link
                                             className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
@@ -85,27 +87,7 @@ export default function Blogs({ allBlogs = blogData, isLight = false }) {
                                 </div>
                             </div>
                         ))}
-                        {allBlogs.length ? (
-                            <div className="tmp-pagination-button">
-                                <a href="#" className="pagination-btn">
-                                    <i className="fa-sharp fa-regular fa-arrow-left" />
-                                </a>
-                                <a href="#" className="pagination-btn active">
-                                    1
-                                </a>
-                                <a href="#" className="pagination-btn">
-                                    2
-                                </a>
-                                <a href="#" className="pagination-btn">
-                                    3
-                                </a>
-                                <a href="#" className="pagination-btn">
-                                    <i className="fa-sharp fa-regular fa-arrow-right" />
-                                </a>
-                            </div>
-                        ) : (
-                            <h3 className="text-center">Aucun Blogs Trouvé</h3>
-                        )}
+                        {!allBlogs.length && <h3 className="text-center">Aucun article trouvé</h3>}
                     </div>
                     <div className="col-lg-4">
                         <BlogSidebar isLight={isLight} />

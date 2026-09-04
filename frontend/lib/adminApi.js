@@ -48,6 +48,35 @@ export async function adminFetch(path, options = {}) {
     return data;
 }
 
+export async function adminUploadFile(file, dir) {
+    const token = getToken();
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('dir', dir);
+
+    const res = await fetch(`${API_URL}/admin/uploads`, {
+        method: 'POST',
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+        body: formData,
+    });
+
+    if (res.status === 401) {
+        clearToken();
+        if (typeof window !== 'undefined') {
+            window.location.href = '/admin/login';
+        }
+        throw new Error('Non autorisé');
+    }
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+        throw new Error(data.error || "Échec de l'upload");
+    }
+
+    return data;
+}
+
 export function decodeToken(token) {
     try {
         const payload = token.split('.')[1];

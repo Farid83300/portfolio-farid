@@ -52,7 +52,10 @@ export default function AdminProjectsPage() {
                             <tr>
                                 <th>Titre</th>
                                 <th>Slug</th>
-                                <th>Lien</th>
+                                <th>Catégorie</th>
+                                <th>Date</th>
+                                <th>Ordre</th>
+                                <th>Vues</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -61,7 +64,14 @@ export default function AdminProjectsPage() {
                                 <tr key={p.id}>
                                     <td>{p.title}</td>
                                     <td>{p.slug}</td>
-                                    <td>{p.link || '—'}</td>
+                                    <td>{p.category || '—'}</td>
+                                    <td>
+                                        {p.project_date
+                                            ? new Date(p.project_date).toLocaleDateString('fr-FR')
+                                            : '—'}
+                                    </td>
+                                    <td>{p.sort_order}</td>
+                                    <td>{p.views_count}</td>
                                     <td>
                                         <div className={styles.actions}>
                                             <Link

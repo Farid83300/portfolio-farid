@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Core\Request;
 use App\Core\Response;
 use App\Models\Project;
+use App\Support\Slugger;
 
 class ProjectController
 {
@@ -29,10 +30,12 @@ class ProjectController
     {
         $data = $request->getBody();
 
-        if (empty($data['title']) || empty($data['slug']) || empty($data['description'])) {
-            Response::json(['error' => 'Titre, slug et description requis'], 400);
+        if (empty($data['title'])) {
+            Response::json(['error' => 'Titre requis'], 400);
             return;
         }
+
+        $data['slug'] = !empty($data['slug']) ? $data['slug'] : Slugger::slugify($data['title']);
 
         $id = Project::create($data);
         Response::json(Project::find($id), 201);
@@ -47,10 +50,12 @@ class ProjectController
 
         $data = $request->getBody();
 
-        if (empty($data['title']) || empty($data['slug']) || empty($data['description'])) {
-            Response::json(['error' => 'Titre, slug et description requis'], 400);
+        if (empty($data['title'])) {
+            Response::json(['error' => 'Titre requis'], 400);
             return;
         }
+
+        $data['slug'] = !empty($data['slug']) ? $data['slug'] : Slugger::slugify($data['title']);
 
         Project::update((int) $id, $data);
         Response::json(Project::find((int) $id), 200);

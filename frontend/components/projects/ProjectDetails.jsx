@@ -1,7 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Appointment from './Appointment';
+import { uploadUrl } from '@/lib/publicApi';
 export default function ProjectDetails({ portfolioItem }) {
+    const gallery = portfolioItem.gallery?.length
+        ? portfolioItem.gallery
+        : portfolioItem.thumbnail
+          ? [{ image: portfolioItem.thumbnail, alt: portfolioItem.title }]
+          : [];
+
     return (
         <div className="project-details-area-wrapper tmp-section-gap">
             <div className="container">
@@ -9,8 +16,8 @@ export default function ProjectDetails({ portfolioItem }) {
                     <div className="col-lg-12">
                         <div className="project-details-thumnail-wrap">
                             <Image
-                                alt="thumbnail"
-                                src={portfolioItem.imageSrc}
+                                alt={portfolioItem.title}
+                                src={uploadUrl(portfolioItem.cover_image || portfolioItem.thumbnail)}
                                 width={1290}
                                 height={560}
                             />
@@ -19,106 +26,66 @@ export default function ProjectDetails({ portfolioItem }) {
                     <div className="col-lg-8">
                         <div className="project-details-content-wrap">
                             <h2 className="title">{portfolioItem.title}</h2>
-                            <p className="docs">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s, when an unknown printer took a galltype and
-                                scrambled it to make a type specimen book. It has survived not only
-                                five centuries tinto electronic typesetting remaining essentially
-                                unchanged
-                            </p>
-                            <p className="docs">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s, when an unknown print
-                            </p>
-                            <div className="check-box-wrap">
-                                <ul>
-                                    <li>
-                                        <h4 className="check-box-item">
-                                            <span>
-                                                <i className="fa-solid fa-circle-check" />
-                                            </span>
-                                            Ui/visual Design
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4 className="check-box-item">
-                                            <span>
-                                                <i className="fa-solid fa-circle-check" />
-                                            </span>
-                                            App Development
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4 className="check-box-item">
-                                            <span>
-                                                <i className="fa-solid fa-circle-check" />
-                                            </span>
-                                            Software Developer
-                                        </h4>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h2 className="mini-title">Elevate Your Business with IT Solutions</h2>
-                            <p className="docs">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s, when an unknown printer took a galltype and
-                                scrambled it to make a type specimen book. It has survived not only
-                                five centuries tinto electronic typesetting remaining essentially
-                                unchanged
-                            </p>
-                            <div className="project-details-swiper-wrapper">
-                                <div className="swiper project-details-swiper">
-                                    <div className="swiper-wrapper">
-                                        <div className="swiper-slide">
-                                            <div className="project-details-img">
-                                                <Image
-                                                    alt="swiper-img"
-                                                    src="/assets/images/projects-details/project-detials-swiper-img-1.jpg"
-                                                    width={410}
-                                                    height={295}
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="swiper-slide">
-                                            <div className="project-details-img">
-                                                <Image
-                                                    alt="swiper-img"
-                                                    src="/assets/images/projects-details/project-detials-swiper-img-2.png"
-                                                    width={410}
-                                                    height={295}
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="swiper-slide">
-                                            <div className="project-details-img">
-                                                <Image
-                                                    alt="swiper-img"
-                                                    src="/assets/images/projects-details/project-detials-swiper-img-1.jpg"
-                                                    width={410}
-                                                    height={295}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
+                            {portfolioItem.subtitle && <p className="docs">{portfolioItem.subtitle}</p>}
+                            {portfolioItem.description && (
+                                <div
+                                    className="docs"
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{ __html: portfolioItem.description }}
+                                />
+                            )}
+                            {portfolioItem.features?.length > 0 && (
+                                <div className="check-box-wrap">
+                                    <ul>
+                                        {portfolioItem.features.map((feature, i) => (
+                                            <li key={i}>
+                                                <h4 className="check-box-item">
+                                                    <span>
+                                                        <i className="fa-solid fa-circle-check" />
+                                                    </span>
+                                                    {feature}
+                                                </h4>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <div className="project-details-swiper-btn">
-                                    <div className="project-swiper-button-prev">
-                                        <span>
-                                            <i className="fa-solid fa-arrow-left" />
-                                        </span>
-                                        Précédent
+                            )}
+                            {gallery.length > 0 && (
+                                <div className="project-details-swiper-wrapper">
+                                    <div className="swiper project-details-swiper">
+                                        <div className="swiper-wrapper">
+                                            {gallery.map((item, i) => (
+                                                <div className="swiper-slide" key={i}>
+                                                    <div className="project-details-img">
+                                                        <Image
+                                                            alt={item.alt || portfolioItem.title}
+                                                            src={uploadUrl(item.image)}
+                                                            width={410}
+                                                            height={295}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                    <div className="project-swiper-button-next">
-                                        Suivant{' '}
-                                        <span>
-                                            <i className="fa-solid fa-arrow-right" />
-                                        </span>
-                                    </div>
+                                    {gallery.length > 1 && (
+                                        <div className="project-details-swiper-btn">
+                                            <div className="project-swiper-button-prev">
+                                                <span>
+                                                    <i className="fa-solid fa-arrow-left" />
+                                                </span>
+                                                Précédent
+                                            </div>
+                                            <div className="project-swiper-button-next">
+                                                Suivant{' '}
+                                                <span>
+                                                    <i className="fa-solid fa-arrow-right" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
-                            </div>
+                            )}
                         </div>
                         {/* Tpm Get In touch start */}
                         <Appointment />
@@ -131,17 +98,47 @@ export default function ProjectDetails({ portfolioItem }) {
                             </div>
                             <div className="body">
                                 <div className="project-details-info">
-                                    Nom: <span>Hosting vps</span>
+                                    Nom: <span>{portfolioItem.title}</span>
                                 </div>
-                                <div className="project-details-info">
-                                    Auteur: <span>Nadimul Islam</span>
-                                </div>
-                                <div className="project-details-info">
-                                    Date: <span>23 January,2024</span>
-                                </div>
-                                <div className="project-details-info">
-                                    Tags: <span>Host Web Design</span>
-                                </div>
+                                {portfolioItem.client && (
+                                    <div className="project-details-info">
+                                        Client: <span>{portfolioItem.client}</span>
+                                    </div>
+                                )}
+                                {portfolioItem.role && (
+                                    <div className="project-details-info">
+                                        Rôle: <span>{portfolioItem.role}</span>
+                                    </div>
+                                )}
+                                {portfolioItem.project_date && (
+                                    <div className="project-details-info">
+                                        Date:{' '}
+                                        <span>
+                                            {new Date(portfolioItem.project_date).toLocaleDateString(
+                                                'fr-FR'
+                                            )}
+                                        </span>
+                                    </div>
+                                )}
+                                {portfolioItem.tags && (
+                                    <div className="project-details-info">
+                                        Tags: <span>{portfolioItem.tags}</span>
+                                    </div>
+                                )}
+                                {portfolioItem.live_url && (
+                                    <div className="project-details-info">
+                                        Live:{' '}
+                                        <span>
+                                            <a
+                                                href={portfolioItem.live_url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                Voir le site
+                                            </a>
+                                        </span>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

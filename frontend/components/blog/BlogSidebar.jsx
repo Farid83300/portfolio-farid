@@ -1,11 +1,31 @@
-import { allBlogs, categories, posts, tags } from '@/data/blogs';
 import Image from 'next/image';
 import React from 'react';
 
 import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
+import { getPosts, uploadUrl } from '@/lib/publicApi';
 
-export default function BlogSidebar({ isLight = false }) {
+export default async function BlogSidebar({ isLight = false }) {
+    const allBlogs = await getPosts();
+
+    const categoryMap = new Map();
+    const tagMap = new Map();
+    allBlogs.forEach((blog) => {
+        if (blog.category_name) {
+            categoryMap.set(blog.category_slug, {
+                title: blog.category_name,
+                slug: blog.category_slug,
+                count: (categoryMap.get(blog.category_slug)?.count || 0) + 1,
+            });
+        }
+        (blog.tags || []).forEach((tag) => {
+            tagMap.set(tag.slug, tag);
+        });
+    });
+    const categories = Array.from(categoryMap.values());
+    const tags = Array.from(tagMap.values());
+    const recentPosts = allBlogs.slice(0, 3);
+
     return (
         <div className="tmp-sidebar">
             <div className="signle-side-bar search-area tmponhover">
@@ -23,24 +43,17 @@ export default function BlogSidebar({ isLight = false }) {
                     <h3 className="title">Categorie</h3>
                 </div>
                 <div className="body">
-                    {categories.map((post, index) => (
+                    {categories.map((cat) => (
                         <Link
-                            href={`/blog${isLight ? '-white' : ''}/category/${slugify(post.title)}`}
+                            href={`/blog${isLight ? '-white' : ''}/category/${cat.slug}`}
                             className="single-post"
-                            key={index}
+                            key={cat.slug}
                         >
                             <span className="single-post-left">
                                 <i className="fa-solid fa-arrow-right" />
-                                <span className="post-title">{post.title}</span>
+                                <span className="post-title">{cat.title}</span>
                             </span>
-                            <span className="post-num">
-                                (
-                                {
-                                    allBlogs.filter((blog) => blog.categories?.includes(post.title))
-                                        .length
-                                }
-                                )
-                            </span>
+                            <span className="post-num">({cat.count})</span>
                         </Link>
                     ))}
                 </div>
@@ -50,15 +63,20 @@ export default function BlogSidebar({ isLight = false }) {
                     <h3 className="title">Post Récent</h3>
                 </div>
                 <div className="body">
-                    {posts.map((post) => (
+                    {recentPosts.map((post) => (
                         <div key={post.id} className="single-post-card tmp-hover-link">
                             <div className="single-post-card-img">
-                                <Image alt="" src={post.imageSrc} width={82} height={92} />
+                                <Image
+                                    alt={post.featured_image_alt || post.title}
+                                    src={uploadUrl(post.featured_image)}
+                                    width={82}
+                                    height={92}
+                                />
                             </div>
                             <div className="single-post-right">
                                 <div className="single-post-top">
                                     <i className="fa-regular fa-folder-open" />
-                                    <p className="post-title">{post.category}</p>
+                                    <p className="post-title">{post.category_name || ''}</p>
                                 </div>
                                 <h3 className="post-title">
                                     <Link
@@ -82,34 +100,40 @@ export default function BlogSidebar({ isLight = false }) {
                         <div className="about-me-details-head">
                             <div className="about-me-img">
                                 <Image
-                                    alt="about-me-user-img"
+                                    alt="Farid Zaffalone"
                                     src="/assets/images/blog/about-me-user-img.png"
                                     width={600}
                                     height={600}
                                 />
                             </div>
                             <div className="about-me-right-content">
-                                <h3 className="title">Fatima Afrafy</h3>
-                                <p className="para">UI/UX Designer</p>
+                                <h3 className="title">Farid Zaffalone</h3>
+                                <p className="para">Développeur Freelance PHP/React & WordPress</p>
                                 <div className="social-link">
-                                    <a href="#">
-                                        <i className="fa-brands fa-instagram" />
+                                    <a href="https://github.com/Farid83300" aria-label="Profil Github">
+                                        <i className="fa-brands fa-github" />
                                     </a>
-                                    <a href="#">
+                                    <a
+                                        href="https://www.linkedin.com/in/farid-zaffalone/"
+                                        aria-label="Profil Linkedin"
+                                    >
                                         <i className="fa-brands fa-linkedin-in" />
                                     </a>
-                                    <a href="#">
+                                    <a href="https://x.com/fzaffalone" aria-label="Profil X">
                                         <i className="fa-brands fa-twitter" />
                                     </a>
-                                    <a href="#">
+                                    <a
+                                        href="https://www.facebook.com/FaridZaffalone"
+                                        aria-label="Profil Facebook"
+                                    >
                                         <i className="fa-brands fa-facebook-f" />
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <p className="about-me-para">
-                            Aliquam eros justo, posuere loborti viverra ullamcorper posuere viverra
-                            .Aliquam eros justo, posuere justo, posuere.
+                            Développeur freelance spécialisé en PHP/React et WordPress, basé à
+                            Draguignan.
                         </p>
                     </div>
                 </div>
@@ -120,13 +144,13 @@ export default function BlogSidebar({ isLight = false }) {
                 </div>
                 <div className="body">
                     <div className="tags-wrapper">
-                        {tags.map((tag, index) => (
+                        {tags.map((tag) => (
                             <Link
-                                href={`/blog${isLight ? '-white' : ''}/tag/${slugify(tag)}`}
+                                href={`/blog${isLight ? '-white' : ''}/tag/${tag.slug}`}
                                 className="tag-link"
-                                key={index}
+                                key={tag.slug}
                             >
-                                {tag}
+                                {tag.name}
                             </Link>
                         ))}
                     </div>

@@ -319,3 +319,107 @@
     padding: 40px 0;
     text-align: center;
 }
+
+.formLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 24px;
+    align-items: start;
+    max-width: none;
+}
+
+.formMain,
+.formAside {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formAside {
+    position: sticky;
+    top: 20px;
+}
+
+.checkboxGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkboxItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--background-color-2);
+    border: 1px solid var(--background-color-4);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--color-text-1);
+    cursor: pointer;
+}
+
+.select {
+    background: var(--background-color-2);
+    border: 1px solid var(--background-color-4);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--color-heading);
+    font-size: 14px;
+    width: 100%;
+}
+
+.inlineAdd {
+    display: flex;
+    gap: 8px;
+}
+
+.inlineAdd .input {
+    flex-grow: 1;
+}
+
+.imagePreview {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 10px;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.galleryItem {
+    position: relative;
+}
+
+.galleryItem img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.galleryRemove {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.hint {
+    color: var(--color-body);
+    font-size: 12px;
+}
