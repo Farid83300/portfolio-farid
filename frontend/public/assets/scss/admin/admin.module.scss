@@ -36,12 +36,15 @@
 }
 
 .menuToggle {
+    width: auto;
+    flex-shrink: 0;
     background: transparent;
     border: none;
     color: var(--color-heading);
     font-size: 22px;
     padding: 6px;
     cursor: pointer;
+    line-height: 1;
 }
 
 .sidebarOverlay {
@@ -271,6 +274,7 @@
 }
 
 .actionLink {
+    width: auto;
     background: none;
     border: none;
     padding: 0;
@@ -291,6 +295,7 @@
 }
 
 .btn {
+    width: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
