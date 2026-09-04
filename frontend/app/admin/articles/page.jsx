@@ -88,12 +88,12 @@ export default function AdminArticlesPage() {
                                         <div className={styles.actions}>
                                             <Link
                                                 href={`/admin/articles/${p.id}/edit`}
-                                                className={`${styles.btn} ${styles.btnGhost}`}
+                                                className={styles.actionLink}
                                             >
                                                 Modifier
                                             </Link>
                                             <button
-                                                className={`${styles.btn} ${styles.btnDanger}`}
+                                                className={styles.actionLinkDanger}
                                                 onClick={() => remove(p.id)}
                                             >
                                                 Supprimer
