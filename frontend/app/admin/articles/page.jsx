@@ -48,6 +48,15 @@ export default function AdminArticlesPage() {
                     <div className={styles.emptyState}>Aucun article pour le moment.</div>
                 ) : (
                     <table className={styles.table}>
+                        <colgroup>
+                            <col style={{ width: '110px' }} />
+                            <col style={{ width: 'auto' }} />
+                            <col style={{ width: '16%' }} />
+                            <col style={{ width: '12%' }} />
+                            <col style={{ width: '105px' }} />
+                            <col style={{ width: '60px' }} />
+                            <col style={{ width: '140px' }} />
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>Statut</th>

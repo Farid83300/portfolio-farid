@@ -48,6 +48,15 @@ export default function AdminProjectsPage() {
                     <div className={styles.emptyState}>Aucun projet pour le moment.</div>
                 ) : (
                     <table className={styles.table}>
+                        <colgroup>
+                            <col style={{ width: 'auto' }} />
+                            <col style={{ width: '14%' }} />
+                            <col style={{ width: '12%' }} />
+                            <col style={{ width: '105px' }} />
+                            <col style={{ width: '60px' }} />
+                            <col style={{ width: '60px' }} />
+                            <col style={{ width: '140px' }} />
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>Titre</th>
