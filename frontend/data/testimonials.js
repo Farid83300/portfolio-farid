@@ -1,9 +1,9 @@
 export const testimonials = [
     {
         id: 1,
-        quote: "Working with themespark was an absolute pleasure! They understood my vision immediately and brought it to life even better than I'd imagined.",
-        name: 'Cameron Williamson',
-        role: 'Ui/Ux Designer',
+        quote: "Farid a fait un code simple et efficace, qu'il comprend et sait expliquer. Il a su aller au delà des attentes en appliquant un de mes conseils.",
+        name: 'François Jaffrennou',
+        role: 'Développeur Salesforce',
         bgImage: '/assets/images/testimonial/bg-image-1png.png',
         width: 630,
         height: 720,
@@ -11,23 +11,13 @@ export const testimonials = [
     },
     {
         id: 2,
-        quote: 'ThemesPark is incredibly talented and detail-oriented. They took the time to understand my brand and created something truly unique',
-        name: 'Cameron Williamson',
-        role: 'Ui/Ux Designer',
+        quote: 'Farid a bien compris ce qu\'il a fait et comment le code fonctionne. Il a fait la démo du respect des recommendation technique.',
+        name: 'David Grillon',
+        role: 'Chef de projet IT',
         bgImage: '/assets/images/testimonial/bg-image-2.png',
         width: 444,
         height: 484,
         animationClass: 'animation-order-2',
-    },
-    {
-        id: 3,
-        quote: "A personal portfolio is a curated collection of an individual's professional work, showcasing their skills, experience, and achievements",
-        name: 'Cameron Williamson',
-        role: 'Ui/Ux Designer',
-        bgImage: '/assets/images/testimonial/bg-image-1png.png',
-        width: 630,
-        height: 720,
-        animationClass: 'animation-order-3',
     },
 ];
 

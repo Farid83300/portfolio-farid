@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { educationExperienceData } from '@/data/education';
+import { educationExperienceData, experiencesData } from '@/data/education';
 
 export default function Education() {
     return (
@@ -56,25 +56,17 @@ export default function Education() {
                                         />
                                     </span>
                                 </h2>
-                                <div className="experience-content tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <p className="ex-subtitle">experience</p>
-                                    <h2 className="ex-name">Fatima Asrafy</h2>
-                                    <h3 className="ex-title">UI/UX Designer</h3>
-                                    <p className="ex-para">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit
-                                        esse cillum desi dolore eu fugiat nulla pariatu Duis aute
-                                        irure
-                                    </p>
-                                </div>
-                                <div className="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                    <p className="ex-subtitle">experience</p>
-                                    <h2 className="ex-name">Fatima Asrafy</h2>
-                                    <h3 className="ex-title">UI/UX Designer</h3>
-                                    <p className="ex-para">
-                                        Interested in working together? Let’s bring your ideas to
-                                        life! Contact me, and let’s start building something.
-                                    </p>
-                                </div>
+                                {experiencesData.map((item, index) => (
+                                    <div
+                                        className={`experience-content tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}
+                                        key={index}
+                                    >
+                                        <p className="ex-subtitle">experience</p>
+                                        <h2 className="ex-name">{item.name}</h2>
+                                        <h3 className="ex-title">{item.title}</h3>
+                                        <p className="ex-para">{item.description}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

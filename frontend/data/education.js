@@ -29,6 +29,20 @@ export const educationExperienceData = [
     },
 ];
 
+export const experiencesData = [
+    {
+        name: 'Développeur Web / WordPress (2 ans)',
+        title: 'Azur webAgency',
+        description: 'Freelance développeur Web et CMS basé à Draguignan.',
+    },
+    {
+        name: 'Webmaster Dropshipper Shopify (8 ans)',
+        title: 'E-commerçants',
+        description:
+            'Auto-entreprise Alpha Shop de commerce en ligne, divers produits, accessoires smartphone, bijoux moderne, high-tech.',
+    },
+];
+
 export const educationExperience = [
     {
         title: 'Trainer Marketing',
