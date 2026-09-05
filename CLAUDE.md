@@ -87,8 +87,6 @@ Since MAMP symlinks the whole `backend/` folder (not just `public/`) into htdocs
 
 Database schema: run `database/migrations.sql`, then `database/migrations_v2.sql` (adds `users.totp_secret`/`totp_enabled`, `chat_messages`, `newsletter_subscribers`), then `database/migrations_v3.sql` (adds `categories`, `tags`, `post_tags`; renames `posts.cover_image` → `featured_image` and adds `featured_image_alt`/`excerpt`/`category_id`/`status`/`views_count`/`meta_*`; adds `projects.category`/`subtitle`/`client`/`role`/`project_date`/`tags`/`features`/`thumbnail`/`cover_image`/`live_url`/`gallery`/`meta_*`/`views_count`/`sort_order` and drops the old `projects.image_url`/`link`), then `database/migrations_v4.sql` (adds `rate_limits`, used by `Services/RateLimiter.php` to throttle login/2FA brute-force) against the DB named in `.env` (`DB_NAME`). Migrations are plain numbered SQL files applied by hand — there's no migration runner/tracking table, so check all four files before assuming the schema is up to date.
 
-`backend/scripts/migrate_from_reeni.php` is a one-off (but idempotent/re-runnable) script that imported the user's real content from their previous site (`portfolio-reeni`, a separate DB + separate MAMP-hosted app) into this schema: 6 posts, 4 projects, 6 categories, 14 tags, plus the associated image files copied into `public/uploads/`. It also reverses a double-UTF-8-encoding bug (`fixMojibake()`) present in a few fields of the source data. Not part of the request lifecycle — run manually with `php scripts/migrate_from_reeni.php` only if re-importing from that source is ever needed again; it upserts by slug so re-running it is safe.
-
 ### Architecture
 
 Minimal hand-rolled MVC, PSR-4 autoloaded under `App\` → `src/`:
