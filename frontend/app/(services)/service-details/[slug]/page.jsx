@@ -7,11 +7,27 @@ import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 import { notFound } from 'next/navigation';
-export const metadata = {
-    title: 'Service || Farid Zaffalone',
-    description:
-        'Détail de service proposé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
-};
+
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    const serviceItem = await getService(slug);
+
+    if (!serviceItem) {
+        return {
+            title: 'Service || Farid Zaffalone',
+            description:
+                'Détail de service proposé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+        };
+    }
+
+    return {
+        title: serviceItem.meta_title || `${serviceItem.title} || Farid Zaffalone`,
+        description:
+            serviceItem.meta_description ||
+            'Détail de service proposé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    };
+}
+
 export default async function page({ params }) {
     const { slug } = await params;
     const serviceItem = await getService(slug);
@@ -36,7 +52,6 @@ export default async function page({ params }) {
                                     </li>
                                     <li className="tmp-breadcrumb-item active">Service Details</li>
                                 </ul>
-                                {/* <div class="circle-1"></div> */}
                             </div>
                         </div>
                     </div>
