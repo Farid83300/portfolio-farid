@@ -2,10 +2,11 @@ import Copyright from '@/components/footers/Copyright';
 import Footer3 from '@/components/footers/Footer3';
 import Header1 from '@/components/headers/Header1';
 import ServiceDetails from '@/components/services/ServiceDetails';
-import { allServices } from '@/data/services';
+import { getService } from '@/lib/publicApi';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
+import { notFound } from 'next/navigation';
 export const metadata = {
     title: 'Service || Farid Zaffalone',
     description:
@@ -13,7 +14,10 @@ export const metadata = {
 };
 export default async function page({ params }) {
     const { slug } = await params;
-    const serviceItem = allServices.find((blog) => blog.slug == slug) || allServices[0];
+    const serviceItem = await getService(slug);
+    if (!serviceItem) {
+        notFound();
+    }
     return (
         <>
             <Header1 />

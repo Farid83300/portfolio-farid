@@ -15,7 +15,7 @@ class UploadService
         'image/gif',
     ];
     private const MAX_SIZE_BYTES = 4 * 1024 * 1024;
-    private const ALLOWED_DIRS = ['articles', 'projects', 'projects/gallery'];
+    private const ALLOWED_DIRS = ['articles', 'projects', 'projects/gallery', 'services'];
 
     public function store(array $file, string $dir): string
     {

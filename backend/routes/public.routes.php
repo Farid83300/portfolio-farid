@@ -5,6 +5,7 @@ use App\Controllers\Public\ContactController;
 use App\Controllers\Public\NewsletterController;
 use App\Controllers\Public\PostController;
 use App\Controllers\Public\ProjectController;
+use App\Controllers\Public\ServiceController;
 
 /** @var \App\Core\Router $router */
 
@@ -32,4 +33,11 @@ $router->get('/projects', function ($request) {
 });
 $router->get('/projects/{slug}', function ($request, $slug) {
     (new ProjectController())->show($request, $slug);
+});
+
+$router->get('/services', function ($request) {
+    (new ServiceController())->index($request);
+});
+$router->get('/services/{slug}', function ($request, $slug) {
+    (new ServiceController())->show($request, $slug);
 });

@@ -9,6 +9,7 @@ use App\Controllers\Admin\NewsletterController;
 use App\Controllers\Admin\PostController;
 use App\Controllers\Admin\ProjectController;
 use App\Controllers\Admin\SecurityController;
+use App\Controllers\Admin\ServiceController;
 use App\Controllers\Admin\TagController;
 use App\Controllers\Admin\UploadController;
 use App\Middlewares\AuthMiddleware;
@@ -80,6 +81,28 @@ $router->put('/admin/projects/{id}', function ($request, $id) {
 $router->delete('/admin/projects/{id}', function ($request, $id) {
     AuthMiddleware::handle();
     (new ProjectController())->destroy($request, $id);
+});
+
+// Services
+$router->get('/admin/services', function ($request) {
+    AuthMiddleware::handle();
+    (new ServiceController())->index($request);
+});
+$router->get('/admin/services/{id}', function ($request, $id) {
+    AuthMiddleware::handle();
+    (new ServiceController())->show($request, $id);
+});
+$router->post('/admin/services', function ($request) {
+    AuthMiddleware::handle();
+    (new ServiceController())->store($request);
+});
+$router->put('/admin/services/{id}', function ($request, $id) {
+    AuthMiddleware::handle();
+    (new ServiceController())->update($request, $id);
+});
+$router->delete('/admin/services/{id}', function ($request, $id) {
+    AuthMiddleware::handle();
+    (new ServiceController())->destroy($request, $id);
 });
 
 // Upload d'images

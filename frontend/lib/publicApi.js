@@ -36,4 +36,12 @@ export async function getProject(slug) {
     return publicFetch(`/projects/${slug}`);
 }
 
+export async function getServices() {
+    return (await publicFetch('/services')) || [];
+}
+
+export async function getService(slug) {
+    return publicFetch(`/services/${slug}`);
+}
+
 export { API_URL };

@@ -1,6 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
-export default function ServiceDetails({ serviceItem }) {
+import Link from 'next/link';
+import { getServices, uploadUrl } from '@/lib/publicApi';
+
+export default async function ServiceDetails({ serviceItem }) {
+    const {
+        title,
+        slug,
+        image,
+        image_alt: imageAlt,
+        description,
+        sections = [],
+    } = serviceItem;
+
+    const otherServices = (await getServices()).filter((service) => service.slug !== slug);
+
     return (
         <div className="service-details-area-wrapper tmp-section-gap">
             <div className="container">
@@ -8,98 +22,50 @@ export default function ServiceDetails({ serviceItem }) {
                     <div className="col-lg-8">
                         <div className="service-thumnail-wrap">
                             <Image
-                                alt="thumnail-img"
-                                src="/assets/images/services/service-detials-thumnail-wrap.png"
+                                alt={imageAlt || `Illustration du service ${title}`}
+                                src={
+                                    image
+                                        ? uploadUrl(image)
+                                        : '/assets/images/services/service-detials-thumnail-wrap.png'
+                                }
                                 width={850}
                                 height={476}
+                                style={{ aspectRatio: '850 / 476', objectFit: 'cover' }}
                             />
                         </div>
-                        <h2 className="title split-collab">{serviceItem.title}</h2>
-                        <p className="doc-para">
-                            Web designing in a powerful way of just not an only professions,
-                            however, in a passion for our Company. We have to a tendency to believe
-                            the idea that smart looking of any websitet in on visitors.Web designing
-                            in a powerful way of just not an only profession Web designing in a
-                            powerful way of just not an only
-                        </p>
-                        <h2 className="title-mini split-collab">
-                            My Experts Areas where i gained skill
-                        </h2>
-                        <p className="doc-para">
-                            Web designing in a powerful way of just not an only professions,
-                            however, in a passion for our Company. We have to a tendency to believe
-                            the idea that smart looking of any websitet in on visitors.Web designing
-                            in a powerful way of just not an only profession Web designing in a
-                            powerful way of just not an only
-                        </p>
-                        <p className="doc-para">
-                            Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper
-                            posuere viverra .Aliquam eros justo, posuere lobortis, viverra laoreet
-                            augue mattis fermentum ullamcorper viverra laoreet Aliquam eros
-                        </p>
-                        <h2 className="title-mini split-collab">
-                            My Experts Areas where i gained skill
-                        </h2>
-                        <p className="doc-para">
-                            Web designing in a powerful way of just not an only professions,
-                            however, in a passion for our Company. We have to a tendency to believe
-                            the idea that smart looking of any websitet in on visitors.Web designing
-                            in a powerful way of just not an only profession Web designing in a
-                            powerful way of just not an only
-                        </p>
-                        <p className="doc-para">
-                            Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper
-                            posuere viverra .Aliquam eros justo, posuere lobortis, viverra laoreet
-                            augue mattis fermentum ullamcorper viverra laoreet Aliquam eros
-                        </p>
-                        <p className="doc-para">
-                            viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo,
-                            posuere lobortis, viverra laoreet augue mattis fermentum ullamcorper
-                            viverra laoreet Aliquam eros
-                        </p>
+                        <h2 className="title split-collab">{title}</h2>
+                        {description && <p className="doc-para">{description}</p>}
+                        {sections.map((section, index) => (
+                            <React.Fragment key={index}>
+                                {section.heading && (
+                                    <h2 className="title-mini split-collab">{section.heading}</h2>
+                                )}
+                                {(section.paragraphs || []).map((paragraph, paragraphIndex) => (
+                                    <p className="doc-para" key={paragraphIndex}>
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </React.Fragment>
+                        ))}
                     </div>
                     <div className="col-lg-4">
                         <div className="signle-side-bar service-list-area tmponhover">
                             <div className="header">
-                                <h3 className="title">Service Catégorie</h3>
+                                <h3 className="title">Autres services</h3>
                             </div>
                             <div className="body">
-                                <a href="#" className="single-service">
-                                    <p className="service-title">TechPros</p>
-                                    <span className="service-icon">
-                                        <i className="fa-solid fa-angle-right" />
-                                    </span>
-                                </a>
-                                <a href="#" className="single-service">
-                                    <p className="service-title">NetWorks</p>
-                                    <span className="service-icon">
-                                        <i className="fa-solid fa-angle-right" />
-                                    </span>
-                                </a>
-                                <a href="#" className="single-service">
-                                    <p className="service-title">DataMasters</p>
-                                    <span className="service-icon">
-                                        <i className="fa-solid fa-angle-right" />
-                                    </span>
-                                </a>
-                                <a href="#" className="single-service">
-                                    <p className="service-title">Dibetics section</p>
-                                    <span className="service-icon">
-                                        <i className="fa-solid fa-angle-right" />
-                                    </span>
-                                </a>
-                                <a href="#" className="single-service">
-                                    <p className="service-title">DigitalSolutions</p>
-                                    <span className="service-icon">
-                                        <i className="fa-solid fa-angle-right" />
-                                    </span>
-                                </a>
-                                <a href="#" className="single-service">
-                                    <p className="service-title">CodeGenius</p>
-                                    <span className="service-icon">
-                                        <i className="fa-solid fa-angle-right" />
-                                    </span>
-                                </a>
+                                {otherServices.map((service) => (
+                                    <Link
+                                        href={`/service-details/${service.slug}`}
+                                        className="single-service"
+                                        key={service.slug}
+                                    >
+                                        <p className="service-title">{service.title}</p>
+                                        <span className="service-icon">
+                                            <i className="fa-solid fa-angle-right" />
+                                        </span>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
                     </div>

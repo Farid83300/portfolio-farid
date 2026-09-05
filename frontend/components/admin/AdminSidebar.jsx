@@ -19,6 +19,7 @@ export default function AdminSidebar({ counts = {} }) {
         { href: '/admin/comments', label: 'Commentaires Blog', count: counts.comments_pending_count },
         { href: '/admin/articles', label: 'Articles' },
         { href: '/admin/projects', label: 'Projets' },
+        { href: '/admin/services', label: 'Services' },
         { href: '/admin/security', label: 'Sécurité / 2FA' },
     ];
 
