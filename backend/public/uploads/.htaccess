@@ -1,0 +1,19 @@
+# Défense en profondeur : ce dossier ne doit jamais exécuter de scripts,
+# même si un fichier malveillant y était un jour déposé malgré la validation
+# côté PHP (UploadService).
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+<FilesMatch "\.(php|phtml|php\d*|phar|cgi|pl|py|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

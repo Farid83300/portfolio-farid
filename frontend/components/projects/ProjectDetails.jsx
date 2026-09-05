@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import DOMPurify from 'isomorphic-dompurify';
 import Appointment from './Appointment';
 import { uploadUrl } from '@/lib/publicApi';
 export default function ProjectDetails({ portfolioItem }) {
@@ -32,7 +33,7 @@ export default function ProjectDetails({ portfolioItem }) {
                                 <div
                                     className="docs"
                                     // eslint-disable-next-line react/no-danger
-                                    dangerouslySetInnerHTML={{ __html: portfolioItem.description }}
+                                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(portfolioItem.description) }}
                                 />
                             )}
                             {portfolioItem.features?.length > 0 && (

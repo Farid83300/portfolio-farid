@@ -8,6 +8,12 @@ use RuntimeException;
 class UploadService
 {
     private const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+    private const ALLOWED_MIME_TYPES = [
+        'image/jpeg',
+        'image/png',
+        'image/webp',
+        'image/gif',
+    ];
     private const MAX_SIZE_BYTES = 4 * 1024 * 1024;
     private const ALLOWED_DIRS = ['articles', 'projects', 'projects/gallery'];
 
@@ -28,6 +34,17 @@ class UploadService
         $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
         if (!in_array($extension, self::ALLOWED_EXTENSIONS, true)) {
             throw new RuntimeException('Type de fichier non autorisé');
+        }
+
+        // Vérifie le contenu réel du fichier (pas seulement son extension déclarée),
+        // pour empêcher l'upload d'un fichier renommé (ex: script déguisé en .jpg).
+        $mimeType = mime_content_type($file['tmp_name']);
+        if ($mimeType === false || !in_array($mimeType, self::ALLOWED_MIME_TYPES, true)) {
+            throw new RuntimeException('Le contenu du fichier ne correspond pas à une image valide');
+        }
+
+        if (@getimagesize($file['tmp_name']) === false) {
+            throw new RuntimeException('Le contenu du fichier ne correspond pas à une image valide');
         }
 
         $basename = Slugger::slugify(pathinfo($file['name'], PATHINFO_FILENAME));

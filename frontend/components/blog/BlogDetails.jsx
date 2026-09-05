@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import DOMPurify from 'isomorphic-dompurify';
 import BlogSidebar from './BlogSidebar';
 import Comment from './Comment';
 import { uploadUrl } from '@/lib/publicApi';
@@ -51,7 +52,7 @@ export default function BlogDetails({ blog, isLight = false }) {
                                 <div
                                     className="disc"
                                     // eslint-disable-next-line react/no-danger
-                                    dangerouslySetInnerHTML={{ __html: blog.content }}
+                                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
                                 />
                                 {blog.tags?.length > 0 && (
                                     <div className="blog-details-navigation">

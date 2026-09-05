@@ -12,6 +12,7 @@ export default function AdminSecurityPage() {
     const [setupData, setSetupData] = useState(null);
     const [qrDataUrl, setQrDataUrl] = useState('');
     const [code, setCode] = useState('');
+    const [enablePassword, setEnablePassword] = useState('');
     const [password, setPassword] = useState('');
     const [disableCode, setDisableCode] = useState('');
     const [error, setError] = useState('');
@@ -42,11 +43,12 @@ export default function AdminSecurityPage() {
         try {
             const data = await adminFetch('/admin/2fa/enable', {
                 method: 'POST',
-                body: JSON.stringify({ code }),
+                body: JSON.stringify({ code, password: enablePassword }),
             });
             setToken(data.token);
             setEnabled(true);
             setSetupData(null);
+            setEnablePassword('');
             setSuccess('2FA activé avec succès.');
             router.push('/admin');
         } catch (err) {
@@ -144,6 +146,17 @@ export default function AdminSecurityPage() {
                             </div>
                         )}
                         <div className={styles.secretText}>{setupData.secret}</div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="enablePassword">Mot de passe</label>
+                            <input
+                                id="enablePassword"
+                                type="password"
+                                className={styles.input}
+                                value={enablePassword}
+                                onChange={(e) => setEnablePassword(e.target.value)}
+                                required
+                            />
+                        </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="code">Code de confirmation</label>
                             <input

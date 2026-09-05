@@ -1,0 +1,11 @@
+# Ce dossier (racine du backend) est symlinké tel quel dans le htdocs de MAMP,
+# donc tout ce qui n'est pas dans public/ (.env, vendor/, database/, scripts/,
+# composer.*) est servi directement par Apache si on ne le bloque pas ici.
+# public/.htaccess réautorise explicitement l'accès pour son propre sous-dossier.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

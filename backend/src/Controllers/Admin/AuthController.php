@@ -6,6 +6,7 @@ use App\Core\Request;
 use App\Core\Response;
 use App\Models\User;
 use App\Services\AuthService;
+use App\Services\RateLimiter;
 use App\Services\TotpService;
 
 class AuthController
@@ -19,16 +20,27 @@ class AuthController
             return;
         }
 
+        $rateLimiter = new RateLimiter();
+        $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+        $loginKey = 'login:' . $ip . ':' . strtolower($data['email']);
+
+        if ($rateLimiter->tooManyAttempts($loginKey)) {
+            Response::json(['error' => 'Trop de tentatives. Réessayez dans quelques minutes.'], 429);
+            return;
+        }
+
         $user = User::findByEmail($data['email']);
 
         $authService = new AuthService();
 
         if (!$user || !$authService->verifyPassword($data['password'], $user['password'])) {
+            $rateLimiter->hit($loginKey);
             Response::json(['error' => 'Identifiants invalides'], 401);
             return;
         }
 
         if (!$user['totp_enabled']) {
+            $rateLimiter->clear($loginKey);
             $token = $authService->generateToken($user['id'], $user['email'], 'setup_2fa');
             Response::json([
                 'token' => $token,
@@ -44,11 +56,21 @@ class AuthController
             return;
         }
 
+        $totpKey = 'login-2fa:' . $user['id'];
+        if ($rateLimiter->tooManyAttempts($totpKey)) {
+            Response::json(['error' => 'Trop de tentatives. Réessayez dans quelques minutes.'], 429);
+            return;
+        }
+
         $totpService = new TotpService();
         if (!$totpService->verify($user['totp_secret'], $user['email'], (string) $code)) {
+            $rateLimiter->hit($totpKey);
             Response::json(['error' => 'Code 2FA invalide'], 401);
             return;
         }
+
+        $rateLimiter->clear($loginKey);
+        $rateLimiter->clear($totpKey);
 
         $token = $authService->generateToken($user['id'], $user['email'], 'full');
 
