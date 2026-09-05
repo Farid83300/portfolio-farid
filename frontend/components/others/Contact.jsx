@@ -138,7 +138,7 @@ export default function Contact() {
                                                             <input
                                                                 className="input-field"
                                                                 id="contact-phone"
-                                                                placeholder="Téléphone"
+                                                                placeholder="Ton Téléphone"
                                                                 type="number"
                                                                 required
                                                             />
@@ -189,7 +189,7 @@ export default function Contact() {
                                                             >
                                                                 <span className="icon-reverse-wrapper">
                                                                     <span className="btn-text">
-                                                                        Prenez rendez-vous
+                                                                        Prendre rendez-vous
                                                                     </span>
                                                                     <span className="btn-icon">
                                                                         <i className="fa-sharp fa-regular fa-arrow-right" />

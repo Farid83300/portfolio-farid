@@ -39,7 +39,7 @@ export default function Education() {
                                     alt="expert-img"
                                     width={630}
                                     height={479}
-                                    src="/assets/images/experiences/expert-img-two.jpg"
+                                    src="/assets/images/experiences/expert-img 14.36.21.jpg"
                                 />
                             </div>
                         </div>

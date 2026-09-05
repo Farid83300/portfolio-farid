@@ -65,10 +65,10 @@ export default function Contact3() {
                             </span>
                         </h2>
                         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                            Parlons de votre projet...
+                            Parlons de ton projet...
                         </h2>
                         <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                            Vous avez un projet en tête ? Discutons-en ensemble. Je vous réponds sous 24h pour étudier vos besoins et vous proposer la solution la plus adaptée à votre budget.
+                            Tu as un projet en tête ? Discutons-en ensemble. Je te réponds sous 24h pour étudier tes besoins et te proposer la solution la plus adaptée à ton budget.
                         </p>
                     </div>
                     <div className="contact-inner">
@@ -102,7 +102,7 @@ export default function Contact3() {
                                             <input
                                                 className="input-field"
                                                 name="contact-phone"
-                                                placeholder="Téléphone"
+                                                placeholder="Ton Téléphone"
                                                 type="number"
                                                 required
                                             />
@@ -137,7 +137,7 @@ export default function Contact3() {
                                         >
                                             <span className="icon-reverse-wrapper">
                                                 <span className="btn-text">
-                                                    Prenez rendez-vous
+                                                    Prendre rendez-vous
                                                 </span>
                                                 <span className="btn-icon">
                                                     <i className="fa-sharp fa-regular fa-arrow-right" />

@@ -55,7 +55,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                         <div className="col-lg-5">
                             <div className="contact-inner">
                                 <div className="section-head section-head-one-side text-align-left tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <span className="title-left">Parlons de votre projet...</span>
+                                    <span className="title-left">Parlons de ton projet...</span>
                                 </div>
                                 <ul className="ft-link v2">
                                     <li className="tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-link-animation">
@@ -120,7 +120,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                                         className="input-field"
                                                         name="phone"
                                                         id="contact-phone"
-                                                        placeholder="Téléphone"
+                                                        placeholder="Ton Téléphone"
                                                         type="number"
                                                         required
                                                     />

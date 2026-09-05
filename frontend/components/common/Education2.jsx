@@ -21,7 +21,7 @@ export default function Education() {
                     </p>
                 </div>
                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    Education
+                    Formations
                     <span>
                         <Image
                             alt="custom-line"
@@ -77,7 +77,7 @@ export default function Education() {
                                 <Image
                                     className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
                                     alt="expert-img"
-                                    src="/assets/images/experiences/expert-img.jpg"
+                                    src="/assets/images/experiences/expert-img 14.36.21.jpg"
                                     width={945}
                                     height={719}
                                 />

@@ -21,7 +21,7 @@ export default function Educationn3() {
                     </p>
                 </div>
                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    Education
+                    Formations
                     <span>
                         <Image
                             alt="custom-line"

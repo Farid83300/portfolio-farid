@@ -34,7 +34,7 @@ export default function Footer1({
                                         </Link>
                                     </div>
                                     <p className="description">
-                                        <span>Inscrivez-vous</span> à mon Newsletters
+                                        <span>Inscris-toi</span> à mon Newsletters
                                     </p>
                                     <NewsletterForm placeholder="Email Adress" />
                                 </div>

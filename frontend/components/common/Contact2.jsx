@@ -59,10 +59,10 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                         <span className="subtitle">Contactez-moi</span>
                                     </div>
                                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                        Parlons de votre projet...
+                                        Parlons de ton projet...
                                     </h2>
                                     <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                        Vous avez un projet en tête ? Discutons-en ensemble. Je vous réponds sous 24h pour étudier vos besoins et vous proposer la solution la plus adaptée à votre budget.
+                                        Tu as un projet en tête ? Discutons-en ensemble. Je te réponds sous 24h pour étudier tes besoins et te proposer la solution la plus adaptée à ton budget.
                                     </p>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                                         <input
                                                             className="input-field"
                                                             id="contact-phone"
-                                                            placeholder="Téléphone"
+                                                            placeholder="Ton Téléphone"
                                                             type="number"
                                                             required
                                                         />

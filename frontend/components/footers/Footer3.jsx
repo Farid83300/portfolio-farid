@@ -34,7 +34,7 @@ export default function Footer3({
                                         </Link>
                                     </div>
                                     <p className="description">
-                                        <span>Inscrivez-vous</span> <br /> à mon Newsletters
+                                        <span>Inscris-toi</span> <br /> à mon Newsletters
                                     </p>
                                     <NewsletterForm placeholder="Adresse Email" />
                                 </div>

@@ -34,7 +34,7 @@ export default function Appointment() {
                                                             className="input-field"
                                                             name="contact-phone"
                                                             id="contact-phone"
-                                                            placeholder="Téléphone"
+                                                            placeholder="Ton Téléphone"
                                                             type="number"
                                                             required
                                                         />
@@ -83,7 +83,7 @@ export default function Appointment() {
                                                         >
                                                             <span className="icon-reverse-wrapper">
                                                                 <span className="btn-text">
-                                                                    Prenez rendez-vous
+                                                                    Prendre rendez-vous
                                                                 </span>
                                                                 <span className="btn-icon">
                                                                     <i className="fa-sharp fa-regular fa-arrow-right" />
