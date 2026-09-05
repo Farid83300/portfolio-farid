@@ -1,31 +1,30 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { portfolioItems2 } from '@/data/portfolio';
-
 import Link from 'next/link';
-export default function Portfolio({ isLight = false }) {
+import { getProjects, uploadUrl } from '@/lib/publicApi';
+
+export default async function Portfolio({ isLight = false }) {
+    const projects = await getProjects();
+    const recentProjects = projects.slice(0, 4);
+
     return (
         <div className="latest-portfolio-area custom-column-grid tmp-section-gapTop" id="portfolio">
             <div className="container">
                 <div className="section-head mb--60">
                     <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <span className="subtitle">Mes Projets terminé</span>
+                        <span className="subtitle">DERNIER PORTFOLIO</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Transforming Ideas into <br />
-                        Exceptional
+                        Retrouvez ici <br />
+                        mes dernières réalisations.
                     </h2>
-                    <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        Business consulting consultants provide expert advice and guida businesses
-                        to help them improve their performance, efficiency, and organizational
-                    </p>
                 </div>
                 <div className="row">
-                    {portfolioItems2.map((item) => (
+                    {recentProjects.map((item, i) => (
                         <div className="col-lg-6 col-sm-6" key={item.id}>
                             <div
-                                className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${item.animationOrder}`}
+                                className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${i + 1}`}
                             >
                                 <div className="portfoli-card-img">
                                     <div className="img-box v2">
@@ -35,10 +34,16 @@ export default function Portfolio({ isLight = false }) {
                                         >
                                             <Image
                                                 className="w-100"
-                                                alt="Thumbnail"
-                                                src={item.imageSrc}
-                                                width={item.width}
-                                                height={item.height}
+                                                alt={item.title}
+                                                src={uploadUrl(item.thumbnail)}
+                                                width={1200}
+                                                height={990}
+                                                style={{
+                                                    width: '100%',
+                                                    height: 'auto',
+                                                    aspectRatio: '1200 / 990',
+                                                    objectFit: 'cover',
+                                                }}
                                             />
                                         </Link>
                                     </div>
@@ -53,7 +58,7 @@ export default function Portfolio({ isLight = false }) {
                                                 {item.title}
                                             </Link>
                                         </h3>
-                                        <p className="portfoli-card-para">{item.description}</p>
+                                        <p className="portfoli-card-para">{item.subtitle}</p>
                                     </div>
                                     <Link
                                         href={`/project-details${isLight ? '-white' : ''}/${item.slug}`}
@@ -68,6 +73,9 @@ export default function Portfolio({ isLight = false }) {
                             </div>
                         </div>
                     ))}
+                    {!recentProjects.length && (
+                        <p className="text-center w-100">Aucun projet pour le moment</p>
+                    )}
                 </div>
             </div>
         </div>
