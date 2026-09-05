@@ -63,9 +63,9 @@ export default function NewsletterForm({ placeholder = 'Email Adress' }) {
                 required
                 disabled={loading}
             />
-            <span className="form-icon">
+            <button type="submit" className="form-icon" aria-label="S'inscrire" disabled={loading}>
                 <i className="fa-regular fa-envelope" />
-            </span>
+            </button>
         </form>
     );
 }
