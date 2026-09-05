@@ -61,7 +61,7 @@ export default function Education() {
                                         className={`experience-content tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}
                                         key={index}
                                     >
-                                        <p className="ex-subtitle">experience</p>
+                                        <p className="ex-subtitle">expérience</p>
                                         <h2 className="ex-name">{item.name}</h2>
                                         <h3 className="ex-title">{item.title}</h3>
                                         <p className="ex-para">{item.description}</p>

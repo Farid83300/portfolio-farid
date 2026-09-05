@@ -31,7 +31,7 @@ export default async function BlogSidebar({ isLight = false }) {
             <div className="signle-side-bar search-area tmponhover">
                 <div className="body">
                     <div className="search-area">
-                        <input type="text" placeholder="Type here" required />
+                        <input type="text" placeholder="Rechercher..." required />
                         <button>
                             <i className="fa-solid fa-magnifying-glass" />
                         </button>
@@ -102,7 +102,7 @@ export default async function BlogSidebar({ isLight = false }) {
                             <div className="about-me-img">
                                 <Image
                                     alt="Farid Zaffalone"
-                                    src="/assets/images/blog/about-me-user-img.png"
+                                    src="/assets/images/photo-profil-new.webp"
                                     width={600}
                                     height={600}
                                 />

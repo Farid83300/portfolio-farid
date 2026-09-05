@@ -194,57 +194,54 @@ export const services4 = [
 
 export const serviceCards = [
     {
-        title: 'A Portfolio of Creativity',
+        title: 'Création de SaaS PHP / React',
         description:
-            'Business consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Je développe des applications web robustes avec une architecture MVC propre, en PHP orienté objet et React.',
     },
     {
-        title: 'My Portfolio of Innovation',
+        title: 'Refonte de site web',
         description:
-            'My work is driven by the belief that thoughtful design and strategic planning can empower brands, transform businesses',
+            'Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n\'est pas nécessaire.',
     },
     {
-        title: 'A Showcase of My Projects',
+        title: 'Création de site WordPress',
         description:
-            'In this portfolio, you’ll find a curated selection of projects that highlight my skills in [Main Areas, e.g., responsive web design',
+            'Je crée ou améliore votre site WordPress avec un design responsive et des fonctionnalités sur mesure.',
     },
 ];
 
 export const services5 = [
     {
-        title: 'A Portfolio of Creativity',
+        title: 'Création de SaaS PHP / React',
         description:
-            'Business consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Je développe des applications web robustes avec une architecture MVC propre, en PHP orienté objet et React.',
     },
     {
-        title: 'My Portfolio of Innovation',
+        title: 'Refonte de site web',
         description:
-            'My work is driven by the belief that thoughtful design and strategic planning can empower brands, transform businesses',
+            'Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n\'est pas nécessaire.',
     },
     {
-        title: 'A Showcase of My Projects',
+        title: 'Création de site WordPress',
         description:
-            'In this portfolio, you’ll find a curated selection of projects that highlight my skills in [Main Areas, e.g., responsive web design',
+            'Je crée ou améliore votre site WordPress avec un design responsive et des fonctionnalités sur mesure.',
     },
 ];
 export const serviceCards2 = [
     {
-        number: '01.',
-        title: 'A Portfolio of Creativity',
+        title: 'Création de SaaS PHP / React',
         description:
-            'Business consulting consultants provide expert advice and guida the a businesses to help theme their performance efficiency',
+            'Je développe des applications web robustes avec une architecture MVC propre, en PHP orienté objet et React.',
     },
     {
-        number: '02.',
-        title: 'My Portfolio of Innovation',
+        title: 'Refonte de site web',
         description:
-            'My work is driven by the belief that thoughtful design and strategic planning can empower brands, transform businesses',
+            'Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n\'est pas nécessaire.',
     },
     {
-        number: '03.',
-        title: 'A Showcase of My Projects',
+        title: 'Création de site WordPress',
         description:
-            'In this portfolio, you’ll find a curated selection of projects that highlight my skills in [Main Areas, e.g., responsive web design',
+            'Je crée ou améliore votre site WordPress avec un design responsive et des fonctionnalités sur mesure.',
     },
 ];
 

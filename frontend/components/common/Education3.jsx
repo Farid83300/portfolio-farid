@@ -14,7 +14,10 @@ export default function Educationn3() {
                         depuis toujours
                     </h2>
                     <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        Business consulting consultants provide expert advice and guida businesses to help them improve their performance, efficiency, and organizational
+                        Curriculum vitae de mon parcours complet disponible sur mon profil
+                        <a href="https://www.linkedin.com/in/farid-zaffalone/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', marginLeft: '4px' }}>
+                            LinkedIn
+                        </a>
                     </p>
                 </div>
                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
@@ -46,7 +49,7 @@ export default function Educationn3() {
                         <div className="col-lg-6">
                             <div className="experiences-wrap-left-content">
                                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    Experiences
+                                    Expériences
                                     <span>
                                         <Image
                                             alt="custom-line"
@@ -57,7 +60,7 @@ export default function Educationn3() {
                                     </span>
                                 </h2>
                                 <div className="experience-content tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <p className="ex-subtitle">experience</p>
+                                    <p className="ex-subtitle">expérience</p>
                                     <h2 className="ex-name">Soft Tech (2 Years)</h2>
                                     <h3 className="ex-title">UI/UX Designer</h3>
                                     <p className="ex-para">
@@ -67,7 +70,7 @@ export default function Educationn3() {
                                     </p>
                                 </div>
                                 <div className="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                    <p className="ex-subtitle">experience</p>
+                                    <p className="ex-subtitle">expérience</p>
                                     <h2 className="ex-name">ModernTech (3 Years)</h2>
                                     <h3 className="ex-title">App Developer</h3>
                                     <p className="ex-para">

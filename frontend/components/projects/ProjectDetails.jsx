@@ -101,7 +101,7 @@ export default function ProjectDetails({ portfolioItem }) {
                     <div className="col-lg-4">
                         <div className="signle-side-bar project-details-area tmponhover">
                             <div className="header">
-                                <h3 className="title">Projet Detail</h3>
+                                <h3 className="title">Projet Détails</h3>
                             </div>
                             <div className="body">
                                 <div className="project-details-info">

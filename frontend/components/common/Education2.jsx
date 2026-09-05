@@ -14,13 +14,8 @@ export default function Education() {
                         depuis toujours
                     </h2>
                     <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        Curriculum vitae de mon parcours complet disponible sur mon profil{' '}
-                        <a
-                            href="https://www.linkedin.com/in/farid-zaffalone/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ textDecoration: 'underline' }}
-                        >
+                        Curriculum vitae de mon parcours complet disponible sur mon profil
+                        <a href="https://www.linkedin.com/in/farid-zaffalone/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', marginLeft: '4px' }}>
                             LinkedIn
                         </a>
                     </p>
@@ -54,7 +49,7 @@ export default function Education() {
                         <div className="col-lg-6">
                             <div className="experiences-wrap-left-content">
                                 <h2 className="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    Experiences
+                                    Expériences
                                     <span>
                                         <Image
                                             alt="custom-line"
@@ -69,7 +64,7 @@ export default function Education() {
                                         className={`experience-content tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}
                                         key={index}
                                     >
-                                        <p className="ex-subtitle">experience</p>
+                                        <p className="ex-subtitle">expérience</p>
                                         <h2 className="ex-name">{item.name}</h2>
                                         <h3 className="ex-title">{item.title}</h3>
                                         <p className="ex-para">{item.description}</p>
