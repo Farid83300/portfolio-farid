@@ -11,14 +11,14 @@ export default function Comment() {
             <form onSubmit={(e) => e.preventDefault()} className="blog-details-form">
                 <div className="single-input">
                     <label>Ton Nom</label>
-                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Nom" />
                 </div>
                 <div className="single-input">
                     <label>Ton Email</label>
                     <input type="text" placeholder="Email" />
                 </div>
                 <label>Message</label>
-                <textarea placeholder="Message here.." defaultValue={''} />
+                <textarea placeholder="Message..." defaultValue={''} />
                 <div className="blog-submit-btn mt--40">
                     <div className="tmp-button-here">
                         <a className="tmp-btn hover-icon-reverse radius-round w-100" href="#">

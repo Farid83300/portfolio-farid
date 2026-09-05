@@ -15,7 +15,8 @@ export default function Blogs3({
                         <span className="subtitle">Blog et News</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Elevating Personal Branding the <br /> through Powerful Portfolios
+                        Actualités et tutoriels <br />
+                        dans le domaine de la Tech
                     </h2>
                 </div>
                 <div className="row">

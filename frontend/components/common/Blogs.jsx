@@ -1,12 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
-import { blogData2 } from '@/data/blogs';
 
 import Link from 'next/link';
-export default function Blogs({
+import { getPosts, uploadUrl } from '@/lib/publicApi';
+
+export default async function Blogs({
     parentClass = 'blog-and-news-are tmp-section-gap',
     isLight = false,
 }) {
+    const posts = await getPosts();
+    const recentPosts = posts.slice(0, 3);
+
     return (
         <section className={parentClass} id="blog">
             <div className="container">
@@ -15,16 +19,16 @@ export default function Blogs({
                         <span className="subtitle">Blog et News</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Elevating Personal Branding the <br />
-                        through Powerful Portfolios
+                        Actualités et tutoriels <br />
+                        dans le domaine de la Tech
                     </h2>
                 </div>
                 <div className="row">
-                    {blogData2.map((blog) => {
+                    {recentPosts.map((blog, i) => {
                         return (
                             <div key={blog.id} className="col-lg-4 col-md-6 col-sm-6">
                                 <div
-                                    className={`blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in ${blog.animationOrder}`}
+                                    className={`blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-${i + 1}`}
                                 >
                                     <div className="img-box">
                                         <Link
@@ -32,10 +36,16 @@ export default function Blogs({
                                         >
                                             <Image
                                                 className="w-100"
-                                                alt={blog.altText}
-                                                src={blog.imageSrc}
+                                                alt={blog.featured_image_alt || blog.title}
+                                                src={uploadUrl(blog.featured_image)}
                                                 width={410}
                                                 height={294}
+                                                style={{
+                                                    width: '100%',
+                                                    height: 'auto',
+                                                    aspectRatio: '410 / 294',
+                                                    objectFit: 'cover',
+                                                }}
                                             />
                                         </Link>
                                         <ul className="blog-tags">
@@ -43,14 +53,16 @@ export default function Blogs({
                                                 <span className="tag-icon">
                                                     <i className="fa-regular fa-user" />
                                                 </span>
-                                                {blog.author}
+                                                Farid Zaffalone
                                             </li>
-                                            <li>
-                                                <span className="tag-icon">
-                                                    <i className="fa-solid fa-calendar-days" />
-                                                </span>
-                                                {blog.date}
-                                            </li>
+                                            {blog.published_at && (
+                                                <li>
+                                                    <span className="tag-icon">
+                                                        <i className="fa-solid fa-calendar-days" />
+                                                    </span>
+                                                    {new Date(blog.published_at).toLocaleDateString('fr-FR')}
+                                                </li>
+                                            )}
                                         </ul>
                                     </div>
                                     <div className="blog-content-wrap">
@@ -78,6 +90,7 @@ export default function Blogs({
                             </div>
                         );
                     })}
+                    {!recentPosts.length && <p className="text-center w-100">Aucun article pour le moment</p>}
                 </div>
             </div>
         </section>
