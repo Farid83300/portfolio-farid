@@ -267,6 +267,23 @@
       justify-content: space-between;
     }
 
+    // The floating chat/scroll-to-top buttons are fixed in the bottom-right
+    // corner (~55px each, stacked) on every page — reserve room for them
+    // here so the last row of footer links never sits underneath them.
+    @media #{variables.$md-layout} {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+      padding: 28px 20px 110px;
+    }
+
+    @media #{variables.$sm-layout} {
+      flex-direction: column;
+      text-align: center;
+      gap: 14px;
+      padding: 24px 20px 90px;
+    }
+
     .copy-right-para {
       color: var(--color-gray);
       font-family: var(--font-secondary);
@@ -290,6 +307,16 @@
 
       @media (min-width: 768px) {
         gap: 15px;
+      }
+
+      @media #{variables.$md-layout} {
+        justify-content: center;
+      }
+
+      @media #{variables.$sm-layout} {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
       }
 
       li {
