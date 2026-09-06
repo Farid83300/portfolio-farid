@@ -60,41 +60,42 @@ export default function Contact() {
                 <div className="contact-info-wrap">
                     <div className="row">
                         <div className="col-lg-4 col-md-6">
-                            <div className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-1">
+                            <a
+                                href="https://maps.app.goo.gl/YJnbFSehAHh7Kant9"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-1"
+                            >
                                 <div className="contact-icon">
                                     <i className="fa-solid fa-location-dot" />
                                 </div>
                                 <h3 className="title">Localisation</h3>
-                                <a
-                                    href="https://maps.app.goo.gl/YJnbFSehAHh7Kant9"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <p className="para">83300 Draguignan, France</p>
-                                </a>
-                            </div>
+                                <p className="para">83300 Draguignan, France</p>
+                            </a>
                         </div>
                         <div className="col-lg-4 col-md-6">
-                            <div className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-2">
+                            <a
+                                href="mailto:contact@faridzaffalone.com"
+                                className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-2"
+                            >
                                 <div className="contact-icon">
                                     <i className="fa-solid fa-envelope" />
                                 </div>
                                 <h3 className="title">E-mail</h3>
-                                <a href="mailto:contact@faridzaffalone.com">
-                                    <p className="para">contact@faridzaffalone.com</p>
-                                </a>
-                            </div>
+                                <p className="para">contact@faridzaffalone.com</p>
+                            </a>
                         </div>
                         <div className="col-lg-4 col-md-6">
-                            <div className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-3">
+                            <a
+                                href="tel:+33660919320"
+                                className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-3"
+                            >
                                 <div className="contact-icon">
                                     <i className="fa-solid fa-phone" />
                                 </div>
                                 <h3 className="title">Téléphone</h3>
-                                <a href="tel:+33660919320">
-                                    <p className="para">+33660919320</p>
-                                </a>
-                            </div>
+                                <p className="para">+33660919320</p>
+                            </a>
                         </div>
                     </div>
                 </div>
