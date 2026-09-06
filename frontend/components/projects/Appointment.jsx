@@ -83,7 +83,7 @@ export default function Appointment() {
                                                         >
                                                             <span className="icon-reverse-wrapper">
                                                                 <span className="btn-text">
-                                                                    Prendre rendez-vous
+                                                                    Envoyer le message
                                                                 </span>
                                                                 <span className="btn-icon">
                                                                     <i className="fa-sharp fa-regular fa-arrow-right" />
