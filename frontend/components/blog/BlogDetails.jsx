@@ -108,7 +108,7 @@ export default function BlogDetails({ blog, isLight = false }) {
                                         </div>
                                     </div>
                                 )}
-                                <Comment />
+                                <Comment postId={blog.id} />
                             </div>
                         </div>
                     </div>

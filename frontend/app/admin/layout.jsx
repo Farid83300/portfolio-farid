@@ -35,9 +35,12 @@ export default function AdminLayout({ children }) {
         setReady(true);
 
         if (payload?.scope === 'full') {
-            adminFetch('/admin/dashboard')
-                .then(setCounts)
-                .catch(() => {});
+            const markViewed =
+                pathname === '/admin/newsletter'
+                    ? adminFetch('/admin/newsletter/mark-viewed', { method: 'PUT' }).catch(() => {})
+                    : Promise.resolve();
+
+            markViewed.then(() => adminFetch('/admin/dashboard').then(setCounts).catch(() => {}));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname]);

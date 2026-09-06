@@ -15,7 +15,7 @@ export default function AdminSidebar({ counts = {} }) {
         { href: '/admin', label: 'Dashboard', exact: true },
         { href: '/admin/messages', label: 'Messages Contact', count: counts.messages_count },
         { href: '/admin/chat', label: 'Messages Chat', count: counts.chat_messages_count },
-        { href: '/admin/newsletter', label: 'Newsletter', count: counts.newsletter_count },
+        { href: '/admin/newsletter', label: 'Newsletter', count: counts.newsletter_new_count },
         { href: '/admin/comments', label: 'Commentaires Blog', count: counts.comments_pending_count },
         { href: '/admin/articles', label: 'Articles' },
         { href: '/admin/projects', label: 'Projets' },

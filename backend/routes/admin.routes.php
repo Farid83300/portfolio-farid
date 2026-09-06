@@ -190,3 +190,7 @@ $router->delete('/admin/newsletter/{id}', function ($request, $id) {
     AuthMiddleware::handle();
     (new NewsletterController())->destroy($request, $id);
 });
+$router->put('/admin/newsletter/mark-viewed', function ($request) {
+    AuthMiddleware::handle();
+    (new NewsletterController())->markViewed($request);
+});

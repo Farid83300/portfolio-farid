@@ -2,6 +2,7 @@
 
 use App\Controllers\Admin\AuthController;
 use App\Controllers\Public\ChatMessageController;
+use App\Controllers\Public\CommentController;
 use App\Controllers\Public\ContactController;
 use App\Controllers\Public\NewsletterController;
 use App\Controllers\Public\PostController;
@@ -24,6 +25,10 @@ $router->post('/newsletter', function ($request) {
 
 $router->post('/chat-messages', function ($request) {
     (new ChatMessageController())->store($request);
+});
+
+$router->post('/comments', function ($request) {
+    (new CommentController())->store($request);
 });
 
 $router->get('/posts', function ($request) {

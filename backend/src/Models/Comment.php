@@ -24,6 +24,22 @@ class Comment
         return $comment ?: null;
     }
 
+    public static function create(array $data): int
+    {
+        $pdo = Database::getInstance();
+        $stmt = $pdo->prepare(
+            'INSERT INTO comments (post_id, author_name, author_email, content) VALUES (:post_id, :author_name, :author_email, :content)'
+        );
+        $stmt->execute([
+            'post_id' => $data['post_id'],
+            'author_name' => $data['author_name'],
+            'author_email' => $data['author_email'],
+            'content' => $data['content'],
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    }
+
     public static function updateStatus(int $id, string $status): void
     {
         $pdo = Database::getInstance();

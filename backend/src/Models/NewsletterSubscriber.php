@@ -47,4 +47,20 @@ class NewsletterSubscriber
 
         return (int) $stmt->fetchColumn();
     }
+
+    public static function countNew(): int
+    {
+        $pdo = Database::getInstance();
+        $stmt = $pdo->query(
+            'SELECT COUNT(*) FROM newsletter_subscribers WHERE unsubscribed_at IS NULL AND viewed_at IS NULL'
+        );
+
+        return (int) $stmt->fetchColumn();
+    }
+
+    public static function markAllViewed(): void
+    {
+        $pdo = Database::getInstance();
+        $pdo->exec('UPDATE newsletter_subscribers SET viewed_at = NOW() WHERE viewed_at IS NULL');
+    }
 }

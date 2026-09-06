@@ -44,7 +44,10 @@ export default function NotFound() {
                                     Cette page n&apos;existe pas ou a été déplacée. Vérifiez
                                     l&apos;adresse ou repartez de la page d&apos;accueil.
                                 </p>
-                                <div className="button-area-banner-one" style={{ justifyContent: 'center', display: 'flex' }}>
+                                <div
+                                    className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4"
+                                    style={{ justifyContent: 'center', display: 'flex' }}
+                                >
                                     <Link
                                         className="tmp-btn hover-icon-reverse radius-round"
                                         href="/"

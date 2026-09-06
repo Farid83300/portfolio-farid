@@ -13,6 +13,12 @@ class NewsletterController
         Response::json(NewsletterSubscriber::all(), 200);
     }
 
+    public function markViewed(Request $request): void
+    {
+        NewsletterSubscriber::markAllViewed();
+        Response::json(['success' => true], 200);
+    }
+
     public function destroy(Request $request, string $id): void
     {
         NewsletterSubscriber::delete((int) $id);

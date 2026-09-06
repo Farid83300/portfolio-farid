@@ -17,6 +17,7 @@ class DashboardController
             'messages_count' => Message::countUnread(),
             'chat_messages_count' => ChatMessage::countUnread(),
             'newsletter_count' => NewsletterSubscriber::count(),
+            'newsletter_new_count' => NewsletterSubscriber::countNew(),
             'comments_pending_count' => Comment::countPending(),
         ], 200);
     }
