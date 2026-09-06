@@ -114,6 +114,25 @@ export default function PolitiqueDeConfidentialite() {
                                     Aucune donnée n&apos;est vendue ni cédée à des tiers à des fins
                                     commerciales.
                                 </p>
+                                <p>
+                                    Le bouton « Prendre RDV » du site renvoie vers un outil de prise de
+                                    rendez-vous tiers,{' '}
+                                    <strong>Calendly</strong>{' '}
+                                    (Calendly LLC, États-Unis). Aucune donnée n&apos;est transmise par
+                                    faridzaffalone.com à Calendly lors du clic : c&apos;est uniquement au
+                                    moment où vous réservez un créneau sur leur site que les informations
+                                    que vous y saisissez (nom, e-mail, etc.) sont collectées directement
+                                    par Calendly, selon leur propre politique de confidentialité,
+                                    consultable sur{' '}
+                                    <a
+                                        href="https://calendly.com/privacy"
+                                        target="_blank"
+                                        rel="noopener noreferrer nofollow"
+                                    >
+                                        calendly.com/privacy
+                                    </a>
+                                    .
+                                </p>
 
                                 <h2>4. Cookies</h2>
                                 <p>
@@ -212,7 +231,7 @@ export default function PolitiqueDeConfidentialite() {
                                     ci-dessous.
                                 </p>
                                 <p>
-                                    <em>Dernière mise à jour : 5 septembre 2026.</em>
+                                    <em>Dernière mise à jour : 6 septembre 2026.</em>
                                 </p>
                             </div>
                         </div>

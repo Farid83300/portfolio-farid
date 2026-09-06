@@ -27,8 +27,25 @@ export default function ProjectDetails({ portfolioItem }) {
                     </div>
                     <div className="col-lg-8">
                         <div className="project-details-content-wrap">
-                            <h2 className="title">{portfolioItem.title}</h2>
-                            {portfolioItem.subtitle && <p className="docs">{portfolioItem.subtitle}</p>}
+                            <div className="project-details-title-row">
+                                <div>
+                                    <h2 className="title">{portfolioItem.title}</h2>
+                                    {portfolioItem.subtitle && (
+                                        <p className="docs">{portfolioItem.subtitle}</p>
+                                    )}
+                                </div>
+                                {portfolioItem.live_url && (
+                                    <a
+                                        href={portfolioItem.live_url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="project-preview-btn"
+                                    >
+                                        <i className="fa-solid fa-eye" />
+                                        Aperçu du site
+                                    </a>
+                                )}
+                            </div>
                             {portfolioItem.description && (
                                 <div
                                     className="docs"

@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import TyperComponent from '@/components/common/TyperComponent';
 export default function Hero() {
     return (
@@ -49,9 +48,11 @@ export default function Hero() {
                                     dans les règles de l'art.
                                 </p>
                                 <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
-                                    <Link
+                                    <a
                                         className="tmp-btn hover-icon-reverse radius-round"
-                                        href={`/contact`}
+                                        href="https://calendly.com/farid-zaffalone/30min"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         <span className="icon-reverse-wrapper">
                                             <span className="btn-text">Prendre RDV</span>
@@ -62,7 +63,7 @@ export default function Hero() {
                                                 <i className="fa-sharp fa-regular fa-arrow-right" />
                                             </span>
                                         </span>
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </div>
