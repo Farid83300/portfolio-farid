@@ -65,7 +65,13 @@ export default function Contact() {
                                     <i className="fa-solid fa-location-dot" />
                                 </div>
                                 <h3 className="title">Localisation</h3>
-                                <p className="para">83300 Draguignan, France</p>
+                                <a
+                                    href="https://maps.app.goo.gl/YJnbFSehAHh7Kant9"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <p className="para">83300 Draguignan, France</p>
+                                </a>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6">
@@ -84,8 +90,10 @@ export default function Contact() {
                                 <div className="contact-icon">
                                     <i className="fa-solid fa-phone" />
                                 </div>
-                                <h3 className="title">Contactez-moi</h3>
-                                <p className="para">+33660919320</p>
+                                <h3 className="title">Téléphone</h3>
+                                <a href="tel:+33660919320">
+                                    <p className="para">+33660919320</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -103,10 +111,10 @@ export default function Contact() {
                                             <span className="subtitle">Contactez-moi</span>
                                         </div>
                                         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                            Parlons de votre projet...
+                                            Parlons de ton projet...
                                         </h2>
                                         <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                            Vous avez un projet en tête ? Discutons-en ensemble. Je vous réponds sous 24h pour étudier vos besoins et vous proposer la solution la plus adaptée à votre budget.
+                                            Tu as un projet en tête ? Discutons-en ensemble. Je te réponds sous 24h pour étudier tes besoins et te proposer la solution la plus adaptée à ton budget.
                                         </p>
                                     </div>
                                 </div>
@@ -189,7 +197,7 @@ export default function Contact() {
                                                             >
                                                                 <span className="icon-reverse-wrapper">
                                                                     <span className="btn-text">
-                                                                        Prendre rendez-vous
+                                                                        Envoyer le message
                                                                     </span>
                                                                     <span className="btn-icon">
                                                                         <i className="fa-sharp fa-regular fa-arrow-right" />

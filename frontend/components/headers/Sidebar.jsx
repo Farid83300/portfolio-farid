@@ -60,7 +60,7 @@ export default function Sidebar() {
                                 <i className="fa-solid fa-phone" />
                                 <div className="information tmp-link-animation">
                                     <span>Téléphone</span>
-                                    <a href="#" className="number">
+                                    <a href="tel:+33660919320" className="number">
                                         +33660919320
                                     </a>
                                 </div>
@@ -71,7 +71,7 @@ export default function Sidebar() {
                                 <i className="fa-solid fa-envelope" />
                                 <div className="information tmp-link-animation">
                                     <span>Email</span>
-                                    <a href="#" className="number">
+                                    <a href="mailto:contact@faridzaffalone.com" className="number">
                                         contact@faridzaffalone.com
                                     </a>
                                 </div>
@@ -82,7 +82,14 @@ export default function Sidebar() {
                                 <i className="fa-solid fa-location-crosshairs" />
                                 <div className="information tmp-link-animation">
                                     <span>Adresse</span>
-                                    <span className="number">83300 Draguignan, France</span>
+                                    <a
+                                        href="https://maps.app.goo.gl/YJnbFSehAHh7Kant9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="number"
+                                    >
+                                        83300 Draguignan, France
+                                    </a>
                                 </div>
                             </div>
                             {/* single contact information end */}

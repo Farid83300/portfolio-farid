@@ -59,19 +59,27 @@ export default function Footer1({
                                             <span className="ft-icon">
                                                 <i className="fa-solid fa-envelope" />
                                             </span>
-                                            <a href="#">contact@faridzaffalone.com</a>
+                                            <a href="mailto:contact@faridzaffalone.com">
+                                                contact@faridzaffalone.com
+                                            </a>
                                         </li>
                                         <li>
                                             <span className="ft-icon">
                                                 <i className="fa-solid fa-location-dot" />
                                             </span>
-                                            83300 Draguignan, France
+                                            <a
+                                                href="https://maps.app.goo.gl/YJnbFSehAHh7Kant9"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                83300 Draguignan, France
+                                            </a>
                                         </li>
                                         <li>
                                             <span className="ft-icon">
                                                 <i className="fa-solid fa-phone" />
                                             </span>
-                                            <a href="#">+33660919320</a>
+                                            <a href="tel:+33660919320">+33660919320</a>
                                         </li>
                                     </ul>
                                     <div className="social-link footer">
