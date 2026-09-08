@@ -52,7 +52,7 @@ export default function AdminProjectsPage() {
                             <col style={{ width: 'auto' }} />
                             <col style={{ width: '14%' }} />
                             <col style={{ width: '12%' }} />
-                            <col style={{ width: '105px' }} />
+                            <col style={{ width: '125px' }} />
                             <col style={{ width: '60px' }} />
                             <col style={{ width: '60px' }} />
                             <col style={{ width: '140px' }} />
