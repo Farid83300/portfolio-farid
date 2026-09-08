@@ -145,7 +145,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                                         >
                                                             <span className="icon-reverse-wrapper">
                                                                 <span className="btn-text">
-                                                                    Envoyer le message
+                                                                    Envoi
                                                                 </span>
                                                                 <span className="btn-icon">
                                                                     <i className="fa-sharp fa-regular fa-arrow-right" />

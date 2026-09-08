@@ -198,7 +198,7 @@ export default function Contact() {
                                                             >
                                                                 <span className="icon-reverse-wrapper">
                                                                     <span className="btn-text">
-                                                                        Envoyer le message
+                                                                        Envoi
                                                                     </span>
                                                                     <span className="btn-icon">
                                                                         <i className="fa-sharp fa-regular fa-arrow-right" />
