@@ -21,6 +21,7 @@ export default function ProjectForm({ project }) {
     const [sortOrder, setSortOrder] = useState(project?.sort_order ?? 0);
     const [thumbnail, setThumbnail] = useState(project?.thumbnail || '');
     const [coverImage, setCoverImage] = useState(project?.cover_image || '');
+    const [previewImage, setPreviewImage] = useState(project?.preview_image || '');
     const [gallery, setGallery] = useState(project?.gallery || []);
     const [metaTitle, setMetaTitle] = useState(project?.meta_title || '');
     const [metaDescription, setMetaDescription] = useState(project?.meta_description || '');
@@ -85,6 +86,7 @@ export default function ProjectForm({ project }) {
                     .filter(Boolean),
                 thumbnail: thumbnail || null,
                 cover_image: coverImage || null,
+                preview_image: previewImage || null,
                 live_url: liveUrl || null,
                 gallery,
                 meta_title: metaTitle || null,
@@ -284,8 +286,21 @@ export default function ProjectForm({ project }) {
                     />
                     {uploading === 'projects' && <div className={styles.hint}>Envoi en cours…</div>}
                     {thumbnail && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={`${API_URL}/uploads/${thumbnail}`} alt="Vignette" className={styles.imagePreview} />
+                        <div className={styles.imagePreviewWrap}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={`${API_URL}/uploads/${thumbnail}`}
+                                alt="Vignette"
+                                className={styles.imagePreview}
+                            />
+                            <button
+                                type="button"
+                                className={styles.galleryRemove}
+                                onClick={() => setThumbnail('')}
+                            >
+                                ×
+                            </button>
+                        </div>
                     )}
                 </div>
 
@@ -298,12 +313,55 @@ export default function ProjectForm({ project }) {
                         onChange={(e) => e.target.files[0] && uploadTo(setCoverImage, 'projects', e.target.files[0])}
                     />
                     {coverImage && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                            src={`${API_URL}/uploads/${coverImage}`}
-                            alt="Couverture"
-                            className={styles.imagePreview}
-                        />
+                        <div className={styles.imagePreviewWrap}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={`${API_URL}/uploads/${coverImage}`}
+                                alt="Couverture"
+                                className={styles.imagePreview}
+                            />
+                            <button
+                                type="button"
+                                className={styles.galleryRemove}
+                                onClick={() => setCoverImage('')}
+                            >
+                                ×
+                            </button>
+                        </div>
+                    )}
+                </div>
+
+                <div className={styles.card}>
+                    <div className={styles.cardTitle}>Image de preview (si le site n&apos;est pas en ligne)</div>
+                    <div className={styles.hint} style={{ marginBottom: 8 }}>
+                        Affichée dans une modale au clic sur &quot;Aperçu du site&quot; quand aucune URL live
+                        n&apos;est renseignée. Max 10 Mo.
+                    </div>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        disabled={uploading === 'projects/preview'}
+                        onChange={(e) =>
+                            e.target.files[0] && uploadTo(setPreviewImage, 'projects/preview', e.target.files[0])
+                        }
+                    />
+                    {uploading === 'projects/preview' && <div className={styles.hint}>Envoi en cours…</div>}
+                    {previewImage && (
+                        <div className={styles.imagePreviewWrap}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={`${API_URL}/uploads/${previewImage}`}
+                                alt="Preview"
+                                className={styles.imagePreview}
+                            />
+                            <button
+                                type="button"
+                                className={styles.galleryRemove}
+                                onClick={() => setPreviewImage('')}
+                            >
+                                ×
+                            </button>
+                        </div>
                     )}
                 </div>
 

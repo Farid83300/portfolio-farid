@@ -15,7 +15,12 @@ class UploadService
         'image/gif',
     ];
     private const MAX_SIZE_BYTES = 4 * 1024 * 1024;
-    private const ALLOWED_DIRS = ['articles', 'projects', 'projects/gallery', 'services'];
+    // L'image de preview (modale "site pas encore en ligne") tolère des captures
+    // d'écran plus lourdes (pleine page, haute résolution) que les autres visuels.
+    private const DIR_MAX_SIZE_BYTES = [
+        'projects/preview' => 10 * 1024 * 1024,
+    ];
+    private const ALLOWED_DIRS = ['articles', 'projects', 'projects/gallery', 'projects/preview', 'services'];
 
     public function store(array $file, string $dir): string
     {
@@ -27,8 +32,10 @@ class UploadService
             throw new RuntimeException("Échec de l'upload");
         }
 
-        if ($file['size'] > self::MAX_SIZE_BYTES) {
-            throw new RuntimeException('Fichier trop volumineux (max 4 Mo)');
+        $maxSize = self::DIR_MAX_SIZE_BYTES[$dir] ?? self::MAX_SIZE_BYTES;
+        if ($file['size'] > $maxSize) {
+            $maxMo = (int) ($maxSize / (1024 * 1024));
+            throw new RuntimeException("Fichier trop volumineux (max {$maxMo} Mo)");
         }
 
         $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));

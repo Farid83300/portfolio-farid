@@ -38,8 +38,8 @@ class Project
     {
         $pdo = Database::getInstance();
         $stmt = $pdo->prepare(
-            'INSERT INTO projects (title, slug, subtitle, category, client, role, project_date, tags, description, features, thumbnail, cover_image, live_url, gallery, meta_title, meta_description, sort_order)
-             VALUES (:title, :slug, :subtitle, :category, :client, :role, :project_date, :tags, :description, :features, :thumbnail, :cover_image, :live_url, :gallery, :meta_title, :meta_description, :sort_order)'
+            'INSERT INTO projects (title, slug, subtitle, category, client, role, project_date, tags, description, features, thumbnail, cover_image, preview_image, live_url, gallery, meta_title, meta_description, sort_order)
+             VALUES (:title, :slug, :subtitle, :category, :client, :role, :project_date, :tags, :description, :features, :thumbnail, :cover_image, :preview_image, :live_url, :gallery, :meta_title, :meta_description, :sort_order)'
         );
         $stmt->execute(self::params($data));
 
@@ -52,7 +52,7 @@ class Project
         $stmt = $pdo->prepare(
             'UPDATE projects SET title = :title, slug = :slug, subtitle = :subtitle, category = :category, client = :client,
              role = :role, project_date = :project_date, tags = :tags, description = :description, features = :features,
-             thumbnail = :thumbnail, cover_image = :cover_image, live_url = :live_url, gallery = :gallery,
+             thumbnail = :thumbnail, cover_image = :cover_image, preview_image = :preview_image, live_url = :live_url, gallery = :gallery,
              meta_title = :meta_title, meta_description = :meta_description, sort_order = :sort_order
              WHERE id = :id'
         );
@@ -74,6 +74,7 @@ class Project
             'features' => isset($data['features']) ? json_encode($data['features']) : null,
             'thumbnail' => $data['thumbnail'] ?? null,
             'cover_image' => $data['cover_image'] ?? null,
+            'preview_image' => $data['preview_image'] ?? null,
             'live_url' => $data['live_url'] ?? null,
             'gallery' => isset($data['gallery']) ? json_encode($data['gallery']) : null,
             'meta_title' => $data['meta_title'] ?? null,

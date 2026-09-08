@@ -1,9 +1,13 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import DOMPurify from 'isomorphic-dompurify';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import Appointment from './Appointment';
 import { uploadUrl } from '@/lib/publicApi';
 export default function ProjectDetails({ portfolioItem }) {
+    const [previewOpen, setPreviewOpen] = useState(false);
     const gallery = portfolioItem.gallery?.length
         ? portfolioItem.gallery
         : portfolioItem.thumbnail
@@ -34,7 +38,7 @@ export default function ProjectDetails({ portfolioItem }) {
                                         <p className="docs">{portfolioItem.subtitle}</p>
                                     )}
                                 </div>
-                                {portfolioItem.live_url && (
+                                {portfolioItem.live_url ? (
                                     <a
                                         href={portfolioItem.live_url}
                                         target="_blank"
@@ -44,6 +48,17 @@ export default function ProjectDetails({ portfolioItem }) {
                                         <i className="fa-solid fa-eye" />
                                         Aperçu du site
                                     </a>
+                                ) : (
+                                    portfolioItem.preview_image && (
+                                        <button
+                                            type="button"
+                                            className="project-preview-btn"
+                                            onClick={() => setPreviewOpen(true)}
+                                        >
+                                            <i className="fa-solid fa-eye" />
+                                            Aperçu du site
+                                        </button>
+                                    )
                                 )}
                             </div>
                             {portfolioItem.description && (
@@ -71,28 +86,34 @@ export default function ProjectDetails({ portfolioItem }) {
                             )}
                             {gallery.length > 0 && (
                                 <div className="project-details-swiper-wrapper">
-                                    <div className="swiper project-details-swiper">
-                                        <div className="swiper-wrapper">
-                                            {gallery.map((item, i) => (
-                                                <div className="swiper-slide" key={i}>
-                                                    <div className="project-details-img">
-                                                        <Image
-                                                            alt={item.alt || portfolioItem.title}
-                                                            src={uploadUrl(item.image)}
-                                                            width={410}
-                                                            height={295}
-                                                            style={{
-                                                                width: '100%',
-                                                                height: 'auto',
-                                                                aspectRatio: '410 / 295',
-                                                                objectFit: 'cover',
-                                                            }}
-                                                        />
-                                                    </div>
+                                    <Swiper
+                                        className="swiper project-details-swiper"
+                                        modules={[Navigation]}
+                                        loop={gallery.length > 1}
+                                        navigation={{
+                                            nextEl: '.project-swiper-button-next',
+                                            prevEl: '.project-swiper-button-prev',
+                                        }}
+                                    >
+                                        {gallery.map((item, i) => (
+                                            <SwiperSlide className="swiper-slide" key={i}>
+                                                <div className="project-details-img">
+                                                    <Image
+                                                        alt={item.alt || portfolioItem.title}
+                                                        src={uploadUrl(item.image)}
+                                                        width={410}
+                                                        height={295}
+                                                        style={{
+                                                            width: '100%',
+                                                            height: 'auto',
+                                                            aspectRatio: '410 / 295',
+                                                            objectFit: 'cover',
+                                                        }}
+                                                    />
                                                 </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
                                     {gallery.length > 1 && (
                                         <div className="project-details-swiper-btn">
                                             <div className="project-swiper-button-prev">
@@ -169,6 +190,27 @@ export default function ProjectDetails({ portfolioItem }) {
                     </div>
                 </div>
             </div>
+            {previewOpen && portfolioItem.preview_image && (
+                <div className="project-preview-modal-overlay" onClick={() => setPreviewOpen(false)}>
+                    <button
+                        type="button"
+                        className="project-preview-modal-close"
+                        onClick={() => setPreviewOpen(false)}
+                        aria-label="Fermer l'aperçu"
+                    >
+                        <i className="fa-solid fa-xmark" />
+                    </button>
+                    <div className="project-preview-modal" onClick={(e) => e.stopPropagation()}>
+                        <Image
+                            alt={portfolioItem.title}
+                            src={uploadUrl(portfolioItem.preview_image)}
+                            width={1600}
+                            height={1200}
+                            style={{ width: '100%', height: 'auto' }}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

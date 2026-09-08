@@ -116,6 +116,7 @@ CREATE TABLE `projects` (
   `features` json DEFAULT NULL,
   `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cover_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `preview_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `live_url` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gallery` json DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
