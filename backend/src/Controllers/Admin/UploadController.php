@@ -32,4 +32,23 @@ class UploadController
             'url' => rtrim($config['app']['url'], '/') . '/uploads/' . $path,
         ], 201);
     }
+
+    public function destroy(Request $request): void
+    {
+        $path = $request->getBody()['path'] ?? null;
+
+        if (empty($path)) {
+            Response::json(['error' => 'Chemin de fichier requis'], 400);
+            return;
+        }
+
+        try {
+            (new UploadService())->delete($path);
+        } catch (RuntimeException $e) {
+            Response::json(['error' => $e->getMessage()], 400);
+            return;
+        }
+
+        Response::json(['success' => true], 200);
+    }
 }

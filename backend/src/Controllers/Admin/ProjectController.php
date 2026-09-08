@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Core\Request;
 use App\Core\Response;
 use App\Models\Project;
+use App\Services\UploadService;
 use App\Support\Slugger;
 
 class ProjectController
@@ -63,6 +64,24 @@ class ProjectController
 
     public function destroy(Request $request, string $id): void
     {
+        $project = Project::find((int) $id);
+
+        if ($project) {
+            $uploads = new UploadService();
+
+            foreach ([$project['thumbnail'], $project['cover_image'], $project['preview_image']] as $path) {
+                if (!empty($path)) {
+                    $uploads->delete($path);
+                }
+            }
+
+            foreach ($project['gallery'] ?? [] as $item) {
+                if (!empty($item['image'])) {
+                    $uploads->delete($item['image']);
+                }
+            }
+        }
+
         Project::delete((int) $id);
         Response::json(['success' => true], 200);
     }

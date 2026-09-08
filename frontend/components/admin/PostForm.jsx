@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
-import { adminFetch, adminUploadFile, API_URL } from '@/lib/adminApi';
+import { adminFetch, adminUploadFile, adminDeleteFile, API_URL } from '@/lib/adminApi';
 
 export default function PostForm({ post }) {
     const router = useRouter();
@@ -68,6 +68,9 @@ export default function PostForm({ post }) {
         try {
             const { path } = await adminUploadFile(file, 'articles');
             setFeaturedImage(path);
+            if (featuredImage && featuredImage !== path) {
+                adminDeleteFile(featuredImage);
+            }
         } catch (err) {
             setError(err.message);
         } finally {
@@ -283,12 +286,24 @@ export default function PostForm({ post }) {
                     <input type="file" accept="image/*" onChange={handleImageUpload} disabled={uploading} />
                     {uploading && <div className={styles.hint}>Envoi en cours…</div>}
                     {featuredImage && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                            src={`${API_URL}/uploads/${featuredImage}`}
-                            alt="Aperçu"
-                            className={styles.imagePreview}
-                        />
+                        <div className={styles.imagePreviewWrap}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={`${API_URL}/uploads/${featuredImage}`}
+                                alt="Aperçu"
+                                className={styles.imagePreview}
+                            />
+                            <button
+                                type="button"
+                                className={styles.galleryRemove}
+                                onClick={() => {
+                                    adminDeleteFile(featuredImage);
+                                    setFeaturedImage('');
+                                }}
+                            >
+                                ×
+                            </button>
+                        </div>
                     )}
                     <div className={styles.formGroup} style={{ marginTop: 10 }}>
                         <label htmlFor="alt">Texte alternatif</label>

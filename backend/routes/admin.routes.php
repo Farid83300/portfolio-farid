@@ -110,6 +110,10 @@ $router->post('/admin/uploads', function ($request) {
     AuthMiddleware::handle();
     (new UploadController())->store($request);
 });
+$router->delete('/admin/uploads', function ($request) {
+    AuthMiddleware::handle();
+    (new UploadController())->destroy($request);
+});
 
 // Catégories (articles)
 $router->get('/admin/categories', function ($request) {

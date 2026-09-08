@@ -77,6 +77,18 @@ export async function adminUploadFile(file, dir) {
     return data;
 }
 
+export async function adminDeleteFile(path) {
+    if (!path) return;
+    try {
+        await adminFetch('/admin/uploads', {
+            method: 'DELETE',
+            body: JSON.stringify({ path }),
+        });
+    } catch {
+        // Le fichier n'existait peut-être déjà plus côté serveur — jamais bloquant pour l'UI.
+    }
+}
+
 export function decodeToken(token) {
     try {
         const payload = token.split('.')[1];

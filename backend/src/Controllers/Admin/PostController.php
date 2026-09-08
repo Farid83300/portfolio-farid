@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Core\Request;
 use App\Core\Response;
 use App\Models\Post;
+use App\Services\UploadService;
 use App\Support\Slugger;
 
 class PostController
@@ -63,6 +64,12 @@ class PostController
 
     public function destroy(Request $request, string $id): void
     {
+        $post = Post::find((int) $id);
+
+        if ($post && !empty($post['featured_image'])) {
+            (new UploadService())->delete($post['featured_image']);
+        }
+
         Post::delete((int) $id);
         Response::json(['success' => true], 200);
     }

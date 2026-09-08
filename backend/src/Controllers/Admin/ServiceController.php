@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Core\Request;
 use App\Core\Response;
 use App\Models\Service;
+use App\Services\UploadService;
 use App\Support\Slugger;
 
 class ServiceController
@@ -63,6 +64,12 @@ class ServiceController
 
     public function destroy(Request $request, string $id): void
     {
+        $service = Service::find((int) $id);
+
+        if ($service && !empty($service['image'])) {
+            (new UploadService())->delete($service['image']);
+        }
+
         Service::delete((int) $id);
         Response::json(['success' => true], 200);
     }

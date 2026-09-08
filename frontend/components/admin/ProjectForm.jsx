@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
-import { adminFetch, adminUploadFile, API_URL } from '@/lib/adminApi';
+import { adminFetch, adminUploadFile, adminDeleteFile, API_URL } from '@/lib/adminApi';
 
 export default function ProjectForm({ project }) {
     const router = useRouter();
@@ -30,11 +30,14 @@ export default function ProjectForm({ project }) {
     const [error, setError] = useState('');
     const [saving, setSaving] = useState(false);
 
-    async function uploadTo(setter, dir, file) {
+    async function uploadTo(setter, dir, file, oldPath) {
         setUploading(dir);
         try {
             const { path } = await adminUploadFile(file, dir);
             setter(path);
+            if (oldPath && oldPath !== path) {
+                adminDeleteFile(oldPath);
+            }
         } catch (err) {
             setError(err.message);
         } finally {
@@ -61,7 +64,13 @@ export default function ProjectForm({ project }) {
     }
 
     function removeGalleryItem(index) {
-        setGallery((prev) => prev.filter((_, i) => i !== index));
+        setGallery((prev) => {
+            const item = prev[index];
+            if (item?.image) {
+                adminDeleteFile(item.image);
+            }
+            return prev.filter((_, i) => i !== index);
+        });
     }
 
     async function handleSubmit(e) {
@@ -282,7 +291,9 @@ export default function ProjectForm({ project }) {
                         type="file"
                         accept="image/*"
                         disabled={uploading === 'projects'}
-                        onChange={(e) => e.target.files[0] && uploadTo(setThumbnail, 'projects', e.target.files[0])}
+                        onChange={(e) =>
+                            e.target.files[0] && uploadTo(setThumbnail, 'projects', e.target.files[0], thumbnail)
+                        }
                     />
                     {uploading === 'projects' && <div className={styles.hint}>Envoi en cours…</div>}
                     {thumbnail && (
@@ -296,7 +307,10 @@ export default function ProjectForm({ project }) {
                             <button
                                 type="button"
                                 className={styles.galleryRemove}
-                                onClick={() => setThumbnail('')}
+                                onClick={() => {
+                                    adminDeleteFile(thumbnail);
+                                    setThumbnail('');
+                                }}
                             >
                                 ×
                             </button>
@@ -310,7 +324,9 @@ export default function ProjectForm({ project }) {
                         type="file"
                         accept="image/*"
                         disabled={uploading === 'projects'}
-                        onChange={(e) => e.target.files[0] && uploadTo(setCoverImage, 'projects', e.target.files[0])}
+                        onChange={(e) =>
+                            e.target.files[0] && uploadTo(setCoverImage, 'projects', e.target.files[0], coverImage)
+                        }
                     />
                     {coverImage && (
                         <div className={styles.imagePreviewWrap}>
@@ -323,7 +339,10 @@ export default function ProjectForm({ project }) {
                             <button
                                 type="button"
                                 className={styles.galleryRemove}
-                                onClick={() => setCoverImage('')}
+                                onClick={() => {
+                                    adminDeleteFile(coverImage);
+                                    setCoverImage('');
+                                }}
                             >
                                 ×
                             </button>
@@ -342,7 +361,8 @@ export default function ProjectForm({ project }) {
                         accept="image/*"
                         disabled={uploading === 'projects/preview'}
                         onChange={(e) =>
-                            e.target.files[0] && uploadTo(setPreviewImage, 'projects/preview', e.target.files[0])
+                            e.target.files[0] &&
+                            uploadTo(setPreviewImage, 'projects/preview', e.target.files[0], previewImage)
                         }
                     />
                     {uploading === 'projects/preview' && <div className={styles.hint}>Envoi en cours…</div>}
@@ -357,7 +377,10 @@ export default function ProjectForm({ project }) {
                             <button
                                 type="button"
                                 className={styles.galleryRemove}
-                                onClick={() => setPreviewImage('')}
+                                onClick={() => {
+                                    adminDeleteFile(previewImage);
+                                    setPreviewImage('');
+                                }}
                             >
                                 ×
                             </button>

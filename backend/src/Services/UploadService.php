@@ -69,4 +69,29 @@ class UploadService
 
         return $dir . '/' . $filename;
     }
+
+    public function delete(string $path): void
+    {
+        $path = ltrim($path, '/');
+        if ($path === '' || str_contains($path, '..')) {
+            throw new RuntimeException('Chemin de fichier invalide');
+        }
+
+        // Le dossier parent du chemin doit être un des dossiers d'upload autorisés,
+        // sinon un client pourrait tenter de faire supprimer n'importe quel fichier du serveur.
+        if (!in_array(dirname($path), self::ALLOWED_DIRS, true)) {
+            throw new RuntimeException('Chemin de fichier invalide');
+        }
+
+        $base = realpath(__DIR__ . '/../../public/uploads');
+        $real = realpath($base . '/' . $path);
+
+        // Fichier déjà absent (ou hors du dossier uploads malgré la validation ci-dessus) :
+        // on considère l'opération réussie plutôt que de faire échouer la suppression du champ.
+        if ($real === false || !str_starts_with($real, $base . DIRECTORY_SEPARATOR)) {
+            return;
+        }
+
+        @unlink($real);
+    }
 }

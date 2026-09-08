@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
-import { adminFetch, adminUploadFile, API_URL } from '@/lib/adminApi';
+import { adminFetch, adminUploadFile, adminDeleteFile, API_URL } from '@/lib/adminApi';
 
 function sectionsToForm(sections) {
     return (sections || []).map((section) => ({
@@ -35,6 +35,9 @@ export default function ServiceForm({ service }) {
         try {
             const { path } = await adminUploadFile(file, 'services');
             setImage(path);
+            if (image && image !== path) {
+                adminDeleteFile(image);
+            }
         } catch (err) {
             setError(err.message);
         } finally {
@@ -291,12 +294,24 @@ export default function ServiceForm({ service }) {
                     />
                     {uploading && <div className={styles.hint}>Envoi en cours…</div>}
                     {image && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                            src={`${API_URL}/uploads/${image}`}
-                            alt={imageAlt || ''}
-                            className={styles.imagePreview}
-                        />
+                        <div className={styles.imagePreviewWrap}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={`${API_URL}/uploads/${image}`}
+                                alt={imageAlt || ''}
+                                className={styles.imagePreview}
+                            />
+                            <button
+                                type="button"
+                                className={styles.galleryRemove}
+                                onClick={() => {
+                                    adminDeleteFile(image);
+                                    setImage('');
+                                }}
+                            >
+                                ×
+                            </button>
+                        </div>
                     )}
                     <div className={styles.formGroup} style={{ marginTop: 12 }}>
                         <label htmlFor="imageAlt">Texte alternatif</label>
