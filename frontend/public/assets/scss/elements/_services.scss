@@ -2,10 +2,15 @@
 
 /* Service Card v1*/
 .service-card-v1 {
+    display: block;
     border-radius: 20px;
     border: 1px solid rgba(255, 73, 74, 0.16);
     padding: 40px 0 40px 0;
     transition: 0.4s;
+    text-decoration: none;
+    &:hover {
+        border-color: var(--color-primary);
+    }
     @media #{variables.$md-layout} {
         padding: 30px 0 30px 0;
     }

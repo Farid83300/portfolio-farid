@@ -11,18 +11,15 @@ export default async function Services() {
                 <div className="row justify-content-center">
                     {services.map((service, index) => (
                         <div className="col-lg-3 col-md-4 col-sm-6" key={service.id}>
-                            <div
+                            <Link
+                                href={`/service-details/${service.slug}`}
                                 className={`service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-${index + 1} tmp-link-animation`}
                             >
                                 <div className="service-card-icon">
                                     <i className={service.icon || 'fa-solid fa-code'} />
                                 </div>
-                                <h4 className="service-title">
-                                    <Link href={`/service-details/${service.slug}`}>
-                                        {service.title}
-                                    </Link>
-                                </h4>
-                            </div>
+                                <h4 className="service-title">{service.title}</h4>
+                            </Link>
                         </div>
                     ))}
                 </div>
