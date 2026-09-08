@@ -68,7 +68,6 @@ export default function Comment({ postId }) {
             </span>
             <form onSubmit={handleSubmit} className="blog-details-form">
                 <div className="single-input">
-                    <label>Ton Nom</label>
                     <input
                         type="text"
                         name="name"
@@ -80,7 +79,6 @@ export default function Comment({ postId }) {
                     />
                 </div>
                 <div className="single-input">
-                    <label>Ton Email</label>
                     <input
                         type="email"
                         name="email"
@@ -91,7 +89,6 @@ export default function Comment({ postId }) {
                         disabled={loading}
                     />
                 </div>
-                <label>Message</label>
                 <textarea
                     name="message"
                     placeholder="Message..."

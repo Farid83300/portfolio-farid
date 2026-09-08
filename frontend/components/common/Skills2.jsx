@@ -6,11 +6,11 @@ export default function Skills2() {
             <div className="container">
                 <div className="section-head text-align-left mb--50">
                     <div className="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <span className="subtitle">My Skill</span>
+                        <span className="subtitle">Mes Compétences</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Elevated Designs Personalized <br />
-                        the best Experiences
+                        Des sites qui allient design <br />
+                        soigné et performance technique
                     </h2>
                 </div>
                 <div className="services-widget v1">
@@ -21,7 +21,7 @@ export default function Skills2() {
                             </div>
                             <div className="card-title">
                                 <h3 className="main-title">Web Dev Full-Stack</h3>
-                                <p className="sub-title">16 Done</p>
+                                <p className="sub-title">16 Terminé</p>
                             </div>
                             <p className="card-para">
                                 PHP · React · MVC · POO → "De la conception à la mise en ligne, je développe des applications web robustes et évolutives avec des architectures propres".
@@ -42,7 +42,7 @@ export default function Skills2() {
                             </div>
                             <div className="card-title">
                                 <h3 className="main-title">WordPress & CMS</h3>
-                                <p className="sub-title">9 Done</p>
+                                <p className="sub-title">9 Terminé</p>
                             </div>
                             <p className="card-para">
                                 LiteSpeed · Core Web Vitals → "Création et optimisation de sites WordPress sur-mesure, avec un focus sur la vitesse, le SEO et la sécurité".
@@ -62,8 +62,8 @@ export default function Skills2() {
                                 <i className="fa-light fa-pen-nib" />
                             </div>
                             <div className="card-title">
-                                <h3 className="main-title">UI/Design & Intégration</h3>
-                                <p className="sub-title">5 Done</p>
+                                <h3 className="main-title">UI/UX Design & Logo</h3>
+                                <p className="sub-title">5 Terminé</p>
                             </div>
                             <p className="card-para">
                                 Figma · Canva · HTML/CSS · Responsive → "Je transforme des maquettes en interfaces pixel-perfect, accessibles et adaptées à tous les écrans".
