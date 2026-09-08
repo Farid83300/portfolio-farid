@@ -11,8 +11,9 @@ export const metadata = {
     description:
         'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
 };
-export default async function page() {
-    const posts = await getPosts();
+export default async function page({ searchParams }) {
+    const { search } = await searchParams;
+    const posts = await getPosts({ search });
     return (
         <>
             <Header1 />
@@ -36,7 +37,7 @@ export default async function page() {
                     </div>
                 </div>
             </div>
-            <Blogs allBlogs={posts} />
+            <Blogs allBlogs={posts} search={search} />
             <Footer1 />
             <Copyright /> <CommonComponents />
         </>

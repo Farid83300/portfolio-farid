@@ -15,10 +15,11 @@ async function publicFetch(path) {
     return res.json();
 }
 
-export async function getPosts({ category, tag } = {}) {
+export async function getPosts({ category, tag, search } = {}) {
     const params = new URLSearchParams();
     if (category) params.set('category', category);
     if (tag) params.set('tag', tag);
+    if (search) params.set('search', search);
     const query = params.toString() ? `?${params.toString()}` : '';
 
     return (await publicFetch(`/posts${query}`)) || [];

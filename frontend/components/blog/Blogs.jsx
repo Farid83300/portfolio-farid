@@ -4,7 +4,7 @@ import BlogSidebar from './BlogSidebar';
 import { uploadUrl } from '@/lib/publicApi';
 
 import Link from 'next/link';
-export default function Blogs({ allBlogs = [], isLight = false }) {
+export default function Blogs({ allBlogs = [], isLight = false, search = '' }) {
     return (
         <div className="blog-classic-area-wrapper tmp-section-gap">
             <div className="container">
@@ -90,7 +90,7 @@ export default function Blogs({ allBlogs = [], isLight = false }) {
                         {!allBlogs.length && <h3 className="text-center">Aucun article trouvé</h3>}
                     </div>
                     <div className="col-lg-4">
-                        <BlogSidebar isLight={isLight} />
+                        <BlogSidebar isLight={isLight} search={search} />
                     </div>
                 </div>
             </div>

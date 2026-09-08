@@ -12,8 +12,9 @@ class PostController
     {
         $category = $_GET['category'] ?? null;
         $tag = $_GET['tag'] ?? null;
+        $search = $_GET['search'] ?? null;
 
-        Response::json(Post::published($category, $tag), 200);
+        Response::json(Post::published($category, $tag, $search), 200);
     }
 
     public function show(Request $request, string $slug): void

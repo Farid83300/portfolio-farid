@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
 import { getPosts, uploadUrl } from '@/lib/publicApi';
 
-export default async function BlogSidebar({ isLight = false }) {
+export default async function BlogSidebar({ isLight = false, search = '' }) {
     const allBlogs = await getPosts();
 
     const categoryMap = new Map();
@@ -30,12 +30,18 @@ export default async function BlogSidebar({ isLight = false }) {
         <div className="tmp-sidebar">
             <div className="signle-side-bar search-area tmponhover">
                 <div className="body">
-                    <div className="search-area">
-                        <input type="text" placeholder="Rechercher..." required />
-                        <button>
+                    <form className="search-area" action={`/blog${isLight ? '-white' : ''}`} method="GET">
+                        <input
+                            type="text"
+                            name="search"
+                            placeholder="Rechercher..."
+                            defaultValue={search}
+                            required
+                        />
+                        <button type="submit">
                             <i className="fa-solid fa-magnifying-glass" />
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div className="signle-side-bar recent-post-area tmponhover">

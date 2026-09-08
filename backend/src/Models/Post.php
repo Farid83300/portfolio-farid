@@ -58,7 +58,7 @@ class Post
         return $post;
     }
 
-    public static function published(?string $categorySlug = null, ?string $tagSlug = null): array
+    public static function published(?string $categorySlug = null, ?string $tagSlug = null, ?string $search = null): array
     {
         $pdo = Database::getInstance();
         $sql = self::baseQuery() . " WHERE posts.status = 'published'";
@@ -72,6 +72,11 @@ class Post
         if ($tagSlug) {
             $sql .= ' AND posts.id IN (SELECT post_id FROM post_tags JOIN tags ON tags.id = post_tags.tag_id WHERE tags.slug = :tag_slug)';
             $params['tag_slug'] = $tagSlug;
+        }
+
+        if ($search) {
+            $sql .= ' AND (posts.title LIKE :search OR posts.excerpt LIKE :search OR posts.content LIKE :search)';
+            $params['search'] = '%' . $search . '%';
         }
 
         $sql .= ' ORDER BY posts.published_at DESC';
