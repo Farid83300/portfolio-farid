@@ -20,7 +20,7 @@ export default async function Blogs({
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
                         Actualités et tutoriels <br />
-                        dans le domaine de la Tech
+                        du domaine de la Tech
                     </h2>
                 </div>
                 <div className="row">
