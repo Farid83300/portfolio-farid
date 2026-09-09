@@ -54,10 +54,10 @@ export default function BlogDetails({ blog, isLight = false }) {
                                     // eslint-disable-next-line react/no-danger
                                     dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
                                 />
-                                {blog.tags?.length > 0 && (
-                                    <div className="blog-details-navigation">
-                                        <div className="navigation-tags">
-                                            <h3 className="tag-title">Mots-clés:</h3>
+                                <div className="blog-details-navigation" style={{ marginBottom: 10 }}>
+                                    <div className="navigation-tags">
+                                        <h3 className="tag-title">Mots-clés:</h3>
+                                        {blog.tags?.length > 0 && (
                                             <ul>
                                                 {blog.tags.map((tag) => (
                                                     <li key={tag.id}>
@@ -71,23 +71,30 @@ export default function BlogDetails({ blog, isLight = false }) {
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </div>
-                                        <div className="social-link footer">
+                                        )}
+                                    </div>
+                                    <div className="social-link footer">
                                             <a
                                                 href="https://github.com/Farid83300"
                                                 aria-label="Profil Github"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
                                                 <i className="fa-brands fa-github" />
                                             </a>
                                             <a
                                                 href="https://www.linkedin.com/in/farid-zaffalone/"
                                                 aria-label="Profil Linkedin"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
                                                 <i className="fa-brands fa-linkedin-in" />
                                             </a>
                                             <a
                                                 href="https://x.com/fzaffalone"
                                                 aria-label="ProfilX (Twitter)"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
                                                 <svg
                                                     width="14"
@@ -102,12 +109,13 @@ export default function BlogDetails({ blog, isLight = false }) {
                                             <a
                                                 href="https://www.facebook.com/FaridZaffalone"
                                                 aria-label="Profil Facebook"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
                                                 <i className="fa-brands fa-facebook-f" />
                                             </a>
                                         </div>
                                     </div>
-                                )}
                                 <Comment postId={blog.id} />
                             </div>
                         </div>

@@ -41,24 +41,49 @@ export default function PostForm({ post }) {
 
     async function addCategory() {
         if (!newCategory.trim()) return;
-        const category = await adminFetch('/admin/categories', {
-            method: 'POST',
-            body: JSON.stringify({ name: newCategory.trim() }),
-        });
-        setCategories((prev) => [...prev, category]);
-        setCategoryId(category.id);
-        setNewCategory('');
+        try {
+            const category = await adminFetch('/admin/categories', {
+                method: 'POST',
+                body: JSON.stringify({ name: newCategory.trim() }),
+            });
+            setCategories((prev) => [...prev, category]);
+            setCategoryId(category.id);
+            setNewCategory('');
+        } catch (err) {
+            setError(err.message);
+        }
     }
 
     async function addTag() {
         if (!newTag.trim()) return;
-        const tag = await adminFetch('/admin/tags', {
-            method: 'POST',
-            body: JSON.stringify({ name: newTag.trim() }),
-        });
-        setTags((prev) => [...prev, tag]);
-        setTagIds((prev) => [...prev, tag.id]);
-        setNewTag('');
+        try {
+            const tag = await adminFetch('/admin/tags', {
+                method: 'POST',
+                body: JSON.stringify({ name: newTag.trim() }),
+            });
+            setTags((prev) => [...prev, tag]);
+            setTagIds((prev) => [...prev, tag.id]);
+            setNewTag('');
+        } catch (err) {
+            setError(err.message);
+        }
+    }
+
+    async function deleteTagEverywhere(tag) {
+        if (
+            !window.confirm(
+                `Supprimer définitivement le tag « ${tag.name} » ? Il sera retiré de TOUS les articles du site, pas seulement de celui-ci.`
+            )
+        ) {
+            return;
+        }
+        try {
+            await adminFetch(`/admin/tags/${tag.id}`, { method: 'DELETE' });
+            setTags((prev) => prev.filter((t) => t.id !== tag.id));
+            setTagIds((prev) => prev.filter((id) => id !== tag.id));
+        } catch (err) {
+            setError(err.message);
+        }
     }
 
     async function handleImageUpload(e) {
@@ -247,6 +272,12 @@ export default function PostForm({ post }) {
                             placeholder="Nouvelle catégorie"
                             value={newCategory}
                             onChange={(e) => setNewCategory(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    addCategory();
+                                }
+                            }}
                         />
                         <button type="button" className={`${styles.btn} ${styles.btnGhost}`} onClick={addCategory}>
                             +
@@ -256,16 +287,31 @@ export default function PostForm({ post }) {
 
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Tags</div>
+                    <div className={styles.hint} style={{ marginBottom: 8 }}>
+                        Coche/décoche pour attribuer un tag à cet article. La corbeille supprime le tag du site
+                        entier (tous les articles).
+                    </div>
                     <div className={styles.checkboxGrid}>
                         {tags.map((tag) => (
-                            <label key={tag.id} className={styles.checkboxItem}>
-                                <input
-                                    type="checkbox"
-                                    checked={tagIds.includes(tag.id)}
-                                    onChange={() => toggleTag(tag.id)}
-                                />
-                                {tag.name}
-                            </label>
+                            <div key={tag.id} className={styles.checkboxItem}>
+                                <label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
+                                    <input
+                                        type="checkbox"
+                                        checked={tagIds.includes(tag.id)}
+                                        onChange={() => toggleTag(tag.id)}
+                                    />
+                                    {tag.name}
+                                </label>
+                                <button
+                                    type="button"
+                                    className={styles.tagRemove}
+                                    aria-label={`Supprimer définitivement le tag ${tag.name} du site`}
+                                    title="Supprimer définitivement ce tag du site (tous les articles)"
+                                    onClick={() => deleteTagEverywhere(tag)}
+                                >
+                                    🗑
+                                </button>
+                            </div>
                         ))}
                     </div>
                     <div className={styles.inlineAdd} style={{ marginTop: 10 }}>
@@ -274,6 +320,12 @@ export default function PostForm({ post }) {
                             placeholder="Nouveau tag"
                             value={newTag}
                             onChange={(e) => setNewTag(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    addTag();
+                                }
+                            }}
                         />
                         <button type="button" className={`${styles.btn} ${styles.btnGhost}`} onClick={addTag}>
                             +
