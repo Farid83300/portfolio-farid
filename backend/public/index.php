@@ -5,6 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\Core\App;
 use App\Middlewares\CorsMiddleware;
 
+//test: vérif ignored build step
 // SÉCURITÉ: en prod (APP_ENV absent ou != 'development'), on masque toute erreur PHP
 // au client (jamais de stack trace/chemin serveur dans une réponse) et on la journalise
 // dans un fichier au lieu de stdout. En dev, on affiche les erreurs pour pouvoir déboguer.
