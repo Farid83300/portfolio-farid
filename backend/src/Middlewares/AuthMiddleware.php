@@ -5,6 +5,9 @@ namespace App\Middlewares;
 use App\Core\Response;
 use App\Services\AuthService;
 
+// SÉCURITÉ: garde d'accès posée en tête de chaque route /admin/* protégée. Rejette
+// (401/403 + exit) toute requête sans Bearer token, ou dont le token est invalide/expiré/
+// scope insuffisant — voir AuthService::verifyToken() pour la vérification signature+exp.
 class AuthMiddleware
 {
     public static function handle(string $requiredScope = 'full'): array

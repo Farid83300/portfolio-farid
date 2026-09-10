@@ -47,4 +47,11 @@ class User
         $stmt = $pdo->prepare('UPDATE users SET totp_enabled = 0, totp_secret = NULL WHERE id = :id');
         $stmt->execute(['id' => $id]);
     }
+
+    public static function updatePassword(int $id, string $passwordHash): void
+    {
+        $pdo = Database::getInstance();
+        $stmt = $pdo->prepare('UPDATE users SET password = :password WHERE id = :id');
+        $stmt->execute(['password' => $passwordHash, 'id' => $id]);
+    }
 }

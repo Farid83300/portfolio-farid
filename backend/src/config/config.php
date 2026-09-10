@@ -17,7 +17,8 @@ return [
     ],
     'jwt' => [
         'secret' => $_ENV['JWT_SECRET'],
-        'expire' => (int) $_ENV['JWT_EXPIRE'],
+        'expire' => (int) ($_ENV['JWT_EXPIRE'] ?? 1800),
+        'refresh_expire' => (int) ($_ENV['REFRESH_TOKEN_EXPIRE'] ?? 2592000),
     ],
     'cors' => [
         'origin' => $_ENV['CORS_ORIGIN'],
@@ -27,5 +28,8 @@ return [
     ],
     'app' => [
         'url' => $_ENV['APP_URL'] ?? 'http://localhost:8000',
+        // SÉCURITÉ: par défaut 'production' (fail-safe) si APP_ENV est absent du .env —
+        // mieux vaut cacher des erreurs par erreur en dev que les afficher par erreur en prod.
+        'env' => $_ENV['APP_ENV'] ?? 'production',
     ],
 ];

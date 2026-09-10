@@ -4,10 +4,9 @@ namespace App\Services;
 
 use App\Config\Database;
 
-/**
- * Compteur de tentatives échouées (login, 2FA) persisté en base, avec verrouillage
- * temporaire au-delà d'un seuil. Protège contre le brute-force sur un compte unique.
- */
+// SÉCURITÉ: compteur de tentatives (échecs de login/2FA, ou volume de requêtes sur un
+// endpoint public) persisté en base, avec verrouillage temporaire au-delà d'un seuil sur
+// une fenêtre glissante. Protège contre le brute-force ET contre le spam/flood applicatif.
 class RateLimiter
 {
     public function tooManyAttempts(string $key): bool
@@ -37,7 +36,12 @@ class RateLimiter
         $pdo = Database::getInstance();
         $row = $this->find($key);
 
-        $attempts = ($row['attempts'] ?? 0) + 1;
+        // SÉCURITÉ: fenêtre glissante — si la dernière tentative remonte à plus longtemps
+        // que la fenêtre elle-même, on repart d'un compteur à zéro plutôt que de continuer
+        // à accumuler indéfiniment (sinon un visiteur légitime qui revient des mois plus
+        // tard finirait par se faire bloquer sans avoir rien fait d'abusif récemment).
+        $isStale = $row && strtotime($row['updated_at']) < time() - $lockoutSeconds;
+        $attempts = (!$row || $isStale) ? 1 : $row['attempts'] + 1;
         $lockedUntil = $attempts >= $maxAttempts
             ? date('Y-m-d H:i:s', time() + $lockoutSeconds)
             : null;
@@ -65,7 +69,7 @@ class RateLimiter
     private function find(string $key): ?array
     {
         $pdo = Database::getInstance();
-        $stmt = $pdo->prepare('SELECT attempts, locked_until FROM rate_limits WHERE `key` = :key LIMIT 1');
+        $stmt = $pdo->prepare('SELECT attempts, locked_until, updated_at FROM rate_limits WHERE `key` = :key LIMIT 1');
         $stmt->execute(['key' => $key]);
         $row = $stmt->fetch();
 

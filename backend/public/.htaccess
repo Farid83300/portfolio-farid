@@ -1,4 +1,5 @@
-# Réautorise l'accès à ce sous-dossier (la racine backend/.htaccess bloque tout par défaut)
+# SÉCURITÉ: réautorise l'accès à ce sous-dossier (la racine backend/.htaccess bloque
+# tout par défaut).
 <IfModule mod_authz_core.c>
     Require all granted
 </IfModule>
@@ -8,6 +9,13 @@
 </IfModule>
 
 RewriteEngine On
+
+# SÉCURITÉ: force HTTPS en production — ignoré en local (localhost/127.0.0.1, où MAMP
+# ne sert qu'en HTTP) pour ne pas casser le dev. Sur o2switch, une fois le certificat
+# HTTPS actif sur le domaine, ceci redirige tout trafic HTTP vers HTTPS.
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Force la transmission du header Authorization à PHP (nécessaire avec MAMP/FastCGI)
 RewriteCond %{HTTP:Authorization} .

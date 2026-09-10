@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import QRCode from 'qrcode';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
-import { adminFetch, decodeToken, getToken, setToken } from '@/lib/adminApi';
+import { adminFetch, decodeToken, getToken, setTokens } from '@/lib/adminApi';
 
 export default function AdminSecurityPage() {
     const router = useRouter();
@@ -15,6 +15,9 @@ export default function AdminSecurityPage() {
     const [enablePassword, setEnablePassword] = useState('');
     const [password, setPassword] = useState('');
     const [disableCode, setDisableCode] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [changeCode, setChangeCode] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(true);
@@ -45,7 +48,7 @@ export default function AdminSecurityPage() {
                 method: 'POST',
                 body: JSON.stringify({ code, password: enablePassword }),
             });
-            setToken(data.token);
+            setTokens(data.token, data.refresh_token);
             setEnabled(true);
             setSetupData(null);
             setEnablePassword('');
@@ -68,6 +71,28 @@ export default function AdminSecurityPage() {
             setPassword('');
             setDisableCode('');
             setSuccess('2FA désactivé.');
+        } catch (err) {
+            setError(err.message);
+        }
+    }
+
+    async function handleChangePassword(e) {
+        e.preventDefault();
+        setError('');
+        setSuccess('');
+        try {
+            await adminFetch('/admin/change-password', {
+                method: 'PUT',
+                body: JSON.stringify({
+                    current_password: currentPassword,
+                    new_password: newPassword,
+                    code: changeCode,
+                }),
+            });
+            setCurrentPassword('');
+            setNewPassword('');
+            setChangeCode('');
+            setSuccess('Mot de passe modifié. Les autres sessions ont été déconnectées.');
         } catch (err) {
             setError(err.message);
         }
@@ -182,6 +207,50 @@ export default function AdminSecurityPage() {
                     </>
                 )}
             </div>
+
+            {enabled && !forcedSetup && (
+                <div className={styles.card} style={{ marginTop: 24 }}>
+                    <div className={styles.cardTitle}>Changer le mot de passe</div>
+                    <form className={styles.form} onSubmit={handleChangePassword}>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="currentPassword">Mot de passe actuel</label>
+                            <input
+                                id="currentPassword"
+                                type="password"
+                                className={styles.input}
+                                value={currentPassword}
+                                onChange={(e) => setCurrentPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="newPassword">Nouveau mot de passe (12 caractères minimum)</label>
+                            <input
+                                id="newPassword"
+                                type="password"
+                                className={styles.input}
+                                value={newPassword}
+                                onChange={(e) => setNewPassword(e.target.value)}
+                                minLength={12}
+                                required
+                            />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="changeCode">Code 2FA actuel</label>
+                            <input
+                                id="changeCode"
+                                className={styles.input}
+                                value={changeCode}
+                                onChange={(e) => setChangeCode(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className={styles.btn}>
+                            Changer le mot de passe
+                        </button>
+                    </form>
+                </div>
+            )}
         </div>
     );
 }

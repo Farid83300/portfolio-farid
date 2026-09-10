@@ -1,4 +1,4 @@
-# Défense en profondeur : ce dossier ne doit jamais exécuter de scripts,
+# SÉCURITÉ: défense en profondeur — ce dossier ne doit jamais exécuter de scripts,
 # même si un fichier malveillant y était un jour déposé malgré la validation
 # côté PHP (UploadService).
 <IfModule mod_php.c>

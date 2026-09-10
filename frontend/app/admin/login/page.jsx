@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
-import { API_URL, setToken } from '@/lib/adminApi';
+import { API_URL, setTokens } from '@/lib/adminApi';
 
 export default function AdminLoginPage() {
     const router = useRouter();
@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
                 return;
             }
 
-            setToken(data.token);
+            setTokens(data.token, data.refresh_token);
             router.push(data.setup_2fa_required ? '/admin/security' : '/admin');
         } catch {
             setError('Impossible de contacter le serveur');

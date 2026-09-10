@@ -14,6 +14,11 @@ use App\Controllers\Public\ServiceController;
 $router->post('/admin/login', function ($request) {
     (new AuthController())->login($request);
 });
+// SÉCURITÉ: pas d'AuthMiddleware ici — c'est justement l'endpoint appelé quand l'access
+// token a expiré. L'authentification se fait sur le refresh token présenté dans le body.
+$router->post('/admin/refresh', function ($request) {
+    (new AuthController())->refresh($request);
+});
 
 $router->post('/contact', function ($request) {
     (new ContactController())->store($request);

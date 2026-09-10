@@ -13,8 +13,8 @@ class MailService
             return false;
         }
 
-        // Neutralise tout retour à la ligne dans les champs contrôlés par le visiteur
-        // avant de les injecter dans les en-têtes / le sujet du mail (header injection).
+        // SÉCURITÉ: neutralise tout retour à la ligne dans les champs contrôlés par le
+        // visiteur avant de les injecter dans les en-têtes / le sujet du mail (header injection).
         $sanitize = static fn (string $value): string => trim(preg_replace('/[\r\n]+/', ' ', $value));
 
         $name = $sanitize($name);

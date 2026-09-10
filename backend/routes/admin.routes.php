@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\Admin\AuthController;
 use App\Controllers\Admin\CategoryController;
 use App\Controllers\Admin\ChatMessageController;
 use App\Controllers\Admin\CommentController;
@@ -37,6 +38,17 @@ $router->post('/admin/2fa/enable', function ($request) {
 $router->post('/admin/2fa/disable', function ($request) {
     $payload = AuthMiddleware::handle();
     (new SecurityController())->disable($request, $payload);
+});
+$router->put('/admin/change-password', function ($request) {
+    $payload = AuthMiddleware::handle();
+    (new SecurityController())->changePassword($request, $payload);
+});
+
+// SÉCURITÉ: logout réel — révoque les refresh tokens côté serveur (voir
+// AuthController::logout), contrairement à un simple effacement du token en local.
+$router->post('/admin/logout', function ($request) {
+    $payload = AuthMiddleware::handle('any');
+    (new AuthController())->logout($request, $payload);
 });
 
 // Articles

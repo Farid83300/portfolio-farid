@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
-import { clearToken } from '@/lib/adminApi';
+import { logout } from '@/lib/adminApi';
 
 export default function AdminSidebar({ counts = {} }) {
     const pathname = usePathname();
@@ -31,8 +31,8 @@ export default function AdminSidebar({ counts = {} }) {
         return link.exact ? pathname === link.href : pathname.startsWith(link.href);
     }
 
-    function handleLogout() {
-        clearToken();
+    async function handleLogout() {
+        await logout();
         router.push('/admin/login');
     }
 

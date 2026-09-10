@@ -5,6 +5,9 @@ namespace App\Config;
 use PDO;
 use PDOException;
 
+// SÉCURITÉ: PDO en ATTR_ERRMODE_EXCEPTION — toute la base de code (tous les Models/)
+// utilise exclusivement des requêtes préparées avec paramètres liés (jamais de
+// concaténation de valeurs dans le SQL), ce qui élimine l'injection SQL par construction.
 class Database
 {
     private static ?PDO $instance = null;

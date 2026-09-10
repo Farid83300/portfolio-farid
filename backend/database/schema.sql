@@ -1,10 +1,11 @@
 -- Schéma complet de la base portfolio_farid, cumul de migrations.sql
--- à migrations_v6.sql (généré le 2026-09-06 depuis la base locale à jour).
+-- à migrations_v8.sql (généré le 2026-09-06, tenu à jour à la main jusqu'à
+-- migrations_v8.sql inclus le 2026-09-10).
 --
 -- À utiliser pour créer une base neuve en une seule fois (nouvelle machine,
--- mise en prod). Les fichiers migrations_v2.sql..v6.sql restent en place
+-- mise en prod). Les fichiers migrations_v2.sql..v8.sql restent en place
 -- pour l'historique et pour faire évoluer une base déjà existante — mais si
--- une future migrations_v7.sql change le schéma, pense à répercuter le
+-- une future migrations_vN.sql change le schéma, pense à répercuter le
 -- changement ici aussi, ce fichier ne se met pas à jour tout seul.
 
 SET NAMES utf8mb4;
@@ -30,6 +31,19 @@ CREATE TABLE `rate_limits` (
   `locked_until` datetime DEFAULT NULL,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `refresh_tokens` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `token_hash` char(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expires_at` datetime NOT NULL,
+  `revoked_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_refresh_tokens_hash` (`token_hash`),
+  KEY `idx_refresh_tokens_user` (`user_id`),
+  CONSTRAINT `refresh_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------------------------

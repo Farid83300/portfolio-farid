@@ -43,8 +43,8 @@ class UploadService
             throw new RuntimeException('Type de fichier non autorisé');
         }
 
-        // Vérifie le contenu réel du fichier (pas seulement son extension déclarée),
-        // pour empêcher l'upload d'un fichier renommé (ex: script déguisé en .jpg).
+        // SÉCURITÉ: vérifie le contenu réel du fichier (pas seulement son extension
+        // déclarée), pour empêcher l'upload d'un fichier renommé (ex: script déguisé en .jpg).
         $mimeType = mime_content_type($file['tmp_name']);
         if ($mimeType === false || !in_array($mimeType, self::ALLOWED_MIME_TYPES, true)) {
             throw new RuntimeException('Le contenu du fichier ne correspond pas à une image valide');
@@ -73,11 +73,13 @@ class UploadService
     public function delete(string $path): void
     {
         $path = ltrim($path, '/');
+        // SÉCURITÉ: rejette toute tentative de path traversal (`..`) avant même de
+        // regarder le dossier parent — défense en profondeur avec le realpath() plus bas.
         if ($path === '' || str_contains($path, '..')) {
             throw new RuntimeException('Chemin de fichier invalide');
         }
 
-        // Le dossier parent du chemin doit être un des dossiers d'upload autorisés,
+        // SÉCURITÉ: le dossier parent du chemin doit être un des dossiers d'upload autorisés,
         // sinon un client pourrait tenter de faire supprimer n'importe quel fichier du serveur.
         if (!in_array(dirname($path), self::ALLOWED_DIRS, true)) {
             throw new RuntimeException('Chemin de fichier invalide');
@@ -86,8 +88,11 @@ class UploadService
         $base = realpath(__DIR__ . '/../../public/uploads');
         $real = realpath($base . '/' . $path);
 
-        // Fichier déjà absent (ou hors du dossier uploads malgré la validation ci-dessus) :
-        // on considère l'opération réussie plutôt que de faire échouer la suppression du champ.
+        // SÉCURITÉ: double vérification via realpath() — le chemin résolu doit rester
+        // physiquement à l'intérieur de public/uploads/ (protège même contre un symlink
+        // ou un cas non couvert par les contrôles précédents). Fichier déjà absent (ou
+        // hors du dossier uploads malgré la validation ci-dessus) : on considère
+        // l'opération réussie plutôt que de faire échouer la suppression du champ.
         if ($real === false || !str_starts_with($real, $base . DIRECTORY_SEPARATOR)) {
             return;
         }
