@@ -3,7 +3,8 @@
 // le script/style-src le plus strict casserait silencieusement tous les appels
 // fetch() du site (formulaires publics + dashboard admin) vers ce domaine.
 const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-const apiOrigin = new URL(apiUrl).origin;
+const apiUrlParsed = new URL(apiUrl);
+const apiOrigin = apiUrlParsed.origin;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -15,6 +16,14 @@ const nextConfig = {
         remotePatterns: [
             { protocol: 'http', hostname: 'localhost', port: '8888', pathname: '/portfolio-farid-backend/**' },
             { protocol: 'http', hostname: 'localhost', port: '8000', pathname: '/uploads/**' },
+            // Domaine de l'API en prod (ex: api.faridzaffalone.com) — sans cette entrée,
+            // next/image bloque silencieusement toute image servie par ce domaine et
+            // affiche une icône cassée, même si le fichier existe bien sur le serveur.
+            {
+                protocol: apiUrlParsed.protocol.replace(':', ''),
+                hostname: apiUrlParsed.hostname,
+                pathname: '/uploads/**',
+            },
         ],
     },
     async headers() {
