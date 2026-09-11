@@ -12,6 +12,16 @@ const nextConfig = {
         quietDeps: true, // This will silence deprecation warnings
         silenceDeprecations: ['mixed-decls', 'legacy-js-api'],
     },
+    // `isomorphic-dompurify` (utilisé côté serveur par BlogDetails.jsx pour nettoyer
+    // le HTML des articles) s'appuie sur `jsdom`, dont une dépendance profonde est
+    // publiée en ESM pur — le bundler serverless de Vercel tente de la charger via
+    // `require()` et plante (`require() of ES Module .../@exodus/bytes/...`), 500 sur
+    // chaque page /blog-details/[slug] en production (jamais reproduit en local avec
+    // `next dev`/`next start`, uniquement dans l'environnement de bundling de Vercel).
+    // En listant le paquet ici, Next.js le laisse tel quel (pas de bundling/trace) et
+    // s'appuie sur le `require()` natif de Node contre le vrai `node_modules`, qui
+    // gère cette interop ESM/CJS correctement.
+    serverExternalPackages: ['isomorphic-dompurify', 'jsdom'],
     images: {
         remotePatterns: [
             { protocol: 'http', hostname: 'localhost', port: '8888', pathname: '/portfolio-farid-backend/**' },
