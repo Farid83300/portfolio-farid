@@ -1,51 +1,58 @@
 'use client';
-import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
 import { toast } from 'react-toastify';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 export default function Contact({ parentClass = 'get-in-touch-area tmp-section-gapTop' }) {
     const form = useRef();
 
-    const sandMail = (e) => {
+    const sandMail = async (e) => {
         e.preventDefault();
-        emailjs
-            .sendForm(
-                // EmailJS service ID - identifies which email service to use
-                'service_cyobi0y',
+        const formData = new FormData(form.current);
 
-                // EmailJS template ID - specifies which email template to use
-                'template_4nbexqj',
-
-                // Reference to the HTML form element containing user input
-                form.current,
-
-                {
-                    // Public API key for authentication with EmailJS
-                    publicKey: 'D79JdTqxXVCcQBXL4',
-                }
-            )
-            .then((res) => {
-                if (res.status == 200) {
-                    toast.success('Message Envoyé avec succès!', {
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                    form.current.reset();
-                } else {
-                    toast.error('Ops, il y a eu un problème!', {
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                }
+        try {
+            const res = await fetch(`${API_URL}/contact`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message'),
+                }),
             });
+
+            if (res.ok) {
+                toast.success('Message Envoyé avec succès!', {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+                form.current.reset();
+            } else {
+                toast.error('Ops, il y a eu un problème!', {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+        } catch {
+            toast.error('Ops, il y a eu un problème!', {
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
     };
     return (
         <section className={parentClass} id="contacts">
@@ -95,7 +102,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                                             className="input-field"
                                                             id="contact-phone"
                                                             placeholder="Ton Téléphone"
-                                                            type="number"
+                                                            type="tel"
                                                             required
                                                         />
                                                     </div>

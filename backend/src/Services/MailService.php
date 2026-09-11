@@ -29,6 +29,10 @@ class MailService
         $body = "Nom: {$name}\nEmail: {$email}\n\n{$content}";
         $headers = "From: no-reply@faridzaffalone.com\r\nReply-To: {$email}\r\n";
 
-        return @mail($to, $mailSubject, $body, $headers);
+        // SÉCURITÉ/délivrabilité: fixe l'enveloppe d'expéditeur (Return-Path) sur le
+        // domaine du site plutôt que de laisser PHP utiliser l'utilisateur système par
+        // défaut — sur hébergement mutualisé, un Return-Path qui ne correspond pas au
+        // domaine expéditeur est un signal fort de spam pour beaucoup de filtres.
+        return @mail($to, $mailSubject, $body, $headers, '-f no-reply@faridzaffalone.com');
     }
 }

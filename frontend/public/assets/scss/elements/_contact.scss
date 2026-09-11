@@ -78,6 +78,25 @@
                     font-weight: 400;
                     line-height: 30px;
                 }
+
+                // Chrome peint son propre fond clair par-dessus les champs qu'il vient
+                // d'auto-remplir (nom/tél/email) — un box-shadow "transparent" ne le
+                // masque pas, il faut une couleur opaque qui repeint réellement
+                // par-dessus, ici le fond réel du panneau (--color-gray-2, #141414).
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active,
+                &:autofill,
+                &:autofill:hover,
+                &:autofill:focus,
+                &:autofill:active {
+                    -webkit-box-shadow: 0 0 0 1000px var(--color-gray-2) inset !important;
+                    box-shadow: 0 0 0 1000px var(--color-gray-2) inset !important;
+                    -webkit-text-fill-color: var(--color-heading) !important;
+                    caret-color: var(--color-heading);
+                    transition: background-color 5000s ease-in-out 0s;
+                }
             }
 
             textarea {

@@ -14,6 +14,26 @@ textarea {
     outline: none;
     border-color: var(--color-primary);
   }
+
+  // Chrome/Edge appliquent leur propre fond clair (souvenir de saisie) dès qu'un
+  // champ a déjà été rempli une fois sur ce domaine — invisible en local (jamais
+  // rempli avant) mais visible en prod. `box-shadow` inset transparent neutralise
+  // ce fond sans casser la transparence voulue du champ.
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active,
+  &:autofill,
+  &:autofill:hover,
+  &:autofill:focus,
+  &:autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: var(--color-body) !important;
+    background-color: transparent !important;
+    caret-color: var(--color-body);
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
 
 button,

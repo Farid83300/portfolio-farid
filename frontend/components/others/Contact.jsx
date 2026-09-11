@@ -148,7 +148,7 @@ export default function Contact() {
                                                                 className="input-field"
                                                                 id="contact-phone"
                                                                 placeholder="Ton Téléphone"
-                                                                type="number"
+                                                                type="tel"
                                                                 required
                                                             />
                                                         </div>

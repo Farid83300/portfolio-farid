@@ -35,7 +35,7 @@ export default function Appointment() {
                                                             name="contact-phone"
                                                             id="contact-phone"
                                                             placeholder="Ton Téléphone"
-                                                            type="number"
+                                                            type="tel"
                                                             required
                                                         />
                                                     </div>
