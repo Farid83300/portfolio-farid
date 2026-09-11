@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import DOMPurify from 'isomorphic-dompurify';
 import BlogSidebar from './BlogSidebar';
 import Comment from './Comment';
 import { uploadUrl } from '@/lib/publicApi';
+import { sanitizeContentHtml } from '@/lib/sanitizeHtml';
 export default function BlogDetails({ blog, isLight = false }) {
     return (
         <div className="blog-classic-area-wrapper tmp-section-gap">
@@ -52,7 +52,7 @@ export default function BlogDetails({ blog, isLight = false }) {
                                 <div
                                     className="disc"
                                     // eslint-disable-next-line react/no-danger
-                                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
+                                    dangerouslySetInnerHTML={{ __html: sanitizeContentHtml(blog.content) }}
                                 />
                                 <div className="blog-details-navigation" style={{ marginBottom: 10 }}>
                                     <div className="navigation-tags">
