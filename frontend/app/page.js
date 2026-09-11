@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Copyright from '@/components/footers/Copyright';
 import Footer1 from '@/components/footers/Footer1';
 import Header1 from '@/components/headers/Header1';
@@ -12,8 +13,9 @@ import Services from '@/components/common/Services';
 import Services2 from '@/components/common/Services3';
 import Skills from '@/components/common/Skills';
 import Skills2 from '@/components/common/Skills2';
-import Testimonials from '@/components/homes/home-1/Testimonials';
 import CommonComponents from '@/components/common/CommonComponents';
+
+const Testimonials = dynamic(() => import('@/components/homes/home-1/Testimonials'));
 
 export const metadata = {
     title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',

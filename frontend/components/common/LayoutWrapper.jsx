@@ -2,8 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import React, { useEffect } from 'react';
-import SplitText from '@/utils/splittext';
-import gsap, { Back } from 'gsap';
 import { closeMobilemenu, closeMobilemenu2 } from '@/utils/toggleMobilemenu';
 
 export default function LayoutWrapper({ children }) {
@@ -277,103 +275,98 @@ export default function LayoutWrapper({ children }) {
         }
     }, [pathname]); // Empty dependency array means this runs once on mount
 
+    // GSAP + SplitText ne sont chargés que si des éléments à animer sont présents sur la page
     useEffect(() => {
-        const animatedTextElements = document.querySelectorAll('.inv-title-animation-wrap');
+        const invTitleElements = document.querySelectorAll('.inv-title-animation-wrap');
+        const splitTitleElements = document.querySelectorAll('.tmp-title-split');
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
+        if (invTitleElements.length === 0 && splitTitleElements.length === 0) {
+            return undefined;
+        }
 
-                        // Reset if needed
-                        if (element.animation) {
-                            element.animation.progress(1).kill();
-                            element.split.revert();
-                        }
+        let observer1;
+        let observer2;
+        let cancelled = false;
 
-                        element.split = new SplitText(element, {
-                            type: 'lines,words,chars',
-                            linesClass: 'split-line',
+        (async () => {
+            const [{ default: gsap, Back }, { default: SplitText }] = await Promise.all([
+                import('gsap'),
+                import('@/utils/splittext'),
+            ]);
+
+            if (cancelled) return;
+
+            function createTitleObserver(elements, splitType) {
+                if (elements.length === 0) return null;
+
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                const element = entry.target;
+
+                                if (element.animation) {
+                                    element.animation.progress(1).kill();
+                                    element.split.revert();
+                                }
+
+                                element.split = new SplitText(element, splitType);
+
+                                gsap.set(element, { perspective: 400 });
+                                gsap.set(element.split.chars, {
+                                    opacity: 0,
+                                    x: '-10',
+                                    rotateX: '0',
+                                });
+
+                                element.animation = gsap.to(element.split.chars, {
+                                    x: '0',
+                                    y: '0',
+                                    rotateX: '0',
+                                    opacity: 1,
+                                    duration: 1,
+                                    ease: Back.easeOut,
+                                    stagger: 0.02,
+                                });
+
+                                observer.unobserve(element);
+                            }
                         });
+                    },
+                    { threshold: 0.1 }
+                );
 
-                        gsap.set(element, { perspective: 400 });
+                elements.forEach((element) => observer.observe(element));
+                return observer;
+            }
 
-                        gsap.set(element.split.chars, {
-                            opacity: 0,
-                            x: '-10',
-                            rotateX: '0',
-                        });
+            observer1 = createTitleObserver(invTitleElements, {
+                type: 'lines,words,chars',
+                linesClass: 'split-line',
+            });
+            observer2 = createTitleObserver(splitTitleElements, { type: 'chars' });
+        })();
 
-                        element.animation = gsap.to(element.split.chars, {
-                            x: '0',
-                            y: '0',
-                            rotateX: '0',
-                            opacity: 1,
-                            duration: 1,
-                            ease: Back.easeOut,
-                            stagger: 0.02,
-                        });
-
-                        observer.unobserve(element); // Unobserve to avoid repeat
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        ); // Adjust threshold if needed
-
-        animatedTextElements.forEach((element) => observer.observe(element));
-
-        return () => observer.disconnect();
+        return () => {
+            cancelled = true;
+            observer1?.disconnect();
+            observer2?.disconnect();
+        };
     }, [pathname]);
 
+    // WOW.js ne se charge que si la page contient réellement des éléments .wow
+    // (Skills.jsx : barres de compétences, Skills2.jsx : fond animé du service actif)
     useEffect(() => {
-        const animatedTextElements = document.querySelectorAll('.tmp-title-split');
+        const wowElements = document.querySelectorAll('.wow');
+        if (wowElements.length === 0) return;
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-
-                        // Reset if needed
-                        if (element.animation) {
-                            element.animation.progress(1).kill();
-                            element.split.revert();
-                        }
-
-                        element.split = new SplitText(element, {
-                            type: 'chars',
-                        });
-
-                        gsap.set(element, { perspective: 400 });
-
-                        gsap.set(element.split.chars, {
-                            opacity: 0,
-                            x: '-10',
-                            rotateX: '0',
-                        });
-
-                        element.animation = gsap.to(element.split.chars, {
-                            x: '0',
-                            y: '0',
-                            rotateX: '0',
-                            opacity: 1,
-                            duration: 1,
-                            ease: Back.easeOut,
-                            stagger: 0.02,
-                        });
-
-                        observer.unobserve(element); // Unobserve to avoid repeat
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        ); // Adjust threshold if needed
-
-        animatedTextElements.forEach((element) => observer.observe(element));
-
-        return () => observer.disconnect();
+        import('@/utils/wow').then((WOW) => {
+            const wow = new WOW.default({
+                mobile: false,
+                live: false,
+            });
+            wow.init();
+        });
     }, [pathname]);
 
     return <>{children}</>;

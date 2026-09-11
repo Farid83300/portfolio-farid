@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { closeSidebar } from '@/utils/toggleSidebar';
 
 export default function Sidebar() {
@@ -9,14 +10,14 @@ export default function Sidebar() {
                 <div className="inner">
                     <div className="top-area">
                         <a href="/" className="logo">
-                            <img
+                            <Image
                                 className="logo-dark"
                                 alt="Logo Farid Zaffalone"
                                 src="/assets/images/logo/logo.png"
                                 width={53}
                                 height={50}
                             />
-                            <img
+                            <Image
                                 className="logo-white"
                                 alt="Logo Farid Zaffalone"
                                 src="/assets/images/logo/logo.png"
@@ -36,9 +37,9 @@ export default function Sidebar() {
                     <div className="content-wrapper">
                         <div className="image-area-feature">
                             <a href="/">
-                                <img
+                                <Image
                                     alt="personal-logo"
-                                    src="/assets/images/logo/man.png"
+                                    src="/assets/images/logo/man.webp"
                                     width={340}
                                     height={196}
                                 />
@@ -99,21 +100,21 @@ export default function Sidebar() {
                             <span className="subtitle">Rejoignez moi</span>
                             <div className="social-link">
                                 <a href="https://github.com/Farid83300" aria-label="Profil Github" target="_blank" rel="noopener noreferrer">
-                                <i className="fa-brands fa-github" />
+                                    <i className="fa-brands fa-github" />
                                 </a>
 
                                 <a href="https://www.linkedin.com/in/farid-zaffalone/" aria-label="Profil Linkedin" target="_blank" rel="noopener noreferrer">
-                                <i className="fa-brands fa-linkedin-in" />
+                                    <i className="fa-brands fa-linkedin-in" />
                                 </a>
 
                                 <a href="https://x.com/fzaffalone" aria-label="Profil X (Twitter)" target="_blank" rel="noopener noreferrer">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
                                 </a>
 
                                 <a href="https://www.facebook.com/FaridZaffalone" aria-label="Profil Facebook" target="_blank" rel="noopener noreferrer">
-                                <i className="fa-brands fa-facebook-f" />
+                                    <i className="fa-brands fa-facebook-f" />
                                 </a>
                             </div>
                         </div>
@@ -121,10 +122,9 @@ export default function Sidebar() {
                     </div>
                 </div>
             </div>
-            <a
+            <div
                 className="overlay_close_side_menu close_side_menu_active"
                 onClick={closeSidebar}
-                href="#"
             />
         </div>
     );

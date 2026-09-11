@@ -1,6 +1,5 @@
 import { Rajdhani, Rubik } from 'next/font/google';
 import '../public/assets/scss/main.scss';
-import 'odometer/themes/odometer-theme-default.css';
 import 'react-toastify/dist/ReactToastify.css';
 import LayoutWrapper from '@/components/common/LayoutWrapper';
 import CookieConsent from '@/components/common/CookieConsent';

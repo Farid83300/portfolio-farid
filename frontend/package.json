@@ -12,9 +12,6 @@
     "dependencies": {
         "@emailjs/browser": "^4.4.1",
         "@popperjs/core": "^2.11.8",
-        "@tsparticles/engine": "^3.0.2",
-        "@tsparticles/react": "^3.0.0",
-        "@tsparticles/slim": "^3.8.1",
         "bootstrap": "^5.0.2",
         "gsap": "^3.12.7",
         "isomorphic-dompurify": "^4.1.0",
