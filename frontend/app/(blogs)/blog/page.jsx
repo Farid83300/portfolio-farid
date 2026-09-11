@@ -10,6 +10,9 @@ export const metadata = {
     title: 'Blog || Farid Zaffalone',
     description:
         'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    alternates: {
+        canonical: '/blog',
+    },
 };
 export default async function page({ searchParams }) {
     const { search } = await searchParams;

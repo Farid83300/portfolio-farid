@@ -12,6 +12,9 @@ export const metadata = {
     title: 'Services || Farid Zaffalone',
     description:
         'Services proposés par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    alternates: {
+        canonical: '/service',
+    },
 };
 export default function page() {
     return (

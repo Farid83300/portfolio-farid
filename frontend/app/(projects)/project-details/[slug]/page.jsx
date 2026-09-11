@@ -7,11 +7,19 @@ import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 import { getProject } from '@/lib/publicApi';
 import { notFound } from 'next/navigation';
-export const metadata = {
-    title: 'Projet || Farid Zaffalone',
-    description:
-        'Détail de projet réalisé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
-};
+
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    return {
+        title: 'Projet || Farid Zaffalone',
+        description:
+            'Détail de projet réalisé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+        alternates: {
+            canonical: `/project-details/${slug}`,
+        },
+    };
+}
+
 export default async function page({ params }) {
     const { slug } = await params;
     const portfolioItem = await getProject(slug);

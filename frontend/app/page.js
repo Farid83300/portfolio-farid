@@ -19,6 +19,9 @@ export const metadata = {
     title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',
     description:
         'Portfolio de Farid Zaffalone, développeur freelance spécialisé dans le développement PHP/React, la conception Figma et les projets WordPress.',
+    alternates: {
+        canonical: '/',
+    },
 };
 export default function Home() {
     return (

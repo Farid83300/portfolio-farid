@@ -7,6 +7,10 @@ import Link from 'next/link';
 export const metadata = {
     title: 'Page introuvable || Farid Zaffalone',
     description: "La page que vous recherchez n'existe pas ou plus.",
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function NotFound() {

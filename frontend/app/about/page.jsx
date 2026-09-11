@@ -12,6 +12,9 @@ import CommonComponents from '@/components/common/CommonComponents';
 export const metadata = {
     title: 'À propos || Farid Zaffalone',
     description: 'En savoir plus sur Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    alternates: {
+        canonical: '/about',
+    },
 };
 export default function page() {
     return (

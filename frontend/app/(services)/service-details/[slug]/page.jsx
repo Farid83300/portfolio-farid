@@ -17,6 +17,9 @@ export async function generateMetadata({ params }) {
             title: 'Service || Farid Zaffalone',
             description:
                 'Détail de service proposé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+            alternates: {
+                canonical: `/service-details/${slug}`,
+            },
         };
     }
 
@@ -25,6 +28,9 @@ export async function generateMetadata({ params }) {
         description:
             serviceItem.meta_description ||
             'Détail de service proposé par Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+        alternates: {
+            canonical: `/service-details/${slug}`,
+        },
     };
 }
 

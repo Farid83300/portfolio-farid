@@ -7,10 +7,19 @@ import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 import { getPost } from '@/lib/publicApi';
 import { notFound } from 'next/navigation';
-export const metadata = {
-    title: 'Blog || Farid Zaffalone',
-    description: 'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
-};
+
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    return {
+        title: 'Blog || Farid Zaffalone',
+        description:
+            'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+        alternates: {
+            canonical: `/blog-details/${slug}`,
+        },
+    };
+}
+
 export default async function page({ params }) {
     const { slug } = await params;
     const blog = await getPost(slug);
@@ -35,7 +44,6 @@ export default async function page({ params }) {
                                     </li>
                                     <li className="tmp-breadcrumb-item active">Blog Details</li>
                                 </ul>
-                                {/* <div class="circle-1"></div> */}
                             </div>
                         </div>
                     </div>

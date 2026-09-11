@@ -8,6 +8,9 @@ export const metadata = {
     title: 'Politique de confidentialité || Farid Zaffalone',
     description:
         "Politique de confidentialité et de protection des données personnelles du site de Farid Zaffalone.",
+    alternates: {
+        canonical: '/politique-de-confidentialite',
+    },
 };
 
 export default function PolitiqueDeConfidentialite() {

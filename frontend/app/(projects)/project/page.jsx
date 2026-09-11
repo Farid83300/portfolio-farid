@@ -10,6 +10,9 @@ export const metadata = {
     title: 'Projets || Farid Zaffalone',
     description:
         'Portfolio de projets de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    alternates: {
+        canonical: '/project',
+    },
 };
 export default async function page() {
     const items = await getProjects();

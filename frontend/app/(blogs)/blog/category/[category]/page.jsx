@@ -6,11 +6,19 @@ import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 import { getPosts } from '@/lib/publicApi';
-export const metadata = {
-    title: 'Blog || Farid Zaffalone',
-    description:
-        'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
-};
+
+export async function generateMetadata({ params }) {
+    const { category } = await params;
+    return {
+        title: 'Blog || Farid Zaffalone',
+        description:
+            'Articles de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+        alternates: {
+            canonical: `/blog/category/${category}`,
+        },
+    };
+}
+
 export default async function CategoryPage({ params }) {
     const { category } = await params;
     const blogs = await getPosts({ category });

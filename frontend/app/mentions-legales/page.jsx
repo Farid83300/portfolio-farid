@@ -7,6 +7,9 @@ import Link from 'next/link';
 export const metadata = {
     title: 'Mentions légales || Farid Zaffalone',
     description: 'Mentions légales du site de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+    alternates: {
+        canonical: '/mentions-legales',
+    },
 };
 
 export default function MentionsLegales() {
