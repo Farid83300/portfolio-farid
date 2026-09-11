@@ -1,9 +1,9 @@
 @use "sass:meta";
-@import "../css/vendor/fontawesome.css";
-@import "../css/plugins/swiper.css";
-@import "../css/plugins/odometer.css";
-@import "../css/vendor/animate.min.css";
-@import "../css/vendor/bootstrap.min.css";
+@import "../css/vendor/fontawesome.scss";
+@import "../css/plugins/swiper.scss";
+@import "../css/plugins/odometer.scss";
+@import "../css/vendor/animate.min.scss";
+@import "../css/vendor/bootstrap.min.scss";
 
 // custom css
 @include meta.load-css("style.scss");

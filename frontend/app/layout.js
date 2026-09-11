@@ -1,10 +1,25 @@
+import { Rajdhani, Rubik } from 'next/font/google';
 import '../public/assets/scss/main.scss';
-import 'odometer/themes/odometer-theme-default.css'; // Import theme
+import 'odometer/themes/odometer-theme-default.css';
 import 'react-toastify/dist/ReactToastify.css';
 import LayoutWrapper from '@/components/common/LayoutWrapper';
 import CookieConsent from '@/components/common/CookieConsent';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
+
+const rajdhani = Rajdhani({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700'],
+    variable: '--font-rajdhani',
+    display: 'swap',
+});
+
+const rubik = Rubik({
+    subsets: ['latin'],
+    variable: '--font-rubik',
+    display: 'swap',
+});
+
 export const metadata = {
     metadataBase: new URL('https://www.faridzaffalone.com'),
     title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',
@@ -14,24 +29,12 @@ export const metadata = {
         canonical: '/',
     },
 };
+
 export default function RootLayout({ children }) {
     return (
-        <html lang="fr">
-            <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
-                    rel="stylesheet"
-                />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-                    rel="stylesheet"
-                />
-            </head>
-
+        <html lang="fr" className={`${rajdhani.variable} ${rubik.variable}`}>
             <body>
-                <Script src="/assets/js/smooth.js" strategy="beforeInteractive" />
+                <Script src="/assets/js/smooth.js" strategy="afterInteractive" />
                 <LayoutWrapper>
                     <ToastContainer
                         position="top-right"

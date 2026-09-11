@@ -5,8 +5,10 @@ import React, { useEffect } from 'react';
 import SplitText from '@/utils/splittext';
 import gsap, { Back } from 'gsap';
 import { closeMobilemenu, closeMobilemenu2 } from '@/utils/toggleMobilemenu';
+
 export default function LayoutWrapper({ children }) {
     const pathname = usePathname();
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             // Import the script only on the client side
@@ -223,6 +225,7 @@ export default function LayoutWrapper({ children }) {
             };
         }
     }, [pathname]); // Empty dependency array means this runs once on mount
+
     useEffect(() => {
         const cards = document.querySelectorAll('.tmponhover');
         const handleCardMouseMove = (e) => {
@@ -260,6 +263,7 @@ export default function LayoutWrapper({ children }) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []); // Empty dependency array means this runs once on mount
+
     useEffect(() => {
         const animates = document.querySelectorAll('.tmp-scroll-trigger');
         if (animates.length > 0) {
@@ -322,6 +326,7 @@ export default function LayoutWrapper({ children }) {
 
         return () => observer.disconnect();
     }, [pathname]);
+
     useEffect(() => {
         const animatedTextElements = document.querySelectorAll('.tmp-title-split');
 
@@ -369,14 +374,6 @@ export default function LayoutWrapper({ children }) {
         animatedTextElements.forEach((element) => observer.observe(element));
 
         return () => observer.disconnect();
-    }, [pathname]);
-    useEffect(() => {
-        const WOW = require('@/utils/wow');
-        const wow = new WOW.default({
-            mobile: false,
-            live: false,
-        });
-        wow.init();
     }, [pathname]);
 
     return <>{children}</>;

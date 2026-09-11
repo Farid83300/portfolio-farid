@@ -15,6 +15,8 @@ export default function Hero() {
                                     src="/assets/images/banner/banner-user-image-one.webp"
                                     width={486}
                                     height={781}
+                                    priority
+                                    fetchPriority="high"
                                 />
                                 <h2 className="banner-big-text-1 up-down">WEB DESIGNER</h2>
                                 <h2 className="banner-big-text-2 up-down-2">WEB DEVELOPER</h2>
