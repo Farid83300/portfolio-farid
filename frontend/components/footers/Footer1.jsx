@@ -85,19 +85,25 @@ export default function Footer1({
                                     <div className="social-link footer">
                                         <a
                                             href="https://github.com/Farid83300"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             aria-label="Profil Github"
                                         >
                                             <i className="fa-brands fa-github" />
                                         </a>
                                         <a
                                             href="https://www.linkedin.com/in/farid-zaffalone/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             aria-label="Profil Linkedin"
                                         >
                                             <i className="fa-brands fa-linkedin-in" />
                                         </a>
                                         <a
                                             href="https://x.com/fzaffalone"
-                                            aria-label="ProfilX (Twitter)"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Profil X (Twitter)"
                                         >
                                             <svg
                                                 width="14"
@@ -111,6 +117,8 @@ export default function Footer1({
                                         </a>
                                         <a
                                             href="https://www.facebook.com/FaridZaffalone"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             aria-label="Profil Facebook"
                                         >
                                             <i className="fa-brands fa-facebook-f" />

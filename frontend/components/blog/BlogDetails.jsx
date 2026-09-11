@@ -92,7 +92,7 @@ export default function BlogDetails({ blog, isLight = false }) {
                                             </a>
                                             <a
                                                 href="https://x.com/fzaffalone"
-                                                aria-label="ProfilX (Twitter)"
+                                                aria-label="Profil X (Twitter)"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
