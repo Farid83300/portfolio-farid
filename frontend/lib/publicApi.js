@@ -8,7 +8,7 @@ export function uploadUrl(path) {
 async function publicFetch(path) {
     let res;
     try {
-        res = await fetch(`${API_URL}${path}`, { cache: 'no-store' });
+        res = await fetch(`${API_URL}${path}`, { next: { revalidate: 3600 } });
     } catch {
         // Backend injoignable (down, réseau coupé...) : on dégrade proprement
         // plutôt que de laisser fetch() planter la page/le sitemap.
