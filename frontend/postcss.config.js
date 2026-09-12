@@ -27,6 +27,13 @@ if (process.env.NODE_ENV === 'production') {
             './app/**/*.{js,jsx}',
             './components/**/*.{js,jsx}',
             './data/**/*.js',
+            // utils/toggleSidebar.js etc. togglent des classes (sidemenu-active,
+            // tmp_side_bar_open...) via classList.add/remove en dehors de tout
+            // fichier JSX — sans ce chemin, PurgeCSS ne les voit jamais et
+            // supprime les règles CSS qui en dépendent (bug réel rencontré :
+            // l'overlay clic-en-dehors-pour-fermer de la sidebar ne s'affichait
+            // plus jamais car `.sidemenu-active` avait disparu du CSS).
+            './utils/**/*.js',
         ],
         defaultExtractor: (content) => content.match(/[\w-/:%]+(?<!:)/g) || [],
         safelist: {
