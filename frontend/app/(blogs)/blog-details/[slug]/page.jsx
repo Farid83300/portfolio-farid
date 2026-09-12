@@ -5,8 +5,13 @@ import Header1 from '@/components/headers/Header1';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
-import { getPost } from '@/lib/publicApi';
+import { getPost, getPosts } from '@/lib/publicApi';
 import { notFound } from 'next/navigation';
+
+export async function generateStaticParams() {
+    const posts = await getPosts();
+    return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;

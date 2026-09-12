@@ -2,11 +2,16 @@ import Copyright from '@/components/footers/Copyright';
 import Footer3 from '@/components/footers/Footer3';
 import Header1 from '@/components/headers/Header1';
 import ServiceDetails from '@/components/services/ServiceDetails';
-import { getService } from '@/lib/publicApi';
+import { getService, getServices } from '@/lib/publicApi';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
 import { notFound } from 'next/navigation';
+
+export async function generateStaticParams() {
+    const services = await getServices();
+    return services.map((service) => ({ slug: service.slug }));
+}
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
