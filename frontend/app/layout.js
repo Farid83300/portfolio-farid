@@ -10,13 +10,13 @@ const rajdhani = Rajdhani({
     subsets: ['latin'],
     weight: ['300', '400', '500', '600', '700'],
     variable: '--font-rajdhani',
-    display: 'swap',
+    display: 'optional',
 });
 
 const rubik = Rubik({
     subsets: ['latin'],
     variable: '--font-rubik',
-    display: 'swap',
+    display: 'optional',
 });
 
 export const metadata = {

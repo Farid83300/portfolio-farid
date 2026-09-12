@@ -27,9 +27,12 @@
         "swiper": "12.2.0"
     },
     "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^8.0.0",
         "eslint": "^9",
         "eslint-config-next": "15.5.25",
         "eslint-config-prettier": "^10.1.8",
+        "postcss-flexbugs-fixes": "^5.0.2",
+        "postcss-preset-env": "^11.5.2",
         "prettier": "^3.9.6"
     },
     "resolutions": {
