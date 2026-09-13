@@ -42,7 +42,9 @@ export default function Blogs({ allBlogs = [], isLight = false, search = '' }) {
                                                 <li>
                                                     <div className="tag-wrap">
                                                         <i className="fa-solid fa-tag" />
-                                                        <h4 className="tag-title">{blog.category_name}</h4>
+                                                        <h4 className="tag-title">
+                                                            {blog.category_name}
+                                                        </h4>
                                                     </div>
                                                 </li>
                                             )}
@@ -51,9 +53,9 @@ export default function Blogs({ allBlogs = [], isLight = false, search = '' }) {
                                                     <div className="tag-wrap">
                                                         <i className="fa-solid fa-calendar-day" />
                                                         <h4 className="tag-title">
-                                                            {new Date(blog.published_at).toLocaleDateString(
-                                                                'fr-FR'
-                                                            )}
+                                                            {new Date(
+                                                                blog.published_at
+                                                            ).toLocaleDateString('fr-FR')}
                                                         </h4>
                                                     </div>
                                                 </li>

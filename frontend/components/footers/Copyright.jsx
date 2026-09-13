@@ -8,14 +8,18 @@ export default function Copyright() {
                     <div className="col-lg-12">
                         <div className="main-wrapper">
                             <p className="copy-right-para tmp-link-animation">
-                                © <Link href={`/`}> Farid Zaffalone </Link> {new Date().getFullYear()} | Tous droits réservés | Made by Farid with ❤️
+                                © <Link href={`/`}> Farid Zaffalone </Link>{' '}
+                                {new Date().getFullYear()} | Tous droits réservés | Made by Farid
+                                with ❤️
                             </p>{' '}
                             <ul className="footer-links tmp-link-animation">
                                 <li>
                                     <Link href={`/mentions-legales`}>Mentions légales</Link>
                                 </li>
                                 <li>
-                                    <Link href={`/politique-de-confidentialite`}>Politique de confidentialité</Link>
+                                    <Link href={`/politique-de-confidentialite`}>
+                                        Politique de confidentialité
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link href={`/contact`}>Me Contacter</Link>

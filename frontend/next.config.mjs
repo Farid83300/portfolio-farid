@@ -14,7 +14,12 @@ const nextConfig = {
     },
     images: {
         remotePatterns: [
-            { protocol: 'http', hostname: 'localhost', port: '8888', pathname: '/portfolio-farid-backend/**' },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '8888',
+                pathname: '/portfolio-farid-backend/**',
+            },
             { protocol: 'http', hostname: 'localhost', port: '8000', pathname: '/uploads/**' },
             // Domaine de l'API en prod (ex: api.faridzaffalone.com) — sans cette entrée,
             // next/image bloque silencieusement toute image servie par ce domaine et

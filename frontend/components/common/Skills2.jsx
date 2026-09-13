@@ -24,7 +24,9 @@ export default function Skills2() {
                                 <p className="sub-title">16 Terminé</p>
                             </div>
                             <p className="card-para">
-                                PHP · React · MVC · POO → "De la conception à la mise en ligne, je développe des applications web robustes et évolutives avec des architectures propres".
+                                PHP · React · MVC · POO → "De la conception à la mise en ligne, je
+                                développe des applications web robustes et évolutives avec des
+                                architectures propres".
                             </p>
                             <a href="#" className="read-more-btn">
                                 Voir Plus
@@ -45,7 +47,9 @@ export default function Skills2() {
                                 <p className="sub-title">9 Terminé</p>
                             </div>
                             <p className="card-para">
-                                LiteSpeed · Core Web Vitals → "Création et optimisation de sites WordPress sur-mesure, avec un focus sur la vitesse, le SEO et la sécurité".
+                                LiteSpeed · Core Web Vitals → "Création et optimisation de sites
+                                WordPress sur-mesure, avec un focus sur la vitesse, le SEO et la
+                                sécurité".
                             </p>
                             <a href="#" className="read-more-btn">
                                 Voir Plus
@@ -66,7 +70,9 @@ export default function Skills2() {
                                 <p className="sub-title">5 Terminé</p>
                             </div>
                             <p className="card-para">
-                                Figma · Canva · HTML/CSS · Responsive → "Je transforme des maquettes en interfaces pixel-perfect, accessibles et adaptées à tous les écrans".
+                                Figma · Canva · HTML/CSS · Responsive → "Je transforme des maquettes
+                                en interfaces pixel-perfect, accessibles et adaptées à tous les
+                                écrans".
                             </p>
                             <a href="#" className="read-more-btn">
                                 Voir Plus

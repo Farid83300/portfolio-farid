@@ -30,7 +30,11 @@ export default async function BlogSidebar({ isLight = false, search = '' }) {
         <div className="tmp-sidebar">
             <div className="signle-side-bar search-area tmponhover">
                 <div className="body">
-                    <form className="search-area" action={`/blog${isLight ? '-white' : ''}`} method="GET">
+                    <form
+                        className="search-area"
+                        action={`/blog${isLight ? '-white' : ''}`}
+                        method="GET"
+                    >
                         <input
                             type="text"
                             name="search"
@@ -117,7 +121,10 @@ export default async function BlogSidebar({ isLight = false, search = '' }) {
                                 <h3 className="title">Farid Zaffalone</h3>
                                 <p className="para">Développeur Freelance PHP/React & WordPress</p>
                                 <div className="social-link">
-                                    <a href="https://github.com/Farid83300" aria-label="Profil Github">
+                                    <a
+                                        href="https://github.com/Farid83300"
+                                        aria-label="Profil Github"
+                                    >
                                         <i className="fa-brands fa-github" />
                                     </a>
                                     <a

@@ -10,10 +10,13 @@ export default function Services3() {
                         <span className="subtitle">Mes Services</span>
                     </div>
                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        Vos idées...<br />Mon expertise.
+                        Vos idées...
+                        <br />
+                        Mon expertise.
                     </h2>
                     <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        Mon expertise a votre service pour des sites web et applications qui convertissent vos visiteurs en clients.
+                        Mon expertise a votre service pour des sites web et applications qui
+                        convertissent vos visiteurs en clients.
                     </p>
                 </div>
                 <div className="row">

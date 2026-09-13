@@ -67,7 +67,9 @@ export default function AdminCommentsPage() {
                                     <td style={{ maxWidth: 320 }}>{c.content}</td>
                                     <td>#{c.post_id}</td>
                                     <td>
-                                        <span className={`${styles.badge} ${styles[badgeClass[c.status]]}`}>
+                                        <span
+                                            className={`${styles.badge} ${styles[badgeClass[c.status]]}`}
+                                        >
                                             {c.status}
                                         </span>
                                     </td>

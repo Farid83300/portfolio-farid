@@ -207,8 +207,17 @@ export default function ProjectForm({ project }) {
                     </div>
                 </div>
 
-                <button type="submit" className={styles.btn} disabled={saving} style={{ alignSelf: 'flex-start' }}>
-                    {saving ? 'Enregistrement…' : project ? 'Mettre à jour le projet' : 'Créer le projet'}
+                <button
+                    type="submit"
+                    className={styles.btn}
+                    disabled={saving}
+                    style={{ alignSelf: 'flex-start' }}
+                >
+                    {saving
+                        ? 'Enregistrement…'
+                        : project
+                          ? 'Mettre à jour le projet'
+                          : 'Créer le projet'}
                 </button>
             </div>
 
@@ -292,7 +301,8 @@ export default function ProjectForm({ project }) {
                         accept="image/*"
                         disabled={uploading === 'projects'}
                         onChange={(e) =>
-                            e.target.files[0] && uploadTo(setThumbnail, 'projects', e.target.files[0], thumbnail)
+                            e.target.files[0] &&
+                            uploadTo(setThumbnail, 'projects', e.target.files[0], thumbnail)
                         }
                     />
                     {uploading === 'projects' && <div className={styles.hint}>Envoi en cours…</div>}
@@ -325,7 +335,8 @@ export default function ProjectForm({ project }) {
                         accept="image/*"
                         disabled={uploading === 'projects'}
                         onChange={(e) =>
-                            e.target.files[0] && uploadTo(setCoverImage, 'projects', e.target.files[0], coverImage)
+                            e.target.files[0] &&
+                            uploadTo(setCoverImage, 'projects', e.target.files[0], coverImage)
                         }
                     />
                     {coverImage && (
@@ -351,10 +362,12 @@ export default function ProjectForm({ project }) {
                 </div>
 
                 <div className={styles.card}>
-                    <div className={styles.cardTitle}>Image de preview (si le site n&apos;est pas en ligne)</div>
+                    <div className={styles.cardTitle}>
+                        Image de preview (si le site n&apos;est pas en ligne)
+                    </div>
                     <div className={styles.hint} style={{ marginBottom: 8 }}>
-                        Affichée dans une modale au clic sur &quot;Aperçu du site&quot; quand aucune URL live
-                        n&apos;est renseignée. Max 10 Mo.
+                        Affichée dans une modale au clic sur &quot;Aperçu du site&quot; quand aucune
+                        URL live n&apos;est renseignée. Max 10 Mo.
                     </div>
                     <input
                         type="file"
@@ -362,10 +375,17 @@ export default function ProjectForm({ project }) {
                         disabled={uploading === 'projects/preview'}
                         onChange={(e) =>
                             e.target.files[0] &&
-                            uploadTo(setPreviewImage, 'projects/preview', e.target.files[0], previewImage)
+                            uploadTo(
+                                setPreviewImage,
+                                'projects/preview',
+                                e.target.files[0],
+                                previewImage
+                            )
                         }
                     />
-                    {uploading === 'projects/preview' && <div className={styles.hint}>Envoi en cours…</div>}
+                    {uploading === 'projects/preview' && (
+                        <div className={styles.hint}>Envoi en cours…</div>
+                    )}
                     {previewImage && (
                         <div className={styles.imagePreviewWrap}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -397,13 +417,18 @@ export default function ProjectForm({ project }) {
                         disabled={uploading === 'projects/gallery'}
                         onChange={handleGalleryUpload}
                     />
-                    {uploading === 'projects/gallery' && <div className={styles.hint}>Envoi en cours…</div>}
+                    {uploading === 'projects/gallery' && (
+                        <div className={styles.hint}>Envoi en cours…</div>
+                    )}
                     {gallery.length > 0 && (
                         <div className={styles.galleryGrid}>
                             {gallery.map((item, i) => (
                                 <div key={i} className={styles.galleryItem}>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img src={`${API_URL}/uploads/${item.image}`} alt={item.alt || ''} />
+                                    <img
+                                        src={`${API_URL}/uploads/${item.image}`}
+                                        alt={item.alt || ''}
+                                    />
                                     <button
                                         type="button"
                                         className={styles.galleryRemove}

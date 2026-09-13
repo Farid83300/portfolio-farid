@@ -243,7 +243,11 @@ export default function ServiceForm({ service }) {
                     disabled={saving}
                     style={{ alignSelf: 'flex-start' }}
                 >
-                    {saving ? 'Enregistrement…' : service ? 'Mettre à jour le service' : 'Créer le service'}
+                    {saving
+                        ? 'Enregistrement…'
+                        : service
+                          ? 'Mettre à jour le service'
+                          : 'Créer le service'}
                 </button>
             </div>
 

@@ -11,7 +11,7 @@ export const testimonials = [
     },
     {
         id: 2,
-        quote: 'Farid a bien compris ce qu\'il a fait et comment le code fonctionne. Il a fait la démo du respect des recommendation technique.',
+        quote: "Farid a bien compris ce qu'il a fait et comment le code fonctionne. Il a fait la démo du respect des recommendation technique.",
         name: 'David Grillon',
         role: 'Chef de projet IT',
         bgImage: '/assets/images/testimonial/bg-image-2.png',

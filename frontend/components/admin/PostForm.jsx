@@ -31,8 +31,12 @@ export default function PostForm({ post }) {
     const [saving, setSaving] = useState(false);
 
     useEffect(() => {
-        adminFetch('/admin/categories').then(setCategories).catch(() => {});
-        adminFetch('/admin/tags').then(setTags).catch(() => {});
+        adminFetch('/admin/categories')
+            .then(setCategories)
+            .catch(() => {});
+        adminFetch('/admin/tags')
+            .then(setTags)
+            .catch(() => {});
     }, []);
 
     function toggleTag(id) {
@@ -219,8 +223,17 @@ export default function PostForm({ post }) {
                     </div>
                 </div>
 
-                <button type="submit" className={styles.btn} disabled={saving} style={{ alignSelf: 'flex-start' }}>
-                    {saving ? 'Enregistrement…' : post ? "Mettre à jour l'article" : "Créer l'article"}
+                <button
+                    type="submit"
+                    className={styles.btn}
+                    disabled={saving}
+                    style={{ alignSelf: 'flex-start' }}
+                >
+                    {saving
+                        ? 'Enregistrement…'
+                        : post
+                          ? "Mettre à jour l'article"
+                          : "Créer l'article"}
                 </button>
             </div>
 
@@ -279,7 +292,11 @@ export default function PostForm({ post }) {
                                 }
                             }}
                         />
-                        <button type="button" className={`${styles.btn} ${styles.btnGhost}`} onClick={addCategory}>
+                        <button
+                            type="button"
+                            className={`${styles.btn} ${styles.btnGhost}`}
+                            onClick={addCategory}
+                        >
                             +
                         </button>
                     </div>
@@ -288,13 +305,20 @@ export default function PostForm({ post }) {
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Tags</div>
                     <div className={styles.hint} style={{ marginBottom: 8 }}>
-                        Coche/décoche pour attribuer un tag à cet article. La corbeille supprime le tag du site
-                        entier (tous les articles).
+                        Coche/décoche pour attribuer un tag à cet article. La corbeille supprime le
+                        tag du site entier (tous les articles).
                     </div>
                     <div className={styles.checkboxGrid}>
                         {tags.map((tag) => (
                             <div key={tag.id} className={styles.checkboxItem}>
-                                <label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
+                                <label
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 6,
+                                        cursor: 'pointer',
+                                    }}
+                                >
                                     <input
                                         type="checkbox"
                                         checked={tagIds.includes(tag.id)}
@@ -327,7 +351,11 @@ export default function PostForm({ post }) {
                                 }
                             }}
                         />
-                        <button type="button" className={`${styles.btn} ${styles.btnGhost}`} onClick={addTag}>
+                        <button
+                            type="button"
+                            className={`${styles.btn} ${styles.btnGhost}`}
+                            onClick={addTag}
+                        >
                             +
                         </button>
                     </div>
@@ -335,7 +363,12 @@ export default function PostForm({ post }) {
 
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Image de couverture</div>
-                    <input type="file" accept="image/*" onChange={handleImageUpload} disabled={uploading} />
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        disabled={uploading}
+                    />
                     {uploading && <div className={styles.hint}>Envoi en cours…</div>}
                     {featuredImage && (
                         <div className={styles.imagePreviewWrap}>

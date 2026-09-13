@@ -22,10 +22,17 @@ export default function ProjectDetails({ portfolioItem }) {
                         <div className="project-details-thumnail-wrap">
                             <Image
                                 alt={portfolioItem.title}
-                                src={uploadUrl(portfolioItem.cover_image || portfolioItem.thumbnail)}
+                                src={uploadUrl(
+                                    portfolioItem.cover_image || portfolioItem.thumbnail
+                                )}
                                 width={1290}
                                 height={560}
-                                style={{ width: '100%', height: 'auto', aspectRatio: '1290 / 560', objectFit: 'cover' }}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    aspectRatio: '1290 / 560',
+                                    objectFit: 'cover',
+                                }}
                             />
                         </div>
                     </div>
@@ -65,7 +72,9 @@ export default function ProjectDetails({ portfolioItem }) {
                                 <div
                                     className="docs"
                                     // eslint-disable-next-line react/no-danger
-                                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(portfolioItem.description) }}
+                                    dangerouslySetInnerHTML={{
+                                        __html: DOMPurify.sanitize(portfolioItem.description),
+                                    }}
                                 />
                             )}
                             {portfolioItem.features?.length > 0 && (
@@ -160,9 +169,9 @@ export default function ProjectDetails({ portfolioItem }) {
                                     <div className="project-details-info">
                                         Date:{' '}
                                         <span>
-                                            {new Date(portfolioItem.project_date).toLocaleDateString(
-                                                'fr-FR'
-                                            )}
+                                            {new Date(
+                                                portfolioItem.project_date
+                                            ).toLocaleDateString('fr-FR')}
                                         </span>
                                     </div>
                                 )}
@@ -191,7 +200,10 @@ export default function ProjectDetails({ portfolioItem }) {
                 </div>
             </div>
             {previewOpen && portfolioItem.preview_image && (
-                <div className="project-preview-modal-overlay" onClick={() => setPreviewOpen(false)}>
+                <div
+                    className="project-preview-modal-overlay"
+                    onClick={() => setPreviewOpen(false)}
+                >
                     <button
                         type="button"
                         className="project-preview-modal-close"

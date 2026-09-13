@@ -60,7 +60,9 @@ export default async function Blogs({
                                                     <span className="tag-icon">
                                                         <i className="fa-solid fa-calendar-days" />
                                                     </span>
-                                                    {new Date(blog.published_at).toLocaleDateString('fr-FR')}
+                                                    {new Date(blog.published_at).toLocaleDateString(
+                                                        'fr-FR'
+                                                    )}
                                                 </li>
                                             )}
                                         </ul>
@@ -90,7 +92,9 @@ export default async function Blogs({
                             </div>
                         );
                     })}
-                    {!recentPosts.length && <p className="text-center w-100">Aucun article pour le moment</p>}
+                    {!recentPosts.length && (
+                        <p className="text-center w-100">Aucun article pour le moment</p>
+                    )}
                 </div>
             </div>
         </section>

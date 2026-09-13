@@ -1,6 +1,6 @@
 export const educationExperienceData = [
     {
-        role: 'Développeur d\'application full-stack',
+        role: "Développeur d'application full-stack",
         duration: '2025-2026',
         description:
             "Diplôme enregistré au RNCP de Niv. 6 (Bac+3/4) Développeur d\'application full-stack PHP/React à OpenClassrooms",
@@ -16,15 +16,13 @@ export const educationExperienceData = [
     {
         role: 'Webmaster Shopify Wix CMS',
         duration: '2016-2018',
-        description:
-            'Auto-formation Webmaster Shopify Wix CMS à Alpha Shop',
+        description: 'Auto-formation Webmaster Shopify Wix CMS à Alpha Shop',
         animationOrder: 3,
     },
     {
-        role: 'Technicien D\'assistance IT',
+        role: "Technicien D'assistance IT",
         duration: '2004-2006',
-        description:
-            'Auto-formation à SpeedyByte',
+        description: 'Auto-formation à SpeedyByte',
         animationOrder: 4,
     },
 ];

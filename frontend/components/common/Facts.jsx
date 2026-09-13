@@ -20,7 +20,8 @@ export default function Facts() {
                                 </h3>
                             </div>
                             <p className="year-para">
-                                De la création de sites vitrines à des applications PHP/React sur mesure, j'accompagne les PME dans leur transformation digitale.
+                                De la création de sites vitrines à des applications PHP/React sur
+                                mesure, j'accompagne les PME dans leur transformation digitale.
                             </p>
                         </div>
                     </div>

@@ -15,7 +15,12 @@ export default function Education() {
                     </h2>
                     <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
                         Curriculum vitae de mon parcours complet disponible sur mon profil
-                        <a href="https://www.linkedin.com/in/farid-zaffalone/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', marginLeft: '4px' }}>
+                        <a
+                            href="https://www.linkedin.com/in/farid-zaffalone/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'underline', marginLeft: '4px' }}
+                        >
                             LinkedIn
                         </a>
                     </p>

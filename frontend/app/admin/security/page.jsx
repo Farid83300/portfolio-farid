@@ -128,7 +128,10 @@ export default function AdminSecurityPage() {
 
                 {enabled && !forcedSetup ? (
                     <>
-                        <p className={styles.loginHint} style={{ textAlign: 'left', marginBottom: 20 }}>
+                        <p
+                            className={styles.loginHint}
+                            style={{ textAlign: 'left', marginBottom: 20 }}
+                        >
                             Le 2FA est actuellement activé sur ce compte.
                         </p>
                         <form className={styles.form} onSubmit={handleDisable}>
@@ -198,7 +201,10 @@ export default function AdminSecurityPage() {
                     </form>
                 ) : (
                     <>
-                        <p className={styles.loginHint} style={{ textAlign: 'left', marginBottom: 20 }}>
+                        <p
+                            className={styles.loginHint}
+                            style={{ textAlign: 'left', marginBottom: 20 }}
+                        >
                             Le 2FA n&apos;est pas encore activé sur ce compte.
                         </p>
                         <button type="button" className={styles.btn} onClick={startSetup}>
@@ -224,7 +230,9 @@ export default function AdminSecurityPage() {
                             />
                         </div>
                         <div className={styles.formGroup}>
-                            <label htmlFor="newPassword">Nouveau mot de passe (12 caractères minimum)</label>
+                            <label htmlFor="newPassword">
+                                Nouveau mot de passe (12 caractères minimum)
+                            </label>
                             <input
                                 id="newPassword"
                                 type="password"

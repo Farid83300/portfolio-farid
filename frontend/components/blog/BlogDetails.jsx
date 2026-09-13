@@ -18,7 +18,12 @@ export default function BlogDetails({ blog, isLight = false }) {
                                     src={uploadUrl(blog.featured_image)}
                                     width={850}
                                     height={440}
-                                    style={{ width: '100%', height: 'auto', aspectRatio: '850 / 440', objectFit: 'cover' }}
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        aspectRatio: '850 / 440',
+                                        objectFit: 'cover',
+                                    }}
                                 />
                             </div>
                             <div className="blog-details-discription">
@@ -29,7 +34,9 @@ export default function BlogDetails({ blog, isLight = false }) {
                                             <li>
                                                 <div className="tag-wrap">
                                                     <i className="fa-solid fa-tag" />
-                                                    <h4 className="tag-title">{blog.category_name}</h4>
+                                                    <h4 className="tag-title">
+                                                        {blog.category_name}
+                                                    </h4>
                                                 </div>
                                             </li>
                                         )}
@@ -38,9 +45,9 @@ export default function BlogDetails({ blog, isLight = false }) {
                                                 <div className="tag-wrap">
                                                     <i className="fa-solid fa-calendar-day" />
                                                     <h4 className="tag-title">
-                                                        {new Date(blog.published_at).toLocaleDateString(
-                                                            'fr-FR'
-                                                        )}
+                                                        {new Date(
+                                                            blog.published_at
+                                                        ).toLocaleDateString('fr-FR')}
                                                     </h4>
                                                 </div>
                                             </li>
@@ -52,9 +59,14 @@ export default function BlogDetails({ blog, isLight = false }) {
                                 <div
                                     className="disc"
                                     // eslint-disable-next-line react/no-danger
-                                    dangerouslySetInnerHTML={{ __html: sanitizeContentHtml(blog.content) }}
+                                    dangerouslySetInnerHTML={{
+                                        __html: sanitizeContentHtml(blog.content),
+                                    }}
                                 />
-                                <div className="blog-details-navigation" style={{ marginBottom: 10 }}>
+                                <div
+                                    className="blog-details-navigation"
+                                    style={{ marginBottom: 10 }}
+                                >
                                     <div className="navigation-tags">
                                         <h3 className="tag-title">Mots-clés:</h3>
                                         {blog.tags?.length > 0 && (
@@ -74,48 +86,48 @@ export default function BlogDetails({ blog, isLight = false }) {
                                         )}
                                     </div>
                                     <div className="social-link footer">
-                                            <a
-                                                href="https://github.com/Farid83300"
-                                                aria-label="Profil Github"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                        <a
+                                            href="https://github.com/Farid83300"
+                                            aria-label="Profil Github"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <i className="fa-brands fa-github" />
+                                        </a>
+                                        <a
+                                            href="https://www.linkedin.com/in/farid-zaffalone/"
+                                            aria-label="Profil Linkedin"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <i className="fa-brands fa-linkedin-in" />
+                                        </a>
+                                        <a
+                                            href="https://x.com/fzaffalone"
+                                            aria-label="Profil X (Twitter)"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <svg
+                                                width="14"
+                                                height="14"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg"
                                             >
-                                                <i className="fa-brands fa-github" />
-                                            </a>
-                                            <a
-                                                href="https://www.linkedin.com/in/farid-zaffalone/"
-                                                aria-label="Profil Linkedin"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <i className="fa-brands fa-linkedin-in" />
-                                            </a>
-                                            <a
-                                                href="https://x.com/fzaffalone"
-                                                aria-label="Profil X (Twitter)"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <svg
-                                                    width="14"
-                                                    height="14"
-                                                    viewBox="0 0 24 24"
-                                                    fill="currentColor"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                                </svg>
-                                            </a>
-                                            <a
-                                                href="https://www.facebook.com/FaridZaffalone"
-                                                aria-label="Profil Facebook"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <i className="fa-brands fa-facebook-f" />
-                                            </a>
-                                        </div>
+                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                            </svg>
+                                        </a>
+                                        <a
+                                            href="https://www.facebook.com/FaridZaffalone"
+                                            aria-label="Profil Facebook"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <i className="fa-brands fa-facebook-f" />
+                                        </a>
                                     </div>
+                                </div>
                                 <Comment postId={blog.id} />
                             </div>
                         </div>

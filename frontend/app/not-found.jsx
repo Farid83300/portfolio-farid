@@ -41,10 +41,16 @@ export default function NotFound() {
                                 >
                                     404
                                 </span>
-                                <h1 className="title split-collab" style={{ fontSize: 'clamp(24px, 4vw, 36px)' }}>
+                                <h1
+                                    className="title split-collab"
+                                    style={{ fontSize: 'clamp(24px, 4vw, 36px)' }}
+                                >
                                     Page introuvable
                                 </h1>
-                                <p className="disc" style={{ maxWidth: 520, margin: '16px auto 32px' }}>
+                                <p
+                                    className="disc"
+                                    style={{ maxWidth: 520, margin: '16px auto 32px' }}
+                                >
                                     Cette page n&apos;existe pas ou a été déplacée. Vérifiez
                                     l&apos;adresse ou repartez de la page d&apos;accueil.
                                 </p>
@@ -57,7 +63,9 @@ export default function NotFound() {
                                         href="/"
                                     >
                                         <span className="icon-reverse-wrapper">
-                                            <span className="btn-text">Retour à l&apos;accueil</span>
+                                            <span className="btn-text">
+                                                Retour à l&apos;accueil
+                                            </span>
                                             <span className="btn-icon">
                                                 <i className="fa-sharp fa-regular fa-arrow-right" />
                                             </span>

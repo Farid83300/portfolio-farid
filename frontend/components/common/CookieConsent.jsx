@@ -72,11 +72,9 @@ export default function CookieConsent() {
                     <div className="cookie-consent-inner">
                         <p className="cookie-consent-text">
                             Ce site utilise des cookies de mesure d&apos;audience (Google Analytics,
-                            Microsoft Clarity) pour comprendre comment il est utilisé. Vous pouvez les
-                            accepter ou les refuser. En savoir plus dans notre{' '}
-                            <a href="/politique-de-confidentialite">
-                                politique de confidentialité
-                            </a>
+                            Microsoft Clarity) pour comprendre comment il est utilisé. Vous pouvez
+                            les accepter ou les refuser. En savoir plus dans notre{' '}
+                            <a href="/politique-de-confidentialite">politique de confidentialité</a>
                             .
                         </p>
                         <div className="cookie-consent-actions">

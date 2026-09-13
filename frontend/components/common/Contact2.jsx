@@ -69,7 +69,9 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                                         Parlons de ton projet...
                                     </h2>
                                     <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                        Tu as un projet en tête ? Discutons-en ensemble. Je te réponds sous 24h pour étudier tes besoins et te proposer la solution la plus adaptée à ton budget.
+                                        Tu as un projet en tête ? Discutons-en ensemble. Je te
+                                        réponds sous 24h pour étudier tes besoins et te proposer la
+                                        solution la plus adaptée à ton budget.
                                     </p>
                                 </div>
                             </div>

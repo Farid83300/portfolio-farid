@@ -4,14 +4,7 @@ import Link from 'next/link';
 import { getServices, uploadUrl } from '@/lib/publicApi';
 
 export default async function ServiceDetails({ serviceItem }) {
-    const {
-        title,
-        slug,
-        image,
-        image_alt: imageAlt,
-        description,
-        sections = [],
-    } = serviceItem;
+    const { title, slug, image, image_alt: imageAlt, description, sections = [] } = serviceItem;
 
     const otherServices = (await getServices()).filter((service) => service.slug !== slug);
 

@@ -7,7 +7,7 @@ export const services5 = [
     {
         title: 'Refonte de site web',
         description:
-            'Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n\'est pas nécessaire.',
+            "Votre site est vieillissant, lent ou peu lisible sur mobile ? Je diagnostique, modernise et optimise votre présence en ligne sans repartir de zéro si ce n'est pas nécessaire.",
     },
     {
         title: 'Création de site WordPress',
