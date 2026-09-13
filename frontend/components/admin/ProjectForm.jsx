@@ -296,6 +296,9 @@ export default function ProjectForm({ project }) {
 
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Vignette (liste portfolio)</div>
+                    <div className={styles.hint} style={{ marginBottom: 8 }}>
+                        Format optimal : 1200×990px (paysage), JPG ou WebP, ≤4 Mo.
+                    </div>
                     <input
                         type="file"
                         accept="image/*"
@@ -330,6 +333,9 @@ export default function ProjectForm({ project }) {
 
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Image de couverture (page détail)</div>
+                    <div className={styles.hint} style={{ marginBottom: 8 }}>
+                        Format optimal : 1600×700px (paysage), JPG ou WebP, ≤4 Mo.
+                    </div>
                     <input
                         type="file"
                         accept="image/*"
@@ -367,7 +373,8 @@ export default function ProjectForm({ project }) {
                     </div>
                     <div className={styles.hint} style={{ marginBottom: 8 }}>
                         Affichée dans une modale au clic sur &quot;Aperçu du site&quot; quand aucune
-                        URL live n&apos;est renseignée. Max 10 Mo.
+                        URL live n&apos;est renseignée. Capture d&apos;écran complète du site
+                        (format libre, paysage recommandé), JPG/WebP/PNG, ≤10 Mo.
                     </div>
                     <input
                         type="file"
@@ -410,6 +417,9 @@ export default function ProjectForm({ project }) {
 
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Galerie (swiper)</div>
+                    <div className={styles.hint} style={{ marginBottom: 8 }}>
+                        Format optimal : 820×590px (paysage), JPG ou WebP, ≤4 Mo par image.
+                    </div>
                     <input
                         type="file"
                         accept="image/*"

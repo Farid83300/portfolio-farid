@@ -63,7 +63,7 @@ export default function Contact({ parentClass = 'get-in-touch-area tmp-section-g
                             <div className="col-lg-5">
                                 <div className="section-head text-align-left">
                                     <div className="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                        <span className="subtitle">Contactez-moi</span>
+                                        <span className="subtitle">Contacte-moi</span>
                                     </div>
                                     <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
                                         Parlons de ton projet...

@@ -363,6 +363,10 @@ export default function PostForm({ post }) {
 
                 <div className={styles.card}>
                     <div className={styles.cardTitle}>Image de couverture</div>
+                    <div className={styles.hint} style={{ marginBottom: 8 }}>
+                        Format optimal : 1600×830px (paysage), JPG ou WebP, ≤4 Mo. Aussi utilisée
+                        comme vignette dans la liste des articles (recadrage automatique).
+                    </div>
                     <input
                         type="file"
                         accept="image/*"
