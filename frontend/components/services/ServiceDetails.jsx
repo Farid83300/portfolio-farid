@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getServices, uploadUrl } from '@/lib/publicApi';
+import ViewTracker from '@/components/common/ViewTracker';
 
 export default async function ServiceDetails({ serviceItem }) {
     const { title, slug, image, image_alt: imageAlt, description, sections = [] } = serviceItem;
@@ -10,6 +11,7 @@ export default async function ServiceDetails({ serviceItem }) {
 
     return (
         <div className="service-details-area-wrapper tmp-section-gap">
+            <ViewTracker type="services" slug={slug} />
             <div className="container">
                 <div className="row row--40">
                     <div className="col-lg-8">

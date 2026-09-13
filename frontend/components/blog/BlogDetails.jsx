@@ -3,11 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BlogSidebar from './BlogSidebar';
 import Comment from './Comment';
+import ViewTracker from '@/components/common/ViewTracker';
 import { uploadUrl } from '@/lib/publicApi';
 import { sanitizeContentHtml } from '@/lib/sanitizeHtml';
 export default function BlogDetails({ blog, isLight = false }) {
     return (
         <div className="blog-classic-area-wrapper tmp-section-gap">
+            <ViewTracker type="posts" slug={blog.slug} />
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8">

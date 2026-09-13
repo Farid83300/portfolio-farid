@@ -42,6 +42,9 @@ $router->get('/posts', function ($request) {
 $router->get('/posts/{slug}', function ($request, $slug) {
     (new PostController())->show($request, $slug);
 });
+$router->post('/posts/{slug}/view', function ($request, $slug) {
+    (new PostController())->trackView($request, $slug);
+});
 
 $router->get('/projects', function ($request) {
     (new ProjectController())->index($request);
@@ -49,10 +52,16 @@ $router->get('/projects', function ($request) {
 $router->get('/projects/{slug}', function ($request, $slug) {
     (new ProjectController())->show($request, $slug);
 });
+$router->post('/projects/{slug}/view', function ($request, $slug) {
+    (new ProjectController())->trackView($request, $slug);
+});
 
 $router->get('/services', function ($request) {
     (new ServiceController())->index($request);
 });
 $router->get('/services/{slug}', function ($request, $slug) {
     (new ServiceController())->show($request, $slug);
+});
+$router->post('/services/{slug}/view', function ($request, $slug) {
+    (new ServiceController())->trackView($request, $slug);
 });

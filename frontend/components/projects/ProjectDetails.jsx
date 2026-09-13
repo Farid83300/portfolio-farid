@@ -5,6 +5,7 @@ import DOMPurify from 'isomorphic-dompurify';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Appointment from './Appointment';
+import ViewTracker from '@/components/common/ViewTracker';
 import { uploadUrl } from '@/lib/publicApi';
 export default function ProjectDetails({ portfolioItem }) {
     const [previewOpen, setPreviewOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function ProjectDetails({ portfolioItem }) {
 
     return (
         <div className="project-details-area-wrapper tmp-section-gap">
+            <ViewTracker type="projects" slug={portfolioItem.slug} />
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
