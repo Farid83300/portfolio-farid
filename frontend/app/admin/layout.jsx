@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
 import AdminSidebar from '@/components/admin/AdminSidebar';
+import IdleLogout from '@/components/admin/IdleLogout';
 import { adminFetch, decodeToken, getToken } from '@/lib/adminApi';
 
 export default function AdminLayout({ children }) {
@@ -59,6 +60,7 @@ export default function AdminLayout({ children }) {
 
     return (
         <div className={styles.page}>
+            <IdleLogout />
             <AdminSidebar counts={counts} />
             <main className={styles.content}>{children}</main>
         </div>

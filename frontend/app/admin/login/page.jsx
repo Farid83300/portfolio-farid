@@ -1,12 +1,23 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { Suspense, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
 import { API_URL, setTokens } from '@/lib/adminApi';
 
 export default function AdminLoginPage() {
+    return (
+        <Suspense fallback={null}>
+            <AdminLoginForm />
+        </Suspense>
+    );
+}
+
+function AdminLoginForm() {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const idleLogout = searchParams.get('reason') === 'idle';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [code, setCode] = useState('');
@@ -51,6 +62,11 @@ export default function AdminLoginPage() {
         <div className={styles.loginWrapper}>
             <form className={styles.loginCard} onSubmit={handleSubmit}>
                 <div className={styles.loginTitle}>Admin Portfolio</div>
+                {idleLogout && !error && (
+                    <div className={styles.loginHint}>
+                        Déconnecté(e) automatiquement après 60 minutes d&apos;inactivité.
+                    </div>
+                )}
                 {error && <div className={styles.error}>{error}</div>}
                 <div className={styles.formGroup}>
                     <label htmlFor="email">Email</label>
@@ -94,6 +110,9 @@ export default function AdminLoginPage() {
                 <button type="submit" className={styles.btn} disabled={loading}>
                     {loading ? 'Connexion…' : 'Se connecter'}
                 </button>
+                <Link href="/" className={styles.loginHint}>
+                    ← Retour à l&apos;accueil
+                </Link>
             </form>
         </div>
     );
