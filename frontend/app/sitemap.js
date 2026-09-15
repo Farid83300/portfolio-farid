@@ -1,7 +1,7 @@
 import { getProjects, getServices, getPosts } from '@/lib/publicApi';
 
 export default async function sitemap() {
-    const baseUrl = 'https://www.faridzaffalone.com';
+    const baseUrl = 'https://faridzaffalone.com';
 
     const staticRoutes = ['', '/about', '/service', '/project', '/contact', '/blog'].map(
         (route) => ({
