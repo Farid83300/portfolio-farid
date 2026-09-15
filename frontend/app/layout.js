@@ -5,6 +5,7 @@ import LayoutWrapper from '@/components/common/LayoutWrapper';
 import CookieConsent from '@/components/common/CookieConsent';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
+import { Analytics } from '@vercel/analytics/next';
 
 const rajdhani = Rajdhani({
     subsets: ['latin'],
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
                     {children}
                 </LayoutWrapper>
                 <CookieConsent />
+                <Analytics />
             </body>
         </html>
     );

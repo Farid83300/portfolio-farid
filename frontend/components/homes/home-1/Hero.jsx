@@ -18,7 +18,7 @@ export default function Hero() {
                                     priority
                                     fetchPriority="high"
                                 />
-                                <h2 className="banner-big-text-1 up-down">WEB DESIGNER</h2>
+                                <h2 className="banner-big-text-1 up-down">UI DESIGNER</h2>
                                 <h2 className="banner-big-text-2 up-down-2">WEB DEVELOPER</h2>
                             </div>
                         </div>
