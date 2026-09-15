@@ -524,6 +524,30 @@
   cursor: pointer;
 }
 
+.checkboxItem input[type=checkbox] {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+}
+
+.tagRemove {
+  width: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text-1);
+  opacity: 0.5;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+.tagRemove:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
 .select {
   background: var(--background-color-2);
   border: 1px solid var(--background-color-4);
@@ -549,6 +573,21 @@
   border-radius: 8px;
   display: block;
   margin-top: 10px;
+}
+
+.imagePreviewWrap {
+  position: relative;
+  display: inline-block;
+  max-width: 220px;
+}
+
+.imagePreviewWrap .imagePreview {
+  margin-top: 10px;
+}
+
+.imagePreviewWrap .galleryRemove {
+  top: 4px;
+  right: -6px;
 }
 
 .galleryGrid {

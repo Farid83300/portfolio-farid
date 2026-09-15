@@ -6,6 +6,7 @@ import CookieConsent from '@/components/common/CookieConsent';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const rajdhani = Rajdhani({
     subsets: ['latin'],
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
                 </LayoutWrapper>
                 <CookieConsent />
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
