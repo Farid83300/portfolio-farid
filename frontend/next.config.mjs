@@ -31,6 +31,23 @@ const nextConfig = {
             },
         ],
     },
+    async redirects() {
+        // SEO: anciens slugs renommés — redirection 301 permanente pour transférer
+        // le référencement Google vers les nouvelles URLs et éviter que les
+        // anciennes restent indexées en 404. À compléter à chaque renommage de slug.
+        return [
+            {
+                source: '/service-details/boutique-e-commerce',
+                destination: '/service-details/creation-de-e-commerce',
+                permanent: true,
+            },
+            {
+                source: '/services/developpement-saas-php-react',
+                destination: '/service-details/creation-de-saas-php-react',
+                permanent: true,
+            },
+        ];
+    },
     async headers() {
         const headers = [
             // SÉCURITÉ: en-têtes de durcissement de base — actifs en dev comme en prod,
