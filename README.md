@@ -2,7 +2,7 @@
 
 Portfolio personnel de **Farid Zaffalone**, développeur freelance PHP/React & WordPress basé à Draguignan. Monorepo composé d'un frontend Next.js et d'une API PHP maison, avec un tableau de bord d'administration complet pour gérer articles, projets, services et messages sans jamais toucher à une base de données.
 
-🔗 **[www.faridzaffalone.com](https://faridzaffalone.com)**
+🔗 **[faridzaffalone.com](https://faridzaffalone.com)**
 
 ---
 

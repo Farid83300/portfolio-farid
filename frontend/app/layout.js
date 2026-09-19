@@ -22,7 +22,7 @@ const rubik = Rubik({
 });
 
 export const metadata = {
-    metadataBase: new URL('https://www.faridzaffalone.com'),
+    metadataBase: new URL('https://faridzaffalone.com'),
     title: 'Farid Zaffalone | Développeur Freelance PHP/React & WordPress',
     description:
         'Portfolio de Farid Zaffalone, développeur freelance spécialisé dans le développement PHP/React, la conception Figma et les projets WordPress.',
