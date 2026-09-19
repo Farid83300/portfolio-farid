@@ -5,7 +5,8 @@ import Header1 from '@/components/headers/Header1';
 import Link from 'next/link';
 import React from 'react';
 import CommonComponents from '@/components/common/CommonComponents';
-import { getPost, getPosts } from '@/lib/publicApi';
+import { getPost, getPosts, uploadUrl } from '@/lib/publicApi';
+import { SITE_URL } from '@/lib/siteConfig';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -15,12 +16,54 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
+    const blog = await getPost(slug);
+    const canonicalPath = `/blog-details/${slug}`;
+
+    if (!blog) {
+        return {
+            title: 'Blog || Farid Zaffalone',
+            description:
+                'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+            alternates: {
+                canonical: canonicalPath,
+            },
+        };
+    }
+
+    const title = blog.meta_title || `${blog.title} || Farid Zaffalone`;
+    const description =
+        blog.meta_description ||
+        blog.excerpt ||
+        'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.';
+    const imageUrl = blog.featured_image ? uploadUrl(blog.featured_image) : null;
+
     return {
-        title: 'Blog || Farid Zaffalone',
-        description:
-            'Article de blog de Farid Zaffalone, développeur freelance PHP/React & WordPress.',
+        title,
+        description,
         alternates: {
-            canonical: `/blog-details/${slug}`,
+            canonical: canonicalPath,
+        },
+        openGraph: {
+            title,
+            description,
+            url: `${SITE_URL}${canonicalPath}`,
+            type: 'article',
+            ...(imageUrl && {
+                images: [
+                    {
+                        url: imageUrl,
+                        width: 1600,
+                        height: 830,
+                        alt: blog.featured_image_alt || blog.title,
+                    },
+                ],
+            }),
+        },
+        twitter: {
+            card: imageUrl ? 'summary_large_image' : 'summary',
+            title,
+            description,
+            ...(imageUrl && { images: [imageUrl] }),
         },
     };
 }

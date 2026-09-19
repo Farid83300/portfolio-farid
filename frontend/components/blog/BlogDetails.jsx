@@ -6,7 +6,9 @@ import Comment from './Comment';
 import ViewTracker from '@/components/common/ViewTracker';
 import { uploadUrl } from '@/lib/publicApi';
 import { sanitizeContentHtml } from '@/lib/sanitizeHtml';
+import { SITE_URL } from '@/lib/siteConfig';
 export default function BlogDetails({ blog, isLight = false }) {
+    const articleUrl = `${SITE_URL}/blog-details/${blog.slug}`;
     return (
         <div className="blog-classic-area-wrapper tmp-section-gap">
             <ViewTracker type="posts" slug={blog.slug} />
@@ -87,47 +89,42 @@ export default function BlogDetails({ blog, isLight = false }) {
                                             </ul>
                                         )}
                                     </div>
-                                    <div className="social-link footer">
-                                        <a
-                                            href="https://github.com/Farid83300"
-                                            aria-label="Profil Github"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <i className="fa-brands fa-github" />
-                                        </a>
-                                        <a
-                                            href="https://www.linkedin.com/in/farid-zaffalone/"
-                                            aria-label="Profil Linkedin"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <i className="fa-brands fa-linkedin-in" />
-                                        </a>
-                                        <a
-                                            href="https://x.com/fzaffalone"
-                                            aria-label="Profil X (Twitter)"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <svg
-                                                width="14"
-                                                height="14"
-                                                viewBox="0 0 24 24"
-                                                fill="currentColor"
-                                                xmlns="http://www.w3.org/2000/svg"
+                                    <div className="navigation-tags">
+                                        <h3 className="tag-title">Partagez:</h3>
+                                        <div className="social-link footer">
+                                            <a
+                                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`}
+                                                aria-label="Partager sur Linkedin"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
-                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                            </svg>
-                                        </a>
-                                        <a
-                                            href="https://www.facebook.com/FaridZaffalone"
-                                            aria-label="Profil Facebook"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <i className="fa-brands fa-facebook-f" />
-                                        </a>
+                                                <i className="fa-brands fa-linkedin-in" />
+                                            </a>
+                                            <a
+                                                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(blog.title)}`}
+                                                aria-label="Partager sur X (Twitter)"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <svg
+                                                    width="14"
+                                                    height="14"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                                </svg>
+                                            </a>
+                                            <a
+                                                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`}
+                                                aria-label="Partager sur Facebook"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <i className="fa-brands fa-facebook-f" />
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <Comment postId={blog.id} />

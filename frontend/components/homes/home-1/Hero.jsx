@@ -35,9 +35,9 @@ export default function Hero() {
                                                 strings={[
                                                     'Web Developer.',
                                                     'Full-stack Developer.',
-                                                    'UI/UX Designer.',
+                                                    'Web Designer.',
                                                     'Freelancer.',
-                                                    'Wordpress Developer.',
+                                                    'CMS Developer.',
                                                 ]}
                                             />
                                         </span>
