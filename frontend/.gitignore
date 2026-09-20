@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Live Sass Compiler output (Next.js compiles main.scss itself; these are stale local artifacts)
+public/assets/scss/**/*.css
+public/assets/scss/**/*.css.map
