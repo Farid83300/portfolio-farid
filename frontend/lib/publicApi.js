@@ -19,7 +19,15 @@ async function publicFetch(path) {
         return null;
     }
 
-    return res.json();
+    try {
+        return await res.json();
+    } catch {
+        // Réponse 200 mais corps invalide (JSON malformé, tronqué, erreur PHP
+        // mélangée à la sortie) — on dégrade comme un échec réseau classique
+        // plutôt que de laisser l'exception remonter et faire planter la page
+        // (500 côté Next.js/Vercel au lieu d'un 404 propre géré par l'appelant).
+        return null;
+    }
 }
 
 export async function getPosts({ category, tag, search } = {}) {
