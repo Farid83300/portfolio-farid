@@ -74,16 +74,25 @@ const nextConfig = {
         // n'annule pas la CSP : elle bloque toujours le chargement de script/style/
         // connexion vers un domaine tiers non listé, le principal vecteur
         // d'exfiltration en cas de XSS.
+        //
+        // 29/09 : ajout de https://*.clarity.ms en script-src (le script Clarity se
+        // charge depuis scripts.clarity.ms, un sous-domaine non couvert par
+        // www.clarity.ms seul) et de https://*.analytics.google.com en connect-src
+        // (GA4 envoie ses requêtes de mesure vers des endpoints régionaux sur ce
+        // domaine, ex. region1.analytics.google.com — différent de google-analytics.com).
+        // Les deux étaient bloqués silencieusement par la CSP, coupant la remontée
+        // de données vers Analytics et Clarity sans qu'aucune erreur ne soit visible
+        // ailleurs que dans la console navigateur.
         if (process.env.NODE_ENV === 'production') {
             headers.push({
                 key: 'Content-Security-Policy',
                 value: [
                     "default-src 'self'",
-                    `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms`,
+                    `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms`,
                     `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
                     `font-src 'self' https://fonts.gstatic.com data:`,
                     `img-src 'self' data: blob: ${apiOrigin}`,
-                    `connect-src 'self' ${apiOrigin} https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.clarity.ms https://api.emailjs.com`,
+                    `connect-src 'self' ${apiOrigin} https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.clarity.ms https://api.emailjs.com`,
                     "object-src 'none'",
                     "base-uri 'self'",
                     "frame-ancestors 'none'",
