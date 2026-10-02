@@ -80,6 +80,10 @@ const nextConfig = {
         // www.clarity.ms seul) et de https://*.analytics.google.com en connect-src
         // (GA4 envoie ses requêtes de mesure vers des endpoints régionaux sur ce
         // domaine, ex. region1.analytics.google.com — différent de google-analytics.com).
+        //
+        // 02/10 : GA4 envoie aussi une requête secondaire vers stats.g.doubleclick.net
+        // (connect-src) et un pixel d'audiences vers www.google.fr/ads/ga-audiences
+        // (img-src, domaine selon la région du visiteur — .com ajouté en prévision).
         // Les deux étaient bloqués silencieusement par la CSP, coupant la remontée
         // de données vers Analytics et Clarity sans qu'aucune erreur ne soit visible
         // ailleurs que dans la console navigateur.
@@ -91,8 +95,8 @@ const nextConfig = {
                     `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms`,
                     `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
                     `font-src 'self' https://fonts.gstatic.com data:`,
-                    `img-src 'self' data: blob: ${apiOrigin}`,
-                    `connect-src 'self' ${apiOrigin} https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.clarity.ms https://api.emailjs.com`,
+                    `img-src 'self' data: blob: ${apiOrigin} https://www.google.fr https://www.google.com`,
+                    `connect-src 'self' ${apiOrigin} https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://*.clarity.ms https://api.emailjs.com`,
                     "object-src 'none'",
                     "base-uri 'self'",
                     "frame-ancestors 'none'",
