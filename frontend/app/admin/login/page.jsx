@@ -3,6 +3,7 @@
 import { Suspense, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { startAuthentication } from '@simplewebauthn/browser';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
 import { API_URL, setTokens } from '@/lib/adminApi';
 
@@ -21,12 +22,45 @@ function AdminLoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [code, setCode] = useState('');
-    const [requireCode, setRequireCode] = useState(false);
+    // 'passkey' : seconde étape par passkey (méthode principale) ; 'totp' : code Google
+    // Authenticator (secours, ou seule méthode tant qu'aucune passkey n'est enregistrée).
+    const [stage, setStage] = useState(null);
+    const [passkeyData, setPasskeyData] = useState(null);
+    const requireCode = stage === 'totp';
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
+    async function runPasskey(data) {
+        setError('');
+        setLoading(true);
+        try {
+            const credential = await startAuthentication({ optionsJSON: data.options.publicKey });
+            const res = await fetch(`${API_URL}/admin/passkey/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ challenge_id: data.challenge_id, credential }),
+            });
+            const result = await res.json();
+            if (!res.ok) {
+                setError(result.error || 'Passkey invalide');
+                setLoading(false);
+                return;
+            }
+            setTokens(result.token, result.refresh_token);
+            router.push('/admin');
+        } catch {
+            // Annulé par l'utilisateur ou pas de passkey disponible sur cet appareil.
+            setError('Passkey non validée. Réessayez ou utilisez un code 2FA.');
+            setLoading(false);
+        }
+    }
+
     async function handleSubmit(e) {
         e.preventDefault();
+        if (stage === 'passkey') {
+            runPasskey(passkeyData);
+            return;
+        }
         setError('');
         setLoading(true);
 
@@ -39,8 +73,14 @@ function AdminLoginForm() {
             const data = await res.json();
 
             if (res.status === 401 && data.require_2fa) {
-                setRequireCode(true);
-                setLoading(false);
+                if (data.passkey) {
+                    setPasskeyData(data.passkey);
+                    setStage('passkey');
+                    runPasskey(data.passkey);
+                } else {
+                    setStage('totp');
+                    setLoading(false);
+                }
                 return;
             }
 
@@ -77,7 +117,7 @@ function AdminLoginForm() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        disabled={requireCode}
+                        disabled={stage !== null}
                     />
                 </div>
                 <div className={styles.formGroup}>
@@ -89,9 +129,14 @@ function AdminLoginForm() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        disabled={requireCode}
+                        disabled={stage !== null}
                     />
                 </div>
+                {stage === 'passkey' && (
+                    <div className={styles.loginHint}>
+                        Validez avec votre passkey (Touch ID, Windows Hello, clé de sécurité…).
+                    </div>
+                )}
                 {requireCode && (
                     <div className={styles.formGroup}>
                         <label htmlFor="code">Code 2FA (Google Authenticator)</label>
@@ -108,8 +153,24 @@ function AdminLoginForm() {
                     </div>
                 )}
                 <button type="submit" className={styles.btn} disabled={loading}>
-                    {loading ? 'Connexion…' : 'Se connecter'}
+                    {loading
+                        ? 'Connexion…'
+                        : stage === 'passkey'
+                          ? 'Utiliser ma passkey'
+                          : 'Se connecter'}
                 </button>
+                {stage === 'passkey' && (
+                    <button
+                        type="button"
+                        className={`${styles.btn} ${styles.btnGhost}`}
+                        onClick={() => {
+                            setError('');
+                            setStage('totp');
+                        }}
+                    >
+                        Utiliser un code 2FA à la place
+                    </button>
+                )}
                 <Link href="/" className={styles.loginHint}>
                     ← Retour à l&apos;accueil
                 </Link>

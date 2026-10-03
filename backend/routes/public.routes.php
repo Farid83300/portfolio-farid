@@ -20,6 +20,11 @@ $router->post('/admin/refresh', function ($request) {
     (new AuthController())->refresh($request);
 });
 
+// Connexion par passkey (le challenge n'est délivré qu'après un mot de passe valide).
+$router->post('/admin/passkey/login', function ($request) {
+    (new \App\Controllers\Admin\PasskeyController())->login($request);
+});
+
 $router->post('/contact', function ($request) {
     (new ContactController())->store($request);
 });

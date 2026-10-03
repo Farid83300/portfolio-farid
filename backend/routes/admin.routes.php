@@ -7,6 +7,7 @@ use App\Controllers\Admin\CommentController;
 use App\Controllers\Admin\DashboardController;
 use App\Controllers\Admin\MessageController;
 use App\Controllers\Admin\NewsletterController;
+use App\Controllers\Admin\PasskeyController;
 use App\Controllers\Admin\PostController;
 use App\Controllers\Admin\ProjectController;
 use App\Controllers\Admin\SecurityController;
@@ -42,6 +43,24 @@ $router->post('/admin/2fa/disable', function ($request) {
 $router->put('/admin/change-password', function ($request) {
     $payload = AuthMiddleware::handle();
     (new SecurityController())->changePassword($request, $payload);
+});
+
+// Passkeys (WebAuthn)
+$router->get('/admin/passkeys', function ($request) {
+    $payload = AuthMiddleware::handle();
+    (new PasskeyController())->index($request, $payload);
+});
+$router->post('/admin/passkeys/options', function ($request) {
+    $payload = AuthMiddleware::handle();
+    (new PasskeyController())->registrationOptions($request, $payload);
+});
+$router->post('/admin/passkeys', function ($request) {
+    $payload = AuthMiddleware::handle();
+    (new PasskeyController())->register($request, $payload);
+});
+$router->delete('/admin/passkeys/{id}', function ($request, $id) {
+    $payload = AuthMiddleware::handle();
+    (new PasskeyController())->destroy($request, $payload, $id);
 });
 
 // SÉCURITÉ: logout réel — révoque les refresh tokens côté serveur (voir

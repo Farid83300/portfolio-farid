@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import QRCode from 'qrcode';
+import { startRegistration } from '@simplewebauthn/browser';
 import styles from '@/public/assets/scss/admin/admin.module.scss';
 import { adminFetch, decodeToken, getToken, setTokens } from '@/lib/adminApi';
 
@@ -21,12 +22,80 @@ export default function AdminSecurityPage() {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(true);
+    const [passkeys, setPasskeys] = useState([]);
+    const [passkeyName, setPasskeyName] = useState('');
+    const [passkeyPassword, setPasskeyPassword] = useState('');
+    const [passkeyBusy, setPasskeyBusy] = useState(false);
+    const [deleteTarget, setDeleteTarget] = useState(null);
+    const [deletePassword, setDeletePassword] = useState('');
 
     useEffect(() => {
         adminFetch('/admin/2fa/status')
-            .then((data) => setEnabled(data.enabled))
+            .then((data) => {
+                setEnabled(data.enabled);
+                if (data.enabled && decodeToken(getToken())?.scope !== 'setup_2fa') {
+                    return loadPasskeys();
+                }
+            })
             .finally(() => setLoading(false));
     }, []);
+
+    async function loadPasskeys() {
+        const data = await adminFetch('/admin/passkeys');
+        setPasskeys(data.passkeys);
+    }
+
+    async function handleAddPasskey(e) {
+        e.preventDefault();
+        setError('');
+        setSuccess('');
+        setPasskeyBusy(true);
+        try {
+            const opts = await adminFetch('/admin/passkeys/options', {
+                method: 'POST',
+                body: JSON.stringify({ password: passkeyPassword }),
+            });
+            const credential = await startRegistration({ optionsJSON: opts.options.publicKey });
+            await adminFetch('/admin/passkeys', {
+                method: 'POST',
+                body: JSON.stringify({
+                    challenge_id: opts.challenge_id,
+                    credential,
+                    name: passkeyName,
+                }),
+            });
+            setPasskeyName('');
+            setPasskeyPassword('');
+            await loadPasskeys();
+            setSuccess('Passkey ajoutée. Elle sera proposée à la prochaine connexion.');
+        } catch (err) {
+            setError(
+                err?.name === 'NotAllowedError' || err?.name === 'InvalidStateError'
+                    ? 'Enregistrement annulé, ou cette passkey existe déjà sur cet appareil.'
+                    : err.message
+            );
+        } finally {
+            setPasskeyBusy(false);
+        }
+    }
+
+    async function handleDeletePasskey(e) {
+        e.preventDefault();
+        setError('');
+        setSuccess('');
+        try {
+            await adminFetch(`/admin/passkeys/${deleteTarget}`, {
+                method: 'DELETE',
+                body: JSON.stringify({ password: deletePassword }),
+            });
+            setDeleteTarget(null);
+            setDeletePassword('');
+            await loadPasskeys();
+            setSuccess('Passkey supprimée.');
+        } catch (err) {
+            setError(err.message);
+        }
+    }
 
     async function startSetup() {
         setError('');
@@ -107,7 +176,7 @@ export default function AdminSecurityPage() {
 
     return (
         <div>
-            <h1 className={styles.pageTitle}>Sécurité / 2FA</h1>
+            <h1 className={styles.pageTitle}>Sécurité / 2FA / Passkeys</h1>
 
             {error && <div className={styles.error}>{error}</div>}
             {success && <div className={styles.success}>{success}</div>}
@@ -213,6 +282,129 @@ export default function AdminSecurityPage() {
                     </>
                 )}
             </div>
+
+            {enabled && !forcedSetup && (
+                <div className={styles.card} style={{ marginTop: 24 }}>
+                    <div className={styles.cardTitle}>
+                        Passkeys (méthode de connexion principale)
+                    </div>
+                    <p className={styles.loginHint} style={{ textAlign: 'left', marginBottom: 20 }}>
+                        À la connexion, après le mot de passe, votre passkey (Touch ID, Windows
+                        Hello, clé de sécurité…) est demandée en priorité. Le code Google
+                        Authenticator reste disponible en secours.
+                    </p>
+
+                    {passkeys.length > 0 && (
+                        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
+                            {passkeys.map((pk) => (
+                                <li
+                                    key={pk.id}
+                                    style={{
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        gap: 12,
+                                        padding: '10px 0',
+                                        borderBottom: '1px solid var(--background-color-4)',
+                                    }}
+                                >
+                                    <span>
+                                        <strong>{pk.name}</strong>
+                                        <br />
+                                        <small className={styles.hint}>
+                                            Ajoutée le{' '}
+                                            {new Date(
+                                                pk.created_at.replace(' ', 'T')
+                                            ).toLocaleDateString('fr-FR')}
+                                            {pk.last_used_at
+                                                ? ` · utilisée le ${new Date(pk.last_used_at.replace(' ', 'T')).toLocaleDateString('fr-FR')}`
+                                                : ' · jamais utilisée'}
+                                        </small>
+                                    </span>
+                                    <button
+                                        type="button"
+                                        className={`${styles.btn} ${styles.btnDanger}`}
+                                        onClick={() => {
+                                            setDeleteTarget(pk.id);
+                                            setDeletePassword('');
+                                        }}
+                                    >
+                                        Supprimer
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    {deleteTarget && (
+                        <form
+                            className={styles.form}
+                            onSubmit={handleDeletePasskey}
+                            style={{ marginBottom: 24 }}
+                        >
+                            <div className={styles.formGroup}>
+                                <label htmlFor="deletePasskeyPassword">
+                                    Mot de passe pour confirmer la suppression
+                                </label>
+                                <input
+                                    id="deletePasskeyPassword"
+                                    type="password"
+                                    className={styles.input}
+                                    value={deletePassword}
+                                    onChange={(e) => setDeletePassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div style={{ display: 'flex', gap: 12 }}>
+                                <button
+                                    type="submit"
+                                    className={`${styles.btn} ${styles.btnDanger}`}
+                                >
+                                    Confirmer la suppression
+                                </button>
+                                <button
+                                    type="button"
+                                    className={`${styles.btn} ${styles.btnGhost}`}
+                                    onClick={() => setDeleteTarget(null)}
+                                >
+                                    Annuler
+                                </button>
+                            </div>
+                        </form>
+                    )}
+
+                    <form className={styles.form} onSubmit={handleAddPasskey}>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="passkeyName">Nom de la passkey</label>
+                            <input
+                                id="passkeyName"
+                                className={styles.input}
+                                placeholder="MacBook, iPhone, YubiKey…"
+                                value={passkeyName}
+                                onChange={(e) => setPasskeyName(e.target.value)}
+                                maxLength={100}
+                            />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="passkeyPassword">
+                                Mot de passe de connexion à l&apos;admin (celui que vous tapez sur
+                                la page de login)
+                            </label>
+                            <input
+                                id="passkeyPassword"
+                                type="password"
+                                className={styles.input}
+                                value={passkeyPassword}
+                                onChange={(e) => setPasskeyPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className={styles.btn} disabled={passkeyBusy}>
+                            {passkeyBusy ? 'En attente de la passkey…' : 'Ajouter une passkey'}
+                        </button>
+                    </form>
+                </div>
+            )}
 
             {enabled && !forcedSetup && (
                 <div className={styles.card} style={{ marginTop: 24 }}>

@@ -7,6 +7,7 @@ use App\Core\Response;
 use App\Models\RefreshToken;
 use App\Models\User;
 use App\Services\AuthService;
+use App\Services\PasskeyService;
 use App\Services\RateLimiter;
 use App\Services\TotpService;
 
@@ -57,7 +58,11 @@ class AuthController
 
         $code = $data['code'] ?? null;
         if (!$code) {
-            Response::json(['require_2fa' => true], 401);
+            // Le mot de passe est valide : si une passkey est enregistrée, on la propose en
+            // méthode principale (challenge lié à cet utilisateur) ; le code TOTP reste
+            // accepté en secours via le même endpoint.
+            $passkey = (new PasskeyService())->loginOptions((int) $user['id']);
+            Response::json(['require_2fa' => true, 'passkey' => $passkey], 401);
             return;
         }
 

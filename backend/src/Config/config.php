@@ -23,6 +23,12 @@ return [
     'cors' => [
         'origin' => $_ENV['CORS_ORIGIN'],
     ],
+    // Passkeys (WebAuthn). RP ID = domaine du FRONTEND (celui de la page /admin/login), sans
+    // schéma ni port : 'localhost' en dev, 'faridzaffalone.com' en prod.
+    'webauthn' => [
+        'rp_id' => $_ENV['WEBAUTHN_RP_ID'] ?? 'localhost',
+        'rp_name' => $_ENV['WEBAUTHN_RP_NAME'] ?? 'Admin Portfolio',
+    ],
     'mail' => [
         'to' => $_ENV['MAIL_TO'] ?? null,
     ],

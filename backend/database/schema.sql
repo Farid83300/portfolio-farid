@@ -46,6 +46,32 @@ CREATE TABLE `refresh_tokens` (
   CONSTRAINT `refresh_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE `webauthn_credentials` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `credential_id` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `public_key` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sign_count` int unsigned NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_used_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_webauthn_credential_id` (`credential_id`),
+  KEY `idx_webauthn_credentials_user` (`user_id`),
+  CONSTRAINT `webauthn_credentials_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `webauthn_challenges` (
+  `id` char(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int NOT NULL,
+  `type` enum('register','login') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `challenge` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expires_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_webauthn_challenges_expires` (`expires_at`),
+  CONSTRAINT `webauthn_challenges_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- --------------------------------------------------------------------------
 -- Blog (articles, catégories, tags, commentaires)
 -- --------------------------------------------------------------------------
